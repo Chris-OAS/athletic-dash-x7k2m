@@ -19,89 +19,89 @@
 
 :root{
   /* Base palette - light */
-  --ink:#1a0a18;
-  --ink-2:rgba(26,10,24,0.72);
-  --ink-3:rgba(26,10,24,0.52);
-  --ink-4:rgba(26,10,24,0.32);
+  --ink:#0a1428;
+  --ink-2:rgba(10,20,40,0.72);
+  --ink-3:rgba(10,20,40,0.52);
+  --ink-4:rgba(10,20,40,0.32);
 
   /* Glass on light */
   --glass:rgba(255,255,255,0.55);
   --glass-strong:rgba(255,255,255,0.72);
   --glass-border:rgba(255,255,255,0.85);
-  --glass-shadow:0 8px 32px rgba(60,30,50,0.08), 0 1px 0 rgba(255,255,255,0.9) inset;
+  --glass-shadow:0 8px 32px rgba(10,30,80,0.10), 0 1px 0 rgba(255,255,255,0.9) inset;
 
-  /* Accent - electric coral, distinctive, athletic */
-  --accent:#ff3d6e;
-  --accent-2:#ff6b9d;
-  --accent-glow:rgba(255,61,110,0.35);
+  /* Accent - electric cobalt blue, athletic */
+  --accent:#0066ff;
+  --accent-2:#3b82f6;
+  --accent-glow:rgba(0,102,255,0.40);
 
-  --good:#0f9d58;
-  --warn:#f59e0b;
+  --good:#16a34a;
+  --warn:#eab308;
   --bad:#ef4444;
-  --info:#3b82f6;
+  --info:#0ea5e9;
 
   /* Typography */
   --display:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
   --mono:'Geist Mono',ui-monospace,SFMono-Regular,monospace;
 
-  /* Time-of-day gradient (default = midday) */
-  --bg-1:#a8d8ff;
-  --bg-2:#fce7f3;
-  --bg-3:#fef3c7;
-  --bg-4:#ddd6fe;
+  /* Time-of-day gradient (default = midday — cool blue) */
+  --bg-1:#bfdbfe;
+  --bg-2:#dbeafe;
+  --bg-3:#e0f2fe;
+  --bg-4:#c7d2fe;
 }
 
 /* Dark mode overrides */
 @media (prefers-color-scheme:dark){
   :root{
-    --ink:#fff5f0;
-    --ink-2:rgba(255,245,240,0.78);
-    --ink-3:rgba(255,245,240,0.58);
-    --ink-4:rgba(255,245,240,0.38);
+    --ink:#f0f6ff;
+    --ink-2:rgba(240,246,255,0.78);
+    --ink-3:rgba(240,246,255,0.55);
+    --ink-4:rgba(240,246,255,0.35);
 
     --glass:rgba(255,255,255,0.06);
     --glass-strong:rgba(255,255,255,0.10);
     --glass-border:rgba(255,255,255,0.12);
-    --glass-shadow:0 8px 32px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.08) inset;
+    --glass-shadow:0 8px 32px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.08) inset;
 
-    --bg-1:#2a1856;
-    --bg-2:#5b1f4a;
-    --bg-3:#7a1a3a;
-    --bg-4:#1a0a3e;
+    --bg-1:#0a1e3e;
+    --bg-2:#0f2851;
+    --bg-3:#1a1f4a;
+    --bg-4:#050a1c;
 
-    --accent:#ff5e7e;
-    --accent-2:#ff8aac;
+    --accent:#3b82f6;
+    --accent-2:#60a5fa;
+    --accent-glow:rgba(59,130,246,0.45);
   }
 }
 
-/* Time of day overrides applied via .time-* class on body */
+/* Time of day overrides applied via .time-* class on body — all blue-toned */
 body.time-morning{
-  --bg-1:#ffb88c;--bg-2:#ffd6cc;--bg-3:#fcd5e8;--bg-4:#d4c5f9;
+  --bg-1:#bfd9ff;--bg-2:#d6e8ff;--bg-3:#e8eeff;--bg-4:#a5c5ed;
 }
-body.time-morning.dark-mode-on,
 @media (prefers-color-scheme:dark){
   body.time-morning{
-    --bg-1:#5a2a1a;--bg-2:#7a2540;--bg-3:#3a1a4a;--bg-4:#2a1a3a;
+    --bg-1:#0c2548;--bg-2:#143256;--bg-3:#0a1f3e;--bg-4:#091830;
   }
 }
 body.time-midday{
-  --bg-1:#a8d8ff;--bg-2:#c5f9f0;--bg-3:#fce7f3;--bg-4:#e0e7ff;
+  --bg-1:#a3cfff;--bg-2:#cee8ff;--bg-3:#dbeafe;--bg-4:#a8c5ed;
 }
 @media (prefers-color-scheme:dark){
   body.time-midday{
-    --bg-1:#1a3a5e;--bg-2:#1a4e4a;--bg-3:#3a1a3e;--bg-4:#1a2a4a;
+    --bg-1:#0a2855;--bg-2:#0c3a6e;--bg-3:#13407a;--bg-4:#091a36;
   }
 }
 body.time-evening{
-  --bg-1:#9d7dd8;--bg-2:#e8a3d5;--bg-3:#ffb88c;--bg-4:#7a5dc7;
+  --bg-1:#5b7fc4;--bg-2:#7c9ad9;--bg-3:#3d5ea0;--bg-4:#28406e;
 }
 @media (prefers-color-scheme:dark){
   body.time-evening{
-    --bg-1:#3a1f5c;--bg-2:#5a1f4a;--bg-3:#1a0a3e;--bg-4:#2a1a4e;
+    --bg-1:#0c1f48;--bg-2:#142a5a;--bg-3:#0a1838;--bg-4:#040b22;
   }
 }
 body.time-night{
-  --bg-1:#3d2e6e;--bg-2:#1a1542;--bg-3:#2a1a4e;--bg-4:#0a0520;
+  --bg-1:#1a2e5a;--bg-2:#0a1838;--bg-3:#142852;--bg-4:#020618;
 }
 
 /* ─────────── RESET ─────────── */
@@ -113,7 +113,7 @@ body{
   font-weight:400;font-size:15px;line-height:1.45;
   letter-spacing:-0.011em;
   color:var(--ink);
-  background:#0a0418;
+  background:#040b1c;
   min-height:100vh;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
@@ -715,7 +715,7 @@ svg{display:block;}
 /* ─────────── BOOTLOADER ─────────── */
 
 .boot{
-  position:fixed;inset:0;background:#0a0418;z-index:300;
+  position:fixed;inset:0;background:#040b1c;z-index:300;
   display:flex;align-items:center;justify-content:center;
   transition:opacity .5s ease;
 }
@@ -1120,9 +1120,9 @@ function renderSleep(d){
   const s=d.sleep||{};
   const total=(s.deep_s||0)+(s.rem_s||0)+(s.light_s||0)+(s.awake_s||0);
   const segs=[
-    {value:s.deep_s,color:'#3a1a5c',label:'Deep'},
-    {value:s.rem_s,color:'#8b3aa8',label:'REM'},
-    {value:s.light_s,color:'#d4a3e8',label:'Light'},
+    {value:s.deep_s,color:'#0c2a6e',label:'Deep'},
+    {value:s.rem_s,color:'#3b82f6',label:'REM'},
+    {value:s.light_s,color:'#93c5fd',label:'Light'},
     {value:s.awake_s,color:'rgba(255,255,255,0.4)',label:'Awake'},
   ];
   const card=document.getElementById('sleep-card');
