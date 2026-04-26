@@ -3,787 +3,887 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#1a0a18" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fff5f0" media="(prefers-color-scheme: light)">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Almanac">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Athlete">
 <title>Athlete</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
+/* ─────────── DESIGN TOKENS ─────────── */
+
 :root{
-  --bg:#fafafa;
-  --surface:#ffffff;
-  --surface-2:#f4f4f5;
-  --border:#e5e5e5;
-  --border-2:#d4d4d4;
-  --text:#0a0a0a;
-  --text-2:#404040;
-  --muted:#737373;
-  --faint:#a3a3a3;
-  --ghost:#e5e5e5;
+  /* Base palette - light */
+  --ink:#1a0a18;
+  --ink-2:rgba(26,10,24,0.72);
+  --ink-3:rgba(26,10,24,0.52);
+  --ink-4:rgba(26,10,24,0.32);
 
-  --recovery:#10b981;
-  --recovery-2:#059669;
-  --sleep:#6366f1;
-  --sleep-2:#4f46e5;
-  --strain:#ef4444;
-  --strain-2:#dc2626;
-  --readiness:#f59e0b;
-  --readiness-2:#d97706;
-  --neutral:#71717a;
+  /* Glass on light */
+  --glass:rgba(255,255,255,0.55);
+  --glass-strong:rgba(255,255,255,0.72);
+  --glass-border:rgba(255,255,255,0.85);
+  --glass-shadow:0 8px 32px rgba(60,30,50,0.08), 0 1px 0 rgba(255,255,255,0.9) inset;
 
-  --good:#10b981;
+  /* Accent - electric coral, distinctive, athletic */
+  --accent:#ff3d6e;
+  --accent-2:#ff6b9d;
+  --accent-glow:rgba(255,61,110,0.35);
+
+  --good:#0f9d58;
   --warn:#f59e0b;
   --bad:#ef4444;
+  --info:#3b82f6;
 
-  --sans:'Geist',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
-  --mono:'Geist Mono',ui-monospace,monospace;
+  /* Typography */
+  --display:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --mono:'Geist Mono',ui-monospace,SFMono-Regular,monospace;
 
-  --radius:18px;
-  --radius-sm:12px;
-
-  --shadow:0 1px 2px rgba(0,0,0,.04),0 4px 12px rgba(0,0,0,.04);
+  /* Time-of-day gradient (default = midday) */
+  --bg-1:#a8d8ff;
+  --bg-2:#fce7f3;
+  --bg-3:#fef3c7;
+  --bg-4:#ddd6fe;
 }
 
-@media (prefers-color-scheme: dark){
+/* Dark mode overrides */
+@media (prefers-color-scheme:dark){
   :root{
-    --bg:#0a0a0a;
-    --surface:#171717;
-    --surface-2:#1f1f1f;
-    --border:#262626;
-    --border-2:#363636;
-    --text:#fafafa;
-    --text-2:#d4d4d4;
-    --muted:#a3a3a3;
-    --faint:#737373;
-    --ghost:#262626;
-    --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.4);
+    --ink:#fff5f0;
+    --ink-2:rgba(255,245,240,0.78);
+    --ink-3:rgba(255,245,240,0.58);
+    --ink-4:rgba(255,245,240,0.38);
+
+    --glass:rgba(255,255,255,0.06);
+    --glass-strong:rgba(255,255,255,0.10);
+    --glass-border:rgba(255,255,255,0.12);
+    --glass-shadow:0 8px 32px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.08) inset;
+
+    --bg-1:#2a1856;
+    --bg-2:#5b1f4a;
+    --bg-3:#7a1a3a;
+    --bg-4:#1a0a3e;
+
+    --accent:#ff5e7e;
+    --accent-2:#ff8aac;
   }
 }
+
+/* Time of day overrides applied via .time-* class on body */
+body.time-morning{
+  --bg-1:#ffb88c;--bg-2:#ffd6cc;--bg-3:#fcd5e8;--bg-4:#d4c5f9;
+}
+body.time-morning.dark-mode-on,
+@media (prefers-color-scheme:dark){
+  body.time-morning{
+    --bg-1:#5a2a1a;--bg-2:#7a2540;--bg-3:#3a1a4a;--bg-4:#2a1a3a;
+  }
+}
+body.time-midday{
+  --bg-1:#a8d8ff;--bg-2:#c5f9f0;--bg-3:#fce7f3;--bg-4:#e0e7ff;
+}
+@media (prefers-color-scheme:dark){
+  body.time-midday{
+    --bg-1:#1a3a5e;--bg-2:#1a4e4a;--bg-3:#3a1a3e;--bg-4:#1a2a4a;
+  }
+}
+body.time-evening{
+  --bg-1:#9d7dd8;--bg-2:#e8a3d5;--bg-3:#ffb88c;--bg-4:#7a5dc7;
+}
+@media (prefers-color-scheme:dark){
+  body.time-evening{
+    --bg-1:#3a1f5c;--bg-2:#5a1f4a;--bg-3:#1a0a3e;--bg-4:#2a1a4e;
+  }
+}
+body.time-night{
+  --bg-1:#3d2e6e;--bg-2:#1a1542;--bg-3:#2a1a4e;--bg-4:#0a0520;
+}
+
+/* ─────────── RESET ─────────── */
 
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 html{font-size:16px;-webkit-text-size-adjust:100%;}
 body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:var(--sans);
-  font-weight:400;
-  font-size:15px;
-  line-height:1.5;
-  letter-spacing:-0.01em;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
+  font-family:var(--display);
+  font-weight:400;font-size:15px;line-height:1.45;
+  letter-spacing:-0.011em;
+  color:var(--ink);
+  background:#0a0418;
   min-height:100vh;
   overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  position:relative;
 }
-::selection{background:var(--text);color:var(--bg);}
-
+::selection{background:var(--accent);color:#fff;}
 button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;}
 a{color:inherit;text-decoration:none;}
+svg{display:block;}
 
-/* ─────────── LAYOUT ─────────── */
+/* ─────────── BACKGROUND MESH ─────────── */
 
-.shell{
-  max-width:480px;margin:0 auto;
-  padding:max(16px,env(safe-area-inset-top)) 16px calc(40px + env(safe-area-inset-bottom));
+.bg-mesh{
+  position:fixed;inset:0;z-index:-2;overflow:hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 15%, var(--bg-1) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 85% 25%, var(--bg-2) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 70% at 20% 90%, var(--bg-3) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 60% at 90% 100%, var(--bg-4) 0%, transparent 55%),
+    var(--bg-4);
+  transition:background 1s ease;
+  animation:mesh-drift 30s ease-in-out infinite alternate;
 }
-@media (min-width:520px){
-  .shell{max-width:680px;padding:24px 24px 60px;}
+@keyframes mesh-drift{
+  0%{background-position:0% 0%, 100% 0%, 0% 100%, 100% 100%;}
+  100%{background-position:5% 5%, 95% 5%, 5% 95%, 95% 95%;}
 }
-@media (min-width:880px){
-  .shell{max-width:1080px;padding:32px 32px 80px;}
+.bg-noise{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0, 0 0 0 0 0, 0 0 0 0 0, 0 0 0 0.4 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  opacity:.04;mix-blend-mode:overlay;
 }
 
-/* ─────────── HEADER ─────────── */
+/* ─────────── APP SHELL ─────────── */
 
-.topbar{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:4px 4px 16px;
-  font-family:var(--mono);
-  font-size:11px;
-  color:var(--muted);
-  letter-spacing:.04em;
+.app{
+  max-width:520px;margin:0 auto;
+  padding:max(50px,env(safe-area-inset-top)) 16px calc(110px + env(safe-area-inset-bottom)) 16px;
+  position:relative;
 }
-.topbar .left{display:flex;align-items:center;gap:8px;}
-.topbar .greet{font-family:var(--sans);font-weight:500;color:var(--text);font-size:13px;letter-spacing:-0.01em;}
-.topbar .live-dot{
-  width:6px;height:6px;border-radius:50%;background:var(--good);
+@media (min-width:560px){
+  .app{max-width:720px;padding-left:24px;padding-right:24px;}
+}
+@media (min-width:980px){
+  .app{max-width:1100px;padding-left:32px;padding-right:32px;padding-bottom:140px;}
+}
+
+/* ─────────── LARGE TITLE (iOS-style) ─────────── */
+
+.title-bar{
+  padding:8px 4px 24px;
+}
+.title-eye{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:12px;font-weight:500;
+  color:var(--ink-3);
+  letter-spacing:-0.01em;
+  margin-bottom:6px;
+}
+.title-eye .dot{
+  width:6px;height:6px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 12px var(--accent-glow);
   animation:pulse 2s ease-in-out infinite;
 }
-@keyframes pulse{0%,100%{opacity:.5;transform:scale(.85);}50%{opacity:1;transform:scale(1);}}
+@keyframes pulse{0%,100%{opacity:.6;transform:scale(.85);}50%{opacity:1;transform:scale(1);}}
+.title-h1{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(44px,11vw,68px);
+  line-height:.95;
+  letter-spacing:-0.045em;
+  color:var(--ink);
+}
+.title-h1 .light{font-weight:300;color:var(--ink-3);}
+
+/* ─────────── PAGE SWITCHER ─────────── */
+
+.page{display:none;animation:page-in .35s cubic-bezier(.2,.7,.2,1);}
+.page.active{display:block;}
+@keyframes page-in{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+
+/* ─────────── GLASS CARD ─────────── */
+
+.glass{
+  background:var(--glass);
+  backdrop-filter:blur(40px) saturate(180%);
+  -webkit-backdrop-filter:blur(40px) saturate(180%);
+  border:1px solid var(--glass-border);
+  border-radius:28px;
+  box-shadow:var(--glass-shadow);
+  overflow:hidden;
+  position:relative;
+}
+
+.glass-strong{
+  background:var(--glass-strong);
+}
 
 /* ─────────── HERO CARD ─────────── */
 
 .hero{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:24px;
-  padding:24px 20px 28px;
-  position:relative;
-  overflow:hidden;
-  box-shadow:var(--shadow);
+  padding:24px 22px 28px;
   margin-bottom:14px;
 }
-.hero-top{
-  display:flex;align-items:center;justify-content:space-between;
-  margin-bottom:6px;
-}
 .hero-eye{
-  font-family:var(--mono);
-  font-size:10.5px;
-  text-transform:uppercase;
-  letter-spacing:.14em;
-  color:var(--muted);
-  font-weight:500;
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:18px;
 }
-.hero-pill{
-  font-family:var(--mono);font-size:10.5px;
-  padding:4px 10px;border-radius:999px;
-  background:var(--surface-2);color:var(--text-2);
-  font-weight:500;letter-spacing:.04em;
-  border:1px solid var(--border);
+.hero-eye-l{
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  color:var(--ink-3);letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.hero-eye-r{
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  color:var(--ink-2);
+  padding:5px 11px;border-radius:999px;
+  background:rgba(255,255,255,0.18);
+  border:1px solid rgba(255,255,255,0.25);
 }
 
-/* RING STAGE */
-.ring-stage{
-  display:flex;align-items:center;justify-content:center;
+@media (prefers-color-scheme:dark){
+  .hero-eye-r{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);}
+}
+
+/* Morning hero: huge readiness number */
+.hero-mega{
+  display:flex;align-items:flex-start;gap:18px;
+  margin:8px 0 14px;
+}
+.hero-num{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(120px,32vw,180px);
+  line-height:.82;letter-spacing:-0.06em;
+  color:var(--ink);
+  font-feature-settings:"tnum" 1,"ss01" 1;
   position:relative;
-  margin:14px 0 18px;
 }
-.ring-stage svg{
-  width:240px;height:240px;
-  filter:drop-shadow(0 6px 22px rgba(0,0,0,.06));
+.hero-num .denom{
+  font-size:0.18em;font-weight:600;color:var(--ink-3);
+  letter-spacing:-0.02em;
+  position:absolute;top:8%;
+  margin-left:-2px;
 }
-.ring-center{
-  position:absolute;inset:0;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  text-align:center;
+.hero-side{
+  flex:1;padding-top:14px;
 }
-.ring-center .label{
+.hero-side .lbl{
   font-family:var(--mono);font-size:10.5px;
   text-transform:uppercase;letter-spacing:.16em;
-  color:var(--muted);font-weight:500;
-  margin-bottom:2px;
+  color:var(--ink-3);font-weight:500;
+  margin-bottom:8px;
 }
-.ring-center .num{
-  font-family:var(--sans);font-weight:700;
-  font-size:64px;line-height:1;letter-spacing:-0.04em;
-  color:var(--text);
-  font-feature-settings:"tnum" 1,"ss01" 1;
+.hero-side .verdict{
+  font-family:var(--display);font-weight:700;
+  font-size:22px;line-height:1.1;letter-spacing:-0.02em;
+  color:var(--accent);
+  margin-bottom:6px;
 }
-.ring-center .num .denom{
-  font-size:18px;color:var(--muted);font-weight:500;letter-spacing:-0.02em;
-  margin-left:2px;vertical-align:top;
+.hero-side .sub{
+  font-size:13.5px;color:var(--ink-2);line-height:1.45;
 }
-.ring-center .verdict{
-  font-size:13.5px;font-weight:600;
-  margin-top:6px;letter-spacing:-0.01em;
-}
-.ring-center .verdict.good{color:var(--good);}
-.ring-center .verdict.warn{color:var(--warn);}
-.ring-center .verdict.bad{color:var(--bad);}
 
-.ring-legend{
-  display:flex;justify-content:space-around;
-  padding:18px 4px 0;
-  border-top:1px solid var(--border);
+/* Hero stat triplet (legend) */
+.hero-trip{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+  margin-top:12px;padding-top:18px;
+  border-top:1px solid var(--glass-border);
 }
-.ring-legend-item{
-  display:flex;flex-direction:column;align-items:center;gap:4px;
-  flex:1;min-width:0;
-}
-.ring-legend-dot{
-  width:8px;height:8px;border-radius:50%;
-}
-.ring-legend-val{
-  font-family:var(--sans);font-weight:600;font-size:18px;
-  letter-spacing:-0.02em;line-height:1;
+.hero-trip .cell{text-align:left;}
+.hero-trip .cell .v{
+  font-family:var(--display);font-weight:700;
+  font-size:24px;letter-spacing:-0.025em;line-height:1;
   font-feature-settings:"tnum" 1;
-  margin-top:2px;
 }
-.ring-legend-lbl{
-  font-family:var(--mono);font-size:9.5px;
-  color:var(--muted);text-transform:uppercase;letter-spacing:.12em;
-  font-weight:500;
+.hero-trip .cell .v .u{font-size:13px;color:var(--ink-3);font-weight:500;margin-left:2px;}
+.hero-trip .cell .l{
+  font-family:var(--mono);font-size:9.5px;color:var(--ink-3);
+  text-transform:uppercase;letter-spacing:.12em;font-weight:500;
+  margin-top:5px;
 }
 
-/* SESSION (midday hero variant) */
-.session{
-  padding:8px 0 4px;
-}
-.session-tag{
+/* Midday hero: session card */
+.session-pill{
   display:inline-flex;align-items:center;gap:6px;
-  font-family:var(--mono);font-size:10.5px;
-  text-transform:uppercase;letter-spacing:.14em;
-  color:var(--readiness);font-weight:600;
-  margin-bottom:10px;
-}
-.session-tag::before{
-  content:"";width:6px;height:6px;border-radius:50%;background:var(--readiness);
+  padding:5px 12px;border-radius:999px;
+  background:var(--accent);color:#fff;
+  font-family:var(--mono);font-size:10.5px;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;
+  margin-bottom:14px;box-shadow:0 4px 12px var(--accent-glow);
 }
 .session-title{
-  font-size:32px;font-weight:700;letter-spacing:-0.035em;line-height:1.05;
-  margin-bottom:6px;
+  font-family:var(--display);font-weight:700;
+  font-size:38px;line-height:1;letter-spacing:-0.04em;
+  color:var(--ink);margin-bottom:8px;
 }
 .session-sub{
-  color:var(--muted);font-size:14px;line-height:1.5;
-  margin-bottom:18px;
+  font-size:14.5px;color:var(--ink-2);line-height:1.5;
+  margin-bottom:18px;max-width:36ch;
 }
 .session-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1px;background:var(--border);
-  border-radius:14px;overflow:hidden;
-  border:1px solid var(--border);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+  margin-bottom:14px;
 }
 .session-cell{
-  background:var(--surface);
-  padding:14px 12px;
+  background:rgba(255,255,255,0.18);
+  border:1px solid rgba(255,255,255,0.25);
+  border-radius:14px;
+  padding:12px;text-align:center;
 }
-.session-cell .lbl{
-  font-family:var(--mono);font-size:9.5px;color:var(--muted);
-  text-transform:uppercase;letter-spacing:.12em;font-weight:500;
-  margin-bottom:6px;
+@media (prefers-color-scheme:dark){
+  .session-cell{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);}
 }
-.session-cell .val{
-  font-weight:600;font-size:18px;letter-spacing:-0.02em;
+.session-cell .v{
+  font-family:var(--display);font-weight:700;
+  font-size:18px;letter-spacing:-0.025em;line-height:1.1;
   font-feature-settings:"tnum" 1;
 }
-.session-rationale{
-  margin-top:14px;padding:12px 14px;
-  background:var(--surface-2);border-radius:12px;
-  font-size:13.5px;color:var(--text-2);line-height:1.55;
+.session-cell .l{
+  font-family:var(--mono);font-size:9.5px;color:var(--ink-3);
+  text-transform:uppercase;letter-spacing:.1em;font-weight:500;
+  margin-top:5px;
 }
+.session-detail{
+  font-size:13.5px;color:var(--ink-2);line-height:1.55;
+  padding:14px 16px;
+  background:rgba(255,255,255,0.18);
+  border-radius:14px;
+}
+@media (prefers-color-scheme:dark){.session-detail{background:rgba(255,255,255,0.05);}}
 
-/* WEEK BARS (evening hero variant) */
-.week-card{padding:6px 0 4px;}
-.week-summary{
-  display:flex;align-items:baseline;gap:14px;
-  margin-bottom:18px;
+/* Evening hero: weekly */
+.week-mega{
+  display:flex;align-items:baseline;gap:14px;margin-bottom:18px;
 }
-.week-summary .km{
-  font-size:56px;font-weight:700;letter-spacing:-0.04em;line-height:1;
+.week-mega .km{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(72px,18vw,108px);
+  line-height:.85;letter-spacing:-0.05em;color:var(--ink);
   font-feature-settings:"tnum" 1;
 }
-.week-summary .km .u{font-size:18px;color:var(--muted);font-weight:500;margin-left:4px;letter-spacing:-0.02em;}
-.week-summary .meta{
+.week-mega .km .u{font-size:0.25em;color:var(--ink-3);font-weight:500;margin-left:6px;letter-spacing:-0.01em;}
+.week-mega .meta{
   flex:1;
-  font-family:var(--mono);font-size:10.5px;color:var(--muted);
-  text-transform:uppercase;letter-spacing:.12em;font-weight:500;line-height:1.6;
+  font-size:13px;color:var(--ink-2);line-height:1.55;
 }
-.week-summary .meta strong{color:var(--text);font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:-0.01em;text-transform:none;display:block;}
+.week-mega .meta strong{color:var(--ink);font-weight:700;}
 .week-bars{
   display:grid;grid-template-columns:repeat(7,1fr);
-  gap:6px;align-items:end;height:140px;
-  padding:0 2px;
+  gap:5px;align-items:end;height:120px;
+  padding-top:10px;
 }
 .week-bar{
-  display:flex;flex-direction:column;align-items:center;gap:8px;
-  height:100%;justify-content:flex-end;
+  display:flex;flex-direction:column;align-items:stretch;
+  height:100%;justify-content:flex-end;gap:6px;
 }
 .week-bar-fill{
   width:100%;
-  background:linear-gradient(180deg,var(--strain),var(--strain-2));
-  border-radius:8px 8px 4px 4px;
-  min-height:3px;
-  transition:height .8s cubic-bezier(.2,.6,.2,1);
+  background:linear-gradient(180deg,var(--accent),var(--accent-2));
+  border-radius:8px;min-height:4px;
+  box-shadow:0 0 16px rgba(255,61,110,0.25);
+  transition:height .8s cubic-bezier(.2,.7,.2,1);
 }
-.week-bar-fill.rest{background:var(--ghost);}
+.week-bar-fill.empty{
+  background:rgba(255,255,255,0.18);
+  border:1px dashed rgba(255,255,255,0.25);
+  box-shadow:none;
+}
+@media (prefers-color-scheme:dark){
+  .week-bar-fill.empty{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);}
+}
 .week-bar-day{
-  font-family:var(--mono);font-size:10px;color:var(--muted);
-  text-transform:uppercase;letter-spacing:.06em;
-  font-weight:500;
+  font-family:var(--mono);font-size:9.5px;color:var(--ink-3);
+  text-transform:uppercase;letter-spacing:.08em;
+  font-weight:500;text-align:center;
 }
-.week-bar-day.today{color:var(--strain);font-weight:600;}
+.week-bar-day.today{color:var(--accent);font-weight:700;}
 
-/* ─────────── STAT GRID (Recovery quartet) ─────────── */
+/* ─────────── SECTIONS / GROUPS ─────────── */
 
 .section-head{
+  padding:22px 8px 10px;
   display:flex;align-items:baseline;justify-content:space-between;
-  padding:18px 4px 12px;
 }
-.section-title{
-  font-size:13px;font-weight:600;letter-spacing:-0.01em;
-  text-transform:uppercase;font-family:var(--mono);
-  color:var(--text);letter-spacing:.06em;
+.section-head h2{
+  font-family:var(--display);font-weight:700;
+  font-size:22px;letter-spacing:-0.025em;
 }
-.section-meta{
-  font-family:var(--mono);font-size:10.5px;color:var(--muted);
+.section-head .meta{
+  font-family:var(--mono);font-size:10.5px;color:var(--ink-3);
   text-transform:uppercase;letter-spacing:.1em;font-weight:500;
 }
 
-.stat-grid{
+/* Stat grid (2 columns) */
+.stats-grid{
   display:grid;grid-template-columns:1fr 1fr;gap:10px;
 }
 .stat{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:16px 16px 14px;
-  position:relative;
-  overflow:hidden;
+  padding:18px 18px 16px;
+  border-radius:22px;
 }
 .stat-head{
-  display:flex;align-items:center;justify-content:space-between;
+  display:flex;align-items:center;gap:10px;
   margin-bottom:14px;
 }
 .stat-icon{
-  width:28px;height:28px;border-radius:8px;
+  width:30px;height:30px;border-radius:9px;
   display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,0.22);
+  border:1px solid rgba(255,255,255,0.28);
 }
-.stat-icon svg{width:16px;height:16px;}
-.stat-lbl{
-  font-family:var(--mono);font-size:10px;color:var(--muted);
-  text-transform:uppercase;letter-spacing:.12em;font-weight:500;
+@media (prefers-color-scheme:dark){
+  .stat-icon{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);}
 }
-.stat-num{
-  font-size:34px;font-weight:700;letter-spacing:-0.035em;line-height:1;
+.stat-icon svg{width:16px;height:16px;color:var(--ink);}
+.stat-name{
+  font-family:var(--mono);font-size:10.5px;
+  color:var(--ink-3);font-weight:500;
+  text-transform:uppercase;letter-spacing:.1em;
+}
+.stat-val{
+  font-family:var(--display);font-weight:700;
+  font-size:42px;letter-spacing:-0.04em;line-height:.95;
+  color:var(--ink);
   font-feature-settings:"tnum" 1;
-  margin-bottom:6px;
 }
-.stat-num .u{
-  font-size:14px;color:var(--muted);font-weight:500;margin-left:3px;letter-spacing:-0.01em;
+.stat-val .u{
+  font-size:14px;color:var(--ink-3);font-weight:500;
+  margin-left:3px;letter-spacing:-0.01em;
 }
-.stat-trend{
-  font-family:var(--mono);font-size:10.5px;color:var(--muted);
-  letter-spacing:.04em;font-weight:500;
-  display:flex;align-items:center;gap:4px;
+.stat-foot{
+  margin-top:8px;
+  font-family:var(--mono);font-size:11px;
+  color:var(--ink-3);letter-spacing:-0.005em;
 }
-.stat-trend .arrow{font-family:var(--sans);font-weight:600;}
-.stat-trend.up .arrow{color:var(--good);}
-.stat-trend.dn .arrow{color:var(--bad);}
-.stat-bar{
-  height:4px;background:var(--ghost);border-radius:2px;
-  margin-top:10px;overflow:hidden;
-}
-.stat-bar-fill{height:100%;border-radius:2px;transition:width 1s cubic-bezier(.2,.6,.2,1);}
+.stat-foot .ok{color:var(--good);}
+.stat-foot .bad{color:var(--bad);}
 
 /* ─────────── ALERT CARD ─────────── */
 
 .alert{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-left:3px solid var(--bad);
-  border-radius:var(--radius);
-  padding:18px 20px;
-  margin-top:14px;
-  box-shadow:var(--shadow);
-}
-.alert-head{
-  display:flex;align-items:center;gap:10px;
-  margin-bottom:10px;
+  padding:20px 22px;margin-top:14px;
+  border-left:3px solid var(--accent);
+  border-radius:24px;
 }
 .alert-tag{
-  font-family:var(--mono);font-size:10px;
-  text-transform:uppercase;letter-spacing:.14em;
-  color:var(--bad);font-weight:600;
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--mono);font-size:10.5px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.12em;
+  color:var(--accent);
+  margin-bottom:10px;
 }
+.alert-tag::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);}
 .alert-title{
-  font-size:18px;font-weight:600;letter-spacing:-0.025em;line-height:1.25;
-  margin-bottom:6px;
+  font-family:var(--display);font-weight:700;
+  font-size:22px;letter-spacing:-0.03em;line-height:1.15;
+  margin-bottom:8px;
 }
 .alert-body{
-  font-size:13.5px;color:var(--text-2);line-height:1.55;
+  font-size:14px;line-height:1.55;color:var(--ink-2);
 }
-.alert-body strong{color:var(--text);font-weight:600;}
+.alert-body strong{color:var(--ink);font-weight:700;}
 .alert-action{
-  margin-top:12px;
-  padding:10px 14px;
-  background:var(--surface-2);border-radius:10px;
+  margin-top:14px;padding:11px 14px;
+  background:rgba(255,255,255,0.22);
+  border:1px solid rgba(255,255,255,0.28);
+  border-radius:12px;
   font-family:var(--mono);font-size:11.5px;
-  letter-spacing:.04em;color:var(--text-2);
+  color:var(--ink-2);letter-spacing:-0.01em;
+}
+@media (prefers-color-scheme:dark){
+  .alert-action{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);}
 }
 
-/* ─────────── SLEEP STAGES CARD ─────────── */
+/* ─────────── SLEEP DONUT ─────────── */
 
-.card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:18px;
-  box-shadow:var(--shadow);
-  margin-top:14px;
-}
-.card-head{
+.sleep-card{padding:22px;}
+.sleep-head{
   display:flex;justify-content:space-between;align-items:baseline;
-  margin-bottom:14px;
+  margin-bottom:18px;
 }
-.card-title{
-  font-size:14px;font-weight:600;letter-spacing:-0.01em;
-}
-.card-num{
-  font-size:24px;font-weight:700;letter-spacing:-0.03em;
+.sleep-title{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-0.02em;}
+.sleep-score{
+  font-family:var(--display);font-weight:800;
+  font-size:32px;letter-spacing:-0.035em;line-height:1;
   font-feature-settings:"tnum" 1;
 }
-.card-num .denom{font-size:12px;color:var(--muted);font-weight:500;margin-left:2px;}
-
-.donut-stage{
-  display:flex;align-items:center;gap:18px;
-  margin-bottom:14px;
-}
-.donut-stage svg{width:120px;height:120px;flex-shrink:0;}
-.donut-legend{
-  flex:1;display:flex;flex-direction:column;gap:8px;
-  font-size:13px;
-}
-.donut-row{display:flex;align-items:center;gap:8px;}
-.donut-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0;}
-.donut-row .name{flex:1;color:var(--text-2);}
-.donut-row .time{
-  font-family:var(--mono);font-weight:500;color:var(--text);
-  font-feature-settings:"tnum" 1;
-}
-
-/* ─────────── TRAINING LOAD CHART ─────────── */
-
-.load-chart{padding:6px 0;}
-.load-row{
-  display:grid;grid-template-columns:60px 1fr 50px;
-  align-items:center;gap:12px;margin-bottom:12px;
-}
-.load-row:last-child{margin-bottom:0;}
-.load-lbl{
-  font-family:var(--mono);font-size:10.5px;color:var(--muted);
-  text-transform:uppercase;letter-spacing:.1em;font-weight:500;
-}
-.load-track{
-  height:10px;background:var(--ghost);border-radius:5px;overflow:hidden;
-  position:relative;
-}
-.load-fill{height:100%;border-radius:5px;transition:width 1s cubic-bezier(.2,.6,.2,1);}
-.load-fill.acute{background:linear-gradient(90deg,var(--strain),var(--strain-2));}
-.load-fill.chronic{background:linear-gradient(90deg,var(--neutral),var(--text-2));}
-.load-val{
-  font-family:var(--sans);font-weight:600;font-size:14px;
-  text-align:right;letter-spacing:-0.01em;
-  font-feature-settings:"tnum" 1;
-}
-.load-summary{
-  display:flex;justify-content:space-between;
-  margin-top:14px;padding-top:14px;
-  border-top:1px solid var(--border);
-  font-family:var(--mono);font-size:11px;color:var(--muted);
-}
-.load-summary strong{
-  color:var(--text);font-family:var(--sans);font-weight:600;
-  margin-left:4px;letter-spacing:-0.01em;
-}
+.sleep-score .denom{font-size:14px;color:var(--ink-3);font-weight:500;}
+.sleep-vis{display:flex;align-items:center;gap:18px;}
+.sleep-vis svg{flex-shrink:0;}
+.sleep-legend{flex:1;display:flex;flex-direction:column;gap:9px;font-size:13.5px;}
+.sleep-row{display:flex;align-items:center;gap:10px;}
+.sleep-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0;}
+.sleep-row .name{flex:1;color:var(--ink-2);}
+.sleep-row .time{font-family:var(--mono);font-weight:500;color:var(--ink);font-feature-settings:"tnum" 1;}
 
 /* ─────────── ACTIVITY FEED ─────────── */
 
+.feed{display:flex;flex-direction:column;gap:8px;}
 .act{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius-sm);
-  padding:14px 14px;
-  display:grid;
-  grid-template-columns:auto 1fr auto;
-  gap:14px;
-  align-items:center;
-  margin-bottom:8px;
+  padding:16px 18px;
+  display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;
+  border-radius:20px;
 }
 .act-icon{
-  width:42px;height:42px;border-radius:12px;
+  width:42px;height:42px;border-radius:13px;
   display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
+  background:rgba(255,255,255,0.22);
+  border:1px solid rgba(255,255,255,0.28);
 }
-.act-icon svg{width:20px;height:20px;}
-.act-icon.run{background:rgba(239,68,68,.12);color:var(--strain);}
-.act-icon.str{background:rgba(99,102,241,.12);color:var(--sleep);}
-.act-icon.yoga{background:rgba(245,158,11,.12);color:var(--readiness);}
-.act-icon.cyc{background:rgba(16,185,129,.12);color:var(--recovery);}
+@media (prefers-color-scheme:dark){
+  .act-icon{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);}
+}
+.act-icon svg{width:20px;height:20px;color:var(--ink);}
+.act-icon.run svg{color:var(--accent);}
 .act-info{min-width:0;}
 .act-name{
-  font-size:14px;font-weight:500;letter-spacing:-0.01em;
-  margin-bottom:3px;
+  font-weight:600;font-size:14.5px;letter-spacing:-0.015em;
+  margin-bottom:3px;color:var(--ink);
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
 }
 .act-stats{
-  display:flex;gap:10px;
-  font-family:var(--mono);font-size:11px;color:var(--muted);
-  font-weight:400;letter-spacing:.02em;flex-wrap:wrap;
+  display:flex;flex-wrap:wrap;gap:10px;
+  font-family:var(--mono);font-size:11px;color:var(--ink-3);
+  letter-spacing:-0.005em;
 }
-.act-stats span strong{color:var(--text-2);font-weight:500;}
+.act-stats span strong{color:var(--ink-2);font-weight:500;}
 .act-hr{
-  text-align:right;font-family:var(--sans);font-weight:600;font-size:18px;
-  letter-spacing:-0.02em;line-height:1;
+  text-align:right;font-family:var(--display);font-weight:700;
+  font-size:22px;letter-spacing:-0.025em;line-height:1;
   font-feature-settings:"tnum" 1;
 }
-.act-hr.hi{color:var(--strain);}
-.act-hr.med{color:var(--readiness);}
-.act-hr.lo{color:var(--recovery);}
+.act-hr.hi{color:var(--bad);}
+.act-hr.med{color:var(--warn);}
+.act-hr.lo{color:var(--good);}
 .act-hr .sub{
   display:block;
   font-family:var(--mono);font-size:9px;font-weight:500;
-  color:var(--muted);text-transform:uppercase;letter-spacing:.12em;
+  color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em;
   margin-top:3px;
 }
+
+/* ─────────── TRAINING LOAD ─────────── */
+
+.load{padding:22px;}
+.load-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px;}
+.load-status{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-0.02em;}
+.load-acwr{
+  font-family:var(--display);font-weight:800;font-size:30px;letter-spacing:-0.035em;
+  font-feature-settings:"tnum" 1;line-height:1;
+}
+.load-acwr .denom{font-size:11px;color:var(--ink-3);font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-left:4px;}
+.load-bars{display:flex;flex-direction:column;gap:13px;}
+.load-row{display:grid;grid-template-columns:60px 1fr 50px;gap:12px;align-items:center;}
+.load-lbl{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em;font-weight:500;}
+.load-track{height:8px;background:rgba(255,255,255,0.22);border-radius:4px;overflow:hidden;border:1px solid rgba(255,255,255,0.25);}
+@media (prefers-color-scheme:dark){.load-track{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);}}
+.load-fill{height:100%;border-radius:3px;transition:width 1s cubic-bezier(.2,.7,.2,1);}
+.load-fill.acute{background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 0 12px var(--accent-glow);}
+.load-fill.chronic{background:linear-gradient(90deg,var(--ink-3),var(--ink-2));}
+.load-val{font-family:var(--display);font-weight:700;font-size:14px;text-align:right;font-feature-settings:"tnum" 1;}
+
+/* ─────────── RUNNA WEEKLY ─────────── */
+
+.weekly{padding:8px 4px;}
+.weekly-row{
+  display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;
+  padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,0.15);
+}
+@media (prefers-color-scheme:dark){.weekly-row{border-color:rgba(255,255,255,0.06);}}
+.weekly-row:last-child{border-bottom:none;}
+.weekly-day{
+  font-family:var(--display);font-weight:700;font-size:18px;
+  color:var(--ink);letter-spacing:-0.02em;
+  text-align:center;line-height:1;
+}
+.weekly-day .num{font-size:13px;font-weight:500;color:var(--ink-3);display:block;margin-top:4px;}
+.weekly-info .name{font-weight:600;font-size:14.5px;letter-spacing:-0.015em;margin-bottom:3px;}
+.weekly-info .det{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);line-height:1.5;}
 
 /* ─────────── RACES ─────────── */
 
 .race{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:18px;
-  margin-bottom:10px;
-  display:grid;
-  grid-template-columns:auto 1fr auto;
-  gap:16px;align-items:center;
+  padding:18px 20px;margin-bottom:10px;
+  display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;
+  border-radius:24px;
 }
-.race.done{opacity:.6;}
-.race-ring-wrap{
-  position:relative;width:64px;height:64px;flex-shrink:0;
+.race.done{opacity:.55;}
+.race-when{
+  text-align:center;flex-shrink:0;width:60px;
 }
-.race-ring-wrap svg{width:64px;height:64px;}
-.race-ring-num{
-  position:absolute;inset:0;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-}
-.race-ring-num .d{
-  font-size:22px;font-weight:700;letter-spacing:-0.03em;line-height:1;
+.race-when .day{
+  font-family:var(--display);font-weight:800;font-size:34px;
+  letter-spacing:-0.04em;line-height:.9;color:var(--ink);
   font-feature-settings:"tnum" 1;
 }
-.race-ring-num .l{
-  font-family:var(--mono);font-size:8px;color:var(--muted);
-  text-transform:uppercase;letter-spacing:.1em;font-weight:500;
-  margin-top:1px;
+.race-when .mo{
+  font-family:var(--mono);font-size:9.5px;
+  color:var(--ink-3);text-transform:uppercase;letter-spacing:.16em;font-weight:500;
+  margin-top:4px;
 }
 .race-info{min-width:0;}
-.race-info .when{
-  font-family:var(--mono);font-size:10.5px;color:var(--muted);
-  text-transform:uppercase;letter-spacing:.12em;font-weight:500;
-  margin-bottom:3px;
-}
 .race-info .name{
-  font-size:15px;font-weight:600;letter-spacing:-0.015em;line-height:1.2;
-  margin-bottom:4px;
+  font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-0.02em;
+  line-height:1.2;margin-bottom:4px;color:var(--ink);
 }
-.race-info .meta{
-  font-family:var(--mono);font-size:11px;color:var(--muted);
-  letter-spacing:.02em;
+.race-info .place{
+  font-family:var(--mono);font-size:11px;color:var(--ink-3);
+  letter-spacing:-0.01em;line-height:1.4;
 }
-.race-cd-badge{
-  text-align:right;font-family:var(--sans);font-weight:600;
-  font-size:13px;letter-spacing:-0.01em;color:var(--text-2);
+.race-cd{text-align:right;flex-shrink:0;}
+.race-cd .d{
+  font-family:var(--display);font-weight:800;font-size:30px;
+  letter-spacing:-0.04em;line-height:.9;color:var(--accent);
+  font-feature-settings:"tnum" 1;
 }
-.race-cd-badge.done{color:var(--good);}
+.race-cd .l{
+  font-family:var(--mono);font-size:9px;
+  color:var(--ink-3);text-transform:uppercase;letter-spacing:.16em;font-weight:500;
+  margin-top:4px;
+}
+.race.done .race-cd .d{font-size:14px;color:var(--good);font-weight:600;}
 
 /* ─────────── PREDICTIONS ─────────── */
 
-.pred-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:10px;
-}
+.pred-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .pred{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius-sm);
-  padding:14px 16px;
+  padding:18px 18px;border-radius:20px;
 }
 .pred-d{
-  font-family:var(--mono);font-size:10.5px;color:var(--muted);
-  text-transform:uppercase;letter-spacing:.14em;font-weight:500;
-  margin-bottom:6px;
+  font-family:var(--mono);font-size:11px;color:var(--ink-3);
+  text-transform:uppercase;letter-spacing:.16em;font-weight:500;margin-bottom:8px;
 }
 .pred-t{
-  font-size:24px;font-weight:700;letter-spacing:-0.03em;
-  font-feature-settings:"tnum" 1;line-height:1;
+  font-family:var(--display);font-weight:800;
+  font-size:30px;letter-spacing:-0.04em;line-height:.95;
+  color:var(--ink);font-feature-settings:"tnum" 1;
 }
-.pred-t .u{font-size:13px;color:var(--muted);font-weight:500;margin-left:3px;letter-spacing:-0.01em;}
 
-/* ─────────── METRICS TABLE ─────────── */
+/* ─────────── METRICS LIST ─────────── */
 
-.metrics{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  overflow:hidden;
-}
+.metrics-list{padding:4px 0;}
 .metric-row{
+  padding:13px 18px;
   display:flex;justify-content:space-between;align-items:center;
-  padding:12px 16px;
-  border-bottom:1px solid var(--border);
+  border-bottom:1px solid rgba(255,255,255,0.15);
   font-size:13.5px;
 }
+@media (prefers-color-scheme:dark){.metric-row{border-color:rgba(255,255,255,0.05);}}
 .metric-row:last-child{border-bottom:none;}
-.metric-k{color:var(--muted);}
-.metric-v{
-  font-family:var(--mono);font-weight:500;color:var(--text);
-  font-feature-settings:"tnum" 1;letter-spacing:-0.01em;
+.metric-k{color:var(--ink-2);}
+.metric-v{font-family:var(--mono);font-weight:500;color:var(--ink);font-feature-settings:"tnum" 1;}
+
+/* ─────────── BOTTOM TAB BAR ─────────── */
+
+.tabbar{
+  position:fixed;bottom:14px;left:50%;transform:translateX(-50%);
+  width:calc(100% - 24px);max-width:496px;
+  padding:6px;
+  background:rgba(255,255,255,0.45);
+  backdrop-filter:blur(40px) saturate(180%);
+  -webkit-backdrop-filter:blur(40px) saturate(180%);
+  border:1px solid rgba(255,255,255,0.7);
+  border-radius:28px;
+  box-shadow:0 16px 48px rgba(40,20,40,0.18), 0 1px 0 rgba(255,255,255,0.9) inset;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  z-index:100;
+  margin-bottom:env(safe-area-inset-bottom);
+}
+@media (prefers-color-scheme:dark){
+  .tabbar{
+    background:rgba(40,20,40,0.55);
+    border-color:rgba(255,255,255,0.1);
+    box-shadow:0 16px 48px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.06) inset;
+  }
+}
+@media (min-width:560px){
+  .tabbar{max-width:560px;}
+}
+.tab{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:4px;padding:9px 4px 7px;
+  border-radius:22px;
+  color:var(--ink-3);
+  transition:color .25s, background .25s;
+}
+.tab svg{width:22px;height:22px;}
+.tab .lbl{
+  font-family:var(--display);font-weight:600;
+  font-size:10.5px;letter-spacing:-0.005em;
+}
+.tab.active{
+  color:#fff;
+  background:var(--accent);
+  box-shadow:0 4px 16px var(--accent-glow);
 }
 
-/* ─────────── FOOTER ─────────── */
-
-.footer{
-  text-align:center;padding:32px 0 8px;
-  font-family:var(--mono);font-size:10.5px;
-  color:var(--faint);letter-spacing:.06em;
-}
-
-/* ─────────── BOOT LOADER ─────────── */
+/* ─────────── BOOTLOADER ─────────── */
 
 .boot{
-  position:fixed;inset:0;background:var(--bg);z-index:200;
+  position:fixed;inset:0;background:#0a0418;z-index:300;
   display:flex;align-items:center;justify-content:center;
-  transition:opacity .4s ease;
+  transition:opacity .5s ease;
 }
 .boot.hide{opacity:0;pointer-events:none;}
-.boot-spinner{
-  width:32px;height:32px;
-  border:2.5px solid var(--ghost);
-  border-top-color:var(--strain);
-  border-radius:50%;
-  animation:spin .9s linear infinite;
+.boot-pulse{
+  width:60px;height:60px;border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 60px var(--accent-glow);
+  animation:boot-pulse 1.2s ease-in-out infinite;
 }
-@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes boot-pulse{0%,100%{transform:scale(.8);opacity:.6;}50%{transform:scale(1);opacity:1;}}
 
-/* ─────────── DESKTOP ─────────── */
+/* ─────────── DESKTOP REFINEMENTS ─────────── */
 
-@media (min-width:880px){
+@media (min-width:980px){
   body{font-size:16px;}
-  .hero{padding:32px 32px 36px;border-radius:28px;}
-  .ring-stage svg{width:300px;height:300px;}
-  .ring-center .num{font-size:80px;}
-  .stat-grid{grid-template-columns:repeat(4,1fr);gap:14px;}
-  .stat{padding:20px;}
-  .stat-num{font-size:40px;}
-  .pred-grid{grid-template-columns:repeat(4,1fr);gap:14px;}
-  .pred-t{font-size:30px;}
-  .race{padding:20px 24px;}
-  .race-ring-wrap{width:72px;height:72px;}
-  .race-ring-wrap svg{width:72px;height:72px;}
-  .week-bars{height:180px;}
-
-  /* Two-column layout for the lower half */
-  .col2{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start;}
+  .title-h1{font-size:80px;}
+  .stats-grid{grid-template-columns:repeat(4,1fr);}
+  .pred-grid{grid-template-columns:repeat(4,1fr);}
+  .col-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start;}
+  .hero{padding:36px 36px 38px;}
+  .hero-num{font-size:200px;}
 }
-
-/* Tap states */
-@media (hover:hover){
-  .stat:hover,.race:hover,.pred:hover{border-color:var(--border-2);}
-}
-
-/* Fade-in for cards */
-.fade{
-  opacity:0;transform:translateY(8px);
-  animation:fade .6s cubic-bezier(.2,.6,.2,1) forwards;
-}
-@keyframes fade{to{opacity:1;transform:none;}}
-.fade.d1{animation-delay:.05s;}
-.fade.d2{animation-delay:.1s;}
-.fade.d3{animation-delay:.15s;}
-.fade.d4{animation-delay:.2s;}
-.fade.d5{animation-delay:.25s;}
-.fade.d6{animation-delay:.3s;}
 </style>
 </head>
 <body>
 
-<div class="boot" id="boot"><div class="boot-spinner"></div></div>
+<div class="bg-mesh"></div>
+<div class="bg-noise"></div>
 
-<div class="shell">
+<div class="boot" id="boot"><div class="boot-pulse"></div></div>
 
-  <!-- TOPBAR -->
-  <div class="topbar">
-    <div class="left">
-      <span class="live-dot"></span>
-      <span class="greet" id="greet">Good evening</span>
+<main class="app">
+
+  <!-- LARGE TITLE -->
+  <div class="title-bar">
+    <div class="title-eye">
+      <span class="dot"></span>
+      <span id="t-eye">— · —</span>
     </div>
-    <div id="topdate">—</div>
+    <h1 class="title-h1" id="t-title">Today<span class="light">.</span></h1>
   </div>
 
-  <!-- HERO -->
-  <div class="hero fade" id="hero"></div>
+  <!-- ────── HOME PAGE ────── -->
+  <section class="page active" id="page-home">
+    <div class="glass hero" id="hero"></div>
 
-  <!-- ZONE 2 ALERT -->
-  <div class="alert fade d1">
-    <div class="alert-head">
-      <span class="alert-tag">Standing Order · The #1 fix</span>
-    </div>
-    <div class="alert-title">Cap easy runs at 145 bpm</div>
-    <div class="alert-body">
-      Your last 10 easy sessions averaged <strong>168 bpm</strong> — Zone 4. Capping at <strong>145 bpm</strong> on recovery runs is the single biggest change available in your data. Aerobic base needs deposits, not withdrawals.
-    </div>
-    <div class="alert-action">Fenix 8 → Run → Alerts → HR → High Alert → 145</div>
-  </div>
-
-  <!-- RECOVERY QUARTET -->
-  <div class="section-head">
-    <div class="section-title">Recovery</div>
-    <div class="section-meta" id="r-time">Last sync —</div>
-  </div>
-  <div class="stat-grid" id="rec-grid"></div>
-
-  <div class="col2">
-
-    <div>
-      <!-- SLEEP STAGES -->
-      <div class="section-head">
-        <div class="section-title">Sleep architecture</div>
-        <div class="section-meta">Last night</div>
-      </div>
-      <div class="card fade d2" id="sleep-card"></div>
+    <!-- THE 145 BPM RULE -->
+    <div class="glass alert">
+      <div class="alert-tag">Coach's standing order</div>
+      <div class="alert-title">Cap easy runs at 145 bpm</div>
+      <div class="alert-body">Your last 10 easy sessions averaged <strong>168 bpm</strong> — Zone 4. Capping at <strong>145 bpm</strong> on recovery runs is the single biggest fix in your data.</div>
+      <div class="alert-action">Fenix 8 → Run → Alerts → HR → High Alert → 145</div>
     </div>
 
-    <div>
-      <!-- TRAINING LOAD -->
-      <div class="section-head">
-        <div class="section-title">Training load</div>
-        <div class="section-meta" id="load-status">—</div>
-      </div>
-      <div class="card fade d3" id="load-card"></div>
+    <!-- RECOVERY STATS -->
+    <div class="section-head">
+      <h2>Recovery</h2>
+      <div class="meta" id="recov-time">—</div>
     </div>
-  </div>
+    <div class="stats-grid" id="rec-grid"></div>
 
-  <!-- ACTIVITY FEED -->
-  <div class="section-head">
-    <div class="section-title">Recent activity</div>
-    <div class="section-meta" id="act-count">— sessions</div>
-  </div>
-  <div id="act-feed" class="fade d4"></div>
+    <!-- SLEEP -->
+    <div class="section-head">
+      <h2>Sleep</h2>
+      <div class="meta">Last night</div>
+    </div>
+    <div class="glass sleep-card" id="sleep-card"></div>
+  </section>
 
-  <!-- RACES -->
-  <div class="section-head">
-    <div class="section-title">Race calendar</div>
-    <div class="section-meta">Next 12 months</div>
-  </div>
-  <div id="race-list" class="fade d5"></div>
+  <!-- ────── TRAINING PAGE ────── -->
+  <section class="page" id="page-training">
+    <div class="section-head">
+      <h2>Training load</h2>
+      <div class="meta" id="load-status">—</div>
+    </div>
+    <div class="glass load" id="load-card"></div>
 
-  <!-- PREDICTIONS -->
-  <div class="section-head">
-    <div class="section-title">Garmin predicts</div>
-    <div class="section-meta">From your VO₂ max</div>
-  </div>
-  <div class="pred-grid" id="pred-grid"></div>
+    <div class="section-head">
+      <h2>Recent sessions</h2>
+      <div class="meta" id="act-count">—</div>
+    </div>
+    <div class="feed" id="feed"></div>
 
-  <!-- METRICS -->
-  <div class="section-head">
-    <div class="section-title">All metrics</div>
-    <div class="section-meta">Today</div>
-  </div>
-  <div class="metrics fade d6" id="metrics"></div>
+    <div class="section-head">
+      <h2>This week's plan</h2>
+      <div class="meta">Runna programme</div>
+    </div>
+    <div class="glass weekly" id="weekly"></div>
+  </section>
 
-  <div class="footer" id="footer">Updated —</div>
+  <!-- ────── RACES PAGE ────── -->
+  <section class="page" id="page-races">
+    <div class="section-head">
+      <h2>Race calendar</h2>
+      <div class="meta">Next 12 months</div>
+    </div>
+    <div id="race-list"></div>
 
-</div>
+    <div class="section-head">
+      <h2>Garmin predicts</h2>
+      <div class="meta">From your VO₂ max</div>
+    </div>
+    <div class="pred-grid" id="pred-grid"></div>
+  </section>
+
+  <!-- ────── METRICS PAGE ────── -->
+  <section class="page" id="page-metrics">
+    <div class="section-head">
+      <h2>All metrics</h2>
+      <div class="meta">Today</div>
+    </div>
+    <div class="glass metrics-list" id="metrics"></div>
+
+    <div class="section-head">
+      <h2>Updated</h2>
+      <div class="meta" id="m-time">—</div>
+    </div>
+    <div class="glass" style="padding:18px 20px;">
+      <div style="font-family:var(--mono);font-size:12px;color:var(--ink-2);line-height:1.6;" id="updated-info">—</div>
+    </div>
+  </section>
+
+</main>
+
+<!-- BOTTOM TAB BAR -->
+<nav class="tabbar">
+  <button class="tab active" data-page="home" data-title="Today" data-eye="HOME">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10"/></svg>
+    <div class="lbl">Today</div>
+  </button>
+  <button class="tab" data-page="training" data-title="Training" data-eye="THE WORK">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v6h12V2"/><path d="M2 12h20"/><path d="M6 22v-6h12v6"/></svg>
+    <div class="lbl">Training</div>
+  </button>
+  <button class="tab" data-page="races" data-title="Races" data-eye="ON THE CALENDAR">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6l2 4-2 4H4z"/><path d="M4 14h6l2 4-2 4H4z"/><path d="M14 4l6 8-6 8"/></svg>
+    <div class="lbl">Races</div>
+  </button>
+  <button class="tab" data-page="metrics" data-title="Numbers" data-eye="ALL DATA">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16l4-8 4 4 5-9"/></svg>
+    <div class="lbl">Numbers</div>
+  </button>
+</nav>
 
 <script>
 /* ───────── DATA + LOGIC ───────── */
 
 const NOW = new Date();
 const TODAY = '2026-04-26';
+const HOUR = NOW.getHours();
 
 const RACES = [
-  {date:'2026-04-25',name:'Southwark Half Marathon',meta:'21.1 km · road',badge:'1:56:46',done:true,start:'2026-01-25'},
-  {date:'2026-05-09',name:'Tough Mudder London West',meta:'15 km · 551m · obstacles',start:'2026-04-26'},
-  {date:'2026-05-23',name:'UKULTRA Seven Sisters',meta:'21 km · 580m · trail',start:'2026-04-26'},
-  {date:'2026-06-21',name:'London to Brighton',meta:'54 mi · 1058m · cycling',start:'2026-05-01'},
-  {date:'2027-04-26',name:'London Marathon (ballot)',meta:'42.2 km · road',start:'2026-10-01',tbc:true},
+  {date:'2026-04-25',name:'Southwark Half Marathon',place:'London · road',badge:'1:56:46',done:true},
+  {date:'2026-05-09',name:'Tough Mudder London West',place:'Henley-on-Thames · 15km · 551m'},
+  {date:'2026-05-23',name:'UKULTRA Seven Sisters',place:'Eastbourne · 21km · trail'},
+  {date:'2026-06-21',name:'London to Brighton',place:'BHF Charity · 54mi cycling'},
+  {date:'2027-04-26',name:'London Marathon',place:'42.2 km · ballot pending',tbc:true},
+];
+
+const RUNNA_WEEK = [
+  {day:'Mon',num:'27',name:'Rest / mobility',det:'15 min stretch · foam roll · low body battery day'},
+  {day:'Tue',num:'28',name:'Easy 8 km',det:'Cap HR 145 · 5:00–5:20/km · conversation pace'},
+  {day:'Wed',num:'29',name:'Strength',det:'Squat · DL · pull · push · core 4 sets each'},
+  {day:'Thu',num:'30',name:'Tempo 6 km',det:'Warm 2km · 4km @ T pace · cool 1km'},
+  {day:'Fri',num:'01',name:'Yoga / mobility',det:'Hips · hamstrings · ankles · 30 min'},
+  {day:'Sat',num:'02',name:'Long run 14 km',det:'Easy long run · hills · cap HR 150'},
+  {day:'Sun',num:'03',name:'Rest',det:'Active recovery walk only'},
 ];
 
 const SVG = {
@@ -793,10 +893,8 @@ const SVG = {
   cyc:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>',
   heart:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>',
   moon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>',
-  bolt:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>',
-  battery:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="16" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/><line x1="6" y1="11" x2="6" y2="13"/><line x1="10" y1="11" x2="10" y2="13"/></svg>',
   pulse:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
-  zap:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+  battery:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="16" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/></svg>',
 };
 
 const TYPE = {
@@ -804,7 +902,6 @@ const TYPE = {
   strength_training:{cls:'str',icon:SVG.str,label:'Strength'},
   yoga:{cls:'yoga',icon:SVG.yoga,label:'Yoga'},
   cycling:{cls:'cyc',icon:SVG.cyc,label:'Ride'},
-  walking:{cls:'cyc',icon:SVG.cyc,label:'Walk'},
 };
 
 /* Formatters */
@@ -812,175 +909,141 @@ const pad=n=>String(n).padStart(2,'0');
 const formatTime=s=>{if(!s)return'—';const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sc=Math.floor(s%60);return h>0?`${h}:${pad(m)}:${pad(sc)}`:`${m}:${pad(sc)}`;};
 const formatDur=s=>{if(!s)return'—';const h=Math.floor(s/3600),m=Math.floor((s%3600)/60);return h>0?`${h}h ${pad(m)}m`:`${m}m`;};
 const formatPace=(s,m)=>{if(!s||!m)return'—';const p=s/(m/1000),mn=Math.floor(p/60),sc=Math.floor(p%60);return `${mn}:${pad(sc)}`;};
-const days=iso=>Math.round((new Date(iso+'T00:00:00').getTime()-new Date(TODAY+'T00:00:00').getTime())/(86400000));
-const dayOf=iso=>{const d=new Date(iso+'T00:00:00');return d.toLocaleDateString('en-GB',{weekday:'short'}).toUpperCase();};
+const dayDiff=iso=>Math.round((new Date(iso+'T00:00:00').getTime()-new Date(TODAY+'T00:00:00').getTime())/86400000);
 
-const hour=NOW.getHours();
-const greeting=hour<5?'Late night':hour<12?'Good morning':hour<18?'Good afternoon':'Good evening';
-const heroMode=hour>=5&&hour<11?'morning':hour>=11&&hour<18?'midday':'evening';
+/* TIME OF DAY */
+const timeMode = HOUR<5 || HOUR>=22 ? 'night'
+              : HOUR<11 ? 'morning'
+              : HOUR<18 ? 'midday'
+              : 'evening';
+document.body.className = 'time-' + timeMode;
 
-/* ───────── SVG HELPERS ───────── */
+const greetMap = {morning:'Good morning',midday:'Good afternoon',evening:'Good evening',night:'Late night'};
 
-function ring(size,strokes){
-  /* strokes: [{r,color,pct,width,bgColor}] inner→outer */
-  const c=size/2;
-  return `<svg viewBox="0 0 ${size} ${size}">${strokes.map(s=>{
-    const circ=2*Math.PI*s.r;
-    const dash=circ*(s.pct/100);
-    return `
-      <circle cx="${c}" cy="${c}" r="${s.r}" stroke="${s.bgColor||'var(--ghost)'}" stroke-width="${s.width}" fill="none"/>
-      <circle cx="${c}" cy="${c}" r="${s.r}" stroke="${s.color}" stroke-width="${s.width}" fill="none"
-        stroke-dasharray="${dash} ${circ-dash}" stroke-dashoffset="0" stroke-linecap="round"
-        transform="rotate(-90 ${c} ${c})">
-        <animate attributeName="stroke-dasharray" from="0 ${circ}" to="${dash} ${circ-dash}" dur="1.2s" fill="freeze" calcMode="spline" keySplines="0.2 0.6 0.2 1"/>
-      </circle>`;
-  }).join('')}</svg>`;
+/* WORKOUT REC */
+function recommend(d){
+  const r=d.training_readiness?.score||0;
+  const last=d.activities?.[0];
+  const lastDate=last?dayDiff(last.date):-99;
+  const lastWasRace=last && /half marathon|marathon|race/i.test(last.name||'');
+  const lastWasLong=last && (last.distance_m>18000 || last.aerobic_te>=5);
+  const recentHard=lastDate>=-1 && (lastWasRace||lastWasLong);
+  const lb=d.training_status?.load_balance;
+  const next=RACES.find(rr=>!rr.done && dayDiff(rr.date)>=0);
+  const dRace=next?dayDiff(next.date):null;
+
+  if(recentHard||r<=4)return{
+    title:'Active recovery',
+    sub:lastWasRace?'Day after a race. Restore the body.':`Readiness ${r}/100 — protect today.`,
+    cells:[['Dose','20–40m'],['Mode','Walk·Yoga'],['Zone','Z1']],
+    detail:'No hard cardio. Mobilise hips, walk in daylight, eat back what the race took. Bed before midnight.'
+  };
+  if(r<=6||lb==='AEROBIC_LOW_SHORTAGE')return{
+    title:'Easy aerobic',
+    sub:lb==='AEROBIC_LOW_SHORTAGE'?'Garmin flags aerobic-low shortage — fill the bucket.':'Modest readiness — bank base mileage.',
+    cells:[['Dose','8–10km'],['HR cap','145'],['Pace','5:00–5:20']],
+    detail:'Conversation pace only. If HR drifts above 150, walk it down. Aerobic base needs deposits, not withdrawals.'
+  };
+  if(dRace!==null && dRace<=7)return{
+    title:'Sharpen, don\'t spend',
+    sub:`${dRace} days to ${next.name}.`,
+    cells:[['Dose','30–40m'],['Set','3×3m @ T'],['Mode','Run']],
+    detail:'Short tune-up. Feel the gears, leave the legs sharp for race day.'
+  };
+  return{
+    title:'Quality session',
+    sub:`Readiness ${r}/100 — green light.`,
+    cells:[['Dose','60–75m'],['Type','Per plan'],['Mode','Run·Lift']],
+    detail:'Warm 15 min, work, cool 10. Refuel within the hour.'
+  };
 }
 
-function donut(size,segments){
-  /* segments: [{value,color,label}] */
-  const c=size/2,r=size/2-10,circ=2*Math.PI*r;
-  const total=segments.reduce((s,x)=>s+x.value,0)||1;
-  let offset=0;
-  return `<svg viewBox="0 0 ${size} ${size}">
-    <circle cx="${c}" cy="${c}" r="${r}" stroke="var(--ghost)" stroke-width="14" fill="none"/>
-    ${segments.map(s=>{
+/* SVG donut (sleep) */
+function donut(size,segs){
+  const c=size/2,r=size/2-12,circ=2*Math.PI*r;
+  const total=segs.reduce((s,x)=>s+x.value,0)||1;
+  let off=0;
+  return `<svg viewBox="0 0 ${size} ${size}" width="${size}" height="${size}">
+    <circle cx="${c}" cy="${c}" r="${r}" stroke="rgba(255,255,255,0.15)" stroke-width="14" fill="none"/>
+    ${segs.map(s=>{
       const len=(s.value/total)*circ;
       const arc=`<circle cx="${c}" cy="${c}" r="${r}" stroke="${s.color}" stroke-width="14" fill="none"
-        stroke-dasharray="${len} ${circ-len}" stroke-dashoffset="${-offset}"
+        stroke-dasharray="${len} ${circ-len}" stroke-dashoffset="${-off}" stroke-linecap="butt"
         transform="rotate(-90 ${c} ${c})"/>`;
-      offset+=len;
+      off+=len;
       return arc;
     }).join('')}
   </svg>`;
 }
 
-/* ───────── WORKOUT REC ───────── */
+/* ───────── RENDER: HERO (per-tab title) ───────── */
 
-function recommend(d){
-  const r=d.training_readiness?.score||0;
-  const last=d.activities?.[0];
-  const lastDate=last?days(last.date):-99;
-  const lastWasRace=last && /half marathon|marathon|race/i.test(last.name||'');
-  const lastWasLong=last && (last.distance_m>18000 || last.aerobic_te>=5);
-  const recentHard=lastDate>=-1 && (lastWasRace||lastWasLong);
-  const lb=d.training_status?.load_balance;
-  const next=RACES.find(r=>!r.done && days(r.date)>=0);
-  const dRace=next?days(next.date):null;
-
-  if(recentHard||r<=4)return{
-    title:'Active recovery',
-    sub:lastWasRace?'Day after a race. Restore.':`Readiness ${r}/100 — protect the body.`,
-    cells:[['Dose','20–40 min'],['Mode','Walk · Yoga'],['Intensity','Z1']],
-    rationale:'No hard cardio. Mobilise hips, walk in daylight, eat back what the race took.'
-  };
-  if(r<=6||lb==='AEROBIC_LOW_SHORTAGE')return{
-    title:'Easy aerobic',
-    sub:lb==='AEROBIC_LOW_SHORTAGE'?'Aerobic base needs deposits.':'Modest readiness — bank the base.',
-    cells:[['Dose','8–10 km'],['HR cap','145 bpm'],['Pace','5:00–5:20']],
-    rationale:'Conversation pace only. If HR drifts above 150, walk it back.'
-  };
-  if(dRace!==null && dRace<=7)return{
-    title:'Sharpen, don\'t spend',
-    sub:`${dRace} days to ${next.name}.`,
-    cells:[['Dose','30–40 min'],['Set','3×3 min @ T'],['Mode','Run']],
-    rationale:'Short tune-up. Feel the gears, leave the legs sharp for race day.'
-  };
-  return{
-    title:'Quality session',
-    sub:`Readiness ${r}/100 — green light.`,
-    cells:[['Dose','60–75 min'],['Intensity','Per programme'],['Mode','Run · Strength']],
-    rationale:'Warm 15 min, work, cool 10. Refuel within the hour.'
-  };
+function renderTitleBar(d){
+  const greet=greetMap[timeMode];
+  const today=new Date(TODAY+'T00:00:00');
+  const date=today.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
+  document.getElementById('t-eye').textContent=`${greet} · ${date}`;
 }
 
-/* ───────── RENDERERS ───────── */
+function setTitle(title,eye){
+  document.getElementById('t-title').innerHTML=`${title}<span class="light">.</span>`;
+  if(eye){
+    const t=greetMap[timeMode];
+    const today=new Date(TODAY+'T00:00:00');
+    const date=today.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
+    document.getElementById('t-eye').textContent=`${eye} · ${date}`;
+  }
+}
 
 function renderHero(d){
   const r=d.training_readiness?.score||0;
   const lvl=d.training_readiness?.level||'';
   const sleep=d.sleep?.score||0;
   const hrv=d.hrv?.weekly_avg||0;
+  const rhr=d.heart_rate?.resting||0;
 
-  const verdictMap={POOR:{t:'Protect today',c:'bad'},LOW:{t:'Tread carefully',c:'warn'},MODERATE:{t:'Steady',c:'warn'},GOOD:{t:'Green light',c:'good'},EXCELLENT:{t:'Hammer down',c:'good'}};
-  const v=verdictMap[(lvl||'').toUpperCase()]||{t:'Steady',c:'warn'};
+  const verdictMap={POOR:'Protect today',LOW:'Tread carefully',MODERATE:'Steady',GOOD:'Green light',EXCELLENT:'Hammer down'};
+  const verdict=verdictMap[(lvl||'').toUpperCase()]||'Steady';
 
   const hero=document.getElementById('hero');
 
-  if(heroMode==='morning'){
-    /* Concentric ring: outer = readiness, middle = sleep, inner = HRV (capped/100) */
-    const hrvPct=Math.min((hrv/80)*100,100);
+  if(timeMode==='morning'){
     hero.innerHTML=`
-      <div class="hero-top">
-        <div class="hero-eye">Recovery · This morning</div>
-        <div class="hero-pill">${lvl||'—'}</div>
+      <div class="hero-eye">
+        <div class="hero-eye-l">Recovery · This morning</div>
+        <div class="hero-eye-r">${lvl||'—'}</div>
       </div>
-      <div class="ring-stage">
-        ${ring(240,[
-          {r:108,color:'url(#g-readiness)',pct:r,width:14},
-          {r:88,color:'url(#g-sleep)',pct:sleep,width:14},
-          {r:68,color:'url(#g-recovery)',pct:hrvPct,width:14}
-        ])}
-        <svg width="0" height="0" style="position:absolute;">
-          <defs>
-            <linearGradient id="g-readiness" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#f59e0b"/>
-            </linearGradient>
-            <linearGradient id="g-sleep" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/>
-            </linearGradient>
-            <linearGradient id="g-recovery" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#34d399"/><stop offset="100%" stop-color="#10b981"/>
-            </linearGradient>
-            <linearGradient id="g-strain" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#f87171"/><stop offset="100%" stop-color="#ef4444"/>
-            </linearGradient>
-          </defs>
-        </svg>
-        <div class="ring-center">
-          <div class="label">Readiness</div>
-          <div class="num">${r}<span class="denom">/100</span></div>
-          <div class="verdict ${v.c}">${v.t}</div>
+      <div class="hero-mega">
+        <div class="hero-num">${r}<span class="denom">/100</span></div>
+        <div class="hero-side">
+          <div class="lbl">Readiness</div>
+          <div class="verdict">${verdict}</div>
+          <div class="sub">${sleep>=85?'Excellent sleep':sleep>=70?'Decent sleep':'Sleep needs work'} · HRV ${hrv}ms</div>
         </div>
       </div>
-      <div class="ring-legend">
-        <div class="ring-legend-item">
-          <span class="ring-legend-dot" style="background:#f59e0b"></span>
-          <span class="ring-legend-val">${r}</span>
-          <span class="ring-legend-lbl">Ready</span>
-        </div>
-        <div class="ring-legend-item">
-          <span class="ring-legend-dot" style="background:#6366f1"></span>
-          <span class="ring-legend-val">${sleep}</span>
-          <span class="ring-legend-lbl">Sleep</span>
-        </div>
-        <div class="ring-legend-item">
-          <span class="ring-legend-dot" style="background:#10b981"></span>
-          <span class="ring-legend-val">${hrv}<span style="font-size:11px;color:var(--muted);font-weight:500">ms</span></span>
-          <span class="ring-legend-lbl">HRV</span>
-        </div>
+      <div class="hero-trip">
+        <div class="cell"><div class="v">${sleep}<span class="u">/100</span></div><div class="l">Sleep</div></div>
+        <div class="cell"><div class="v">${hrv}<span class="u">ms</span></div><div class="l">HRV</div></div>
+        <div class="cell"><div class="v">${rhr}<span class="u">bpm</span></div><div class="l">RHR</div></div>
       </div>`;
   }
-  else if(heroMode==='midday'){
+  else if(timeMode==='midday' || timeMode==='night'){
     const rec=recommend(d);
-    /* Single big ring showing readiness as backdrop */
     hero.innerHTML=`
-      <div class="hero-top">
-        <div class="hero-eye">Today's session</div>
-        <div class="hero-pill">${lvl||'—'} · ${r}/100</div>
+      <div class="hero-eye">
+        <div class="hero-eye-l">Today's session</div>
+        <div class="hero-eye-r">${lvl||'—'} · ${r}/100</div>
       </div>
-      <div class="session">
-        <div class="session-tag">Recommended</div>
-        <div class="session-title">${rec.title}</div>
-        <div class="session-sub">${rec.sub}</div>
-        <div class="session-grid">
-          ${rec.cells.map(([k,v])=>`<div class="session-cell"><div class="lbl">${k}</div><div class="val">${v}</div></div>`).join('')}
-        </div>
-        <div class="session-rationale">${rec.rationale}</div>
-      </div>`;
+      <div class="session-pill">Recommended</div>
+      <div class="session-title">${rec.title}</div>
+      <div class="session-sub">${rec.sub}</div>
+      <div class="session-grid">
+        ${rec.cells.map(([k,v])=>`<div class="session-cell"><div class="v">${v}</div><div class="l">${k}</div></div>`).join('')}
+      </div>
+      <div class="session-detail">${rec.detail}</div>`;
   }
   else{
-    /* Evening: weekly bar chart */
+    /* evening */
     const acts=d.activities||[];
     const now=new Date(TODAY+'T00:00:00').getTime();
     const dayMs=86400000;
@@ -994,34 +1057,34 @@ function renderHero(d){
     }
     const maxKm=Math.max(...buckets.map(b=>b.km),5);
     const totalKm=buckets.reduce((s,b)=>s+b.km,0);
-    const sessions=acts.filter(a=>{const d=new Date(a.date+'T00:00:00').getTime();return d>=now-6*dayMs;}).length;
-    const vig=d.intensity?.vigorous||0;
+    const sessions=acts.filter(a=>{const t=new Date(a.date+'T00:00:00').getTime();return t>=now-6*dayMs;}).length;
+    const next=RACES.find(rr=>!rr.done && dayDiff(rr.date)>=0);
+    const dRace=next?dayDiff(next.date):null;
 
     hero.innerHTML=`
-      <div class="hero-top">
-        <div class="hero-eye">This week</div>
-        <div class="hero-pill">${dayOf(TODAY)}</div>
+      <div class="hero-eye">
+        <div class="hero-eye-l">This week</div>
+        <div class="hero-eye-r">${dRace!==null?`${dRace}d to ${next.name.split(' ')[0]}`:''}</div>
       </div>
-      <div class="week-card">
-        <div class="week-summary">
-          <div class="km">${totalKm.toFixed(0)}<span class="u">km</span></div>
-          <div class="meta">
-            <strong>${sessions} sessions</strong>
-            ${vig} vig min
-          </div>
+      <div class="week-mega">
+        <div class="km">${totalKm.toFixed(0)}<span class="u">km</span></div>
+        <div class="meta">
+          <strong>${sessions}</strong> sessions logged<br>
+          <strong>${d.intensity?.vigorous||0}</strong> vigorous min<br>
+          <strong>${(d.steps?.weekly_total||0).toLocaleString()}</strong> steps
         </div>
-        <div class="week-bars">
-          ${buckets.map(b=>{
-            const h=Math.max((b.km/maxKm)*100,3);
-            return `<div class="week-bar">
-              <div class="week-bar-fill ${b.km===0?'rest':''}" style="height:${h}%"></div>
-              <div class="week-bar-day ${b.today?'today':''}">${b.day}</div>
-            </div>`;
-          }).join('')}
-        </div>
+      </div>
+      <div class="week-bars">
+        ${buckets.map(b=>{
+          const h=Math.max((b.km/maxKm)*100,3);
+          const empty=b.km===0;
+          return `<div class="week-bar"><div class="week-bar-fill ${empty?'empty':''}" style="height:${h}%"></div><div class="week-bar-day ${b.today?'today':''}">${b.day}</div></div>`;
+        }).join('')}
       </div>`;
   }
 }
+
+/* ───────── RENDER: RECOVERY STATS ───────── */
 
 function renderRecovery(d){
   const sleep=d.sleep?.score||0;
@@ -1029,68 +1092,61 @@ function renderRecovery(d){
   const rhr=d.heart_rate?.resting||0;
   const bb=d.body_battery?.charged||0;
   const rhr7=d.heart_rate?.last_7d_avg_resting||0;
-  const rhrTrend=rhr7>0?(rhr<=rhr7?'up':'dn'):'';
+
+  document.getElementById('recov-time').textContent=`Synced ${d.fetched_time||'—'}`;
 
   const stats=[
-    {icon:SVG.moon,iconCls:'sleep',color:'var(--sleep)',lbl:'Sleep',num:sleep,unit:'',pct:sleep,trendCls:sleep>=85?'up':sleep>=70?'':'dn',trend:`${formatDur(d.sleep?.duration_s)}`},
-    {icon:SVG.pulse,iconCls:'recovery',color:'var(--recovery)',lbl:'HRV',num:hrv,unit:'ms',pct:Math.min((hrv/80)*100,100),trendCls:'up',trend:`${(d.hrv?.status||'—').toLowerCase()}`},
-    {icon:SVG.heart,iconCls:'strain',color:'var(--strain)',lbl:'Resting HR',num:rhr,unit:'bpm',pct:Math.max(100-(rhr-40)*2.5,20),trendCls:rhrTrend,trend:`7d avg ${rhr7}`},
-    {icon:SVG.battery,iconCls:'readiness',color:'var(--readiness)',lbl:'Body Battery',num:bb,unit:'%',pct:bb,trendCls:'',trend:`↑${d.body_battery?.charged||0} ↓${d.body_battery?.drained||0}`},
+    {icon:SVG.moon,name:'Sleep',num:sleep,unit:'/100',foot:`${formatDur(d.sleep?.duration_s)}`,footCls:sleep>=85?'ok':''},
+    {icon:SVG.pulse,name:'HRV',num:hrv,unit:'ms',foot:`${(d.hrv?.status||'').toLowerCase()}`,footCls:'ok'},
+    {icon:SVG.heart,name:'Resting HR',num:rhr,unit:'bpm',foot:`7d ${rhr7}`,footCls:rhr<=rhr7?'ok':''},
+    {icon:SVG.battery,name:'Body battery',num:bb,unit:'%',foot:`↑${d.body_battery?.charged||0} ↓${d.body_battery?.drained||0}`,footCls:bb>=40?'ok':''},
   ];
 
   document.getElementById('rec-grid').innerHTML=stats.map(s=>`
-    <div class="stat">
+    <div class="glass stat">
       <div class="stat-head">
-        <div class="stat-icon" style="background:${s.color}1f;color:${s.color};">${s.icon}</div>
-        <div class="stat-lbl">${s.lbl}</div>
+        <div class="stat-icon">${s.icon}</div>
+        <div class="stat-name">${s.name}</div>
       </div>
-      <div class="stat-num">${s.num}<span class="u">${s.unit}</span></div>
-      <div class="stat-trend ${s.trendCls}"><span class="arrow">${s.trendCls==='up'?'↗':s.trendCls==='dn'?'↘':'·'}</span>${s.trend}</div>
-      <div class="stat-bar"><div class="stat-bar-fill" style="width:${s.pct}%;background:${s.color};"></div></div>
+      <div class="stat-val">${s.num}<span class="u">${s.unit}</span></div>
+      <div class="stat-foot"><span class="${s.footCls}">${s.foot}</span></div>
     </div>
   `).join('');
-
-  document.getElementById('r-time').textContent=`Last sync ${d.fetched_time||'—'}`;
 }
 
-function renderSleepCard(d){
+/* ───────── RENDER: SLEEP DONUT ───────── */
+
+function renderSleep(d){
   const s=d.sleep||{};
   const total=(s.deep_s||0)+(s.rem_s||0)+(s.light_s||0)+(s.awake_s||0);
-  if(total===0){
-    document.getElementById('sleep-card').innerHTML='<div style="color:var(--muted);text-align:center;padding:20px;">No sleep data</div>';
-    return;
-  }
   const segs=[
-    {value:s.deep_s,color:'#312e81',label:'Deep'},
-    {value:s.rem_s,color:'#6366f1',label:'REM'},
-    {value:s.light_s,color:'#a5b4fc',label:'Light'},
-    {value:s.awake_s,color:'#cbd5e1',label:'Awake'},
+    {value:s.deep_s,color:'#3a1a5c',label:'Deep'},
+    {value:s.rem_s,color:'#8b3aa8',label:'REM'},
+    {value:s.light_s,color:'#d4a3e8',label:'Light'},
+    {value:s.awake_s,color:'rgba(255,255,255,0.4)',label:'Awake'},
   ];
-  document.getElementById('sleep-card').innerHTML=`
-    <div class="card-head">
-      <div class="card-title">${formatDur(total)} asleep</div>
-      <div class="card-num">${s.score||'—'}<span class="denom">/100</span></div>
+  const card=document.getElementById('sleep-card');
+  if(total===0){card.innerHTML='<div style="text-align:center;color:var(--ink-3);">No sleep data</div>';return;}
+  card.innerHTML=`
+    <div class="sleep-head">
+      <div class="sleep-title">${formatDur(total)} asleep</div>
+      <div class="sleep-score">${s.score||'—'}<span class="denom">/100</span></div>
     </div>
-    <div class="donut-stage">
+    <div class="sleep-vis">
       ${donut(120,segs)}
-      <div class="donut-legend">
-        ${segs.map(seg=>`
-          <div class="donut-row">
-            <div class="donut-dot" style="background:${seg.color}"></div>
-            <div class="name">${seg.label}</div>
-            <div class="time">${formatDur(seg.value)}</div>
-          </div>
-        `).join('')}
+      <div class="sleep-legend">
+        ${segs.map(seg=>`<div class="sleep-row"><div class="sleep-dot" style="background:${seg.color}"></div><div class="name">${seg.label}</div><div class="time">${formatDur(seg.value)}</div></div>`).join('')}
       </div>
     </div>`;
 }
+
+/* ───────── RENDER: TRAINING LOAD ───────── */
 
 function renderLoad(d){
   const ts=d.training_status||{};
   const acute=ts.load||0;
   const chronic=ts.load_chronic||0;
   const max=Math.max(acute,chronic,1);
-
   const phraseMap={
     PRODUCTIVE_3:'Productive · in form',PRODUCTIVE_2:'Productive',PRODUCTIVE_1:'Productive',
     PEAKING_3:'Peaking',MAINTAINING_3:'Maintaining',
@@ -1099,135 +1155,123 @@ function renderLoad(d){
   };
   const status=phraseMap[ts.status]||(ts.status||'—').toLowerCase().replace(/_/g,' ');
   document.getElementById('load-status').textContent=status;
-
   document.getElementById('load-card').innerHTML=`
-    <div class="card-head">
-      <div class="card-title">Acute vs chronic</div>
-      <div class="card-num">${ts.acwr||'—'}<span class="denom">ACWR</span></div>
+    <div class="load-head">
+      <div class="load-status">${status}</div>
+      <div class="load-acwr">${ts.acwr||'—'}<span class="denom">ACWR</span></div>
     </div>
-    <div class="load-chart">
-      <div class="load-row">
-        <div class="load-lbl">Acute</div>
-        <div class="load-track"><div class="load-fill acute" style="width:${(acute/max)*100}%"></div></div>
-        <div class="load-val">${acute}</div>
-      </div>
-      <div class="load-row">
-        <div class="load-lbl">Chronic</div>
-        <div class="load-track"><div class="load-fill chronic" style="width:${(chronic/max)*100}%"></div></div>
-        <div class="load-val">${chronic}</div>
-      </div>
-    </div>
-    <div class="load-summary">
-      <div>Status<strong>${status}</strong></div>
-      <div>Balance<strong>${(ts.acwr_status||'—').toLowerCase()}</strong></div>
+    <div class="load-bars">
+      <div class="load-row"><div class="load-lbl">Acute</div><div class="load-track"><div class="load-fill acute" style="width:${(acute/max)*100}%"></div></div><div class="load-val">${acute}</div></div>
+      <div class="load-row"><div class="load-lbl">Chronic</div><div class="load-track"><div class="load-fill chronic" style="width:${(chronic/max)*100}%"></div></div><div class="load-val">${chronic}</div></div>
     </div>`;
 }
 
-function renderActs(d){
+/* ───────── RENDER: ACTIVITY FEED ───────── */
+
+function renderFeed(d){
   const acts=d.activities||[];
   document.getElementById('act-count').textContent=`${acts.length} sessions · 30 days`;
-  document.getElementById('act-feed').innerHTML=acts.slice(0,8).map(a=>{
-    const t=TYPE[a.type]||{cls:'cyc',icon:SVG.cyc,label:'Activity'};
+  document.getElementById('feed').innerHTML=acts.slice(0,12).map(a=>{
+    const t=TYPE[a.type]||{cls:'',icon:SVG.run,label:a.type};
+    const date=new Date(a.date+'T00:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short'});
     const dist=a.distance_m>0?`<span><strong>${(a.distance_m/1000).toFixed(1)}</strong>km</span>`:'';
     const dur=`<span><strong>${formatDur(a.duration_s)}</strong></span>`;
     const pace=a.distance_m>0?`<span><strong>${formatPace(a.duration_s,a.distance_m)}</strong>/km</span>`:'';
-    const elev=a.elevation_m>0?`<span><strong>${Math.round(a.elevation_m)}</strong>m ↑</span>`:'';
+    const elev=a.elevation_m>0?`<span><strong>${Math.round(a.elevation_m)}</strong>m↑</span>`:'';
     const hrCls=a.avg_hr>=170?'hi':a.avg_hr>=150?'med':'lo';
     const hr=a.avg_hr?`<div class="act-hr ${hrCls}">${Math.round(a.avg_hr)}<span class="sub">avg HR</span></div>`:'<div></div>';
-    const date=new Date(a.date+'T00:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short'});
-    return `<div class="act">
+    return `<div class="glass act">
       <div class="act-icon ${t.cls}">${t.icon}</div>
       <div class="act-info">
         <div class="act-name">${a.name||t.label}</div>
-        <div class="act-stats">
-          <span style="color:var(--text-2)"><strong>${date}</strong></span>
-          ${dist}${dur}${pace}${elev}
-        </div>
+        <div class="act-stats"><span style="color:var(--ink-2)"><strong>${date}</strong></span>${dist}${dur}${pace}${elev}</div>
       </div>
       ${hr}
     </div>`;
   }).join('');
 }
 
+/* ───────── RENDER: WEEKLY PLAN ───────── */
+
+function renderWeekly(){
+  document.getElementById('weekly').innerHTML=RUNNA_WEEK.map(r=>`
+    <div class="weekly-row">
+      <div class="weekly-day">${r.day}<span class="num">${r.num}</span></div>
+      <div class="weekly-info"><div class="name">${r.name}</div><div class="det">${r.det}</div></div>
+    </div>
+  `).join('');
+}
+
+/* ───────── RENDER: RACES ───────── */
+
 function renderRaces(){
   document.getElementById('race-list').innerHTML=RACES.map(r=>{
-    const d=days(r.date);
+    const days=dayDiff(r.date);
+    const date=new Date(r.date+'T00:00:00');
+    const day=date.getDate();
+    const mo=date.toLocaleDateString('en-GB',{month:'short'}).toUpperCase();
     if(r.done){
-      return `<div class="race done">
-        <div class="race-ring-wrap">
-          ${ring(64,[{r:26,color:'var(--good)',pct:100,width:5,bgColor:'var(--ghost)'}])}
-          <div class="race-ring-num"><div class="d">✓</div><div class="l">Done</div></div>
-        </div>
-        <div class="race-info">
-          <div class="when">${new Date(r.date+'T00:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short'})}</div>
-          <div class="name">${r.name}</div>
-          <div class="meta">${r.meta}</div>
-        </div>
-        <div class="race-cd-badge done">${r.badge}</div>
+      return `<div class="glass race done">
+        <div class="race-when"><div class="day">${day}</div><div class="mo">${mo}</div></div>
+        <div class="race-info"><div class="name">${r.name}</div><div class="place">${r.place}</div></div>
+        <div class="race-cd"><div class="d">${r.badge}</div><div class="l">Result</div></div>
       </div>`;
     }
-    const startDate=r.start;
-    const total=days(r.date)-days(startDate);
-    const elapsed=0-days(startDate);
-    const pct=Math.min(Math.max((elapsed/total)*100,2),100);
-    const color=d<=14?'var(--strain)':d<=30?'var(--readiness)':'var(--sleep)';
-    return `<div class="race">
-      <div class="race-ring-wrap">
-        ${ring(64,[{r:26,color:color,pct:pct,width:5,bgColor:'var(--ghost)'}])}
-        <div class="race-ring-num"><div class="d" style="color:${color}">${d}</div><div class="l">Days</div></div>
-      </div>
-      <div class="race-info">
-        <div class="when">${new Date(r.date+'T00:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:new Date(r.date+'T00:00:00').getFullYear()!==2026?'numeric':undefined})}${r.tbc?' · ballot':''}</div>
-        <div class="name">${r.name}</div>
-        <div class="meta">${r.meta}</div>
-      </div>
-      <div class="race-cd-badge">${d<7?'This week':d<31?'This month':'Upcoming'}</div>
+    const cdLabel = days<=1?'Tomorrow':days<7?'This week':days<31?'This month':'Coming up';
+    return `<div class="glass race">
+      <div class="race-when"><div class="day">${day}</div><div class="mo">${mo}</div></div>
+      <div class="race-info"><div class="name">${r.name}${r.tbc?' <span style="font-weight:400;color:var(--ink-3);font-size:11px;">(ballot)</span>':''}</div><div class="place">${r.place}</div></div>
+      <div class="race-cd"><div class="d">${days}</div><div class="l">days</div></div>
     </div>`;
   }).join('');
 }
 
-function renderPredictions(d){
+/* ───────── RENDER: PREDICTIONS ───────── */
+
+function renderPred(d){
   const p=d.race_predictions||{};
-  const items=[
-    ['5K',formatTime(p.five_k)],
-    ['10K',formatTime(p.ten_k)],
-    ['Half',formatTime(p.half_marathon)],
-    ['Marathon',formatTime(p.marathon)],
-  ];
-  document.getElementById('pred-grid').innerHTML=items.map(([k,v])=>`
-    <div class="pred">
-      <div class="pred-d">${k}</div>
-      <div class="pred-t">${v}</div>
-    </div>
-  `).join('');
+  const items=[['5K',formatTime(p.five_k)],['10K',formatTime(p.ten_k)],['Half',formatTime(p.half_marathon)],['Marathon',formatTime(p.marathon)]];
+  document.getElementById('pred-grid').innerHTML=items.map(([k,v])=>`<div class="glass pred"><div class="pred-d">${k}</div><div class="pred-t">${v}</div></div>`).join('');
 }
+
+/* ───────── RENDER: METRICS ───────── */
 
 function renderMetrics(d){
   const rows=[
     ['VO₂ max',(d.vo2max?.value||d.training_status?.vo2max||0).toFixed(1)],
     ['Resting HR',`${d.heart_rate?.resting||'—'} bpm`],
     ['HRV (weekly)',`${d.hrv?.weekly_avg||'—'} ms`],
-    ['Sleep score',`${d.sleep?.score||'—'}/100`],
+    ['HRV status',(d.hrv?.status||'—').toLowerCase()],
+    ['Sleep score',`${d.sleep?.score||'—'} / 100`],
     ['Sleep duration',formatDur(d.sleep?.duration_s)],
+    ['Deep sleep',formatDur(d.sleep?.deep_s)],
+    ['REM sleep',formatDur(d.sleep?.rem_s)],
     ['Avg SpO₂',d.spo2?.avg?`${d.spo2.avg}%`:'—'],
-    ['Avg stress',`${d.stress?.avg||'—'}/100`],
+    ['Avg stress',`${d.stress?.avg||'—'} / 100`],
     ['Body battery',`${d.body_battery?.charged||'—'}↑ ${d.body_battery?.drained||'—'}↓`],
-    ['Daily steps',(d.steps?.daily_avg||0).toLocaleString()],
-    ['Vigorous min',`${d.intensity?.vigorous||'—'} / ${d.intensity?.goal||150}`],
+    ['Daily steps avg',(d.steps?.daily_avg||0).toLocaleString()],
+    ['Vigorous min/wk',`${d.intensity?.vigorous||'—'} / ${d.intensity?.goal||150}`],
     ['Endurance score',`${d.endurance_score?.overall||'—'}`],
     ['Training load',`${d.training_status?.load||'—'} acute · ${d.training_status?.load_chronic||'—'} chronic`],
+    ['ACWR',`${d.training_status?.acwr||'—'} · ${(d.training_status?.acwr_status||'').toLowerCase()}`],
   ];
-  document.getElementById('metrics').innerHTML=rows.map(([k,v])=>`
-    <div class="metric-row"><div class="metric-k">${k}</div><div class="metric-v">${v}</div></div>
-  `).join('');
+  document.getElementById('metrics').innerHTML=rows.map(([k,v])=>`<div class="metric-row"><div class="metric-k">${k}</div><div class="metric-v">${v}</div></div>`).join('');
+  document.getElementById('m-time').textContent=`${d.fetched_at||'—'} ${d.fetched_time||''}`;
+  document.getElementById('updated-info').innerHTML=`Pulled from Garmin Connect at <strong style="color:var(--ink)">${d.fetched_time||'—'}</strong> on <strong style="color:var(--ink)">${d.fetched_at||'—'}</strong>.<br>Auto-syncs daily at 7:00 BST.`;
 }
 
-function renderTopBar(d){
-  document.getElementById('greet').textContent=`${greeting}, Chris`;
-  const today=new Date(TODAY+'T00:00:00');
-  document.getElementById('topdate').textContent=today.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'}).toUpperCase();
-  document.getElementById('footer').textContent=`Pulled from Garmin · ${d.fetched_at||'—'} ${d.fetched_time||''}`;
-}
+/* ───────── TAB SWITCHING ───────── */
+
+document.querySelectorAll('.tab').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('page-'+btn.dataset.page).classList.add('active');
+    setTitle(btn.dataset.title, btn.dataset.eye);
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
 
 /* ───────── BOOT ───────── */
 
@@ -1238,19 +1282,20 @@ async function boot(){
     if(res.ok)d=await res.json();
   }catch(e){console.warn(e);}
 
-  renderTopBar(d);
+  renderTitleBar(d);
   renderHero(d);
   renderRecovery(d);
-  renderSleepCard(d);
+  renderSleep(d);
   renderLoad(d);
-  renderActs(d);
+  renderFeed(d);
+  renderWeekly();
   renderRaces();
-  renderPredictions(d);
+  renderPred(d);
   renderMetrics(d);
 
   setTimeout(()=>{
     document.getElementById('boot').classList.add('hide');
-    setTimeout(()=>document.getElementById('boot').remove(),500);
+    setTimeout(()=>document.getElementById('boot').remove(),600);
   },300);
 }
 
