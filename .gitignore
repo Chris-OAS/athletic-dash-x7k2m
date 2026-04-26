@@ -1,0 +1,7 @@
+fetch.log
+.DS_Store
+.garminconnect/
+garmin_tokens.json
+*.pyc
+__pycache__/
+diagnose.py

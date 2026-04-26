@@ -1,0 +1,388 @@
+{
+  "profile": {
+    "name": "Athlete",
+    "full_name": "Christian Lombardi"
+  },
+  "activities": [
+    {
+      "name": "Southwark - W13 Sat Long Run - Half Marathon",
+      "type": "running",
+      "date": "2026-04-25",
+      "distance_m": 21123.080078125,
+      "duration_s": 7005.68115234375,
+      "avg_hr": 174.0,
+      "max_hr": 188.0,
+      "calories": 1568.0,
+      "elevation_m": 48.0,
+      "avg_speed": 3.0150001049041752,
+      "aerobic_te": 5.0,
+      "vo2max": 49.0
+    },
+    {
+      "name": "Southwark - W13 Thu Easy Run - 11km Easy Run",
+      "type": "running",
+      "date": "2026-04-23",
+      "distance_m": 11022.6103515625,
+      "duration_s": 3835.251953125,
+      "avg_hr": 169.0,
+      "max_hr": 182.0,
+      "calories": 826.0,
+      "elevation_m": 46.0,
+      "avg_speed": 2.874000072479248,
+      "aerobic_te": 4.099999904632568,
+      "vo2max": 49.0
+    },
+    {
+      "name": "Strength",
+      "type": "strength_training",
+      "date": "2026-04-22",
+      "distance_m": 0.0,
+      "duration_s": 3603.555908203125,
+      "avg_hr": 110.0,
+      "max_hr": 164.0,
+      "calories": 328.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 1.399999976158142,
+      "vo2max": 0
+    },
+    {
+      "name": "Southwark - W12 Sat Long Run - 10km Long Run",
+      "type": "running",
+      "date": "2026-04-18",
+      "distance_m": 10078.48046875,
+      "duration_s": 3494.986083984375,
+      "avg_hr": 167.0,
+      "max_hr": 183.0,
+      "calories": 748.0,
+      "elevation_m": 39.0,
+      "avg_speed": 2.884000062942505,
+      "aerobic_te": 4.0,
+      "vo2max": 49.0
+    },
+    {
+      "name": "Southwark - W12 Thu Easy Run - 8km Easy Run",
+      "type": "running",
+      "date": "2026-04-16",
+      "distance_m": 8113.9599609375,
+      "duration_s": 2872.0859375,
+      "avg_hr": 167.0,
+      "max_hr": 177.0,
+      "calories": 612.0,
+      "elevation_m": 19.0,
+      "avg_speed": 2.825000047683716,
+      "aerobic_te": 3.700000047683716,
+      "vo2max": 49.0
+    },
+    {
+      "name": "Yoga",
+      "type": "yoga",
+      "date": "2026-04-14",
+      "distance_m": 0,
+      "duration_s": 7772.63916015625,
+      "avg_hr": 82.0,
+      "max_hr": 136.0,
+      "calories": 367.0,
+      "elevation_m": 0,
+      "avg_speed": 0,
+      "aerobic_te": 0.4000000059604645,
+      "vo2max": 0
+    },
+    {
+      "name": "Southwark - W12 Tue Time Trial - 5km Time Tr",
+      "type": "running",
+      "date": "2026-04-14",
+      "distance_m": 8041.2900390625,
+      "duration_s": 2710.512939453125,
+      "avg_hr": 170.0,
+      "max_hr": 194.0,
+      "calories": 589.0,
+      "elevation_m": 39.0,
+      "avg_speed": 2.9670000076293945,
+      "aerobic_te": 4.300000190734863,
+      "vo2max": 49.0
+    },
+    {
+      "name": "Southwark - W11 Sat Long Run - 18km Hilly Pr",
+      "type": "running",
+      "date": "2026-04-11",
+      "distance_m": 19014.759765625,
+      "duration_s": 6454.5068359375,
+      "avg_hr": 171.0,
+      "max_hr": 198.0,
+      "calories": 1405.0,
+      "elevation_m": 160.0,
+      "avg_speed": 2.946000099182129,
+      "aerobic_te": 5.0,
+      "vo2max": 48.0
+    },
+    {
+      "name": "Strength",
+      "type": "strength_training",
+      "date": "2026-04-10",
+      "distance_m": 0.0,
+      "duration_s": 2466.3291015625,
+      "avg_hr": 113.0,
+      "max_hr": 170.0,
+      "calories": 241.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 0.8999999761581421,
+      "vo2max": 0
+    },
+    {
+      "name": "Southwark - W11 Thu Easy Run - 10km Easy Run",
+      "type": "running",
+      "date": "2026-04-09",
+      "distance_m": 10012.91015625,
+      "duration_s": 3490.97802734375,
+      "avg_hr": 164.0,
+      "max_hr": 181.0,
+      "calories": 738.0,
+      "elevation_m": 30.0,
+      "avg_speed": 2.868000030517578,
+      "aerobic_te": 3.9000000953674316,
+      "vo2max": 48.0
+    },
+    {
+      "name": "Yoga",
+      "type": "yoga",
+      "date": "2026-04-07",
+      "distance_m": 0,
+      "duration_s": 5444.2431640625,
+      "avg_hr": 65.0,
+      "max_hr": 113.0,
+      "calories": 143.0,
+      "elevation_m": 0,
+      "avg_speed": 0,
+      "aerobic_te": 0.10000000149011612,
+      "vo2max": 0
+    },
+    {
+      "name": "Southwark - W11 Tue Hills - Drop Set Hill Re",
+      "type": "running",
+      "date": "2026-04-07",
+      "distance_m": 10101.849609375,
+      "duration_s": 3467.680908203125,
+      "avg_hr": 170.0,
+      "max_hr": 197.0,
+      "calories": 756.0,
+      "elevation_m": 44.0,
+      "avg_speed": 2.9130001068115234,
+      "aerobic_te": 4.599999904632568,
+      "vo2max": 48.0
+    },
+    {
+      "name": "Strength",
+      "type": "strength_training",
+      "date": "2026-04-06",
+      "distance_m": 0.0,
+      "duration_s": 2624.574951171875,
+      "avg_hr": 112.0,
+      "max_hr": 164.0,
+      "calories": 250.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 1.100000023841858,
+      "vo2max": 0
+    },
+    {
+      "name": "Southwark - W10 Sat Long Run - 16km Hilly Lo",
+      "type": "running",
+      "date": "2026-04-04",
+      "distance_m": 16015.26953125,
+      "duration_s": 5307.4619140625,
+      "avg_hr": 174.0,
+      "max_hr": 203.0,
+      "calories": 1164.0,
+      "elevation_m": 86.0,
+      "avg_speed": 3.0179998874664307,
+      "aerobic_te": 5.0,
+      "vo2max": 48.0
+    },
+    {
+      "name": "Southwark - W10 Thu Easy Run - 11km Easy Run",
+      "type": "running",
+      "date": "2026-04-02",
+      "distance_m": 11023.23046875,
+      "duration_s": 3845.093994140625,
+      "avg_hr": 171.0,
+      "max_hr": 182.0,
+      "calories": 826.0,
+      "elevation_m": 30.0,
+      "avg_speed": 2.867000102996826,
+      "aerobic_te": 4.599999904632568,
+      "vo2max": 48.0
+    },
+    {
+      "name": "Strength",
+      "type": "strength_training",
+      "date": "2026-04-01",
+      "distance_m": 0.0,
+      "duration_s": 2650.6689453125,
+      "avg_hr": 117.0,
+      "max_hr": 154.0,
+      "calories": 268.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 1.100000023841858,
+      "vo2max": 0
+    },
+    {
+      "name": "Southwark - W10 Tue Tempo - Progressive Run",
+      "type": "running",
+      "date": "2026-03-31",
+      "distance_m": 11138.2900390625,
+      "duration_s": 3705.802001953125,
+      "avg_hr": 176.0,
+      "max_hr": 194.0,
+      "calories": 825.0,
+      "elevation_m": 26.0,
+      "avg_speed": 3.00600004196167,
+      "aerobic_te": 5.0,
+      "vo2max": 48.0
+    },
+    {
+      "name": "Strength",
+      "type": "strength_training",
+      "date": "2026-03-27",
+      "distance_m": 0.0,
+      "duration_s": 2372.843994140625,
+      "avg_hr": 122.0,
+      "max_hr": 163.0,
+      "calories": 274.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 1.600000023841858,
+      "vo2max": 0
+    },
+    {
+      "name": "Southwark - W9 Tue Tempo - Tempo 2km Repeats",
+      "type": "running",
+      "date": "2026-03-24",
+      "distance_m": 8267.169921875,
+      "duration_s": 2769.722900390625,
+      "avg_hr": 174.0,
+      "max_hr": 197.0,
+      "calories": 617.0,
+      "elevation_m": 27.0,
+      "avg_speed": 2.9849998950958248,
+      "aerobic_te": 4.599999904632568,
+      "vo2max": 48.0
+    },
+    {
+      "name": "Strength",
+      "type": "strength_training",
+      "date": "2026-03-23",
+      "distance_m": 0.0,
+      "duration_s": 2222.373046875,
+      "avg_hr": 116.0,
+      "max_hr": 167.0,
+      "calories": 237.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 1.7999999523162842,
+      "vo2max": 0
+    }
+  ],
+  "sleep": {
+    "score": 89,
+    "duration_s": 27816,
+    "deep_s": 4860,
+    "rem_s": 7260,
+    "light_s": 15720,
+    "awake_s": 360,
+    "avg_spo2": 95.0,
+    "avg_resp": 13.0,
+    "restless": 0,
+    "avg_hrv": 0
+  },
+  "hrv": {
+    "weekly_avg": 63,
+    "last_night": 0,
+    "status": "BALANCED",
+    "balanced_low": 0,
+    "balanced_high": 0
+  },
+  "body_battery": {
+    "charged": 25,
+    "drained": 16,
+    "end_val": "2026-04-26T18:14:00.0"
+  },
+  "heart_rate": {
+    "resting": 48,
+    "max": 141,
+    "min": 44,
+    "last_7d_avg_resting": 45
+  },
+  "stress": {
+    "avg": 39,
+    "max": 99,
+    "rest_duration": 0,
+    "low_duration": 0,
+    "med_duration": 0,
+    "high_duration": 0
+  },
+  "spo2": {
+    "avg": 95.0,
+    "lowest": 85
+  },
+  "training_readiness": {
+    "score": 6,
+    "level": "POOR",
+    "feedback": ""
+  },
+  "training_status": {
+    "status": "PRODUCTIVE_3",
+    "load": 641,
+    "load_chronic": 650,
+    "acwr": 0.9,
+    "acwr_status": "OPTIMAL",
+    "fitness_trend": 3,
+    "load_balance": "AEROBIC_LOW_SHORTAGE",
+    "monthly_aerobic_low": 56.15776,
+    "monthly_aerobic_high": 2504.433,
+    "monthly_anaerobic": 252.0902,
+    "vo2max": 48.7
+  },
+  "vo2max": {
+    "value": 48.7
+  },
+  "respiration": {
+    "avg": 13.0,
+    "highest": 21.0,
+    "lowest": 6.0
+  },
+  "race_predictions": {
+    "five_k": 1402,
+    "ten_k": 2950,
+    "half_marathon": 6634,
+    "marathon": 14720
+  },
+  "endurance_score": {
+    "overall": 6049,
+    "level": 3
+  },
+  "hill_score": {
+    "value": 0,
+    "level": ""
+  },
+  "steps": {
+    "weekly_total": 106302,
+    "daily_avg": 13287
+  },
+  "intensity": {
+    "moderate": 52,
+    "vigorous": 206,
+    "goal": 150
+  },
+  "running_tolerance": {
+    "value": 0
+  },
+  "morning_readiness": {
+    "score": 6,
+    "level": "POOR"
+  },
+  "fetched_at": "2026-04-26",
+  "fetched_time": "22:12"
+}

@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>12-Week Athletic Programme</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --off-black: #111;
+    --dark: #1a1a1a;
+    --card: #1e1e1e;
+    --border: #2a2a2a;
+    --border-light: #333;
+    --text: #f0ede8;
+    --muted: #888;
+    --faint: #444;
+    --run: #e8f04a;
+    --strength: #4af0a0;
+    --sprint: #f04a4a;
+    --cali: #4ac8f0;
+    --rest: #555;
+    --mobility: #c84af0;
+    --run-dim: rgba(232,240,74,0.12);
+    --strength-dim: rgba(74,240,160,0.12);
+    --sprint-dim: rgba(240,74,74,0.12);
+    --cali-dim: rgba(74,200,240,0.12);
+    --mobility-dim: rgba(200,74,240,0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 60px 40px 40px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,240,74,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--run);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 8vw, 96px);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+  .hero h1 span { color: var(--run); }
+  .hero-stats {
+    display: flex; gap: 32px; flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .hero-stat { border-left: 2px solid var(--border-light); padding-left: 14px; }
+  .hero-stat .val { font-size: 22px; font-weight: 500; color: var(--text); }
+  .hero-stat .lbl { font-size: 11px; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; }
+
+  /* LEGEND */
+  .legend {
+    display: flex; gap: 20px; flex-wrap: wrap;
+    padding: 16px 40px;
+    border-bottom: 1px solid var(--border);
+    background: var(--off-black);
+  }
+  .leg { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--muted); }
+  .leg-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  /* PHASE NAV */
+  .phase-nav {
+    display: flex; gap: 0;
+    padding: 0 40px;
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+  }
+  .phase-btn {
+    padding: 14px 28px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--muted);
+    background: none; border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .phase-btn:hover { color: var(--text); }
+  .phase-btn.active { color: var(--run); border-bottom-color: var(--run); }
+
+  /* MAIN */
+  .main { padding: 32px 40px 60px; }
+
+  .phase-section { display: none; }
+  .phase-section.active { display: block; }
+
+  .phase-header {
+    margin-bottom: 28px;
+    padding: 24px 28px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .phase-header::after {
+    content: attr(data-num);
+    position: absolute; right: 24px; top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .phase-tag {
+    font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--run);
+    margin-bottom: 6px;
+  }
+  .phase-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px; letter-spacing: 0.04em;
+    color: var(--text); margin-bottom: 8px;
+  }
+  .phase-desc { font-size: 13px; color: var(--muted); max-width: 560px; line-height: 1.6; }
+  .phase-meta { display: flex; gap: 24px; margin-top: 16px; }
+  .phase-meta-item { font-size: 12px; }
+  .phase-meta-item .k { color: var(--muted); }
+  .phase-meta-item .v { color: var(--text); font-weight: 500; }
+
+  /* WEEKS GRID */
+  .weeks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+
+  .week-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .week-card:hover { border-color: var(--border-light); }
+
+  .week-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 18px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .week-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px; letter-spacing: 0.06em; color: var(--text);
+  }
+  .week-focus {
+    font-size: 11px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  .week-vol {
+    font-size: 11px; color: var(--muted);
+    background: var(--dark); padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  .days-list { padding: 12px 0; }
+
+  .day-row {
+    display: flex; align-items: flex-start;
+    gap: 12px; padding: 8px 18px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+  .day-row:last-child { border-bottom: none; }
+  .day-row:hover { background: rgba(255,255,255,0.02); }
+
+  .day-name {
+    font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--faint);
+    width: 28px; flex-shrink: 0;
+    padding-top: 3px;
+  }
+  .day-type-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    flex-shrink: 0; margin-top: 6px;
+  }
+  .day-content { flex: 1; }
+  .day-title { font-size: 13px; font-weight: 400; color: var(--text); margin-bottom: 2px; }
+  .day-detail { font-size: 11px; color: var(--muted); line-height: 1.5; }
+  .day-metrics {
+    display: flex; gap: 8px; margin-top: 4px; flex-wrap: wrap;
+  }
+  .metric-chip {
+    font-size: 10px; padding: 2px 8px;
+    border-radius: 20px; border: 1px solid var(--border-light);
+    color: var(--muted);
+  }
+
+  /* PILLAR SECTION */
+  .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+
+  .pillar-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px;
+  }
+  .pillar-icon { font-size: 22px; margin-bottom: 10px; }
+  .pillar-name { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.06em; color: var(--text); margin-bottom: 6px; }
+  .pillar-sub { font-size: 11px; color: var(--muted); margin-bottom: 14px; }
+  .pillar-items li { font-size: 12px; color: var(--muted); padding: 4px 0; border-bottom: 1px solid var(--border); list-style: none; display: flex; gap: 8px; align-items: flex-start; }
+  .pillar-items li:last-child { border-bottom: none; }
+  .pillar-items li::before { content: '—'; color: var(--faint); flex-shrink: 0; }
+
+  /* GARMIN SECTION */
+  .garmin-section { margin-top: 8px; }
+  .garmin-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px; letter-spacing: 0.04em; color: var(--text);
+    margin-bottom: 4px;
+  }
+  .garmin-sub { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+
+  .method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+
+  .method-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 22px;
+    position: relative; overflow: hidden;
+  }
+  .method-card.best { border-color: var(--run); }
+  .method-card.best::before {
+    content: 'RECOMMENDED';
+    position: absolute; top: 12px; right: 14px;
+    font-size: 9px; letter-spacing: 0.15em;
+    color: var(--run); font-weight: 500;
+  }
+  .method-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px; color: rgba(255,255,255,0.05);
+    line-height: 1; margin-bottom: -8px;
+  }
+  .method-name { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+  .method-effort {
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .method-desc { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
+  .steps-list { list-style: none; }
+  .steps-list li {
+    font-size: 12px; color: var(--muted);
+    padding: 6px 0; border-top: 1px solid var(--border);
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px; color: var(--faint);
+    flex-shrink: 0; line-height: 1.4;
+  }
+
+  .note-box {
+    background: rgba(232,240,74,0.05);
+    border: 1px solid rgba(232,240,74,0.15);
+    border-radius: 10px; padding: 16px 20px;
+    font-size: 12px; color: var(--muted); line-height: 1.7;
+    margin-top: 12px;
+  }
+  .note-box strong { color: var(--run); font-weight: 500; }
+
+  /* DELOAD */
+  .deload-banner {
+    background: linear-gradient(135deg, rgba(240,74,74,0.08), rgba(240,74,74,0.03));
+    border: 1px solid rgba(240,74,74,0.2);
+    border-radius: 10px; padding: 16px 20px;
+    font-size: 12px; color: var(--muted); line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .deload-banner strong { color: var(--sprint); }
+
+  @media (max-width: 700px) {
+    .hero { padding: 40px 20px 28px; }
+    .legend { padding: 12px 20px; }
+    .phase-nav { padding: 0 20px; }
+    .main { padding: 24px 20px 48px; }
+    .weeks-grid { grid-template-columns: 1fr; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .method-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-label">Garmin Data · Personalised · Apr 2026</div>
+  <h1>12-WEEK<br><span>ATHLETIC</span><br>PROGRAMME</h1>
+  <p style="font-size:14px;color:var(--muted);max-width:480px;">Built from your actual data: VO₂ max 48.7 · RHR 48 bpm · avg sleep 84.2 · 222km run in 10 weeks</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="val">3 Phases</div><div class="lbl">Foundation → Build → Peak</div></div>
+    <div class="hero-stat"><div class="val">5 days/wk</div><div class="lbl">Training load</div></div>
+    <div class="hero-stat"><div class="val">VO₂ →55</div><div class="lbl">12-month target</div></div>
+    <div class="hero-stat"><div class="val">11pm bed</div><div class="lbl">Sleep protocol</div></div>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="leg"><div class="leg-dot" style="background:var(--run)"></div>Zone 2 Run</div>
+  <div class="leg"><div class="leg-dot" style="background:var(--sprint)"></div>Speed / Intervals</div>
+  <div class="leg"><div class="leg-dot" style="background:var(--strength)"></div>Strength</div>
+  <div class="leg"><div class="leg-dot" style="background:var(--cali)"></div>Calisthenics</div>
+  <div class="leg"><div class="leg-dot" style="background:var(--mobility)"></div>Mobility / Yoga</div>
+  <div class="leg"><div class="leg-dot" style="background:var(--rest)"></div>Rest</div>
+</div>
+
+<div class="phase-nav">
+  <button class="phase-btn active" onclick="showPhase('p1',this)">Phase 1 · Foundation</button>
+  <button class="phase-btn" onclick="showPhase('p2',this)">Phase 2 · Build</button>
+  <button class="phase-btn" onclick="showPhase('p3',this)">Phase 3 · Peak</button>
+  <button class="phase-btn" onclick="showPhase('pillars',this)">Training Pillars</button>
+  <button class="phase-btn" onclick="showPhase('garmin',this)">⌚ Garmin Sync</button>
+</div>
+
+<div class="main">
+
+<!-- PHASE 1 -->
+<div id="p1" class="phase-section active">
+  <div class="phase-header" data-num="01">
+    <div class="phase-tag">Weeks 1–4 · Post-race recovery & reset</div>
+    <div class="phase-title">FOUNDATION</div>
+    <div class="phase-desc">Coming off your half marathon, this phase re-establishes movement quality, introduces real Zone 2 aerobic work at 140–145 bpm, and begins your compound strength foundation. No ego lifting. No hard running. Patience here earns everything later.</div>
+    <div class="phase-meta">
+      <div class="phase-meta-item"><span class="k">Running vol </span><span class="v">25–35 km/wk</span></div>
+      <div class="phase-meta-item"><span class="k">Strength </span><span class="v">2–3× / week</span></div>
+      <div class="phase-meta-item"><span class="k">Intensity </span><span class="v">Low — Zone 2 focus</span></div>
+      <div class="phase-meta-item"><span class="k">Key metric </span><span class="v">HR &lt;145 easy runs</span></div>
+    </div>
+  </div>
+
+  <div class="weeks-grid">
+    <!-- WEEK 1 -->
+    <div class="week-card">
+      <div class="week-header">
+        <div>
+          <div class="week-num">WEEK 01</div>
+          <div class="week-focus">Recovery · Re-entry</div>
+        </div>
+        <div class="week-vol">~18 km</div>
+      </div>
+      <div class="days-list">
+        <div class="day-row"><div class="day-name">MON</div><div class="day-type-dot" style="background:var(--rest)"></div><div class="day-content"><div class="day-title">Full rest</div><div class="day-detail">Walk 20–30 min. Legs up. Sleep 8.5h+</div></div></div>
+        <div class="day-row"><div class="day-name">TUE</div><div class="day-type-dot" style="background:var(--mobility)"></div><div class="day-content"><div class="day-title">Mobility & breathwork</div><div class="day-detail">40 min yoga / hip flexors / thoracic spine</div><div class="day-metrics"><span class="metric-chip">No HR target</span></div></div></div>
+        <div class="day-row"><div class="day-name">WED</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Easy Zone 2 jog — 25 min</div><div class="day-detail">STOP if HR exceeds 145 bpm. Walk breaks fine.</div><div class="day-metrics"><span class="metric-chip">HR &lt;145</span><span class="metric-chip">~4–5 km</span></div></div></div>
+        <div class="day-row"><div class="day-name">THU</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength A — Lower body</div><div class="day-detail">Goblet squat 3×10, Romanian DL 3×10, Step-ups 3×10, Hip thrust 3×12</div><div class="day-metrics"><span class="metric-chip">Light load</span><span class="metric-chip">60 min</span></div></div></div>
+        <div class="day-row"><div class="day-name">FRI</div><div class="day-name"></div><div class="day-type-dot" style="background:var(--rest)"></div><div class="day-content"><div class="day-title">Rest or walk</div></div></div>
+        <div class="day-row"><div class="day-name">SAT</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Zone 2 long run — 45 min</div><div class="day-detail">Very easy. If HR spikes, walk. Nasal breathing target.</div><div class="day-metrics"><span class="metric-chip">HR &lt;145</span><span class="metric-chip">~7 km</span></div></div></div>
+        <div class="day-row"><div class="day-name">SUN</div><div class="day-type-dot" style="background:var(--rest)"></div><div class="day-content"><div class="day-title">Full rest</div><div class="day-detail">Body Battery check — target 80+ by morning</div></div></div>
+      </div>
+    </div>
+
+    <!-- WEEK 2 -->
+    <div class="week-card">
+      <div class="week-header">
+        <div>
+          <div class="week-num">WEEK 02</div>
+          <div class="week-focus">Aerobic base · Strength intro</div>
+        </div>
+        <div class="week-vol">~25 km</div>
+      </div>
+      <div class="days-list">
+        <div class="day-row"><div class="day-name">MON</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength A — Lower + core</div><div class="day-detail">Back squat 4×6 @60% · Deadlift 4×5 @60% · Plank 3×45s</div><div class="day-metrics"><span class="metric-chip">60% 1RM</span><span class="metric-chip">65 min</span></div></div></div>
+        <div class="day-row"><div class="day-name">TUE</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Zone 2 run — 40 min</div><div class="day-detail">Conversational pace. 6:15–6:45/km expected.</div><div class="day-metrics"><span class="metric-chip">HR 135–145</span><span class="metric-chip">~6 km</span></div></div></div>
+        <div class="day-row"><div class="day-name">WED</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength B — Upper + cali intro</div><div class="day-detail">OHP 4×6 · Weighted pull-up 3×5 · Dips 3×8 · L-sit holds 3×10s</div><div class="day-metrics"><span class="metric-chip">Controlled tempo</span></div></div></div>
+        <div class="day-row"><div class="day-name">THU</div><div class="day-type-dot" style="background:var(--mobility)"></div><div class="day-content"><div class="day-title">Active recovery + mobility</div><div class="day-detail">30 min yoga, ankle / hip / shoulder circuits</div></div></div>
+        <div class="day-row"><div class="day-name">FRI</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Zone 2 run — 35 min</div><div class="day-detail">Focus on nasal breathing the whole run.</div><div class="day-metrics"><span class="metric-chip">HR &lt;145</span><span class="metric-chip">~5.5 km</span></div></div></div>
+        <div class="day-row"><div class="day-name">SAT</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Zone 2 long run — 60 min</div><div class="day-detail">First long one since the race. Ego check — keep it slow.</div><div class="day-metrics"><span class="metric-chip">HR 135–145</span><span class="metric-chip">~9 km</span></div></div></div>
+        <div class="day-row"><div class="day-name">SUN</div><div class="day-type-dot" style="background:var(--rest)"></div><div class="day-content"><div class="day-title">Rest</div></div></div>
+      </div>
+    </div>
+
+    <!-- WEEK 3 -->
+    <div class="week-card">
+      <div class="week-header">
+        <div>
+          <div class="week-num">WEEK 03</div>
+          <div class="week-focus">First sprint session · Load build</div>
+        </div>
+        <div class="week-vol">~30 km</div>
+      </div>
+      <div class="days-list">
+        <div class="day-row"><div class="day-name">MON</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength A — Lower power</div><div class="day-detail">Back squat 4×5 @65% · Deadlift 4×4 @70% · Box jump 4×4 · KB swing 4×10</div><div class="day-metrics"><span class="metric-chip">65–70% 1RM</span></div></div></div>
+        <div class="day-row"><div class="day-name">TUE</div><div class="day-type-dot" style="background:var(--sprint)"></div><div class="day-content"><div class="day-title">First sprint session 🔥</div><div class="day-detail">10 min warm-up jog · 6×30m flat sprint (walk back) · 10 min cool down</div><div class="day-metrics"><span class="metric-chip">Max effort</span><span class="metric-chip">Full recovery between</span></div></div></div>
+        <div class="day-row"><div class="day-name">WED</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Zone 2 — 45 min</div><div class="day-detail">Easy aerobic. HR discipline today — check after every km.</div><div class="day-metrics"><span class="metric-chip">HR 135–145</span></div></div></div>
+        <div class="day-row"><div class="day-name">THU</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength B — Upper + cali</div><div class="day-detail">OHP 4×5 @65% · Weighted pull-up 4×4 · Ring dip 3×8 · HSPU negatives 3×4</div></div></div>
+        <div class="day-row"><div class="day-name">FRI</div><div class="day-type-dot" style="background:var(--mobility)"></div><div class="day-content"><div class="day-title">Mobility + cali skills</div><div class="day-detail">L-sit 5×15s · Skin the cat 3×3 · Shoulder prehab circuit</div></div></div>
+        <div class="day-row"><div class="day-name">SAT</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Zone 2 long run — 75 min</div><div class="day-detail">Hilly route. Stay aerobic despite elevation — walk hills if needed.</div><div class="day-metrics"><span class="metric-chip">HR &lt;148</span><span class="metric-chip">~11 km</span></div></div></div>
+        <div class="day-row"><div class="day-name">SUN</div><div class="day-type-dot" style="background:var(--rest)"></div><div class="day-content"><div class="day-title">Rest</div></div></div>
+      </div>
+    </div>
+
+    <!-- WEEK 4 DELOAD -->
+    <div class="week-card">
+      <div class="week-header">
+        <div>
+          <div class="week-num">WEEK 04</div>
+          <div class="week-focus" style="color:var(--sprint)">Deload — Mandatory</div>
+        </div>
+        <div class="week-vol" style="color:var(--sprint)">~18 km</div>
+      </div>
+      <div class="days-list">
+        <div class="day-row"><div class="day-name">MON</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength — 50% volume</div><div class="day-detail">Same movements, same weight, half the sets. Quality not quantity.</div><div class="day-metrics"><span class="metric-chip">3 sets only</span></div></div></div>
+        <div class="day-row"><div class="day-name">TUE</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Easy 30 min jog</div><div class="day-detail">Pure conversation pace. No watch pressure.</div><div class="day-metrics"><span class="metric-chip">HR &lt;140</span></div></div></div>
+        <div class="day-row"><div class="day-name">WED</div><div class="day-type-dot" style="background:var(--mobility)"></div><div class="day-content"><div class="day-title">Yoga 60 min</div></div></div>
+        <div class="day-row"><div class="day-name">THU</div><div class="day-type-dot" style="background:var(--rest)"></div><div class="day-content"><div class="day-title">Rest</div></div></div>
+        <div class="day-row"><div class="day-name">FRI</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Easy 30 min jog</div><div class="day-metrics"><span class="metric-chip">HR &lt;140</span></div></div></div>
+        <div class="day-row"><div class="day-name">SAT</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Zone 2 — 50 min</div><div class="day-detail">No long run this week. Body needs the break.</div></div></div>
+        <div class="day-row"><div class="day-name">SUN</div><div class="day-type-dot" style="background:var(--rest)"></div><div class="day-content"><div class="day-title">Rest · Benchmark test Mon</div><div class="day-detail">Note: resting HR, HRV, body weight this week</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 2 -->
+<div id="p2" class="phase-section">
+  <div class="phase-header" data-num="02">
+    <div class="phase-tag">Weeks 5–8 · Progressive overload</div>
+    <div class="phase-title">BUILD</div>
+    <div class="phase-desc">This is where adaptation compounds. Strength loads increase weekly. Sprint volume doubles. VO₂ max intervals introduced. Zone 2 HR ceiling rises to 150 as aerobic efficiency improves. Calisthenics skills start to feel attainable.</div>
+    <div class="phase-meta">
+      <div class="phase-meta-item"><span class="k">Running vol </span><span class="v">35–45 km/wk</span></div>
+      <div class="phase-meta-item"><span class="k">Strength </span><span class="v">3× / week</span></div>
+      <div class="phase-meta-item"><span class="k">Intensity </span><span class="v">Polarised — easy or hard</span></div>
+      <div class="phase-meta-item"><span class="k">Key metric </span><span class="v">VO₂ max target 51+</span></div>
+    </div>
+  </div>
+
+  <div class="weeks-grid">
+    <div class="week-card">
+      <div class="week-header"><div><div class="week-num">WEEK 05</div><div class="week-focus">VO₂ intervals debut</div></div><div class="week-vol">~35 km</div></div>
+      <div class="days-list">
+        <div class="day-row"><div class="day-name">MON</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength A — Lower power</div><div class="day-detail">Back squat 5×4 @72% · Deadlift 4×4 @75% · Trap bar carry 3×30m · Box jump 4×5</div><div class="day-metrics"><span class="metric-chip">72–75% 1RM</span></div></div></div>
+        <div class="day-row"><div class="day-name">TUE</div><div class="day-type-dot" style="background:var(--sprint)"></div><div class="day-content"><div class="day-title">VO₂ max intervals 🔥</div><div class="day-detail">2km warm-up · 4×4 min @95% max HR (HR 192+) · 4 min walk/jog rest · 2km cool-down</div><div class="day-metrics"><span class="metric-chip">HR 192–200</span><span class="metric-chip">~10 km total</span></div></div></div>
+        <div class="day-row"><div class="day-name">WED</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Zone 2 recovery run — 40 min</div><div class="day-detail">True recovery. If yesterday felt hard, keep this ultra easy.</div><div class="day-metrics"><span class="metric-chip">HR &lt;145</span></div></div></div>
+        <div class="day-row"><div class="day-name">THU</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength B — Upper + cali</div><div class="day-detail">OHP 5×4 @72% · Weighted pull-up 4×4 (+10kg) · Ring dip 4×8 · L-sit 5×20s · HSPU 3×5</div></div></div>
+        <div class="day-row"><div class="day-name">FRI</div><div class="day-type-dot" style="background:var(--sprint)"></div><div class="day-content"><div class="day-title">Hill sprints</div><div class="day-detail">8×8s max effort uphill · full walk down recovery · med ball throws 4×8</div><div class="day-metrics"><span class="metric-chip">Max effort</span></div></div></div>
+        <div class="day-row"><div class="day-name">SAT</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Long Zone 2 — 90 min</div><div class="day-detail">Hilly route. Discipline: walk anything that pushes HR above 150.</div><div class="day-metrics"><span class="metric-chip">HR &lt;150</span><span class="metric-chip">~13 km</span></div></div></div>
+        <div class="day-row"><div class="day-name">SUN</div><div class="day-type-dot" style="background:var(--rest)"></div><div class="day-content"><div class="day-title">Rest + mobility 20 min</div></div></div>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-header"><div><div class="week-num">WEEK 06</div><div class="week-focus">Strength PR week</div></div><div class="week-vol">~38 km</div></div>
+      <div class="days-list">
+        <div class="day-row"><div class="day-name">MON</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength A — Heavy lower</div><div class="day-detail">Back squat 5×3 @78% · Deadlift 3×3 @80% · Single-leg RDL 3×8 · Pistol squat progression 3×5</div><div class="day-metrics"><span class="metric-chip">78–80% 1RM</span></div></div></div>
+        <div class="day-row"><div class="day-name">TUE</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Zone 2 — 50 min</div><div class="day-metrics"><span class="metric-chip">HR &lt;148</span><span class="metric-chip">~8 km</span></div></div></div>
+        <div class="day-row"><div class="day-name">WED</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength B + calisthenics</div><div class="day-detail">Bench 5×3 @78% · Weighted pull-up 4×4 (+15kg) · Muscle-up attempt 3×max · Front lever tuck 3×10s</div></div></div>
+        <div class="day-row"><div class="day-name">THU</div><div class="day-type-dot" style="background:var(--sprint)"></div><div class="day-content"><div class="day-title">VO₂ max intervals</div><div class="day-detail">5×4 min @95% max HR · 3 min active rest</div><div class="day-metrics"><span class="metric-chip">HR 192–203</span></div></div></div>
+        <div class="day-row"><div class="day-name">FRI</div><div class="day-type-dot" style="background:var(--mobility)"></div><div class="day-content"><div class="day-title">Active recovery + cali skills</div><div class="day-detail">Handstand practice 15 min · L-sit 6×20s · Mobility circuit</div></div></div>
+        <div class="day-row"><div class="day-name">SAT</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Long run — 100 min</div><div class="day-metrics"><span class="metric-chip">HR &lt;150</span><span class="metric-chip">~15 km</span></div></div></div>
+        <div class="day-row"><div class="day-name">SUN</div><div class="day-type-dot" style="background:var(--rest)"></div><div class="day-content"><div class="day-title">Rest</div></div></div>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-header"><div><div class="week-num">WEEK 07</div><div class="week-focus">Peak build volume</div></div><div class="week-vol">~43 km</div></div>
+      <div class="days-list">
+        <div class="day-row"><div class="day-name">MON</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength A — Power focus</div><div class="day-detail">Power clean 4×3 · Back squat 4×4 @80% · Broad jump 4×4 · KB swing 5×12 heavy</div><div class="day-metrics"><span class="metric-chip">Explosive</span></div></div></div>
+        <div class="day-row"><div class="day-name">TUE</div><div class="day-type-dot" style="background:var(--sprint)"></div><div class="day-content"><div class="day-title">Speed — 40m accelerations</div><div class="day-detail">10 min warm-up · 10×40m (full recovery) · A-skips, B-skips drills</div><div class="day-metrics"><span class="metric-chip">Max velocity</span></div></div></div>
+        <div class="day-row"><div class="day-name">WED</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Zone 2 — 55 min</div><div class="day-metrics"><span class="metric-chip">HR &lt;148</span></div></div></div>
+        <div class="day-row"><div class="day-name">THU</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength B — Upper heavy + cali</div><div class="day-detail">OHP 5×3 @80% · Weighted pull-up 5×3 (+20kg) · HSPU 4×6 · L-sit 6×25s</div></div></div>
+        <div class="day-row"><div class="day-name">FRI</div><div class="day-type-dot" style="background:var(--sprint)"></div><div class="day-content"><div class="day-title">VO₂ intervals + hill sprints</div><div class="day-detail">3×4 min intervals + 6×8s hill sprints · Short session, high quality</div></div></div>
+        <div class="day-row"><div class="day-name">SAT</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Long run — 105 min hilly</div><div class="day-metrics"><span class="metric-chip">HR &lt;150</span><span class="metric-chip">~16 km</span></div></div></div>
+        <div class="day-row"><div class="day-name">SUN</div><div class="day-type-dot" style="background:var(--rest)"></div><div class="day-content"><div class="day-title">Rest</div></div></div>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-header"><div><div class="week-num">WEEK 08</div><div class="week-focus" style="color:var(--sprint)">Deload · Benchmark</div></div><div class="week-vol" style="color:var(--sprint)">~22 km</div></div>
+      <div class="days-list">
+        <div class="day-row"><div class="day-name">MON</div><div class="day-type-dot" style="background:var(--sprint)"></div><div class="day-content"><div class="day-title">Benchmark: 5km time trial</div><div class="day-detail">Target: sub 20:00. Full warm-up. Record HR and pace.</div><div class="day-metrics"><span class="metric-chip">Target &lt;4:00/km</span></div></div></div>
+        <div class="day-row"><div class="day-name">TUE</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength test day</div><div class="day-detail">1RM squat test · 1RM deadlift test · Max pull-ups</div></div></div>
+        <div class="day-row"><div class="day-name">WED</div><div class="day-type-dot" style="background:var(--rest)"></div><div class="day-content"><div class="day-title">Rest</div></div></div>
+        <div class="day-row"><div class="day-name">THU</div><div class="day-type-dot" style="background:var(--mobility)"></div><div class="day-content"><div class="day-title">Yoga + mobility 60 min</div></div></div>
+        <div class="day-row"><div class="day-name">FRI</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Easy jog 30 min</div></div></div>
+        <div class="day-row"><div class="day-name">SAT</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Zone 2 — 60 min easy</div></div></div>
+        <div class="day-row"><div class="day-name">SUN</div><div class="day-type-dot" style="background:var(--rest)"></div><div class="day-content"><div class="day-title">Rest</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 3 -->
+<div id="p3" class="phase-section">
+  <div class="phase-header" data-num="03">
+    <div class="phase-tag">Weeks 9–12 · Performance expression</div>
+    <div class="phase-title">PEAK</div>
+    <div class="phase-desc">Full athletic expression. Heavy strength, max-velocity sprinting, calisthenics skill work, and sustained aerobic capacity all firing together. VO₂ max should be climbing toward 52–53. Week 12 is a full retest — document everything against your pre-programme baselines.</div>
+    <div class="phase-meta">
+      <div class="phase-meta-item"><span class="k">Running vol </span><span class="v">40–50 km/wk</span></div>
+      <div class="phase-meta-item"><span class="k">Strength </span><span class="v">3× / week · 80–87% 1RM</span></div>
+      <div class="phase-meta-item"><span class="k">Intensity </span><span class="v">High — full polarised</span></div>
+      <div class="phase-meta-item"><span class="k">Key metric </span><span class="v">VO₂ max 52–54 target</span></div>
+    </div>
+  </div>
+
+  <div class="weeks-grid">
+    <div class="week-card">
+      <div class="week-header"><div><div class="week-num">WEEK 09</div><div class="week-focus">Full athlete week</div></div><div class="week-vol">~43 km</div></div>
+      <div class="days-list">
+        <div class="day-row"><div class="day-name">MON</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength A — Max strength</div><div class="day-detail">Back squat 5×2 @85% · Deadlift 4×2 @87% · Power clean 4×2 · Broad jump 5×3</div><div class="day-metrics"><span class="metric-chip">85–87% 1RM</span></div></div></div>
+        <div class="day-row"><div class="day-name">TUE</div><div class="day-type-dot" style="background:var(--sprint)"></div><div class="day-content"><div class="day-title">Max velocity day 🔥</div><div class="day-detail">Full warm-up + drills · 8×40m fly sprints · Med ball rotational throws 4×8</div><div class="day-metrics"><span class="metric-chip">Absolute max speed</span></div></div></div>
+        <div class="day-row"><div class="day-name">WED</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Zone 2 — 50 min</div><div class="day-metrics"><span class="metric-chip">HR &lt;150</span></div></div></div>
+        <div class="day-row"><div class="day-name">THU</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength B — Upper + advanced cali</div><div class="day-detail">OHP 5×2 @85% · Weighted pull-up 5×2 (+25kg) · Muscle-up 3×3 · HSPU 4×6 · Front lever 3×8s</div></div></div>
+        <div class="day-row"><div class="day-name">FRI</div><div class="day-type-dot" style="background:var(--sprint)"></div><div class="day-content"><div class="day-title">VO₂ max intervals — peak</div><div class="day-detail">6×4 min @95–100% max HR · 3 min rest · This is the hardest session of the programme</div><div class="day-metrics"><span class="metric-chip">HR 195–203</span></div></div></div>
+        <div class="day-row"><div class="day-name">SAT</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Long run — 110 min</div><div class="day-metrics"><span class="metric-chip">HR &lt;152</span><span class="metric-chip">~17 km</span></div></div></div>
+        <div class="day-row"><div class="day-name">SUN</div><div class="day-type-dot" style="background:var(--rest)"></div><div class="day-content"><div class="day-title">Rest</div></div></div>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-header"><div><div class="week-num">WEEK 10</div><div class="week-focus">Sport day added</div></div><div class="week-vol">~45 km</div></div>
+      <div class="days-list">
+        <div class="day-row"><div class="day-name">MON</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength A — Full lower</div><div class="day-detail">Squat 5×3 @83% · Deadlift 4×3 @85% · Weighted lunge 3×8 · KB swing 5×15 heavy</div></div></div>
+        <div class="day-row"><div class="day-name">TUE</div><div class="day-type-dot" style="background:var(--sprint)"></div><div class="day-content"><div class="day-title">Hill sprints + acceleration</div><div class="day-detail">10×8s hills + 6×30m flat. Drills between sets.</div><div class="day-metrics"><span class="metric-chip">Max effort</span></div></div></div>
+        <div class="day-row"><div class="day-name">WED</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Zone 2 — 55 min</div><div class="day-metrics"><span class="metric-chip">HR &lt;150</span></div></div></div>
+        <div class="day-row"><div class="day-name">THU</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength B + cali peak</div><div class="day-detail">OHP 5×3 @83% · Pull-up 5×3 (+25kg) · Muscle-up 4×3 · HSPU 4×8 · L-sit 6×30s</div></div></div>
+        <div class="day-row"><div class="day-name">FRI</div><div class="day-type-dot" style="background:var(--sprint)"></div><div class="day-content"><div class="day-title">VO₂ intervals</div><div class="day-detail">5×4 min @95% + 5×30s @100% with 90s rest</div></div></div>
+        <div class="day-row"><div class="day-name">SAT</div><div class="day-type-dot" style="background:var(--cali)"></div><div class="day-content"><div class="day-title">Sport / team game</div><div class="day-detail">Football, basketball, tennis — whatever you enjoy. This is your athletic expression day.</div></div></div>
+        <div class="day-row"><div class="day-name">SUN</div><div class="day-type-dot" style="background:var(--rest)"></div><div class="day-content"><div class="day-title">Rest</div></div></div>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-header"><div><div class="week-num">WEEK 11</div><div class="week-focus">Final hard week</div></div><div class="week-vol">~48 km</div></div>
+      <div class="days-list">
+        <div class="day-row"><div class="day-name">MON</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength A — Peak load</div><div class="day-detail">Squat 3×2 @87% · Deadlift 3×2 @90% · Power clean 3×2 · Box jump 5×4</div><div class="day-metrics"><span class="metric-chip">87–90% 1RM</span></div></div></div>
+        <div class="day-row"><div class="day-name">TUE</div><div class="day-type-dot" style="background:var(--sprint)"></div><div class="day-content"><div class="day-title">Max speed — fly 40s</div><div class="day-detail">10×40m fly sprints (20m rolling start). Full 3 min recovery each.</div></div></div>
+        <div class="day-row"><div class="day-name">WED</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Zone 2 — 60 min</div><div class="day-metrics"><span class="metric-chip">HR &lt;150</span><span class="metric-chip">~9 km</span></div></div></div>
+        <div class="day-row"><div class="day-name">THU</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength B + cali showcase</div><div class="day-detail">OHP 3×2 @87% · Pull-up 5×3 (+28kg) · Muscle-up 5×2 · HSPU 5×6 · Front lever 4×10s</div></div></div>
+        <div class="day-row"><div class="day-name">FRI</div><div class="day-type-dot" style="background:var(--sprint)"></div><div class="day-content"><div class="day-title">Final VO₂ block</div><div class="day-detail">6×3 min @100% HR max · 3 min full rest. Short, brutal, effective.</div><div class="day-metrics"><span class="metric-chip">HR 198–203</span></div></div></div>
+        <div class="day-row"><div class="day-name">SAT</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Long run — 115 min</div><div class="day-detail">Last long one. Run it with gratitude — you've come a long way.</div><div class="day-metrics"><span class="metric-chip">HR &lt;152</span><span class="metric-chip">~18 km</span></div></div></div>
+        <div class="day-row"><div class="day-name">SUN</div><div class="day-type-dot" style="background:var(--rest)"></div><div class="day-content"><div class="day-title">Rest · Prepare to retest</div></div></div>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-header"><div><div class="week-num">WEEK 12</div><div class="week-focus" style="color:var(--run)">Retest · Celebrate</div></div><div class="week-vol" style="color:var(--run)">Benchmarks</div></div>
+      <div class="days-list">
+        <div class="day-row"><div class="day-name">MON</div><div class="day-type-dot" style="background:var(--sprint)"></div><div class="day-content"><div class="day-title">5km time trial</div><div class="day-detail">Benchmark vs Week 8 result. Target: sub 19:30</div><div class="day-metrics"><span class="metric-chip">Target &lt;3:54/km</span></div></div></div>
+        <div class="day-row"><div class="day-name">TUE</div><div class="day-type-dot" style="background:var(--strength)"></div><div class="day-content"><div class="day-title">Strength retest</div><div class="day-detail">New 1RM squat / deadlift / OHP. Max pull-ups. Broad jump.</div></div></div>
+        <div class="day-row"><div class="day-name">WED</div><div class="day-type-dot" style="background:var(--cali)"></div><div class="day-content"><div class="day-title">Calisthenics retest</div><div class="day-detail">Max pull-ups · L-sit max hold · Muscle-up max reps · HSPU max</div></div></div>
+        <div class="day-row"><div class="day-name">THU</div><div class="day-type-dot" style="background:var(--rest)"></div><div class="day-content"><div class="day-title">Rest</div></div></div>
+        <div class="day-row"><div class="day-name">FRI</div><div class="day-type-dot" style="background:var(--sprint)"></div><div class="day-content"><div class="day-title">40m sprint retest</div><div class="day-detail">Target: sub 5.2s · Compare to Phase 1 baseline</div></div></div>
+        <div class="day-row"><div class="day-name">SAT</div><div class="day-type-dot" style="background:var(--run)"></div><div class="day-content"><div class="day-title">Easy celebratory run — 45 min</div><div class="day-detail">Zone 2 only. Reflect on 12 weeks of work.</div></div></div>
+        <div class="day-row"><div class="day-name">SUN</div><div class="day-type-dot" style="background:var(--rest)"></div><div class="day-content"><div class="day-title">Rest · Plan the next 12 weeks</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PILLARS -->
+<div id="pillars" class="phase-section">
+  <div class="phase-header" data-num="—">
+    <div class="phase-tag">Every session · Every week</div>
+    <div class="phase-title">TRAINING PILLARS</div>
+    <div class="phase-desc">Four non-negotiable disciplines. Each one builds a different adaptation. Together they create the functional athlete profile — powerful, fast, mobile, and durable at 35 and beyond.</div>
+  </div>
+
+  <div class="pillars-grid">
+    <div class="pillar-card" style="border-color:rgba(232,240,74,0.3)">
+      <div class="pillar-icon">🏃</div>
+      <div class="pillar-name" style="color:var(--run)">Zone 2 Running</div>
+      <div class="pillar-sub">Your aerobic engine. 80% of all running.</div>
+      <ul class="pillar-items">
+        <li>HR 135–150 bpm — conversational</li>
+        <li>6:00–7:00 min/km pace (feels slow — it is)</li>
+        <li>Nasal breathing as a quality check</li>
+        <li>Long run: 80–115 min Saturday</li>
+        <li>VO₂ max target: 52+ by week 12</li>
+      </ul>
+    </div>
+    <div class="pillar-card" style="border-color:rgba(240,74,74,0.3)">
+      <div class="pillar-icon">⚡</div>
+      <div class="pillar-name" style="color:var(--sprint)">Speed & Power</div>
+      <div class="pillar-sub">Your missing piece. Builds fast-twitch capacity.</div>
+      <ul class="pillar-items">
+        <li>VO₂ max intervals: 4–6×4 min @95% HR</li>
+        <li>Hill sprints: 8–10×8s max effort</li>
+        <li>40m accelerations: 6–10 reps full recovery</li>
+        <li>Med ball throws: rotational power</li>
+        <li>Box jumps: loaded & unloaded</li>
+      </ul>
+    </div>
+    <div class="pillar-card" style="border-color:rgba(74,240,160,0.3)">
+      <div class="pillar-icon">🏋️</div>
+      <div class="pillar-name" style="color:var(--strength)">Compound Strength</div>
+      <div class="pillar-sub">Structural load. 3× per week. Progressive overload.</div>
+      <ul class="pillar-items">
+        <li>Back squat → target 1.5× BW (114 kg)</li>
+        <li>Deadlift → target 2× BW (152 kg)</li>
+        <li>Overhead press → target 0.8× BW (61 kg)</li>
+        <li>Trap bar carry: loaded locomotion</li>
+        <li>Power clean: full-body explosiveness</li>
+      </ul>
+    </div>
+    <div class="pillar-card" style="border-color:rgba(74,200,240,0.3)">
+      <div class="pillar-icon">🤸</div>
+      <div class="pillar-name" style="color:var(--cali)">Calisthenics</div>
+      <div class="pillar-sub">Body control. Relative strength. Athletic identity.</div>
+      <ul class="pillar-items">
+        <li>Weighted pull-up → +28 kg target</li>
+        <li>Muscle-up: 3–5 reps by week 12</li>
+        <li>HSPU: 6–8 strict reps</li>
+        <li>L-sit: 30 sec hold</li>
+        <li>Front lever: 10 sec tuck progression</li>
+      </ul>
+    </div>
+    <div class="pillar-card" style="border-color:rgba(200,74,240,0.3)">
+      <div class="pillar-icon">🧘</div>
+      <div class="pillar-name" style="color:var(--mobility)">Mobility & Sleep</div>
+      <div class="pillar-sub">Where adaptation actually happens. Daily investment.</div>
+      <ul class="pillar-items">
+        <li>10 min morning mobility — non-negotiable</li>
+        <li>Bed by 11:00–11:15 PM every night</li>
+        <li>Weekly yoga session 45–60 min</li>
+        <li>Hip flexor + thoracic + ankle daily</li>
+        <li>Body Battery 75+ = green light to train hard</li>
+      </ul>
+    </div>
+    <div class="pillar-card" style="border-color:var(--border)">
+      <div class="pillar-icon">💊</div>
+      <div class="pillar-name">Nutrition Protocol</div>
+      <div class="pillar-sub">Fuelled for performance. Based on your 76 kg.</div>
+      <ul class="pillar-items">
+        <li>Protein: 175–190g daily (spread across 5 meals)</li>
+        <li>Training days: 2,700–2,900 kcal</li>
+        <li>Rest days: 2,200–2,400 kcal</li>
+        <li>Creatine 5g daily — always</li>
+        <li>Vitamin D3, Omega-3, Magnesium glycinate</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- GARMIN SYNC -->
+<div id="garmin" class="phase-section">
+  <div class="phase-header" data-num="⌚">
+    <div class="phase-tag">Fenix 8 integration</div>
+    <div class="phase-title">SYNC TO YOUR WATCH</div>
+    <div class="phase-desc">Three ways to get this programme onto your Garmin Fenix 8 — from fully automatic to manual. The best option for your needs is TrainingPeaks: it supports auto-sync of structured running and strength-adjacent workouts with HR targets direct to your watch.</div>
+  </div>
+
+  <div class="method-grid">
+
+    <div class="method-card best">
+      <div class="method-num">01</div>
+      <div class="method-name">TrainingPeaks → Garmin Auto-Sync</div>
+      <div class="method-effort" style="color:var(--run)">Effort: 30 min setup · then fully automatic</div>
+      <div class="method-desc">TrainingPeaks has native two-way integration with Garmin Connect. Once connected, the next 15 days of structured workouts auto-sync to your watch daily. Your Fenix 8 will show each session with HR targets, interval structure, and step-by-step guidance on the wrist.</div>
+      <ul class="steps-list">
+        <li><div class="step-num">1</div><div>Create a free TrainingPeaks account at trainingpeaks.com</div></li>
+        <li><div class="step-num">2</div><div>Go to Settings → Apps & Devices → Add Garmin → log in with your Garmin Connect credentials</div></li>
+        <li><div class="step-num">3</div><div>Enable "Structured Workout Sync" toggle — this pushes workouts TO your watch</div></li>
+        <li><div class="step-num">4</div><div>Add this programme's sessions to your TrainingPeaks calendar (or ask a coach to load them)</div></li>
+        <li><div class="step-num">5</div><div>Sync your Fenix 8 via Bluetooth — workouts appear under Training → Training Calendar</div></li>
+        <li><div class="step-num">6</div><div>On race/workout day: start activity → Options → Training → Today's Workout → Go</div></li>
+      </ul>
+    </div>
+
+    <div class="method-card">
+      <div class="method-num">02</div>
+      <div class="method-name">Garmin Connect — Built-in Workout Creator</div>
+      <div class="method-effort" style="color:var(--cali)">Effort: 2–3 hrs setup · semi-automatic</div>
+      <div class="method-desc">Build each session directly in Garmin Connect's workout creator (web or app). Define steps, HR zones, duration, and rest periods. Schedule them on your calendar. They auto-push to your Fenix 8 on the day. No third-party app needed — works natively.</div>
+      <ul class="steps-list">
+        <li><div class="step-num">1</div><div>Open Garmin Connect app → More → Workouts → Create Workout</div></li>
+        <li><div class="step-num">2</div><div>Select sport type (Running, Strength, etc.) and add steps with HR targets</div></li>
+        <li><div class="step-num">3</div><div>Save workout → Schedule it on the Calendar for the correct date</div></li>
+        <li><div class="step-num">4</div><div>Repeat for all 12 weeks (this is the time-consuming part)</div></li>
+        <li><div class="step-num">5</div><div>Sync watch — workouts appear automatically on the scheduled day</div></li>
+        <li><div class="step-num">6</div><div>Note: Strength workouts have limited structured support vs running workouts</div></li>
+      </ul>
+    </div>
+
+    <div class="method-card">
+      <div class="method-num">03</div>
+      <div class="method-name">Final Surge → Garmin Auto-Sync</div>
+      <div class="method-effort" style="color:var(--mobility)">Effort: 20 min setup · 4-day rolling auto-sync</div>
+      <div class="method-desc">Final Surge is a free coaching platform with direct Garmin integration. It auto-pushes the next 4 days of structured workouts to your Garmin Connect calendar each night, which then sync to your Fenix 8. Good alternative if you want coaching features.</div>
+      <ul class="steps-list">
+        <li><div class="step-num">1</div><div>Download Final Surge app → create free account</div></li>
+        <li><div class="step-num">2</div><div>More → Connected Apps → Garmin Connect → Sync Accounts</div></li>
+        <li><div class="step-num">3</div><div>Enable Auto-Sync toggle — next 4 days push nightly automatically</div></li>
+        <li><div class="step-num">4</div><div>Add workouts to your Final Surge calendar</div></li>
+        <li><div class="step-num">5</div><div>Or tap Manual Workout Push to send immediately</div></li>
+      </ul>
+    </div>
+
+    <div class="method-card">
+      <div class="method-num">04</div>
+      <div class="method-name">On-Watch Manual — Simplest Option</div>
+      <div class="method-effort" style="color:var(--muted)">Effort: None · No sync needed</div>
+      <div class="method-desc">Your Fenix 8 has built-in workout suggestions and the ability to set HR alerts and interval timers directly on the watch. Use this as a fallback — set HR zone alerts (zone 2 alert when you go above 145 bpm) and use the interval timer for sprint and strength sessions.</div>
+      <ul class="steps-list">
+        <li><div class="step-num">1</div><div>Fenix 8 → Settings → Alerts → Heart Rate → set high alert at 145 bpm for easy runs</div></li>
+        <li><div class="step-num">2</div><div>For intervals: Training → Workouts → HIIT → Tabata or Custom Intervals</div></li>
+        <li><div class="step-num">3</div><div>For strength: use the Strength activity with rep counting</div></li>
+        <li><div class="step-num">4</div><div>Screenshot this plan and refer to it before each session</div></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="note-box">
+    <strong>Recommendation for you:</strong> Start with <strong>Option 4 (on-watch HR alerts)</strong> this week during recovery — zero setup time and immediately fixes your biggest issue (easy runs too hard). Then set up <strong>TrainingPeaks (Option 1)</strong> over the weekend and load the full 12-week calendar before Week 1 begins. The 30-minute setup pays dividends for 12 weeks of guided sessions appearing automatically on your wrist each morning.
+    <br><br>
+    <strong>Key watch setting to change today:</strong> Fenix 8 → Run activity → Alerts → Add HR Alert → Above 145 bpm. This single setting will beep every time your "easy" runs drift into Zone 4 — the most important change from your current training.
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<script>
+function showPhase(id, btn) {
+  document.querySelectorAll('.phase-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.phase-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
