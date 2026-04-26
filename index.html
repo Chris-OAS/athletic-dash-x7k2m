@@ -980,8 +980,21 @@ svg{display:block;}
 }
 .rt-skip:active{transform:scale(.94);}
 
-/* When rest timer visible, push tabbar up */
-body.has-rest .tabbar{transform:translateX(-50%) translateY(0);}
+/* When rest timer visible, give content extra bottom padding so workout doesn't scroll under it */
+body.has-rest .app{padding-bottom:calc(186px + env(safe-area-inset-bottom));}
+
+/* Make the "GO" state of timer much more prominent */
+.rest-timer.done{
+  background:var(--good);
+  box-shadow:0 12px 36px rgba(22,163,74,0.55), 0 0 0 1px rgba(255,255,255,0.2) inset;
+  animation:rest-pulse 1.5s ease-in-out infinite;
+}
+@keyframes rest-pulse{
+  0%,100%{transform:translateX(-50%) scale(1);box-shadow:0 12px 36px rgba(22,163,74,0.55), 0 0 0 1px rgba(255,255,255,0.2) inset;}
+  50%{transform:translateX(-50%) scale(1.03);box-shadow:0 16px 48px rgba(22,163,74,0.85), 0 0 0 2px rgba(255,255,255,0.3) inset;}
+}
+.rest-timer.done .rt-time{font-size:30px;letter-spacing:-0.04em;}
+.rest-timer.done .rt-skip{background:rgba(255,255,255,0.35);font-weight:700;}
 
 /* ─────────── BOTTOM TAB BAR ─────────── */
 
@@ -1685,23 +1698,51 @@ function loadProgress(d){try{return JSON.parse(localStorage.getItem(progKey(d))|
 function saveProgress(d,p){localStorage.setItem(progKey(d),JSON.stringify(p));}
 function clearProgress(d){localStorage.removeItem(progKey(d));}
 
-/* ── Audio chime via Web Audio API (works on iOS after first user tap) ── */
+/* ── Audio chime via Web Audio API
+   iOS Safari requires AudioContext to be created/resumed inside a user gesture.
+   We prime the context every time the user taps a set, so it's awake by the time
+   the timer fires the chime later. ── */
 let audioCtx=null;
+
+function primeAudio(){
+  try{
+    if(!audioCtx){
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if(audioCtx.state === 'suspended'){
+      audioCtx.resume();
+    }
+    /* Play a 1-sample silent buffer to fully wake the context on iOS */
+    const buf = audioCtx.createBuffer(1, 1, 22050);
+    const src = audioCtx.createBufferSource();
+    src.buffer = buf;
+    src.connect(audioCtx.destination);
+    src.start(0);
+  }catch(e){console.warn('audio prime',e);}
+}
+
 function chime(){
   try{
-    audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();
-    const t=audioCtx.currentTime;
-    [880, 1320].forEach((freq,i)=>{
-      const osc=audioCtx.createOscillator();
-      const gain=audioCtx.createGain();
-      osc.connect(gain);gain.connect(audioCtx.destination);
-      osc.type='sine';osc.frequency.value=freq;
-      gain.gain.setValueAtTime(0.0001,t+i*0.18);
-      gain.gain.exponentialRampToValueAtTime(0.25,t+i*0.18+0.02);
-      gain.gain.exponentialRampToValueAtTime(0.0001,t+i*0.18+0.55);
-      osc.start(t+i*0.18);osc.stop(t+i*0.18+0.6);
+    if(!audioCtx)return;
+    /* Make sure context is running */
+    if(audioCtx.state === 'suspended') audioCtx.resume();
+    const t = audioCtx.currentTime;
+    /* Three-beep pattern: low → mid → high — clearly audible "go" cue */
+    [660, 880, 1320].forEach((freq, i) => {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      const start = t + i * 0.16;
+      gain.gain.setValueAtTime(0.0001, start);
+      gain.gain.exponentialRampToValueAtTime(0.5, start + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.4);
+      osc.start(start);
+      osc.stop(start + 0.45);
     });
-  }catch(e){console.warn('audio',e);}
+  }catch(e){console.warn('chime',e);}
 }
 
 /* ── Day picker render — uses active phase week ── */
@@ -1876,13 +1917,23 @@ function renderWorkout(){
   /* Attach set-tap handlers */
   document.querySelectorAll('.set-row').forEach(row=>{
     row.addEventListener('click',()=>{
+      /* PRIME AUDIO inside the user gesture so iOS Safari unlocks playback */
+      primeAudio();
+
       const ei=row.dataset.ei,si=row.dataset.si,rest=parseInt(row.dataset.rest);
       const p=loadProgress(viewedDOW);
       const key=`${ei}-${si}`;
       p[key]=!p[key];
       saveProgress(viewedDOW,p);
       if(p[key]){
-        startRestTimer(rest, `Next: Set ${parseInt(si)+2 > session.exercises[ei].sets ? '1 of '+session.exercises[parseInt(ei)+1]?.name?.split(' ').slice(0,2).join(' ') : (parseInt(si)+2)+' of '+session.exercises[ei].name.split(' ').slice(0,2).join(' ')}`);
+        const nextSetNum = parseInt(si)+2;
+        const exTotal = session.exercises[ei].sets;
+        const nextEx = session.exercises[parseInt(ei)+1];
+        const exShortName = session.exercises[ei].name.split(' ').slice(0,2).join(' ');
+        const nextLabel = nextSetNum > exTotal
+          ? (nextEx ? 'Next: '+nextEx.name.split(' ').slice(0,2).join(' ') : 'Last set done')
+          : `Next: Set ${nextSetNum} of ${exShortName}`;
+        startRestTimer(rest, nextLabel);
       }else{
         cancelRestTimer();
       }
@@ -1928,11 +1979,17 @@ function finishRest(){
   clearInterval(restInterval);restInterval=null;
   const t=document.getElementById('rest-timer');
   t.classList.add('done');
-  document.getElementById('rt-label').textContent='REST DONE · GO';
+  document.getElementById('rt-label').textContent='READY · TAP TO DISMISS';
   document.getElementById('rt-time').textContent='GO';
+  /* Reset the progress ring to full so it doesn't show empty */
+  document.getElementById('rt-progress').setAttribute('stroke-dashoffset', 0);
   chime();
-  if(navigator.vibrate)navigator.vibrate([200,100,200]);
-  setTimeout(()=>{cancelRestTimer();},3500);
+  if(navigator.vibrate)navigator.vibrate([200,100,200,100,200]);
+  /* Update document title as a backup notification */
+  const orig = document.title;
+  document.title = '⏰ GO — ' + orig;
+  setTimeout(()=>{document.title = orig;}, 5000);
+  /* Stay visible until user taps Skip/Dismiss — no auto-hide */
 }
 function cancelRestTimer(){
   if(restInterval){clearInterval(restInterval);restInterval=null;}
