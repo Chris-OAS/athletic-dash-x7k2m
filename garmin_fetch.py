@@ -263,6 +263,45 @@ def run():
         'level': mr.get('level', ''),
     }
 
+    print("Fetching scheduled workouts (Runna sync)...")
+    today_d = date.today()
+    today_iso = today_d.isoformat()
+    scheduled = []
+    for delta in (0, 1, 2, 3):  # this month + next 3
+        ym = today_d.replace(day=1)
+        for _ in range(delta):
+            ym = (ym.replace(day=28) + timedelta(days=4)).replace(day=1)
+        sw = safe(client.get_scheduled_workouts, ym.year, ym.month) or {}
+        for item in sw.get('calendarItems', []) if isinstance(sw, dict) else []:
+            if not isinstance(item, dict):
+                continue
+            iso = item.get('date')
+            title = item.get('title') or ''
+            if not iso or not title:
+                continue
+            if iso < today_iso:  # only upcoming
+                continue
+            scheduled.append({
+                'date': iso,
+                'title': title,
+                'sport': item.get('sportTypeKey'),
+                'workout_id': item.get('workoutId'),
+                'is_race': item.get('isRace'),
+                'item_type': item.get('itemType'),
+            })
+    # Dedupe by (date, title) keeping first
+    seen = set()
+    deduped = []
+    for w in scheduled:
+        key = (w['date'], w['title'])
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(w)
+    deduped.sort(key=lambda x: (x['date'], x['title']))
+    data['scheduled_workouts'] = deduped
+    print(f"  Found {len(deduped)} upcoming scheduled workouts/races")
+
     data['fetched_at'] = today
     data['fetched_time'] = str(__import__('datetime').datetime.now().strftime('%H:%M'))
 

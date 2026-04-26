@@ -778,6 +778,12 @@ svg{display:block;}
   color:var(--accent);margin-bottom:8px;
 }
 .session-overview .type-tag::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);}
+.runna-badge{
+  display:inline-block;font-family:var(--mono);font-size:9px;font-weight:700;
+  letter-spacing:.16em;color:#fff;
+  background:linear-gradient(90deg,#ff4757,#ff6b81);
+  padding:3px 7px;border-radius:6px;margin-left:8px;vertical-align:1px;
+}
 .session-overview .name{
   font-family:var(--display);font-weight:700;
   font-size:24px;letter-spacing:-0.03em;line-height:1.15;
@@ -1752,7 +1758,8 @@ function renderDayPicker(){
   const days=[];
   for(let i=0;i<7;i++){
     const d=new Date(monday);d.setDate(monday.getDate()+i);
-    const iso=d.toISOString().slice(0,10);
+    const y=d.getFullYear(),mm=String(d.getMonth()+1).padStart(2,'0'),dd=String(d.getDate()).padStart(2,'0');
+    const iso=`${y}-${mm}-${dd}`;
     days.push({dow:d.getDay(),date:d.getDate(),iso,isToday:isCurrentPhase && d.getDay()===TODAY_DOW});
   }
   document.getElementById('day-picker').innerHTML=days.map(d=>`
@@ -1806,10 +1813,81 @@ function refreshWorkout(){
   renderWorkout();
 }
 
+/* ── Compute the actual ISO date for the selected DOW within the active phase ── */
+function dateForDOW(){
+  const monday=new Date(activePhase.weekStart+'T00:00:00');
+  const offset=(viewedDOW===0)?6:(viewedDOW-1);
+  const d=new Date(monday);d.setDate(monday.getDate()+offset);
+  /* Format as local YYYY-MM-DD to avoid UTC timezone shift */
+  const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),dd=String(d.getDate()).padStart(2,'0');
+  return `${y}-${m}-${dd}`;
+}
+
+/* ── Parse a Runna workout title into structured data ──
+   "W14 Tue Hills - Hill Repeats (10.8km)" → {week:'W14', name:'Hill Repeats', dist:10.8, kind:'hills'}
+   "Southwark - W13 Sat Long Run - Half Marathon Progressive (21.1km)" handled too. */
+function parseRunna(title){
+  const distMatch=title.match(/\(([\d.]+)\s*km\)/i);
+  const dist=distMatch?parseFloat(distMatch[1]):null;
+  const weekMatch=title.match(/W(\d{1,2})/i);
+  const week=weekMatch?'W'+weekMatch[1]:'';
+  /* Name: take text after the last " - " before the parens */
+  const nameMatch=title.replace(/\([^)]*\)/,'').match(/-\s*([^-]+)$/);
+  const name=nameMatch?nameMatch[1].trim():title.replace(/\([^)]*\)/,'').trim();
+  let kind='easy';
+  const lower=title.toLowerCase();
+  if(/race|half marathon|marathon|10k|5k|tough mudder|ultra/i.test(lower) && /\d+k/.test(lower) && !/easy/.test(lower))kind='race';
+  else if(/hill|repeat/i.test(lower))kind='hills';
+  else if(/tempo|threshold|progressive|time tr/i.test(lower))kind='tempo';
+  else if(/long/i.test(lower))kind='long';
+  else if(/easy|recovery/i.test(lower))kind='easy';
+  return {week, name, dist, kind, raw:title};
+}
+
+/* ── Find a Runna workout matching a date ── */
+function findRunna(iso){
+  const sw=APP_DATA.scheduled_workouts||[];
+  return sw.find(w=>w.date===iso && (w.sport==='running' || w.is_race));
+}
+
+/* ── Build a Runna-driven session card for a date ── */
+function runnaSession(iso, runna){
+  const p=parseRunna(runna.title);
+  const isRace=runna.is_race===true || p.kind==='race';
+  const dist=p.dist?`${p.dist} km`:'—';
+  /* HR / pace targets driven by kind */
+  const targets={
+    easy:[['Distance',dist],['HR cap','145'],['Pace','5:00–5:20']],
+    long:[['Distance',dist],['HR cap','150'],['Pace','5:10–5:30']],
+    tempo:[['Distance',dist],['Tempo','4:30–4:40'],['Effort','hard sustained']],
+    hills:[['Distance',dist],['Effort','hill repeats'],['HR','80–90% max']],
+    race:[['Distance',dist],['Goal','race effort'],['Pacing','even/positive']],
+  };
+  const details={
+    easy:'<strong>Conversation pace.</strong> If HR drifts above 150, walk it down. Aerobic base.',
+    long:'<strong>Easy long run.</strong> Hills welcome but stay aerobic. Bring water + 1 gel for the back half.',
+    tempo:'<strong>Threshold work.</strong> Warm 1km easy + 4 strides. Work at tempo (HR ~170). Cool 1km easy.',
+    hills:'<strong>Hill repeats.</strong> Hard up, easy/jog down. Form: short stride, drive arms, land midfoot.',
+    race:'<strong>Race day.</strong> Eat carbs early. Stay smooth in the first third. Push the second half.',
+  };
+  return {type:isRace?'race':'run', name:p.name, short:p.week?`${p.week} · From Runna · ${p.raw.split('-').slice(0,2).join('-').trim()}`:'From Runna',
+    target:targets[p.kind]||targets.easy,
+    detail:details[p.kind]||details.easy,
+    runnaTitle:p.raw, isRunna:true};
+}
+
 /* ── Render workout for the selected day ── */
 function renderWorkout(){
   document.getElementById('workout-title').textContent=workoutTitle();
-  const session = activePhase.days[viewedDOW];
+  let session = activePhase.days[viewedDOW];
+
+  /* Override with Runna if a real workout exists for this date */
+  const iso = dateForDOW();
+  const runna = findRunna(iso);
+  if(runna && (!session || ['run','rest','mobility'].includes(session.type))){
+    session = runnaSession(iso, runna);
+  }
+
   const wrap=document.getElementById('workout');
   if(!session){wrap.innerHTML='<div class="glass rest-day"><div class="title">No session</div><div class="body">No workout scheduled for this day in this phase.</div></div>';return;}
 
@@ -1850,9 +1928,10 @@ function renderWorkout(){
 
   if(session.type==='run' || session.type==='mobility' || session.type==='cycling'){
     const tagMap={run:'Run',mobility:'Mobility',cycling:'Cycling'};
+    const runnaBadge = session.isRunna ? '<span class="runna-badge">RUNNA</span>' : '';
     wrap.innerHTML=`
       <div class="glass session-overview">
-        <div class="type-tag">${tagMap[session.type]}</div>
+        <div class="type-tag">${tagMap[session.type]} ${runnaBadge}</div>
         <div class="name">${session.name}</div>
         <div class="meta">${session.short}</div>
         <div class="run-prescription">
@@ -2073,6 +2152,8 @@ document.querySelectorAll('.tab').forEach(btn=>{
 
 /* ───────── BOOT ───────── */
 
+let APP_DATA = {};
+
 async function boot(){
   let d={};
   try{
@@ -2080,6 +2161,7 @@ async function boot(){
     if(res.ok)d=await res.json();
   }catch(e){console.warn(e);}
 
+  APP_DATA = d;
   renderTitleBar(d);
   renderHero(d);
   renderRecovery(d);
