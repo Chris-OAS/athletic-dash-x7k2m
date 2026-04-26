@@ -2,975 +2,1259 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Athlete Dashboard</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Almanac">
+<title>Athlete</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-:root {
-  --bg:#0c0c0e;--surface:#141416;--card:#1a1a1e;--border:#252528;--border2:#2e2e33;
-  --text:#f2f0eb;--muted:#6b6b75;--faint:#38383f;
-  --run:#f0e040;--sprint:#ff4d4d;--strength:#40e09a;--cali:#40b8f0;
-  --mobility:#b040f0;--cycle:#f08040;--rest:#3a3a42;
-  --green:#40e09a;--amber:#f0a040;--red:#ff4d4d;--blue:#40b8f0;--purple:#b040f0;
+:root{
+  --bg:#fafafa;
+  --surface:#ffffff;
+  --surface-2:#f4f4f5;
+  --border:#e5e5e5;
+  --border-2:#d4d4d4;
+  --text:#0a0a0a;
+  --text-2:#404040;
+  --muted:#737373;
+  --faint:#a3a3a3;
+  --ghost:#e5e5e5;
+
+  --recovery:#10b981;
+  --recovery-2:#059669;
+  --sleep:#6366f1;
+  --sleep-2:#4f46e5;
+  --strain:#ef4444;
+  --strain-2:#dc2626;
+  --readiness:#f59e0b;
+  --readiness-2:#d97706;
+  --neutral:#71717a;
+
+  --good:#10b981;
+  --warn:#f59e0b;
+  --bad:#ef4444;
+
+  --sans:'Geist',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --mono:'Geist Mono',ui-monospace,monospace;
+
+  --radius:18px;
+  --radius-sm:12px;
+
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 4px 12px rgba(0,0,0,.04);
 }
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0a0a0a;
+    --surface:#171717;
+    --surface-2:#1f1f1f;
+    --border:#262626;
+    --border-2:#363636;
+    --text:#fafafa;
+    --text-2:#d4d4d4;
+    --muted:#a3a3a3;
+    --faint:#737373;
+    --ghost:#262626;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.4);
+  }
+}
+
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
-body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;font-weight:300;min-height:100vh;overflow-x:hidden;}
+html{font-size:16px;-webkit-text-size-adjust:100%;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  font-weight:400;
+  font-size:15px;
+  line-height:1.5;
+  letter-spacing:-0.01em;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+::selection{background:var(--text);color:var(--bg);}
 
-/* LOADING */
-.loading{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:999;gap:16px;}
-.loading-icon{font-size:40px;animation:pulse 1.5s ease-in-out infinite;}
-.loading-text{font-size:14px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
-@keyframes pulse{0%,100%{opacity:0.4;transform:scale(0.95);}50%{opacity:1;transform:scale(1);}}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;}
+a{color:inherit;text-decoration:none;}
 
-/* BOTTOM NAV */
-.nav{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);display:flex;z-index:100;padding-bottom:env(safe-area-inset-bottom);}
-.nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 4px 8px;background:none;border:none;cursor:pointer;color:var(--muted);gap:3px;font-family:'Barlow',sans-serif;transition:color .2s;}
-.nav-btn.active{color:var(--run);}
-.nav-btn svg{width:20px;height:20px;}
-.nav-lbl{font-size:9px;letter-spacing:.08em;text-transform:uppercase;}
+/* ─────────── LAYOUT ─────────── */
 
-/* PAGES */
-.page{display:none;padding:0 0 80px;min-height:100vh;animation:fadeIn .2s ease;}
-.page.active{display:block;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:translateY(0);}}
+.shell{
+  max-width:480px;margin:0 auto;
+  padding:max(16px,env(safe-area-inset-top)) 16px calc(40px + env(safe-area-inset-bottom));
+}
+@media (min-width:520px){
+  .shell{max-width:680px;padding:24px 24px 60px;}
+}
+@media (min-width:880px){
+  .shell{max-width:1080px;padding:32px 32px 80px;}
+}
 
-/* PAGE HERO */
-.hero{padding:20px 16px 14px;border-bottom:1px solid var(--border);}
-.hero-eye{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--run);margin-bottom:4px;}
-.hero-title{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:700;letter-spacing:.02em;line-height:1;}
-.hero-sub{font-size:12px;color:var(--muted);margin-top:4px;}
+/* ─────────── HEADER ─────────── */
 
-/* STATS GRID */
-.stats4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
-.stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
-.sbox{background:var(--surface);padding:12px 8px;text-align:center;}
-.sval{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:600;line-height:1;}
-.slbl{font-size:9px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:3px;}
-.sunit{font-size:12px;color:var(--muted);}
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:4px 4px 16px;
+  font-family:var(--mono);
+  font-size:11px;
+  color:var(--muted);
+  letter-spacing:.04em;
+}
+.topbar .left{display:flex;align-items:center;gap:8px;}
+.topbar .greet{font-family:var(--sans);font-weight:500;color:var(--text);font-size:13px;letter-spacing:-0.01em;}
+.topbar .live-dot{
+  width:6px;height:6px;border-radius:50%;background:var(--good);
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:.5;transform:scale(.85);}50%{opacity:1;transform:scale(1);}}
 
-/* SECTION */
-.sec{padding:14px 16px;border-bottom:1px solid var(--border);}
-.sec:last-child{border-bottom:none;}
-.sec-lbl{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+/* ─────────── HERO CARD ─────────── */
 
-/* CARD */
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:10px;}
-.card:last-child{margin-bottom:0;}
-.card-head{padding:11px 14px 9px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
-.card-title{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:600;letter-spacing:.03em;}
-.card-body{padding:12px 14px;}
+.hero{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:24px 20px 28px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  margin-bottom:14px;
+}
+.hero-top{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:6px;
+}
+.hero-eye{
+  font-family:var(--mono);
+  font-size:10.5px;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:var(--muted);
+  font-weight:500;
+}
+.hero-pill{
+  font-family:var(--mono);font-size:10.5px;
+  padding:4px 10px;border-radius:999px;
+  background:var(--surface-2);color:var(--text-2);
+  font-weight:500;letter-spacing:.04em;
+  border:1px solid var(--border);
+}
 
-/* METRIC ROW */
-.mrow{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:.5px solid var(--border);font-size:13px;}
-.mrow:last-child{border-bottom:none;}
-.mk{color:var(--muted);}
-.mv{font-weight:500;color:var(--text);text-align:right;}
+/* RING STAGE */
+.ring-stage{
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+  margin:14px 0 18px;
+}
+.ring-stage svg{
+  width:240px;height:240px;
+  filter:drop-shadow(0 6px 22px rgba(0,0,0,.06));
+}
+.ring-center{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+}
+.ring-center .label{
+  font-family:var(--mono);font-size:10.5px;
+  text-transform:uppercase;letter-spacing:.16em;
+  color:var(--muted);font-weight:500;
+  margin-bottom:2px;
+}
+.ring-center .num{
+  font-family:var(--sans);font-weight:700;
+  font-size:64px;line-height:1;letter-spacing:-0.04em;
+  color:var(--text);
+  font-feature-settings:"tnum" 1,"ss01" 1;
+}
+.ring-center .num .denom{
+  font-size:18px;color:var(--muted);font-weight:500;letter-spacing:-0.02em;
+  margin-left:2px;vertical-align:top;
+}
+.ring-center .verdict{
+  font-size:13.5px;font-weight:600;
+  margin-top:6px;letter-spacing:-0.01em;
+}
+.ring-center .verdict.good{color:var(--good);}
+.ring-center .verdict.warn{color:var(--warn);}
+.ring-center .verdict.bad{color:var(--bad);}
 
-/* TAGS */
-.tag{font-size:9px;padding:3px 8px;border-radius:20px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;}
-.t-run{background:rgba(240,224,64,.15);color:var(--run);}
-.t-str{background:rgba(64,224,154,.15);color:var(--strength);}
-.t-spr{background:rgba(255,77,77,.15);color:var(--sprint);}
-.t-cal{background:rgba(64,184,240,.15);color:var(--cali);}
-.t-mob{background:rgba(176,64,240,.15);color:var(--mobility);}
-.t-cyc{background:rgba(240,128,64,.15);color:var(--cycle);}
+.ring-legend{
+  display:flex;justify-content:space-around;
+  padding:18px 4px 0;
+  border-top:1px solid var(--border);
+}
+.ring-legend-item{
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  flex:1;min-width:0;
+}
+.ring-legend-dot{
+  width:8px;height:8px;border-radius:50%;
+}
+.ring-legend-val{
+  font-family:var(--sans);font-weight:600;font-size:18px;
+  letter-spacing:-0.02em;line-height:1;
+  font-feature-settings:"tnum" 1;
+  margin-top:2px;
+}
+.ring-legend-lbl{
+  font-family:var(--mono);font-size:9.5px;
+  color:var(--muted);text-transform:uppercase;letter-spacing:.12em;
+  font-weight:500;
+}
 
-/* SCORE RING */
-.score-ring{display:flex;align-items:center;gap:14px;padding:12px 0;}
-.ring-wrap{position:relative;width:70px;height:70px;flex-shrink:0;}
-.ring-wrap canvas{width:70px!important;height:70px!important;}
-.ring-num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
-.ring-val{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;line-height:1;}
-.ring-lbl{font-size:9px;color:var(--muted);letter-spacing:.06em;}
-.ring-info{flex:1;}
-.ring-title{font-size:14px;font-weight:500;margin-bottom:4px;}
-.ring-sub{font-size:12px;color:var(--muted);line-height:1.5;}
+/* SESSION (midday hero variant) */
+.session{
+  padding:8px 0 4px;
+}
+.session-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--mono);font-size:10.5px;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--readiness);font-weight:600;
+  margin-bottom:10px;
+}
+.session-tag::before{
+  content:"";width:6px;height:6px;border-radius:50%;background:var(--readiness);
+}
+.session-title{
+  font-size:32px;font-weight:700;letter-spacing:-0.035em;line-height:1.05;
+  margin-bottom:6px;
+}
+.session-sub{
+  color:var(--muted);font-size:14px;line-height:1.5;
+  margin-bottom:18px;
+}
+.session-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);
+  border-radius:14px;overflow:hidden;
+  border:1px solid var(--border);
+}
+.session-cell{
+  background:var(--surface);
+  padding:14px 12px;
+}
+.session-cell .lbl{
+  font-family:var(--mono);font-size:9.5px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.12em;font-weight:500;
+  margin-bottom:6px;
+}
+.session-cell .val{
+  font-weight:600;font-size:18px;letter-spacing:-0.02em;
+  font-feature-settings:"tnum" 1;
+}
+.session-rationale{
+  margin-top:14px;padding:12px 14px;
+  background:var(--surface-2);border-radius:12px;
+  font-size:13.5px;color:var(--text-2);line-height:1.55;
+}
 
-/* ACTIVITIES */
-.act-row{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:.5px solid var(--border);}
-.act-row:last-child{border-bottom:none;}
-.act-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
-.act-info{flex:1;min-width:0;}
-.act-name{font-size:13px;font-weight:500;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.act-date{font-size:11px;color:var(--muted);}
-.act-stats{display:flex;gap:8px;margin-top:4px;flex-wrap:wrap;}
-.act-stat{font-size:11px;color:var(--muted);}
-.act-stat span{color:var(--text);font-weight:500;}
-.act-hr{text-align:right;flex-shrink:0;}
-.act-hr-val{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:600;}
-.act-hr-lbl{font-size:9px;color:var(--muted);}
+/* WEEK BARS (evening hero variant) */
+.week-card{padding:6px 0 4px;}
+.week-summary{
+  display:flex;align-items:baseline;gap:14px;
+  margin-bottom:18px;
+}
+.week-summary .km{
+  font-size:56px;font-weight:700;letter-spacing:-0.04em;line-height:1;
+  font-feature-settings:"tnum" 1;
+}
+.week-summary .km .u{font-size:18px;color:var(--muted);font-weight:500;margin-left:4px;letter-spacing:-0.02em;}
+.week-summary .meta{
+  flex:1;
+  font-family:var(--mono);font-size:10.5px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.12em;font-weight:500;line-height:1.6;
+}
+.week-summary .meta strong{color:var(--text);font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:-0.01em;text-transform:none;display:block;}
+.week-bars{
+  display:grid;grid-template-columns:repeat(7,1fr);
+  gap:6px;align-items:end;height:140px;
+  padding:0 2px;
+}
+.week-bar{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  height:100%;justify-content:flex-end;
+}
+.week-bar-fill{
+  width:100%;
+  background:linear-gradient(180deg,var(--strain),var(--strain-2));
+  border-radius:8px 8px 4px 4px;
+  min-height:3px;
+  transition:height .8s cubic-bezier(.2,.6,.2,1);
+}
+.week-bar-fill.rest{background:var(--ghost);}
+.week-bar-day{
+  font-family:var(--mono);font-size:10px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.06em;
+  font-weight:500;
+}
+.week-bar-day.today{color:var(--strain);font-weight:600;}
 
-/* SLEEP STAGES */
-.sleep-bar{display:flex;height:20px;border-radius:4px;overflow:hidden;gap:2px;margin:8px 0;}
-.sleep-seg{display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:600;transition:flex .5s ease;}
+/* ─────────── STAT GRID (Recovery quartet) ─────────── */
 
-/* PROGRESS */
-.prog{margin:6px 0 10px;}
-.prog-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:4px;}
-.prog-track{height:5px;background:var(--faint);border-radius:3px;}
-.prog-fill{height:100%;border-radius:3px;transition:width .8s ease;}
+.section-head{
+  display:flex;align-items:baseline;justify-content:space-between;
+  padding:18px 4px 12px;
+}
+.section-title{
+  font-size:13px;font-weight:600;letter-spacing:-0.01em;
+  text-transform:uppercase;font-family:var(--mono);
+  color:var(--text);letter-spacing:.06em;
+}
+.section-meta{
+  font-family:var(--mono);font-size:10.5px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.1em;font-weight:500;
+}
 
-/* ALERT */
-.alert{border-radius:10px;padding:11px 14px;font-size:13px;line-height:1.6;margin-bottom:10px;}
-.al-y{background:rgba(240,224,64,.07);border:1px solid rgba(240,224,64,.2);color:#c8bc30;}
-.al-g{background:rgba(64,224,154,.07);border:1px solid rgba(64,224,154,.2);color:#40e09a;}
-.al-r{background:rgba(255,77,77,.07);border:1px solid rgba(255,77,77,.2);color:#ff8080;}
-.al-b{background:rgba(64,184,240,.07);border:1px solid rgba(64,184,240,.2);color:#40b8f0;}
-.alert strong{font-weight:500;}
+.stat-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;
+}
+.stat{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:16px 16px 14px;
+  position:relative;
+  overflow:hidden;
+}
+.stat-head{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:14px;
+}
+.stat-icon{
+  width:28px;height:28px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+}
+.stat-icon svg{width:16px;height:16px;}
+.stat-lbl{
+  font-family:var(--mono);font-size:10px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.12em;font-weight:500;
+}
+.stat-num{
+  font-size:34px;font-weight:700;letter-spacing:-0.035em;line-height:1;
+  font-feature-settings:"tnum" 1;
+  margin-bottom:6px;
+}
+.stat-num .u{
+  font-size:14px;color:var(--muted);font-weight:500;margin-left:3px;letter-spacing:-0.01em;
+}
+.stat-trend{
+  font-family:var(--mono);font-size:10.5px;color:var(--muted);
+  letter-spacing:.04em;font-weight:500;
+  display:flex;align-items:center;gap:4px;
+}
+.stat-trend .arrow{font-family:var(--sans);font-weight:600;}
+.stat-trend.up .arrow{color:var(--good);}
+.stat-trend.dn .arrow{color:var(--bad);}
+.stat-bar{
+  height:4px;background:var(--ghost);border-radius:2px;
+  margin-top:10px;overflow:hidden;
+}
+.stat-bar-fill{height:100%;border-radius:2px;transition:width 1s cubic-bezier(.2,.6,.2,1);}
 
-/* ACCORDION */
-.acc{border-radius:12px;overflow:hidden;border:1px solid var(--border);margin-bottom:8px;}
-.acc-hd{padding:12px 14px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;background:var(--card);user-select:none;}
-.acc-title{font-size:14px;font-weight:500;}
-.acc-arr{color:var(--muted);font-size:11px;transition:transform .2s;}
-.acc-arr.open{transform:rotate(180deg);}
-.acc-body{display:none;padding:12px 14px;background:var(--surface);border-top:1px solid var(--border);}
-.acc-body.open{display:block;}
+/* ─────────── ALERT CARD ─────────── */
 
-/* EXERCISE */
-.ex-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:.5px solid var(--border);}
-.ex-row:last-child{border-bottom:none;}
-.ex-n{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:600;color:var(--faint);width:22px;flex-shrink:0;}
-.ex-info{flex:1;}
-.ex-name{font-size:14px;font-weight:500;}
-.ex-detail{font-size:11px;color:var(--muted);margin-top:2px;line-height:1.4;}
-.ex-badge{text-align:right;flex-shrink:0;}
-.ex-sets{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:600;}
-.ex-rest{font-size:10px;color:var(--muted);}
+.alert{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-left:3px solid var(--bad);
+  border-radius:var(--radius);
+  padding:18px 20px;
+  margin-top:14px;
+  box-shadow:var(--shadow);
+}
+.alert-head{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:10px;
+}
+.alert-tag{
+  font-family:var(--mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--bad);font-weight:600;
+}
+.alert-title{
+  font-size:18px;font-weight:600;letter-spacing:-0.025em;line-height:1.25;
+  margin-bottom:6px;
+}
+.alert-body{
+  font-size:13.5px;color:var(--text-2);line-height:1.55;
+}
+.alert-body strong{color:var(--text);font-weight:600;}
+.alert-action{
+  margin-top:12px;
+  padding:10px 14px;
+  background:var(--surface-2);border-radius:10px;
+  font-family:var(--mono);font-size:11.5px;
+  letter-spacing:.04em;color:var(--text-2);
+}
 
-/* RACE */
-.race{border-radius:12px;overflow:hidden;margin-bottom:10px;border-left:3px solid var(--faint);}
-.race.done{border-left-color:var(--strength);opacity:.65;}
-.race.mud{border-left-color:var(--amber);}
-.race.trail{border-left-color:var(--blue);}
-.race.cycle{border-left-color:var(--green);}
-.race.mara{border-left-color:var(--red);}
-.race-in{padding:13px 14px;background:var(--card);}
-.race-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;}
-.race-date{font-size:10px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;}
-.race-name{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:600;letter-spacing:.02em;margin-bottom:7px;}
-.race-stats-row{display:flex;gap:10px;flex-wrap:wrap;}
-.race-stat{font-size:11px;color:var(--muted);}
-.race-stat span{color:var(--text);font-weight:500;}
-.cd{font-size:12px;font-weight:600;padding:2px 9px;border-radius:20px;}
+/* ─────────── SLEEP STAGES CARD ─────────── */
 
-/* PHASE TABS */
-.ptabs{display:flex;gap:6px;margin-bottom:12px;overflow-x:auto;padding-bottom:2px;}
-.ptab{flex-shrink:0;padding:5px 14px;border-radius:20px;border:1px solid var(--border2);font-size:12px;color:var(--muted);background:none;cursor:pointer;font-family:'Barlow',sans-serif;transition:all .2s;}
-.ptab.active{background:var(--run);border-color:var(--run);color:#0c0c0e;font-weight:500;}
-.ph{display:none;}
-.ph.active{display:block;}
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:var(--shadow);
+  margin-top:14px;
+}
+.card-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  margin-bottom:14px;
+}
+.card-title{
+  font-size:14px;font-weight:600;letter-spacing:-0.01em;
+}
+.card-num{
+  font-size:24px;font-weight:700;letter-spacing:-0.03em;
+  font-feature-settings:"tnum" 1;
+}
+.card-num .denom{font-size:12px;color:var(--muted);font-weight:500;margin-left:2px;}
 
-/* RUNNA STRIP */
-.runna-day{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:.5px solid var(--border);}
-.runna-day:last-child{border-bottom:none;}
-.runna-badge{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;width:32px;flex-shrink:0;padding-top:1px;}
-.runna-info{flex:1;}
-.runna-title{font-size:13px;font-weight:500;margin-bottom:2px;}
-.runna-detail{font-size:11px;color:var(--muted);line-height:1.5;}
+.donut-stage{
+  display:flex;align-items:center;gap:18px;
+  margin-bottom:14px;
+}
+.donut-stage svg{width:120px;height:120px;flex-shrink:0;}
+.donut-legend{
+  flex:1;display:flex;flex-direction:column;gap:8px;
+  font-size:13px;
+}
+.donut-row{display:flex;align-items:center;gap:8px;}
+.donut-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0;}
+.donut-row .name{flex:1;color:var(--text-2);}
+.donut-row .time{
+  font-family:var(--mono);font-weight:500;color:var(--text);
+  font-feature-settings:"tnum" 1;
+}
 
-/* HEART BANNER */
-.hr-banner{background:rgba(255,77,77,.07);border:1px solid rgba(255,77,77,.2);border-radius:12px;padding:14px;margin-bottom:10px;display:flex;align-items:center;gap:12px;}
-.hr-num{font-family:'Barlow Condensed',sans-serif;font-size:42px;font-weight:700;color:var(--sprint);line-height:1;flex-shrink:0;}
-.hr-text{font-size:12px;color:var(--muted);line-height:1.6;}
-.hr-text strong{color:var(--text);font-weight:500;}
+/* ─────────── TRAINING LOAD CHART ─────────── */
 
-/* SLEEP CARD */
-.sleep-big{background:linear-gradient(135deg,rgba(176,64,240,.1),rgba(64,184,240,.05));border:1px solid rgba(176,64,240,.2);border-radius:12px;padding:16px;text-align:center;margin-bottom:10px;}
-.sleep-time{font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:700;letter-spacing:.02em;}
-.sleep-sub{font-size:12px;color:var(--muted);margin-top:4px;}
+.load-chart{padding:6px 0;}
+.load-row{
+  display:grid;grid-template-columns:60px 1fr 50px;
+  align-items:center;gap:12px;margin-bottom:12px;
+}
+.load-row:last-child{margin-bottom:0;}
+.load-lbl{
+  font-family:var(--mono);font-size:10.5px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.1em;font-weight:500;
+}
+.load-track{
+  height:10px;background:var(--ghost);border-radius:5px;overflow:hidden;
+  position:relative;
+}
+.load-fill{height:100%;border-radius:5px;transition:width 1s cubic-bezier(.2,.6,.2,1);}
+.load-fill.acute{background:linear-gradient(90deg,var(--strain),var(--strain-2));}
+.load-fill.chronic{background:linear-gradient(90deg,var(--neutral),var(--text-2));}
+.load-val{
+  font-family:var(--sans);font-weight:600;font-size:14px;
+  text-align:right;letter-spacing:-0.01em;
+  font-feature-settings:"tnum" 1;
+}
+.load-summary{
+  display:flex;justify-content:space-between;
+  margin-top:14px;padding-top:14px;
+  border-top:1px solid var(--border);
+  font-family:var(--mono);font-size:11px;color:var(--muted);
+}
+.load-summary strong{
+  color:var(--text);font-family:var(--sans);font-weight:600;
+  margin-left:4px;letter-spacing:-0.01em;
+}
 
-/* 2 COL */
-.two{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.mini-stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center;}
-.mini-val{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;}
-.mini-lbl{font-size:10px;color:var(--muted);margin-top:2px;}
+/* ─────────── ACTIVITY FEED ─────────── */
 
-/* SUPP GRID */
-.supp-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.supp{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;}
-.supp-icon{font-size:18px;margin-bottom:6px;}
-.supp-name{font-size:13px;font-weight:500;margin-bottom:2px;}
-.supp-dose{font-size:11px;color:var(--muted);}
+.act{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:14px 14px;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:14px;
+  align-items:center;
+  margin-bottom:8px;
+}
+.act-icon{
+  width:42px;height:42px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.act-icon svg{width:20px;height:20px;}
+.act-icon.run{background:rgba(239,68,68,.12);color:var(--strain);}
+.act-icon.str{background:rgba(99,102,241,.12);color:var(--sleep);}
+.act-icon.yoga{background:rgba(245,158,11,.12);color:var(--readiness);}
+.act-icon.cyc{background:rgba(16,185,129,.12);color:var(--recovery);}
+.act-info{min-width:0;}
+.act-name{
+  font-size:14px;font-weight:500;letter-spacing:-0.01em;
+  margin-bottom:3px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.act-stats{
+  display:flex;gap:10px;
+  font-family:var(--mono);font-size:11px;color:var(--muted);
+  font-weight:400;letter-spacing:.02em;flex-wrap:wrap;
+}
+.act-stats span strong{color:var(--text-2);font-weight:500;}
+.act-hr{
+  text-align:right;font-family:var(--sans);font-weight:600;font-size:18px;
+  letter-spacing:-0.02em;line-height:1;
+  font-feature-settings:"tnum" 1;
+}
+.act-hr.hi{color:var(--strain);}
+.act-hr.med{color:var(--readiness);}
+.act-hr.lo{color:var(--recovery);}
+.act-hr .sub{
+  display:block;
+  font-family:var(--mono);font-size:9px;font-weight:500;
+  color:var(--muted);text-transform:uppercase;letter-spacing:.12em;
+  margin-top:3px;
+}
 
-/* FETCH STATUS */
-.fetch-bar{display:flex;align-items:center;justify-content:space-between;padding:8px 16px;background:var(--surface);border-bottom:1px solid var(--border);font-size:11px;color:var(--muted);}
-.fetch-dot{width:6px;height:6px;border-radius:50%;margin-right:6px;display:inline-block;}
+/* ─────────── RACES ─────────── */
 
-/* VO2 CHART */
-.vo2-chart{height:70px;position:relative;margin:8px 0;}
+.race{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px;
+  margin-bottom:10px;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:16px;align-items:center;
+}
+.race.done{opacity:.6;}
+.race-ring-wrap{
+  position:relative;width:64px;height:64px;flex-shrink:0;
+}
+.race-ring-wrap svg{width:64px;height:64px;}
+.race-ring-num{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+}
+.race-ring-num .d{
+  font-size:22px;font-weight:700;letter-spacing:-0.03em;line-height:1;
+  font-feature-settings:"tnum" 1;
+}
+.race-ring-num .l{
+  font-family:var(--mono);font-size:8px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.1em;font-weight:500;
+  margin-top:1px;
+}
+.race-info{min-width:0;}
+.race-info .when{
+  font-family:var(--mono);font-size:10.5px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.12em;font-weight:500;
+  margin-bottom:3px;
+}
+.race-info .name{
+  font-size:15px;font-weight:600;letter-spacing:-0.015em;line-height:1.2;
+  margin-bottom:4px;
+}
+.race-info .meta{
+  font-family:var(--mono);font-size:11px;color:var(--muted);
+  letter-spacing:.02em;
+}
+.race-cd-badge{
+  text-align:right;font-family:var(--sans);font-weight:600;
+  font-size:13px;letter-spacing:-0.01em;color:var(--text-2);
+}
+.race-cd-badge.done{color:var(--good);}
 
-/* READINESS GAUGE */
-.readiness-bar{height:8px;border-radius:4px;background:var(--faint);margin:8px 0;overflow:hidden;}
-.readiness-fill{height:100%;border-radius:4px;transition:width .8s ease;}
+/* ─────────── PREDICTIONS ─────────── */
+
+.pred-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;
+}
+.pred{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:14px 16px;
+}
+.pred-d{
+  font-family:var(--mono);font-size:10.5px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.14em;font-weight:500;
+  margin-bottom:6px;
+}
+.pred-t{
+  font-size:24px;font-weight:700;letter-spacing:-0.03em;
+  font-feature-settings:"tnum" 1;line-height:1;
+}
+.pred-t .u{font-size:13px;color:var(--muted);font-weight:500;margin-left:3px;letter-spacing:-0.01em;}
+
+/* ─────────── METRICS TABLE ─────────── */
+
+.metrics{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+.metric-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 16px;
+  border-bottom:1px solid var(--border);
+  font-size:13.5px;
+}
+.metric-row:last-child{border-bottom:none;}
+.metric-k{color:var(--muted);}
+.metric-v{
+  font-family:var(--mono);font-weight:500;color:var(--text);
+  font-feature-settings:"tnum" 1;letter-spacing:-0.01em;
+}
+
+/* ─────────── FOOTER ─────────── */
+
+.footer{
+  text-align:center;padding:32px 0 8px;
+  font-family:var(--mono);font-size:10.5px;
+  color:var(--faint);letter-spacing:.06em;
+}
+
+/* ─────────── BOOT LOADER ─────────── */
+
+.boot{
+  position:fixed;inset:0;background:var(--bg);z-index:200;
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .4s ease;
+}
+.boot.hide{opacity:0;pointer-events:none;}
+.boot-spinner{
+  width:32px;height:32px;
+  border:2.5px solid var(--ghost);
+  border-top-color:var(--strain);
+  border-radius:50%;
+  animation:spin .9s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* ─────────── DESKTOP ─────────── */
+
+@media (min-width:880px){
+  body{font-size:16px;}
+  .hero{padding:32px 32px 36px;border-radius:28px;}
+  .ring-stage svg{width:300px;height:300px;}
+  .ring-center .num{font-size:80px;}
+  .stat-grid{grid-template-columns:repeat(4,1fr);gap:14px;}
+  .stat{padding:20px;}
+  .stat-num{font-size:40px;}
+  .pred-grid{grid-template-columns:repeat(4,1fr);gap:14px;}
+  .pred-t{font-size:30px;}
+  .race{padding:20px 24px;}
+  .race-ring-wrap{width:72px;height:72px;}
+  .race-ring-wrap svg{width:72px;height:72px;}
+  .week-bars{height:180px;}
+
+  /* Two-column layout for the lower half */
+  .col2{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start;}
+}
+
+/* Tap states */
+@media (hover:hover){
+  .stat:hover,.race:hover,.pred:hover{border-color:var(--border-2);}
+}
+
+/* Fade-in for cards */
+.fade{
+  opacity:0;transform:translateY(8px);
+  animation:fade .6s cubic-bezier(.2,.6,.2,1) forwards;
+}
+@keyframes fade{to{opacity:1;transform:none;}}
+.fade.d1{animation-delay:.05s;}
+.fade.d2{animation-delay:.1s;}
+.fade.d3{animation-delay:.15s;}
+.fade.d4{animation-delay:.2s;}
+.fade.d5{animation-delay:.25s;}
+.fade.d6{animation-delay:.3s;}
 </style>
 </head>
 <body>
 
-<div class="loading" id="loading">
-  <div class="loading-icon">⌚</div>
-  <div class="loading-text">Loading your data</div>
+<div class="boot" id="boot"><div class="boot-spinner"></div></div>
+
+<div class="shell">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="left">
+      <span class="live-dot"></span>
+      <span class="greet" id="greet">Good evening</span>
+    </div>
+    <div id="topdate">—</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero fade" id="hero"></div>
+
+  <!-- ZONE 2 ALERT -->
+  <div class="alert fade d1">
+    <div class="alert-head">
+      <span class="alert-tag">Standing Order · The #1 fix</span>
+    </div>
+    <div class="alert-title">Cap easy runs at 145 bpm</div>
+    <div class="alert-body">
+      Your last 10 easy sessions averaged <strong>168 bpm</strong> — Zone 4. Capping at <strong>145 bpm</strong> on recovery runs is the single biggest change available in your data. Aerobic base needs deposits, not withdrawals.
+    </div>
+    <div class="alert-action">Fenix 8 → Run → Alerts → HR → High Alert → 145</div>
+  </div>
+
+  <!-- RECOVERY QUARTET -->
+  <div class="section-head">
+    <div class="section-title">Recovery</div>
+    <div class="section-meta" id="r-time">Last sync —</div>
+  </div>
+  <div class="stat-grid" id="rec-grid"></div>
+
+  <div class="col2">
+
+    <div>
+      <!-- SLEEP STAGES -->
+      <div class="section-head">
+        <div class="section-title">Sleep architecture</div>
+        <div class="section-meta">Last night</div>
+      </div>
+      <div class="card fade d2" id="sleep-card"></div>
+    </div>
+
+    <div>
+      <!-- TRAINING LOAD -->
+      <div class="section-head">
+        <div class="section-title">Training load</div>
+        <div class="section-meta" id="load-status">—</div>
+      </div>
+      <div class="card fade d3" id="load-card"></div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY FEED -->
+  <div class="section-head">
+    <div class="section-title">Recent activity</div>
+    <div class="section-meta" id="act-count">— sessions</div>
+  </div>
+  <div id="act-feed" class="fade d4"></div>
+
+  <!-- RACES -->
+  <div class="section-head">
+    <div class="section-title">Race calendar</div>
+    <div class="section-meta">Next 12 months</div>
+  </div>
+  <div id="race-list" class="fade d5"></div>
+
+  <!-- PREDICTIONS -->
+  <div class="section-head">
+    <div class="section-title">Garmin predicts</div>
+    <div class="section-meta">From your VO₂ max</div>
+  </div>
+  <div class="pred-grid" id="pred-grid"></div>
+
+  <!-- METRICS -->
+  <div class="section-head">
+    <div class="section-title">All metrics</div>
+    <div class="section-meta">Today</div>
+  </div>
+  <div class="metrics fade d6" id="metrics"></div>
+
+  <div class="footer" id="footer">Updated —</div>
+
 </div>
-
-<!-- FETCH STATUS BAR -->
-<div class="fetch-bar" id="fetch-bar" style="display:none;">
-  <div><span class="fetch-dot" id="fetch-dot"></span><span id="fetch-status">Ready</span></div>
-  <div id="fetch-time"></div>
-</div>
-
-<!-- ══ HOME ══ -->
-<div id="home" class="page active">
-  <div class="hero">
-    <div class="hero-eye">Live Garmin Data</div>
-    <div class="hero-title" id="home-title">YOUR PLAN</div>
-    <div class="hero-sub">Male · 35 · 173cm · 76kg · London</div>
-  </div>
-  <div class="stats4">
-    <div class="sbox"><div class="sval" style="color:var(--blue)" id="s-vo2">—</div><div class="slbl">VO₂ Max</div></div>
-    <div class="sbox"><div class="sval" style="color:var(--green)" id="s-rhr">—</div><div class="slbl">RHR bpm</div></div>
-    <div class="sbox"><div class="sval" style="color:var(--run)" id="s-sleep">—</div><div class="slbl">Sleep</div></div>
-    <div class="sbox"><div class="sval" style="color:var(--purple)" id="s-hrv">—</div><div class="slbl">HRV ms</div></div>
-  </div>
-
-  <!-- TRAINING READINESS -->
-  <div class="sec">
-    <div class="sec-lbl">Today's readiness</div>
-    <div class="score-ring">
-      <div class="ring-wrap">
-        <canvas id="readiness-canvas" width="140" height="140"></canvas>
-        <div class="ring-num">
-          <div class="ring-val" id="readiness-score">—</div>
-          <div class="ring-lbl">ready</div>
-        </div>
-      </div>
-      <div class="ring-info">
-        <div class="ring-title" id="readiness-level">Loading...</div>
-        <div class="ring-sub" id="readiness-feedback">Fetching from Garmin...</div>
-      </div>
-    </div>
-    <div class="two" style="margin-top:4px;">
-      <div class="mini-stat">
-        <div class="mini-val" id="body-battery">—</div>
-        <div class="mini-lbl">Body battery</div>
-      </div>
-      <div class="mini-stat">
-        <div class="mini-val" id="stress-avg">—</div>
-        <div class="mini-lbl">Avg stress</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- #1 RULE -->
-  <div class="sec">
-    <div class="sec-lbl">The #1 rule from your data</div>
-    <div class="hr-banner">
-      <div class="hr-num">145</div>
-      <div class="hr-text"><strong>Max HR on easy runs.</strong> Your Garmin shows easy runs at 169 bpm avg — Zone 4. Set Fenix 8 alert at 145 bpm now. Biggest single change you can make.</div>
-    </div>
-    <div class="alert al-y"><strong>Set it:</strong> Fenix 8 → Run → Alerts → Heart Rate → High Alert → 145 bpm</div>
-  </div>
-
-  <!-- SLEEP SNAPSHOT -->
-  <div class="sec">
-    <div class="sec-lbl">Last night's sleep</div>
-    <div class="two" style="margin-bottom:10px;">
-      <div class="mini-stat">
-        <div class="mini-val" style="color:var(--purple);" id="sleep-dur">—</div>
-        <div class="mini-lbl">Duration</div>
-      </div>
-      <div class="mini-stat">
-        <div class="mini-val" id="sleep-score-home" style="color:var(--run);">—</div>
-        <div class="mini-lbl">Sleep score</div>
-      </div>
-    </div>
-    <div class="sleep-bar" id="sleep-bar-home"></div>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px;">
-      <div style="font-size:11px;color:var(--muted);">Deep <span id="sleep-deep" style="color:var(--blue)">—</span></div>
-      <div style="font-size:11px;color:var(--muted);">REM <span id="sleep-rem" style="color:var(--purple)">—</span></div>
-      <div style="font-size:11px;color:var(--muted);">SpO₂ <span id="spo2-val" style="color:var(--green)">—</span></div>
-    </div>
-  </div>
-
-  <!-- SLEEP PROTOCOL -->
-  <div class="sec">
-    <div class="sec-lbl">Sleep protocol</div>
-    <div class="sleep-big">
-      <div class="sleep-time">11:00 PM</div>
-      <div class="sleep-sub">Bedtime target · Your 90+ score weeks all had bed before midnight</div>
-    </div>
-  </div>
-
-  <!-- SUPPLEMENTS -->
-  <div class="sec">
-    <div class="sec-lbl">Daily supplements</div>
-    <div class="supp-grid">
-      <div class="supp"><div class="supp-icon">💊</div><div class="supp-name">Creatine</div><div class="supp-dose">5g daily · always</div></div>
-      <div class="supp"><div class="supp-icon">☀️</div><div class="supp-name">Vitamin D3+K2</div><div class="supp-dose">2000–4000 IU daily</div></div>
-      <div class="supp"><div class="supp-icon">🐟</div><div class="supp-name">Omega-3</div><div class="supp-dose">2–3g EPA/DHA daily</div></div>
-      <div class="supp"><div class="supp-icon">🌙</div><div class="supp-name">Magnesium</div><div class="supp-dose">Glycinate 300mg · bed</div></div>
-    </div>
-  </div>
-
-  <!-- NUTRITION -->
-  <div class="sec">
-    <div class="sec-lbl">Nutrition (76kg)</div>
-    <div class="card"><div class="card-body">
-      <div class="mrow"><span class="mk">Training day</span><span class="mv">2,700–2,900 kcal</span></div>
-      <div class="mrow"><span class="mk">Rest day</span><span class="mv">2,200–2,400 kcal</span></div>
-      <div class="mrow"><span class="mk">Protein</span><span class="mv">175–190g · 5 meals</span></div>
-      <div class="mrow"><span class="mk">Carbs (training)</span><span class="mv">280–350g</span></div>
-      <div class="mrow"><span class="mk">Pre-workout</span><span class="mv">Carbs + protein 90 min before</span></div>
-      <div class="mrow"><span class="mk">Post-workout</span><span class="mv">40g protein + carbs &lt;60 min</span></div>
-    </div></div>
-  </div>
-</div>
-
-<!-- ══ TRAINING ══ -->
-<div id="training" class="page">
-  <div class="hero">
-    <div class="hero-eye">12-Week Programme</div>
-    <div class="hero-title">TRAINING</div>
-    <div class="hero-sub">Starts ~26 May · Runna handles Tue/Thu/Sat running</div>
-  </div>
-
-  <!-- LIVE STATS -->
-  <div class="stats3">
-    <div class="sbox"><div class="sval" style="color:var(--run)" id="t-activities">—</div><div class="slbl">Activities 30d</div></div>
-    <div class="sbox"><div class="sval" style="color:var(--green)" id="t-intensity">—</div><div class="slbl">Vigorous min</div></div>
-    <div class="sbox"><div class="sval" style="color:var(--amber)" id="t-endurance">—</div><div class="slbl">Endurance score</div></div>
-  </div>
-
-  <!-- RECENT ACTIVITIES -->
-  <div class="sec">
-    <div class="sec-lbl">Recent activities (live from Garmin)</div>
-    <div class="card"><div class="card-body" id="activities-list">
-      <div style="color:var(--muted);font-size:13px;text-align:center;padding:20px;">Loading activities...</div>
-    </div></div>
-  </div>
-
-  <!-- RUNNA -->
-  <div class="sec">
-    <div class="sec-lbl">Your Runna schedule (Tue / Thu / Sat)</div>
-    <div class="card"><div class="card-body">
-      <div class="runna-day">
-        <div class="runna-badge" style="color:var(--run)">TUE</div>
-        <div class="runna-info">
-          <div class="runna-title">Tempo / Time Trial / Speed</div>
-          <div class="runna-detail">Structured intervals on watch · HR 170–185 bpm · as per Runna plan</div>
-        </div>
-      </div>
-      <div class="runna-day">
-        <div class="runna-badge" style="color:var(--strength)">THU</div>
-        <div class="runna-info">
-          <div class="runna-title">Easy run — Zone 2 only</div>
-          <div class="runna-detail">HR MUST stay below 145 bpm · 6:15–7:00/km · nasal breathing test</div>
-        </div>
-      </div>
-      <div class="runna-day">
-        <div class="runna-badge" style="color:var(--blue)">SAT</div>
-        <div class="runna-info">
-          <div class="runna-title">Long run</div>
-          <div class="runna-detail">Zone 2 effort · walk if HR exceeds 148 bpm</div>
-        </div>
-      </div>
-    </div></div>
-  </div>
-
-  <!-- RACE PREDICTIONS -->
-  <div class="sec">
-    <div class="sec-lbl">Garmin race predictions (live)</div>
-    <div class="card"><div class="card-body" id="race-preds">
-      <div class="mrow"><span class="mk">5km</span><span class="mv" id="pred-5k">Loading...</span></div>
-      <div class="mrow"><span class="mk">10km</span><span class="mv" id="pred-10k">—</span></div>
-      <div class="mrow"><span class="mk">Half marathon</span><span class="mv" id="pred-hm">—</span></div>
-      <div class="mrow"><span class="mk">Marathon</span><span class="mv" id="pred-m">—</span></div>
-    </div></div>
-  </div>
-
-  <!-- PHASE SELECTOR -->
-  <div class="sec">
-    <div class="sec-lbl">Programme sessions</div>
-    <div class="ptabs">
-      <button class="ptab active" onclick="showPhase('ph1',this)">Phase 1</button>
-      <button class="ptab" onclick="showPhase('ph2',this)">Phase 2</button>
-      <button class="ptab" onclick="showPhase('ph3',this)">Phase 3</button>
-    </div>
-
-    <div id="ph1" class="ph active">
-      <div class="alert al-g" style="margin-bottom:10px;"><strong>Weeks 1–4 · May 26</strong> · Foundation. Low intensity. Zone 2. Movement quality.</div>
-      <div class="acc">
-        <div class="acc-hd" onclick="toggleAcc(this)">
-          <div style="display:flex;align-items:center;gap:8px;"><span>💪</span><span class="acc-title">Monday · Strength A — Lower</span></div>
-          <span class="acc-arr">▾</span>
-        </div>
-        <div class="acc-body">
-          <div class="ex-row"><div class="ex-n">1</div><div class="ex-info"><div class="ex-name">Back Squat</div><div class="ex-detail">60% 1RM → 72% wk4 · controlled descent</div></div><div class="ex-badge"><div class="ex-sets">4×6</div><div class="ex-rest">90s rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">2</div><div class="ex-info"><div class="ex-name">Deadlift</div><div class="ex-detail">60% 1RM · brace + hinge, not squat</div></div><div class="ex-badge"><div class="ex-sets">4×5</div><div class="ex-rest">90s rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">3</div><div class="ex-info"><div class="ex-name">Box Jump</div><div class="ex-detail">Soft landing · reset fully between reps</div></div><div class="ex-badge"><div class="ex-sets">4×4</div><div class="ex-rest">2min rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">4</div><div class="ex-info"><div class="ex-name">Kettlebell Swing</div><div class="ex-detail">Hip hinge power · not a squat</div></div><div class="ex-badge"><div class="ex-sets">4×10</div><div class="ex-rest">60s rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">5</div><div class="ex-info"><div class="ex-name">Plank</div><div class="ex-detail">Hollow body · no sagging hips</div></div><div class="ex-badge"><div class="ex-sets">3×45s</div><div class="ex-rest">45s rest</div></div></div>
-        </div>
-      </div>
-      <div class="acc">
-        <div class="acc-hd" onclick="toggleAcc(this)">
-          <div style="display:flex;align-items:center;gap:8px;"><span>🤸</span><span class="acc-title">Wednesday · Upper + Calisthenics</span></div>
-          <span class="acc-arr">▾</span>
-        </div>
-        <div class="acc-body">
-          <div class="ex-row"><div class="ex-n">1</div><div class="ex-info"><div class="ex-name">Overhead Press</div><div class="ex-detail">60% 1RM · strict, no leg drive</div></div><div class="ex-badge"><div class="ex-sets">4×6</div><div class="ex-rest">90s rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">2</div><div class="ex-info"><div class="ex-name">Weighted Pull-Up</div><div class="ex-detail">BW → add 5kg from wk2</div></div><div class="ex-badge"><div class="ex-sets">4×5</div><div class="ex-rest">2min rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">3</div><div class="ex-info"><div class="ex-name">Ring / Bar Dip</div><div class="ex-detail">Full ROM · chest to bar level</div></div><div class="ex-badge"><div class="ex-sets">3×8</div><div class="ex-rest">90s rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">4</div><div class="ex-info"><div class="ex-name">L-Sit Hold</div><div class="ex-detail">Bars or parallettes · legs parallel</div></div><div class="ex-badge"><div class="ex-sets">5×15s</div><div class="ex-rest">60s rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">5</div><div class="ex-info"><div class="ex-name">HSPU Negative</div><div class="ex-detail">5-sec descent · kick up to wall</div></div><div class="ex-badge"><div class="ex-sets">3×4</div><div class="ex-rest">2min rest</div></div></div>
-        </div>
-      </div>
-      <div class="acc">
-        <div class="acc-hd" onclick="toggleAcc(this)">
-          <div style="display:flex;align-items:center;gap:8px;"><span>⚡</span><span class="acc-title">Tuesday · Sprint Session</span></div>
-          <span class="acc-arr">▾</span>
-        </div>
-        <div class="acc-body">
-          <div class="ex-row"><div class="ex-n">—</div><div class="ex-info"><div class="ex-name">Warm-up jog + drills</div><div class="ex-detail">Easy 10 min · A-skips, high knees, falling starts</div></div><div class="ex-badge"><div class="ex-sets">10min</div></div></div>
-          <div class="ex-row"><div class="ex-n">—</div><div class="ex-info"><div class="ex-name">30m Flat Sprints</div><div class="ex-detail">MAX effort every rep · walk back full recovery · no cheating</div></div><div class="ex-badge"><div class="ex-sets">6×30m</div><div class="ex-rest">full rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">—</div><div class="ex-info"><div class="ex-name">Cool-down jog</div><div class="ex-detail">Easy 10 min</div></div><div class="ex-badge"><div class="ex-sets">10min</div></div></div>
-        </div>
-      </div>
-      <div class="acc">
-        <div class="acc-hd" onclick="toggleAcc(this)">
-          <div style="display:flex;align-items:center;gap:8px;"><span>🧘</span><span class="acc-title">Friday · Mobility + Cali Skills</span></div>
-          <span class="acc-arr">▾</span>
-        </div>
-        <div class="acc-body">
-          <div class="ex-row"><div class="ex-n">1</div><div class="ex-info"><div class="ex-name">Hip Flexor Stretch</div><div class="ex-detail">Kneeling lunge · 90s each side</div></div><div class="ex-badge"><div class="ex-sets">3×90s</div></div></div>
-          <div class="ex-row"><div class="ex-n">2</div><div class="ex-info"><div class="ex-name">Thoracic Rotation</div><div class="ex-detail">Thread-the-needle · both sides</div></div><div class="ex-badge"><div class="ex-sets">3×10</div></div></div>
-          <div class="ex-row"><div class="ex-n">3</div><div class="ex-info"><div class="ex-name">Ankle Mobility</div><div class="ex-detail">Wall drill · knee over toe</div></div><div class="ex-badge"><div class="ex-sets">3×15</div></div></div>
-          <div class="ex-row"><div class="ex-n">4</div><div class="ex-info"><div class="ex-name">Skin the Cat</div><div class="ex-detail">Rings · slow and controlled</div></div><div class="ex-badge"><div class="ex-sets">3×3</div></div></div>
-          <div class="ex-row"><div class="ex-n">5</div><div class="ex-info"><div class="ex-name">Handstand Wall Practice</div><div class="ex-detail">Kick-up holds · build shoulder stability</div></div><div class="ex-badge"><div class="ex-sets">10min</div></div></div>
-        </div>
-      </div>
-    </div>
-
-    <div id="ph2" class="ph">
-      <div class="alert al-y" style="margin-bottom:10px;"><strong>Weeks 5–8 · Jun 23</strong> · Progressive overload. VO₂ intervals debut. Sprint volume doubles.</div>
-      <div class="acc"><div class="acc-hd" onclick="toggleAcc(this)"><div style="display:flex;align-items:center;gap:8px;"><span>💪</span><span class="acc-title">Monday · Strength A — Power</span></div><span class="acc-arr">▾</span></div>
-        <div class="acc-body">
-          <div class="ex-row"><div class="ex-n">1</div><div class="ex-info"><div class="ex-name">Back Squat</div><div class="ex-detail">72–80% 1RM · build weekly</div></div><div class="ex-badge"><div class="ex-sets">5×4</div><div class="ex-rest">2min rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">2</div><div class="ex-info"><div class="ex-name">Deadlift</div><div class="ex-detail">75–82% 1RM · full brace</div></div><div class="ex-badge"><div class="ex-sets">4×4</div><div class="ex-rest">2min rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">3</div><div class="ex-info"><div class="ex-name">Power Clean</div><div class="ex-detail">Light weight · bar speed is the goal</div></div><div class="ex-badge"><div class="ex-sets">4×3</div><div class="ex-rest">2min rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">4</div><div class="ex-info"><div class="ex-name">Trap Bar Carry</div><div class="ex-detail">Loaded locomotion</div></div><div class="ex-badge"><div class="ex-sets">3×30m</div><div class="ex-rest">90s rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">5</div><div class="ex-info"><div class="ex-name">Broad Jump</div><div class="ex-detail">Max distance · soft landing</div></div><div class="ex-badge"><div class="ex-sets">4×4</div><div class="ex-rest">2min rest</div></div></div>
-        </div>
-      </div>
-      <div class="acc"><div class="acc-hd" onclick="toggleAcc(this)"><div style="display:flex;align-items:center;gap:8px;"><span>⚡</span><span class="acc-title">Tuesday · VO₂ Max Intervals 🔥</span></div><span class="acc-arr">▾</span></div>
-        <div class="acc-body">
-          <div class="alert al-r" style="margin-bottom:8px;font-size:12px;"><strong>HR target: 192–203 bpm.</strong> This is the hardest running you'll do. 95% max HR per interval.</div>
-          <div class="ex-row"><div class="ex-n">—</div><div class="ex-info"><div class="ex-name">Warm-up</div><div class="ex-detail">Easy 2km + 4×100m strides</div></div><div class="ex-badge"><div class="ex-sets">15min</div></div></div>
-          <div class="ex-row"><div class="ex-n">—</div><div class="ex-info"><div class="ex-name">VO₂ Intervals</div><div class="ex-detail">95% max HR · active rest between (walk/jog)</div></div><div class="ex-badge"><div class="ex-sets">4–6×4min</div><div class="ex-rest">4min rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">—</div><div class="ex-info"><div class="ex-name">Cool-down</div><div class="ex-detail">Easy 2km</div></div><div class="ex-badge"><div class="ex-sets">10min</div></div></div>
-        </div>
-      </div>
-      <div class="acc"><div class="acc-hd" onclick="toggleAcc(this)"><div style="display:flex;align-items:center;gap:8px;"><span>🤸</span><span class="acc-title">Thursday · Upper + Advanced Cali</span></div><span class="acc-arr">▾</span></div>
-        <div class="acc-body">
-          <div class="ex-row"><div class="ex-n">1</div><div class="ex-info"><div class="ex-name">Overhead Press</div><div class="ex-detail">72–80% 1RM</div></div><div class="ex-badge"><div class="ex-sets">5×4</div><div class="ex-rest">2min rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">2</div><div class="ex-info"><div class="ex-name">Weighted Pull-Up</div><div class="ex-detail">+10–20kg</div></div><div class="ex-badge"><div class="ex-sets">5×3</div><div class="ex-rest">2min rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">3</div><div class="ex-info"><div class="ex-name">Muscle-Up Attempt</div><div class="ex-detail">Bar or rings · explosive pull to dip</div></div><div class="ex-badge"><div class="ex-sets">3×max</div><div class="ex-rest">3min rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">4</div><div class="ex-info"><div class="ex-name">HSPU Strict</div><div class="ex-detail">Nose to floor · press up controlled</div></div><div class="ex-badge"><div class="ex-sets">4×6</div><div class="ex-rest">2min rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">5</div><div class="ex-info"><div class="ex-name">Front Lever Tuck</div><div class="ex-detail">Rings · body parallel · tuck legs</div></div><div class="ex-badge"><div class="ex-sets">3×10s</div><div class="ex-rest">90s rest</div></div></div>
-        </div>
-      </div>
-      <div class="acc"><div class="acc-hd" onclick="toggleAcc(this)"><div style="display:flex;align-items:center;gap:8px;"><span>⚡</span><span class="acc-title">Friday · Hill Sprints</span></div><span class="acc-arr">▾</span></div>
-        <div class="acc-body">
-          <div class="ex-row"><div class="ex-n">—</div><div class="ex-info"><div class="ex-name">Hill Sprints</div><div class="ex-detail">8–10 sec MAX uphill · walk full recovery · every rep max</div></div><div class="ex-badge"><div class="ex-sets">8–10×8s</div><div class="ex-rest">walk back</div></div></div>
-          <div class="ex-row"><div class="ex-n">—</div><div class="ex-info"><div class="ex-name">Med Ball Rotational Throw</div><div class="ex-detail">Wall · explosive hip rotation each side</div></div><div class="ex-badge"><div class="ex-sets">4×8</div><div class="ex-rest">each side</div></div></div>
-        </div>
-      </div>
-    </div>
-
-    <div id="ph3" class="ph">
-      <div class="alert al-r" style="margin-bottom:10px;"><strong>Weeks 9–12 · Jul 21</strong> · Peak. 85–90% 1RM. Max velocity. Week 12 = full benchmark retest.</div>
-      <div class="acc"><div class="acc-hd" onclick="toggleAcc(this)"><div style="display:flex;align-items:center;gap:8px;"><span>💪</span><span class="acc-title">Monday · Max Strength</span></div><span class="acc-arr">▾</span></div>
-        <div class="acc-body">
-          <div class="ex-row"><div class="ex-n">1</div><div class="ex-info"><div class="ex-name">Back Squat</div><div class="ex-detail">85–87% 1RM · quality over qty</div></div><div class="ex-badge"><div class="ex-sets">5×2</div><div class="ex-rest">3min rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">2</div><div class="ex-info"><div class="ex-name">Deadlift</div><div class="ex-detail">87–90% 1RM · full brace</div></div><div class="ex-badge"><div class="ex-sets">4×2</div><div class="ex-rest">3min rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">3</div><div class="ex-info"><div class="ex-name">Power Clean</div><div class="ex-detail">Bar speed · explosive</div></div><div class="ex-badge"><div class="ex-sets">4×2</div><div class="ex-rest">3min rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">4</div><div class="ex-info"><div class="ex-name">Broad Jump</div><div class="ex-detail">Absolute max distance</div></div><div class="ex-badge"><div class="ex-sets">5×3</div><div class="ex-rest">2min rest</div></div></div>
-        </div>
-      </div>
-      <div class="acc"><div class="acc-hd" onclick="toggleAcc(this)"><div style="display:flex;align-items:center;gap:8px;"><span>⚡</span><span class="acc-title">Tuesday · Max Velocity Day 🔥</span></div><span class="acc-arr">▾</span></div>
-        <div class="acc-body">
-          <div class="ex-row"><div class="ex-n">—</div><div class="ex-info"><div class="ex-name">Full warm-up + sprint drills</div><div class="ex-detail">A-skips, B-skips, falling starts · 20 min</div></div><div class="ex-badge"><div class="ex-sets">20min</div></div></div>
-          <div class="ex-row"><div class="ex-n">—</div><div class="ex-info"><div class="ex-name">Fly 40m Sprints</div><div class="ex-detail">20m rolling start → 40m MAX · absolute top speed · full 3min recovery every rep</div></div><div class="ex-badge"><div class="ex-sets">8–10×40m</div><div class="ex-rest">3min rest</div></div></div>
-        </div>
-      </div>
-      <div class="acc"><div class="acc-hd" onclick="toggleAcc(this)"><div style="display:flex;align-items:center;gap:8px;"><span>🤸</span><span class="acc-title">Thursday · Peak Calisthenics</span></div><span class="acc-arr">▾</span></div>
-        <div class="acc-body">
-          <div class="ex-row"><div class="ex-n">1</div><div class="ex-info"><div class="ex-name">Weighted Pull-Up</div><div class="ex-detail">+25–28kg target</div></div><div class="ex-badge"><div class="ex-sets">5×2</div><div class="ex-rest">3min rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">2</div><div class="ex-info"><div class="ex-name">Muscle-Up</div><div class="ex-detail">Clean technique · bar or rings</div></div><div class="ex-badge"><div class="ex-sets">4×3</div><div class="ex-rest">3min rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">3</div><div class="ex-info"><div class="ex-name">HSPU Strict</div><div class="ex-detail">Nose to floor</div></div><div class="ex-badge"><div class="ex-sets">5×6</div><div class="ex-rest">2min rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">4</div><div class="ex-info"><div class="ex-name">L-Sit Hold</div><div class="ex-detail">30 sec target · build hold</div></div><div class="ex-badge"><div class="ex-sets">6×30s</div><div class="ex-rest">60s rest</div></div></div>
-          <div class="ex-row"><div class="ex-n">5</div><div class="ex-info"><div class="ex-name">Front Lever</div><div class="ex-detail">Tuck or advanced tuck · full tension</div></div><div class="ex-badge"><div class="ex-sets">4×10s</div><div class="ex-rest">90s rest</div></div></div>
-        </div>
-      </div>
-      <div class="card"><div class="card-head"><div class="card-title">Week 12 — Benchmark Retest</div></div>
-        <div class="card-body">
-          <div class="mrow"><span class="mk">Mon</span><span class="mv">5km time trial · target sub 19:30</span></div>
-          <div class="mrow"><span class="mk">Tue</span><span class="mv">1RM squat + deadlift + OHP</span></div>
-          <div class="mrow"><span class="mk">Wed</span><span class="mv">Max pull-ups · L-sit hold · muscle-ups</span></div>
-          <div class="mrow"><span class="mk">Fri</span><span class="mv">40m sprint · target sub 5.2s</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- STRENGTH TARGETS -->
-  <div class="sec">
-    <div class="sec-lbl">12-month targets</div>
-    <div class="card"><div class="card-body">
-      <div class="prog"><div class="prog-labels"><span>Back Squat</span><span>Target 114kg (1.5× BW)</span></div><div class="prog-track"><div class="prog-fill" style="width:55%;background:var(--strength)"></div></div></div>
-      <div class="prog"><div class="prog-labels"><span>Deadlift</span><span>Target 152kg (2× BW)</span></div><div class="prog-track"><div class="prog-fill" style="width:50%;background:var(--strength)"></div></div></div>
-      <div class="prog"><div class="prog-labels"><span>Overhead Press</span><span>Target 61kg</span></div><div class="prog-track"><div class="prog-fill" style="width:50%;background:var(--run)"></div></div></div>
-      <div class="prog"><div class="prog-labels"><span>Weighted Pull-Up</span><span>Target +28kg</span></div><div class="prog-track"><div class="prog-fill" style="width:40%;background:var(--blue)"></div></div></div>
-      <div class="prog"><div class="prog-labels"><span>VO₂ Max</span><span id="vo2-progress-label">Target 55–57</span></div><div class="prog-track"><div class="prog-fill" id="vo2-progress-fill" style="width:60%;background:var(--blue)"></div></div></div>
-    </div></div>
-  </div>
-</div>
-
-<!-- ══ RACES ══ -->
-<div id="races" class="page">
-  <div class="hero">
-    <div class="hero-eye">Race Calendar</div>
-    <div class="hero-title">EVENTS</div>
-    <div class="hero-sub">4 confirmed · 1 ballot · 3 disciplines</div>
-  </div>
-  <div class="sec">
-    <div class="race done">
-      <div class="race-in">
-        <div class="race-date">✓ Sat 25 Apr 2026 · Complete</div>
-        <div class="race-name">🏃 Southwark Half Marathon</div>
-        <div class="race-stats-row">
-          <div class="race-stat">Distance <span>21.1km</span></div>
-          <div class="race-stat">Pace <span>5:32/km</span></div>
-          <div class="race-stat">Avg HR <span>174 bpm</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="race mud">
-      <div class="race-in">
-        <div class="race-top">
-          <div class="race-date">Sat 9 May 2026</div>
-          <div class="cd" style="background:rgba(240,160,64,.15);color:var(--amber);" id="r-mud"></div>
-        </div>
-        <div class="race-name">🟠 Tough Mudder London West 15K</div>
-        <div class="race-stats-row" style="margin-bottom:10px;">
-          <div class="race-stat">Distance <span>15km</span></div>
-          <div class="race-stat">Elevation <span>551m</span></div>
-          <div class="race-stat">Obstacles <span>20+</span></div>
-        </div>
-        <div class="acc"><div class="acc-hd" onclick="toggleAcc(this)" style="background:rgba(240,160,64,.05);border-radius:8px;"><div class="acc-title" style="font-size:13px;">Strategy & prep</div><span class="acc-arr">▾</span></div>
-          <div class="acc-body" style="border-radius:0 0 8px 8px;">
-            <div class="mrow"><span class="mk">Approach</span><span class="mv">Enjoy it — no timing</span></div>
-            <div class="mrow"><span class="mk">Hills</span><span class="mv">Walk steep ups, run downs</span></div>
-            <div class="mrow"><span class="mk">Prep this week</span><span class="mv">Dead hangs + pull-ups daily</span></div>
-            <div class="mrow"><span class="mk">Kit</span><span class="mv">Gloves, old trainers, layers</span></div>
-            <div class="mrow"><span class="mk">Night before</span><span class="mv">Carb load · bed by 10:30pm</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="race trail">
-      <div class="race-in">
-        <div class="race-top">
-          <div class="race-date">Sat 23 May 2026</div>
-          <div class="cd" style="background:rgba(64,184,240,.15);color:var(--blue);" id="r-sev"></div>
-        </div>
-        <div class="race-name">⛰️ UKULTRA Seven Sisters Half Marathon</div>
-        <div class="race-stats-row" style="margin-bottom:10px;">
-          <div class="race-stat">Distance <span>21km</span></div>
-          <div class="race-stat">Elevation <span>580m / 1,900ft</span></div>
-          <div class="race-stat">Terrain <span>Trail / grass</span></div>
-        </div>
-        <div class="acc"><div class="acc-hd" onclick="toggleAcc(this)" style="background:rgba(64,184,240,.05);border-radius:8px;"><div class="acc-title" style="font-size:13px;">Strategy & route</div><span class="acc-arr">▾</span></div>
-          <div class="acc-body">
-            <div class="mrow"><span class="mk">Start pace</span><span class="mv">Very easy — hills punish early effort</span></div>
-            <div class="mrow"><span class="mk">Seven Sisters</span><span class="mv">Walk steep sections — protect quads</span></div>
-            <div class="mrow"><span class="mk">Target finish</span><span class="mv">Sub 2:20 solid for trail debut</span></div>
-            <div class="mrow"><span class="mk">Route</span><span class="mv">Eastbourne → Friston Forest → Beachy Head</span></div>
-            <div class="mrow"><span class="mk">Kit</span><span class="mv">Trail / grip shoes · poles optional</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="race cycle">
-      <div class="race-in">
-        <div class="race-top">
-          <div class="race-date">Sun 21 Jun 2026</div>
-          <div class="cd" style="background:rgba(64,224,154,.15);color:var(--green);" id="r-l2b"></div>
-        </div>
-        <div class="race-name">🚴 London to Brighton — BHF</div>
-        <div class="race-stats-row" style="margin-bottom:10px;">
-          <div class="race-stat">Distance <span>54 miles</span></div>
-          <div class="race-stat">Elevation <span>1,058m</span></div>
-          <div class="race-stat">Riders <span>14,000+</span></div>
-        </div>
-        <div class="acc"><div class="acc-hd" onclick="toggleAcc(this)" style="background:rgba(64,224,154,.05);border-radius:8px;"><div class="acc-title" style="font-size:13px;">Ditchling Beacon strategy</div><span class="acc-arr">▾</span></div>
-          <div class="acc-body">
-            <div class="mrow"><span class="mk">Beacon position</span><span class="mv">Mile 48 of 54 😬</span></div>
-            <div class="mrow"><span class="mk">Pacing rule</span><span class="mv">Spin easy to mile 45 — save legs for Beacon</span></div>
-            <div class="mrow"><span class="mk">Fuelling</span><span class="mv">Every 45 min · eat before mile 40</span></div>
-            <div class="mrow"><span class="mk">Essentials</span><span class="mv">Chamois cream · layers · bike check night before</span></div>
-            <div class="mrow"><span class="mk">Cycling HR</span><span class="mv">Zone 2 · 130–148 bpm</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="race mara">
-      <div class="race-in">
-        <div class="race-date">April 2027 · Ballot result: Autumn 2026</div>
-        <div class="race-name">🎽 London Marathon 2027</div>
-        <div class="race-stats-row">
-          <div class="race-stat">Distance <span>42.2km</span></div>
-          <div class="race-stat">Target <span>Sub 3:45</span></div>
-          <div class="race-stat">Status <span style="color:var(--red)">Ballot pending</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══ METRICS ══ -->
-<div id="metrics" class="page">
-  <div class="hero">
-    <div class="hero-eye">Live from Garmin</div>
-    <div class="hero-title">YOUR METRICS</div>
-    <div class="hero-sub" id="metrics-last-updated">Loading...</div>
-  </div>
-
-  <div class="stats4">
-    <div class="sbox"><div class="sval" style="color:var(--blue)" id="m-vo2">—</div><div class="slbl">VO₂ Max</div></div>
-    <div class="sbox"><div class="sval" style="color:var(--green)" id="m-rhr">—</div><div class="slbl">RHR bpm</div></div>
-    <div class="sbox"><div class="sval" style="color:var(--purple)" id="m-hrv">—</div><div class="slbl">HRV ms</div></div>
-    <div class="sbox"><div class="sval" style="color:var(--amber)" id="m-spo2">—</div><div class="slbl">SpO₂ %</div></div>
-  </div>
-
-  <div class="sec">
-    <div class="sec-lbl">Sleep (last night)</div>
-    <div class="card"><div class="card-body">
-      <div class="mrow"><span class="mk">Score</span><span class="mv" id="m-sleep-score">—</span></div>
-      <div class="mrow"><span class="mk">Duration</span><span class="mv" id="m-sleep-dur">—</span></div>
-      <div class="mrow"><span class="mk">Deep sleep</span><span class="mv" id="m-deep">—</span></div>
-      <div class="mrow"><span class="mk">REM sleep</span><span class="mv" id="m-rem">—</span></div>
-      <div class="mrow"><span class="mk">Restless moments</span><span class="mv" id="m-restless">—</span></div>
-      <div class="mrow"><span class="mk">Avg respiration</span><span class="mv" id="m-resp">—</span></div>
-    </div></div>
-  </div>
-
-  <div class="sec">
-    <div class="sec-lbl">Recovery</div>
-    <div class="card"><div class="card-body">
-      <div class="mrow"><span class="mk">HRV status</span><span class="mv" id="m-hrv-status">—</span></div>
-      <div class="mrow"><span class="mk">HRV weekly avg</span><span class="mv" id="m-hrv-avg">—</span></div>
-      <div class="mrow"><span class="mk">Training readiness</span><span class="mv" id="m-readiness">—</span></div>
-      <div class="mrow"><span class="mk">Body battery</span><span class="mv" id="m-bb">—</span></div>
-      <div class="mrow"><span class="mk">Avg stress today</span><span class="mv" id="m-stress">—</span></div>
-    </div></div>
-  </div>
-
-  <div class="sec">
-    <div class="sec-lbl">Performance</div>
-    <div class="card"><div class="card-body">
-      <div class="mrow"><span class="mk">Endurance score</span><span class="mv" id="m-endurance">—</span></div>
-      <div class="mrow"><span class="mk">Hill score</span><span class="mv" id="m-hill">—</span></div>
-      <div class="mrow"><span class="mk">Training status</span><span class="mv" id="m-tstatus">—</span></div>
-      <div class="mrow"><span class="mk">Vigorous min / week</span><span class="mv" id="m-vig">—</span></div>
-      <div class="mrow"><span class="mk">Weekly steps avg</span><span class="mv" id="m-steps">—</span></div>
-      <div class="mrow"><span class="mk">Lowest SpO₂ overnight</span><span class="mv" id="m-spo2-low">— <span style="font-size:11px;color:var(--muted);">(watch if &lt;92%)</span></span></div>
-    </div></div>
-  </div>
-
-  <div class="sec">
-    <div class="sec-lbl">HR zones (max 203 bpm)</div>
-    <div class="card"><div class="card-body">
-      <div class="mrow"><span class="mk">Zone 2 · Easy runs target</span><span class="mv" style="color:var(--strength)">135–145 bpm</span></div>
-      <div class="mrow"><span class="mk">Zone 3 · Tempo</span><span class="mv">145–163 bpm</span></div>
-      <div class="mrow"><span class="mk">Zone 4 · Your current "easy"</span><span class="mv" style="color:var(--sprint)">163–182 bpm ⚠️</span></div>
-      <div class="mrow"><span class="mk">Zone 5 · VO₂ intervals</span><span class="mv">182–203 bpm</span></div>
-    </div></div>
-  </div>
-
-  <div class="sec">
-    <div class="sec-lbl">What your data says</div>
-    <div class="alert al-r" style="margin-bottom:8px;"><strong>Easy runs in Zone 4.</strong> Avg 169 bpm on easy days. Fix = 145 bpm alert on Fenix 8 right now.</div>
-    <div class="alert al-y" style="margin-bottom:8px;"><strong>Jan 2026 was your storm.</strong> Sleep 73–77, VO₂ 46.9, zero structure. The Southwark plan rescued all three.</div>
-    <div class="alert al-g"><strong>Ceiling: 55–58 VO₂ max.</strong> Hit 52 without Zone 2 or proper strength. With both = top 10–15% globally for 35.</div>
-  </div>
-</div>
-
-<!-- BOTTOM NAV -->
-<nav class="nav">
-  <button class="nav-btn active" onclick="showPage('home',this)">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-    <span class="nav-lbl">Home</span>
-  </button>
-  <button class="nav-btn" onclick="showPage('training',this)">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4v6a6 6 0 0 0 12 0V4"/><line x1="4" y1="20" x2="20" y2="20"/></svg>
-    <span class="nav-lbl">Training</span>
-  </button>
-  <button class="nav-btn" onclick="showPage('races',this)">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-    <span class="nav-lbl">Races</span>
-  </button>
-  <button class="nav-btn" onclick="showPage('metrics',this)">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-    <span class="nav-lbl">Metrics</span>
-  </button>
-</nav>
 
 <script>
-// ── HELPERS ──────────────────────────────────────────────
-function secs2time(s) {
-  if (!s) return '—';
-  const h = Math.floor(s/3600), m = Math.floor((s%3600)/60);
-  return h > 0 ? `${h}h ${m}m` : `${m}m`;
-}
-function secs2pace(s, dist_m) {
-  if (!s || !dist_m) return '—';
-  const pace = s / (dist_m / 1000);
-  const pm = Math.floor(pace/60), ps = Math.round(pace%60);
-  return `${pm}:${ps.toString().padStart(2,'0')}/km`;
-}
-function secs2hhmmss(s) {
-  if (!s) return '—';
-  const h = Math.floor(s/3600), m = Math.floor((s%3600)/60), sec = Math.floor(s%60);
-  return h > 0 ? `${h}h ${m.toString().padStart(2,'0')}m ${sec.toString().padStart(2,'0')}s` : `${m}m ${sec.toString().padStart(2,'0')}s`;
-}
-function km(m) { return m ? (m/1000).toFixed(1)+'km' : '—'; }
-function daysTo(dateStr) {
-  const diff = Math.ceil((new Date(dateStr) - new Date()) / 86400000);
-  if (diff < 0) return 'Done ✓';
-  if (diff === 0) return 'TODAY!';
-  return diff+'d';
-}
-function actIcon(type) {
-  const icons = {running:'🏃',cycling:'🚴',swimming:'🏊',strength_training:'💪',yoga:'🧘',trail_running:'⛰️',virtual_ride:'🚴',hiking:'🥾',snowboarding:'🏂'};
-  return icons[type] || '⚡';
-}
-function actColor(type) {
-  const cols = {running:'rgba(240,224,64,.15)',cycling:'rgba(240,128,64,.15)',swimming:'rgba(64,184,240,.15)',strength_training:'rgba(64,224,154,.15)',yoga:'rgba(176,64,240,.15)',trail_running:'rgba(64,184,240,.15)'};
-  return cols[type] || 'rgba(58,58,66,.5)';
-}
-function scoreColor(score) {
-  if (score >= 80) return '#40e09a';
-  if (score >= 60) return '#f0e040';
-  if (score >= 40) return '#f08040';
-  return '#ff4d4d';
+/* ───────── DATA + LOGIC ───────── */
+
+const NOW = new Date();
+const TODAY = '2026-04-26';
+
+const RACES = [
+  {date:'2026-04-25',name:'Southwark Half Marathon',meta:'21.1 km · road',badge:'1:56:46',done:true,start:'2026-01-25'},
+  {date:'2026-05-09',name:'Tough Mudder London West',meta:'15 km · 551m · obstacles',start:'2026-04-26'},
+  {date:'2026-05-23',name:'UKULTRA Seven Sisters',meta:'21 km · 580m · trail',start:'2026-04-26'},
+  {date:'2026-06-21',name:'London to Brighton',meta:'54 mi · 1058m · cycling',start:'2026-05-01'},
+  {date:'2027-04-26',name:'London Marathon (ballot)',meta:'42.2 km · road',start:'2026-10-01',tbc:true},
+];
+
+const SVG = {
+  run:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/><path d="m5 12 3-3 4 1 2 5-3 3"/><path d="m11 19 3-2 1-3-1-2"/><path d="m17 7 2 2 1 4-2 2"/></svg>',
+  str:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.4 14.4 9.6 9.6"/><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z"/><path d="m21.5 21.5-1.4-1.4"/><path d="M3.9 3.9 2.5 2.5"/><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z"/></svg>',
+  yoga:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v5"/><path d="M5 12h14"/><path d="m9 21 3-9 3 9"/></svg>',
+  cyc:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>',
+  heart:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>',
+  moon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>',
+  bolt:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>',
+  battery:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="16" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/><line x1="6" y1="11" x2="6" y2="13"/><line x1="10" y1="11" x2="10" y2="13"/></svg>',
+  pulse:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
+  zap:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+};
+
+const TYPE = {
+  running:{cls:'run',icon:SVG.run,label:'Run'},
+  strength_training:{cls:'str',icon:SVG.str,label:'Strength'},
+  yoga:{cls:'yoga',icon:SVG.yoga,label:'Yoga'},
+  cycling:{cls:'cyc',icon:SVG.cyc,label:'Ride'},
+  walking:{cls:'cyc',icon:SVG.cyc,label:'Walk'},
+};
+
+/* Formatters */
+const pad=n=>String(n).padStart(2,'0');
+const formatTime=s=>{if(!s)return'—';const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sc=Math.floor(s%60);return h>0?`${h}:${pad(m)}:${pad(sc)}`:`${m}:${pad(sc)}`;};
+const formatDur=s=>{if(!s)return'—';const h=Math.floor(s/3600),m=Math.floor((s%3600)/60);return h>0?`${h}h ${pad(m)}m`:`${m}m`;};
+const formatPace=(s,m)=>{if(!s||!m)return'—';const p=s/(m/1000),mn=Math.floor(p/60),sc=Math.floor(p%60);return `${mn}:${pad(sc)}`;};
+const days=iso=>Math.round((new Date(iso+'T00:00:00').getTime()-new Date(TODAY+'T00:00:00').getTime())/(86400000));
+const dayOf=iso=>{const d=new Date(iso+'T00:00:00');return d.toLocaleDateString('en-GB',{weekday:'short'}).toUpperCase();};
+
+const hour=NOW.getHours();
+const greeting=hour<5?'Late night':hour<12?'Good morning':hour<18?'Good afternoon':'Good evening';
+const heroMode=hour>=5&&hour<11?'morning':hour>=11&&hour<18?'midday':'evening';
+
+/* ───────── SVG HELPERS ───────── */
+
+function ring(size,strokes){
+  /* strokes: [{r,color,pct,width,bgColor}] inner→outer */
+  const c=size/2;
+  return `<svg viewBox="0 0 ${size} ${size}">${strokes.map(s=>{
+    const circ=2*Math.PI*s.r;
+    const dash=circ*(s.pct/100);
+    return `
+      <circle cx="${c}" cy="${c}" r="${s.r}" stroke="${s.bgColor||'var(--ghost)'}" stroke-width="${s.width}" fill="none"/>
+      <circle cx="${c}" cy="${c}" r="${s.r}" stroke="${s.color}" stroke-width="${s.width}" fill="none"
+        stroke-dasharray="${dash} ${circ-dash}" stroke-dashoffset="0" stroke-linecap="round"
+        transform="rotate(-90 ${c} ${c})">
+        <animate attributeName="stroke-dasharray" from="0 ${circ}" to="${dash} ${circ-dash}" dur="1.2s" fill="freeze" calcMode="spline" keySplines="0.2 0.6 0.2 1"/>
+      </circle>`;
+  }).join('')}</svg>`;
 }
 
-// ── RING CHART ───────────────────────────────────────────
-function drawRing(canvasId, score, max, color) {
-  const c = document.getElementById(canvasId);
-  if (!c) return;
-  const ctx = c.getContext('2d');
-  const dpr = window.devicePixelRatio || 1;
-  c.width = 140 * dpr; c.height = 140 * dpr;
-  ctx.scale(dpr, dpr);
-  const cx=70, cy=70, r=28, lw=7;
-  ctx.clearRect(0,0,140,140);
-  ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2);
-  ctx.strokeStyle='#252528'; ctx.lineWidth=lw; ctx.stroke();
-  const pct = Math.min(score/max, 1);
-  ctx.beginPath(); ctx.arc(cx,cy,r,-Math.PI/2,-Math.PI/2+Math.PI*2*pct);
-  ctx.strokeStyle=color; ctx.lineWidth=lw; ctx.lineCap='round'; ctx.stroke();
+function donut(size,segments){
+  /* segments: [{value,color,label}] */
+  const c=size/2,r=size/2-10,circ=2*Math.PI*r;
+  const total=segments.reduce((s,x)=>s+x.value,0)||1;
+  let offset=0;
+  return `<svg viewBox="0 0 ${size} ${size}">
+    <circle cx="${c}" cy="${c}" r="${r}" stroke="var(--ghost)" stroke-width="14" fill="none"/>
+    ${segments.map(s=>{
+      const len=(s.value/total)*circ;
+      const arc=`<circle cx="${c}" cy="${c}" r="${r}" stroke="${s.color}" stroke-width="14" fill="none"
+        stroke-dasharray="${len} ${circ-len}" stroke-dashoffset="${-offset}"
+        transform="rotate(-90 ${c} ${c})"/>`;
+      offset+=len;
+      return arc;
+    }).join('')}
+  </svg>`;
 }
 
-// ── COUNTDOWNS ──────────────────────────────────────────
-function updateCountdowns() {
-  const races = {
-    'mudder-cd':'2026-05-09','mud2':'2026-05-09',
-    'r-mud':'2026-05-09','r-sev':'2026-05-23','r-l2b':'2026-06-21'
+/* ───────── WORKOUT REC ───────── */
+
+function recommend(d){
+  const r=d.training_readiness?.score||0;
+  const last=d.activities?.[0];
+  const lastDate=last?days(last.date):-99;
+  const lastWasRace=last && /half marathon|marathon|race/i.test(last.name||'');
+  const lastWasLong=last && (last.distance_m>18000 || last.aerobic_te>=5);
+  const recentHard=lastDate>=-1 && (lastWasRace||lastWasLong);
+  const lb=d.training_status?.load_balance;
+  const next=RACES.find(r=>!r.done && days(r.date)>=0);
+  const dRace=next?days(next.date):null;
+
+  if(recentHard||r<=4)return{
+    title:'Active recovery',
+    sub:lastWasRace?'Day after a race. Restore.':`Readiness ${r}/100 — protect the body.`,
+    cells:[['Dose','20–40 min'],['Mode','Walk · Yoga'],['Intensity','Z1']],
+    rationale:'No hard cardio. Mobilise hips, walk in daylight, eat back what the race took.'
   };
-  Object.entries(races).forEach(([id,date]) => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = daysTo(date);
-  });
+  if(r<=6||lb==='AEROBIC_LOW_SHORTAGE')return{
+    title:'Easy aerobic',
+    sub:lb==='AEROBIC_LOW_SHORTAGE'?'Aerobic base needs deposits.':'Modest readiness — bank the base.',
+    cells:[['Dose','8–10 km'],['HR cap','145 bpm'],['Pace','5:00–5:20']],
+    rationale:'Conversation pace only. If HR drifts above 150, walk it back.'
+  };
+  if(dRace!==null && dRace<=7)return{
+    title:'Sharpen, don\'t spend',
+    sub:`${dRace} days to ${next.name}.`,
+    cells:[['Dose','30–40 min'],['Set','3×3 min @ T'],['Mode','Run']],
+    rationale:'Short tune-up. Feel the gears, leave the legs sharp for race day.'
+  };
+  return{
+    title:'Quality session',
+    sub:`Readiness ${r}/100 — green light.`,
+    cells:[['Dose','60–75 min'],['Intensity','Per programme'],['Mode','Run · Strength']],
+    rationale:'Warm 15 min, work, cool 10. Refuel within the hour.'
+  };
 }
 
-// ── POPULATE FROM DATA ───────────────────────────────────
-function populate(d) {
-  if (!d) return;
+/* ───────── RENDERERS ───────── */
 
-  // Home stats
-  const vo2 = d.vo2max?.value || d.training_status?.vo2max || 0;
-  setText('s-vo2', vo2 ? vo2.toFixed(1) : '—');
-  setText('s-rhr', d.heart_rate?.resting || '—');
-  setText('s-sleep', d.sleep?.score || '—');
-  setText('s-hrv', d.hrv?.last_night || d.hrv?.weekly_avg || '—');
+function renderHero(d){
+  const r=d.training_readiness?.score||0;
+  const lvl=d.training_readiness?.level||'';
+  const sleep=d.sleep?.score||0;
+  const hrv=d.hrv?.weekly_avg||0;
 
-  // Training readiness ring
-  const tr = d.training_readiness?.score || 0;
-  const trColor = scoreColor(tr);
-  drawRing('readiness-canvas', tr, 100, trColor);
-  setText('readiness-score', tr || '—');
-  setText('readiness-level', d.training_readiness?.level || 'Loading...');
-  setText('readiness-feedback', d.training_readiness?.feedback || 'Connect Garmin to see readiness');
-  document.getElementById('readiness-score').style.color = trColor;
+  const verdictMap={POOR:{t:'Protect today',c:'bad'},LOW:{t:'Tread carefully',c:'warn'},MODERATE:{t:'Steady',c:'warn'},GOOD:{t:'Green light',c:'good'},EXCELLENT:{t:'Hammer down',c:'good'}};
+  const v=verdictMap[(lvl||'').toUpperCase()]||{t:'Steady',c:'warn'};
 
-  // Body battery & stress
-  setText('body-battery', d.body_battery?.charged || '—');
-  setText('stress-avg', d.stress?.avg || '—');
+  const hero=document.getElementById('hero');
 
-  // Sleep home
-  const sleepDur = d.sleep?.duration_s;
-  setText('sleep-dur', secs2time(sleepDur));
-  setText('sleep-score-home', d.sleep?.score || '—');
-  setText('sleep-deep', secs2time(d.sleep?.deep_s));
-  setText('sleep-rem', secs2time(d.sleep?.rem_s));
-  setText('spo2-val', d.spo2?.avg ? d.spo2.avg+'%' : (d.sleep?.avg_spo2 ? d.sleep.avg_spo2+'%' : '—'));
-
-  // Sleep bar
-  const totalSleep = (d.sleep?.deep_s||0) + (d.sleep?.rem_s||0) + (d.sleep?.light_s||0) + (d.sleep?.awake_s||0);
-  if (totalSleep > 0) {
-    const bar = document.getElementById('sleep-bar-home');
-    const stages = [
-      {s:d.sleep?.rem_s||0, color:'#b040f0', label:'REM'},
-      {s:d.sleep?.light_s||0, color:'#40b8f0', label:'Light'},
-      {s:d.sleep?.deep_s||0, color:'#185FA5', label:'Deep'},
-      {s:d.sleep?.awake_s||0, color:'#38383f', label:'Awake'},
-    ];
-    bar.innerHTML = stages.map(st => {
-      const pct = (st.s/totalSleep*100).toFixed(1);
-      return pct > 3 ? `<div class="sleep-seg" style="flex:${pct};background:${st.color};color:rgba(255,255,255,0.7);">${pct>8?st.label:''}</div>` : '';
-    }).join('');
-  }
-
-  // Training page
-  setText('t-activities', d.activities?.length || '—');
-  setText('t-intensity', d.intensity?.vigorous || '—');
-  const endScore = d.endurance_score?.overall;
-  setText('t-endurance', endScore || '—');
-
-  // Activities list
-  const actList = document.getElementById('activities-list');
-  if (d.activities && d.activities.length > 0) {
-    actList.innerHTML = d.activities.slice(0, 8).map(a => {
-      const distKm = a.distance_m > 0 ? (a.distance_m/1000).toFixed(1)+'km' : '';
-      const dur = secs2time(a.duration_s);
-      const pace = a.avg_speed > 0 && a.distance_m > 0 ? secs2pace(a.duration_s, a.distance_m) : '';
-      return `<div class="act-row">
-        <div class="act-icon" style="background:${actColor(a.type)}">${actIcon(a.type)}</div>
-        <div class="act-info">
-          <div class="act-name">${a.name || a.type}</div>
-          <div class="act-date">${a.date}</div>
-          <div class="act-stats">
-            ${distKm?`<div class="act-stat">Dist <span>${distKm}</span></div>`:''}
-            ${dur?`<div class="act-stat">Time <span>${dur}</span></div>`:''}
-            ${pace?`<div class="act-stat">Pace <span>${pace}</span></div>`:''}
-            ${a.elevation_m?`<div class="act-stat">Elev <span>${Math.round(a.elevation_m)}m</span></div>`:''}
-          </div>
+  if(heroMode==='morning'){
+    /* Concentric ring: outer = readiness, middle = sleep, inner = HRV (capped/100) */
+    const hrvPct=Math.min((hrv/80)*100,100);
+    hero.innerHTML=`
+      <div class="hero-top">
+        <div class="hero-eye">Recovery · This morning</div>
+        <div class="hero-pill">${lvl||'—'}</div>
+      </div>
+      <div class="ring-stage">
+        ${ring(240,[
+          {r:108,color:'url(#g-readiness)',pct:r,width:14},
+          {r:88,color:'url(#g-sleep)',pct:sleep,width:14},
+          {r:68,color:'url(#g-recovery)',pct:hrvPct,width:14}
+        ])}
+        <svg width="0" height="0" style="position:absolute;">
+          <defs>
+            <linearGradient id="g-readiness" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#f59e0b"/>
+            </linearGradient>
+            <linearGradient id="g-sleep" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#6366f1"/>
+            </linearGradient>
+            <linearGradient id="g-recovery" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#34d399"/><stop offset="100%" stop-color="#10b981"/>
+            </linearGradient>
+            <linearGradient id="g-strain" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#f87171"/><stop offset="100%" stop-color="#ef4444"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="ring-center">
+          <div class="label">Readiness</div>
+          <div class="num">${r}<span class="denom">/100</span></div>
+          <div class="verdict ${v.c}">${v.t}</div>
         </div>
-        <div class="act-hr">
-          <div class="act-hr-val" style="color:${a.avg_hr>170?'var(--sprint)':a.avg_hr>150?'var(--amber)':'var(--green)'}">${a.avg_hr||'—'}</div>
-          <div class="act-hr-lbl">avg HR</div>
+      </div>
+      <div class="ring-legend">
+        <div class="ring-legend-item">
+          <span class="ring-legend-dot" style="background:#f59e0b"></span>
+          <span class="ring-legend-val">${r}</span>
+          <span class="ring-legend-lbl">Ready</span>
+        </div>
+        <div class="ring-legend-item">
+          <span class="ring-legend-dot" style="background:#6366f1"></span>
+          <span class="ring-legend-val">${sleep}</span>
+          <span class="ring-legend-lbl">Sleep</span>
+        </div>
+        <div class="ring-legend-item">
+          <span class="ring-legend-dot" style="background:#10b981"></span>
+          <span class="ring-legend-val">${hrv}<span style="font-size:11px;color:var(--muted);font-weight:500">ms</span></span>
+          <span class="ring-legend-lbl">HRV</span>
         </div>
       </div>`;
-    }).join('');
   }
-
-  // Race predictions
-  function fmtPred(secs) {
-    if (!secs) return '—';
-    const h=Math.floor(secs/3600), m=Math.floor((secs%3600)/60), s=Math.floor(secs%60);
-    return `${h}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+  else if(heroMode==='midday'){
+    const rec=recommend(d);
+    /* Single big ring showing readiness as backdrop */
+    hero.innerHTML=`
+      <div class="hero-top">
+        <div class="hero-eye">Today's session</div>
+        <div class="hero-pill">${lvl||'—'} · ${r}/100</div>
+      </div>
+      <div class="session">
+        <div class="session-tag">Recommended</div>
+        <div class="session-title">${rec.title}</div>
+        <div class="session-sub">${rec.sub}</div>
+        <div class="session-grid">
+          ${rec.cells.map(([k,v])=>`<div class="session-cell"><div class="lbl">${k}</div><div class="val">${v}</div></div>`).join('')}
+        </div>
+        <div class="session-rationale">${rec.rationale}</div>
+      </div>`;
   }
-  setText('pred-5k', fmtPred(d.race_predictions?.five_k));
-  setText('pred-10k', fmtPred(d.race_predictions?.ten_k));
-  setText('pred-hm', fmtPred(d.race_predictions?.half_marathon));
-  setText('pred-m', fmtPred(d.race_predictions?.marathon));
+  else{
+    /* Evening: weekly bar chart */
+    const acts=d.activities||[];
+    const now=new Date(TODAY+'T00:00:00').getTime();
+    const dayMs=86400000;
+    const buckets=[];
+    for(let i=6;i>=0;i--){
+      const dDate=new Date(now-i*dayMs);
+      const iso=dDate.toISOString().slice(0,10);
+      const dayActs=acts.filter(a=>a.date===iso);
+      const km=dayActs.reduce((s,a)=>s+(a.distance_m||0),0)/1000;
+      buckets.push({day:dDate.toLocaleDateString('en-GB',{weekday:'short'}).slice(0,3).toUpperCase(),km,today:i===0});
+    }
+    const maxKm=Math.max(...buckets.map(b=>b.km),5);
+    const totalKm=buckets.reduce((s,b)=>s+b.km,0);
+    const sessions=acts.filter(a=>{const d=new Date(a.date+'T00:00:00').getTime();return d>=now-6*dayMs;}).length;
+    const vig=d.intensity?.vigorous||0;
 
-  // VO2 progress bar
-  if (vo2) {
-    const pct = Math.min((vo2/58)*100, 100).toFixed(0);
-    const fill = document.getElementById('vo2-progress-fill');
-    if (fill) { fill.style.width = pct+'%'; }
-    setText('vo2-progress-label', `Current: ${vo2.toFixed(1)} → Target 55–57`);
-  }
-
-  // Metrics page
-  setText('m-vo2', vo2 ? vo2.toFixed(1) : '—');
-  setText('m-rhr', d.heart_rate?.resting || '—');
-  setText('m-hrv', d.hrv?.last_night || '—');
-  setText('m-spo2', d.spo2?.avg ? d.spo2.avg+'%' : '—');
-  setText('m-sleep-score', d.sleep?.score || '—');
-  setText('m-sleep-dur', secs2time(d.sleep?.duration_s));
-  setText('m-deep', secs2time(d.sleep?.deep_s));
-  setText('m-rem', secs2time(d.sleep?.rem_s));
-  setText('m-restless', d.sleep?.restless || '—');
-  setText('m-resp', d.respiration?.avg ? d.respiration.avg+' brpm' : (d.sleep?.avg_resp ? d.sleep.avg_resp+' brpm' : '—'));
-  setText('m-hrv-status', d.hrv?.status || '—');
-  setText('m-hrv-avg', d.hrv?.weekly_avg ? d.hrv.weekly_avg+' ms' : '—');
-  setText('m-readiness', tr ? `${tr}/100 · ${d.training_readiness?.level||''}` : '—');
-  setText('m-bb', d.body_battery?.charged || '—');
-  setText('m-stress', d.stress?.avg || '—');
-  setText('m-endurance', endScore ? `${endScore} · ${d.endurance_score?.level||''}` : '—');
-  setText('m-hill', d.hill_score?.value ? `${d.hill_score.value} · ${d.hill_score.level||''}` : '—');
-  setText('m-tstatus', d.training_status?.status || '—');
-  setText('m-vig', d.intensity?.vigorous ? d.intensity.vigorous+' min' : '—');
-  setText('m-steps', d.steps?.daily_avg ? d.steps.daily_avg.toLocaleString()+'/day' : '—');
-  setText('m-spo2-low', d.spo2?.lowest ? d.spo2.lowest+'%' : '—');
-  setText('metrics-last-updated', `Last updated: ${d.fetched_at} ${d.fetched_time}`);
-
-  // Status bar
-  setText('fetch-status', `Data from ${d.fetched_at}`);
-  setText('fetch-time', `VO₂ ${vo2?.toFixed(1)||'—'} · RHR ${d.heart_rate?.resting||'—'}`);
-  document.getElementById('fetch-dot').style.background = '#40e09a';
-  document.getElementById('fetch-bar').style.display = 'flex';
-}
-
-function setText(id, val) {
-  const el = document.getElementById(id);
-  if (el) el.textContent = val;
-}
-
-// ── LOAD DATA ────────────────────────────────────────────
-async function loadData() {
-  try {
-    const res = await fetch('garmin_data.json?t=' + Date.now());
-    if (!res.ok) throw new Error('No data file');
-    const data = await res.json();
-    populate(data);
-    document.getElementById('loading').style.display = 'none';
-  } catch(e) {
-    // No data file yet — show dashboard with static content
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('fetch-bar').style.display = 'flex';
-    document.getElementById('fetch-status').textContent = 'Run garmin_fetch.py to load live data';
-    document.getElementById('fetch-dot').style.background = '#f08040';
-    document.getElementById('metrics-last-updated').textContent = 'Run garmin_fetch.py to see live data';
+    hero.innerHTML=`
+      <div class="hero-top">
+        <div class="hero-eye">This week</div>
+        <div class="hero-pill">${dayOf(TODAY)}</div>
+      </div>
+      <div class="week-card">
+        <div class="week-summary">
+          <div class="km">${totalKm.toFixed(0)}<span class="u">km</span></div>
+          <div class="meta">
+            <strong>${sessions} sessions</strong>
+            ${vig} vig min
+          </div>
+        </div>
+        <div class="week-bars">
+          ${buckets.map(b=>{
+            const h=Math.max((b.km/maxKm)*100,3);
+            return `<div class="week-bar">
+              <div class="week-bar-fill ${b.km===0?'rest':''}" style="height:${h}%"></div>
+              <div class="week-bar-day ${b.today?'today':''}">${b.day}</div>
+            </div>`;
+          }).join('')}
+        </div>
+      </div>`;
   }
 }
 
-// ── PAGE NAV ─────────────────────────────────────────────
-function showPage(id, btn) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
-  window.scrollTo(0,0);
-}
-function showPhase(id, btn) {
-  document.querySelectorAll('.ph').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
-}
-function toggleAcc(hd) {
-  hd.nextElementSibling.classList.toggle('open');
-  hd.querySelector('.acc-arr').classList.toggle('open');
+function renderRecovery(d){
+  const sleep=d.sleep?.score||0;
+  const hrv=d.hrv?.weekly_avg||0;
+  const rhr=d.heart_rate?.resting||0;
+  const bb=d.body_battery?.charged||0;
+  const rhr7=d.heart_rate?.last_7d_avg_resting||0;
+  const rhrTrend=rhr7>0?(rhr<=rhr7?'up':'dn'):'';
+
+  const stats=[
+    {icon:SVG.moon,iconCls:'sleep',color:'var(--sleep)',lbl:'Sleep',num:sleep,unit:'',pct:sleep,trendCls:sleep>=85?'up':sleep>=70?'':'dn',trend:`${formatDur(d.sleep?.duration_s)}`},
+    {icon:SVG.pulse,iconCls:'recovery',color:'var(--recovery)',lbl:'HRV',num:hrv,unit:'ms',pct:Math.min((hrv/80)*100,100),trendCls:'up',trend:`${(d.hrv?.status||'—').toLowerCase()}`},
+    {icon:SVG.heart,iconCls:'strain',color:'var(--strain)',lbl:'Resting HR',num:rhr,unit:'bpm',pct:Math.max(100-(rhr-40)*2.5,20),trendCls:rhrTrend,trend:`7d avg ${rhr7}`},
+    {icon:SVG.battery,iconCls:'readiness',color:'var(--readiness)',lbl:'Body Battery',num:bb,unit:'%',pct:bb,trendCls:'',trend:`↑${d.body_battery?.charged||0} ↓${d.body_battery?.drained||0}`},
+  ];
+
+  document.getElementById('rec-grid').innerHTML=stats.map(s=>`
+    <div class="stat">
+      <div class="stat-head">
+        <div class="stat-icon" style="background:${s.color}1f;color:${s.color};">${s.icon}</div>
+        <div class="stat-lbl">${s.lbl}</div>
+      </div>
+      <div class="stat-num">${s.num}<span class="u">${s.unit}</span></div>
+      <div class="stat-trend ${s.trendCls}"><span class="arrow">${s.trendCls==='up'?'↗':s.trendCls==='dn'?'↘':'·'}</span>${s.trend}</div>
+      <div class="stat-bar"><div class="stat-bar-fill" style="width:${s.pct}%;background:${s.color};"></div></div>
+    </div>
+  `).join('');
+
+  document.getElementById('r-time').textContent=`Last sync ${d.fetched_time||'—'}`;
 }
 
-// ── INIT ─────────────────────────────────────────────────
-updateCountdowns();
-loadData();
-setInterval(updateCountdowns, 60000);
+function renderSleepCard(d){
+  const s=d.sleep||{};
+  const total=(s.deep_s||0)+(s.rem_s||0)+(s.light_s||0)+(s.awake_s||0);
+  if(total===0){
+    document.getElementById('sleep-card').innerHTML='<div style="color:var(--muted);text-align:center;padding:20px;">No sleep data</div>';
+    return;
+  }
+  const segs=[
+    {value:s.deep_s,color:'#312e81',label:'Deep'},
+    {value:s.rem_s,color:'#6366f1',label:'REM'},
+    {value:s.light_s,color:'#a5b4fc',label:'Light'},
+    {value:s.awake_s,color:'#cbd5e1',label:'Awake'},
+  ];
+  document.getElementById('sleep-card').innerHTML=`
+    <div class="card-head">
+      <div class="card-title">${formatDur(total)} asleep</div>
+      <div class="card-num">${s.score||'—'}<span class="denom">/100</span></div>
+    </div>
+    <div class="donut-stage">
+      ${donut(120,segs)}
+      <div class="donut-legend">
+        ${segs.map(seg=>`
+          <div class="donut-row">
+            <div class="donut-dot" style="background:${seg.color}"></div>
+            <div class="name">${seg.label}</div>
+            <div class="time">${formatDur(seg.value)}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>`;
+}
+
+function renderLoad(d){
+  const ts=d.training_status||{};
+  const acute=ts.load||0;
+  const chronic=ts.load_chronic||0;
+  const max=Math.max(acute,chronic,1);
+
+  const phraseMap={
+    PRODUCTIVE_3:'Productive · in form',PRODUCTIVE_2:'Productive',PRODUCTIVE_1:'Productive',
+    PEAKING_3:'Peaking',MAINTAINING_3:'Maintaining',
+    RECOVERY:'Recovering',OVERREACHING:'Overreaching',UNPRODUCTIVE:'Unproductive',
+    DETRAINING:'Detraining'
+  };
+  const status=phraseMap[ts.status]||(ts.status||'—').toLowerCase().replace(/_/g,' ');
+  document.getElementById('load-status').textContent=status;
+
+  document.getElementById('load-card').innerHTML=`
+    <div class="card-head">
+      <div class="card-title">Acute vs chronic</div>
+      <div class="card-num">${ts.acwr||'—'}<span class="denom">ACWR</span></div>
+    </div>
+    <div class="load-chart">
+      <div class="load-row">
+        <div class="load-lbl">Acute</div>
+        <div class="load-track"><div class="load-fill acute" style="width:${(acute/max)*100}%"></div></div>
+        <div class="load-val">${acute}</div>
+      </div>
+      <div class="load-row">
+        <div class="load-lbl">Chronic</div>
+        <div class="load-track"><div class="load-fill chronic" style="width:${(chronic/max)*100}%"></div></div>
+        <div class="load-val">${chronic}</div>
+      </div>
+    </div>
+    <div class="load-summary">
+      <div>Status<strong>${status}</strong></div>
+      <div>Balance<strong>${(ts.acwr_status||'—').toLowerCase()}</strong></div>
+    </div>`;
+}
+
+function renderActs(d){
+  const acts=d.activities||[];
+  document.getElementById('act-count').textContent=`${acts.length} sessions · 30 days`;
+  document.getElementById('act-feed').innerHTML=acts.slice(0,8).map(a=>{
+    const t=TYPE[a.type]||{cls:'cyc',icon:SVG.cyc,label:'Activity'};
+    const dist=a.distance_m>0?`<span><strong>${(a.distance_m/1000).toFixed(1)}</strong>km</span>`:'';
+    const dur=`<span><strong>${formatDur(a.duration_s)}</strong></span>`;
+    const pace=a.distance_m>0?`<span><strong>${formatPace(a.duration_s,a.distance_m)}</strong>/km</span>`:'';
+    const elev=a.elevation_m>0?`<span><strong>${Math.round(a.elevation_m)}</strong>m ↑</span>`:'';
+    const hrCls=a.avg_hr>=170?'hi':a.avg_hr>=150?'med':'lo';
+    const hr=a.avg_hr?`<div class="act-hr ${hrCls}">${Math.round(a.avg_hr)}<span class="sub">avg HR</span></div>`:'<div></div>';
+    const date=new Date(a.date+'T00:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+    return `<div class="act">
+      <div class="act-icon ${t.cls}">${t.icon}</div>
+      <div class="act-info">
+        <div class="act-name">${a.name||t.label}</div>
+        <div class="act-stats">
+          <span style="color:var(--text-2)"><strong>${date}</strong></span>
+          ${dist}${dur}${pace}${elev}
+        </div>
+      </div>
+      ${hr}
+    </div>`;
+  }).join('');
+}
+
+function renderRaces(){
+  document.getElementById('race-list').innerHTML=RACES.map(r=>{
+    const d=days(r.date);
+    if(r.done){
+      return `<div class="race done">
+        <div class="race-ring-wrap">
+          ${ring(64,[{r:26,color:'var(--good)',pct:100,width:5,bgColor:'var(--ghost)'}])}
+          <div class="race-ring-num"><div class="d">✓</div><div class="l">Done</div></div>
+        </div>
+        <div class="race-info">
+          <div class="when">${new Date(r.date+'T00:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short'})}</div>
+          <div class="name">${r.name}</div>
+          <div class="meta">${r.meta}</div>
+        </div>
+        <div class="race-cd-badge done">${r.badge}</div>
+      </div>`;
+    }
+    const startDate=r.start;
+    const total=days(r.date)-days(startDate);
+    const elapsed=0-days(startDate);
+    const pct=Math.min(Math.max((elapsed/total)*100,2),100);
+    const color=d<=14?'var(--strain)':d<=30?'var(--readiness)':'var(--sleep)';
+    return `<div class="race">
+      <div class="race-ring-wrap">
+        ${ring(64,[{r:26,color:color,pct:pct,width:5,bgColor:'var(--ghost)'}])}
+        <div class="race-ring-num"><div class="d" style="color:${color}">${d}</div><div class="l">Days</div></div>
+      </div>
+      <div class="race-info">
+        <div class="when">${new Date(r.date+'T00:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:new Date(r.date+'T00:00:00').getFullYear()!==2026?'numeric':undefined})}${r.tbc?' · ballot':''}</div>
+        <div class="name">${r.name}</div>
+        <div class="meta">${r.meta}</div>
+      </div>
+      <div class="race-cd-badge">${d<7?'This week':d<31?'This month':'Upcoming'}</div>
+    </div>`;
+  }).join('');
+}
+
+function renderPredictions(d){
+  const p=d.race_predictions||{};
+  const items=[
+    ['5K',formatTime(p.five_k)],
+    ['10K',formatTime(p.ten_k)],
+    ['Half',formatTime(p.half_marathon)],
+    ['Marathon',formatTime(p.marathon)],
+  ];
+  document.getElementById('pred-grid').innerHTML=items.map(([k,v])=>`
+    <div class="pred">
+      <div class="pred-d">${k}</div>
+      <div class="pred-t">${v}</div>
+    </div>
+  `).join('');
+}
+
+function renderMetrics(d){
+  const rows=[
+    ['VO₂ max',(d.vo2max?.value||d.training_status?.vo2max||0).toFixed(1)],
+    ['Resting HR',`${d.heart_rate?.resting||'—'} bpm`],
+    ['HRV (weekly)',`${d.hrv?.weekly_avg||'—'} ms`],
+    ['Sleep score',`${d.sleep?.score||'—'}/100`],
+    ['Sleep duration',formatDur(d.sleep?.duration_s)],
+    ['Avg SpO₂',d.spo2?.avg?`${d.spo2.avg}%`:'—'],
+    ['Avg stress',`${d.stress?.avg||'—'}/100`],
+    ['Body battery',`${d.body_battery?.charged||'—'}↑ ${d.body_battery?.drained||'—'}↓`],
+    ['Daily steps',(d.steps?.daily_avg||0).toLocaleString()],
+    ['Vigorous min',`${d.intensity?.vigorous||'—'} / ${d.intensity?.goal||150}`],
+    ['Endurance score',`${d.endurance_score?.overall||'—'}`],
+    ['Training load',`${d.training_status?.load||'—'} acute · ${d.training_status?.load_chronic||'—'} chronic`],
+  ];
+  document.getElementById('metrics').innerHTML=rows.map(([k,v])=>`
+    <div class="metric-row"><div class="metric-k">${k}</div><div class="metric-v">${v}</div></div>
+  `).join('');
+}
+
+function renderTopBar(d){
+  document.getElementById('greet').textContent=`${greeting}, Chris`;
+  const today=new Date(TODAY+'T00:00:00');
+  document.getElementById('topdate').textContent=today.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'}).toUpperCase();
+  document.getElementById('footer').textContent=`Pulled from Garmin · ${d.fetched_at||'—'} ${d.fetched_time||''}`;
+}
+
+/* ───────── BOOT ───────── */
+
+async function boot(){
+  let d={};
+  try{
+    const res=await fetch('garmin_data.json?t='+Date.now());
+    if(res.ok)d=await res.json();
+  }catch(e){console.warn(e);}
+
+  renderTopBar(d);
+  renderHero(d);
+  renderRecovery(d);
+  renderSleepCard(d);
+  renderLoad(d);
+  renderActs(d);
+  renderRaces();
+  renderPredictions(d);
+  renderMetrics(d);
+
+  setTimeout(()=>{
+    document.getElementById('boot').classList.add('hide');
+    setTimeout(()=>document.getElementById('boot').remove(),500);
+  },300);
+}
+
+boot();
 </script>
 </body>
 </html>
