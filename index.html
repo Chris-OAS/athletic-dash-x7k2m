@@ -681,6 +681,67 @@ svg{display:block;}
 }
 .reset-btn:active{transform:scale(.96);}
 
+/* Phase navigator */
+.phase-nav{
+  display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;
+  padding:14px 16px;margin-bottom:12px;border-radius:20px;
+}
+.phase-arrow{
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(255,255,255,0.20);border:1px solid rgba(255,255,255,0.28);
+  color:var(--ink);font-size:20px;font-weight:600;line-height:1;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .15s,opacity .2s;
+}
+@media (prefers-color-scheme:dark){
+  .phase-arrow{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);}
+}
+.phase-arrow:active{transform:scale(.92);}
+.phase-arrow:disabled{opacity:.3;cursor:default;}
+.phase-info{text-align:center;min-width:0;}
+.phase-week{
+  font-family:var(--mono);font-size:9.5px;color:var(--ink-3);
+  text-transform:uppercase;letter-spacing:.14em;font-weight:500;margin-bottom:3px;
+}
+.phase-name{
+  font-family:var(--display);font-weight:700;font-size:17px;
+  letter-spacing:-0.02em;line-height:1.2;color:var(--ink);
+}
+.phase-sub{
+  font-family:var(--display);font-weight:400;font-size:12px;
+  color:var(--ink-3);margin-top:3px;line-height:1.3;
+}
+.phase-jump{margin-top:8px;}
+.phase-jump button{
+  font-family:var(--mono);font-size:10.5px;
+  color:var(--accent);text-transform:uppercase;letter-spacing:.1em;font-weight:600;
+  padding:5px 12px;border-radius:999px;
+  background:rgba(0,102,255,0.10);border:1px solid rgba(0,102,255,0.25);
+}
+
+/* Race day card */
+.race-day-card{
+  padding:24px 22px;margin-bottom:12px;border-radius:24px;
+  border:2px solid var(--accent);
+  box-shadow:0 0 32px var(--accent-glow);
+}
+.rdc-tag{
+  display:inline-block;
+  font-family:var(--mono);font-size:10.5px;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;color:#fff;
+  padding:4px 12px;border-radius:999px;background:var(--accent);
+  margin-bottom:14px;
+}
+.rdc-name{
+  font-family:var(--display);font-weight:800;
+  font-size:28px;letter-spacing:-0.035em;line-height:1.05;
+  margin-bottom:6px;color:var(--ink);
+}
+.rdc-meta{
+  font-family:var(--mono);font-size:11.5px;color:var(--ink-3);
+  letter-spacing:-0.005em;margin-bottom:14px;
+}
+
 .day-picker{
   display:grid;grid-template-columns:repeat(7,1fr);
   gap:6px;margin-bottom:14px;padding:0 2px;
@@ -1052,6 +1113,7 @@ body.has-rest .tabbar{transform:translateX(-50%) translateY(0);}
       <h2 id="workout-title">Today's workout</h2>
       <button id="reset-workout" class="reset-btn" title="Reset progress">Reset</button>
     </div>
+    <div class="glass phase-nav" id="phase-nav"></div>
     <div class="day-picker" id="day-picker"></div>
     <div id="workout"></div>
 
@@ -1147,73 +1209,163 @@ const RACES = [
   {date:'2027-04-26',name:'London Marathon',place:'42.2 km · ballot pending',tbc:true},
 ];
 
-/* ───────── 7-DAY PROGRAM
-   Designed for Chris: holistic athlete (run + lift + calisthenics).
-   Strength sessions are full-body, twice per week. Runs come from Runna.
-   Rest seconds are based on exercise category:
-     compound heavy = 180s · compound = 120s · accessory = 90s · core/iso = 45-60s
-   ───────── */
-const PROGRAM = {
-  /* 0=Sun, 1=Mon ... 6=Sat */
-  1:{ // Mon
-    type:'strength', name:'Strength A · Push & Squat',
-    short:'6 lifts · ~50 min',
-    exercises:[
-      {name:'Back Squat',sets:4,reps:'6',weight:'80 kg',rest:180,note:'Below parallel · brace hard'},
-      {name:'Bench Press',sets:4,reps:'6',weight:'70 kg',rest:180,note:'Pause 1s on chest'},
-      {name:'Romanian Deadlift',sets:3,reps:'8',weight:'70 kg',rest:150,note:'Hinge · soft knees'},
-      {name:'Dips',sets:3,reps:'AMRAP',weight:'BW',rest:120,note:'Add weight if >12 reps'},
-      {name:'Walking Lunges',sets:3,reps:'12 / leg',weight:'16 kg DBs',rest:90,note:'Long stride · knee tracks toe'},
-      {name:'Plank',sets:3,reps:'60s',weight:'BW',rest:45,note:'Glutes squeezed · neutral spine'},
-    ]
-  },
-  2:{ // Tue
-    type:'run', name:'Easy 8 km',
-    short:'Recovery aerobic · cap HR 145',
-    target:[['Distance','8 km'],['HR cap','145'],['Pace','5:00–5:20']],
-    detail:'<strong>Conversation pace only.</strong> If HR drifts above 150, walk it down. The bucket of aerobic base needs deposits — this is a deposit day, not a withdrawal.'
-  },
-  3:{ // Wed
-    type:'mobility', name:'Yoga & Mobility',
-    short:'30 min · full body',
-    target:[['Duration','30 min'],['Focus','Hips · spine'],['Intensity','Z1']],
-    detail:'Hips · hamstrings · thoracic · ankles. 30 minutes of slow flow. Bonus: 5 min meditation at the end. Drink 500ml water before bed.'
-  },
-  4:{ // Thu
-    type:'run', name:'Tempo 6 km',
-    short:'Lactate threshold work',
-    target:[['Distance','6 km'],['Tempo','4:30–4:40'],['Set','4 km @ T']],
-    detail:'<strong>Warm:</strong> 1 km easy + 4 strides<br><strong>Work:</strong> 4 km at tempo (around 4:30–4:40/km, HR ~170). Hard but sustainable.<br><strong>Cool:</strong> 1 km easy.'
-  },
-  5:{ // Fri
-    type:'strength', name:'Strength B · Pull & Hinge',
-    short:'6 lifts · ~50 min',
-    exercises:[
-      {name:'Deadlift',sets:4,reps:'5',weight:'100 kg',rest:180,note:'Brace · neutral spine · drive floor away'},
-      {name:'Pull-ups',sets:4,reps:'AMRAP',weight:'BW',rest:150,note:'Full hang to chin over bar'},
-      {name:'Overhead Press',sets:3,reps:'8',weight:'45 kg',rest:150,note:'Tight glutes · ribs down'},
-      {name:'Bent Row',sets:3,reps:'8',weight:'60 kg',rest:90,note:'Pull to belly · pause'},
-      {name:'Bulgarian Split Squat',sets:3,reps:'10 / leg',weight:'14 kg DBs',rest:90,note:'Front foot forward · sink low'},
-      {name:'Pallof Press',sets:3,reps:'12 / side',weight:'15 kg cable',rest:45,note:'Anti-rotation · slow tempo'},
-    ]
-  },
-  6:{ // Sat
-    type:'run', name:'Long Run 14 km',
-    short:'Aerobic capacity build',
-    target:[['Distance','14 km'],['HR cap','150'],['Pace','5:10–5:30']],
-    detail:'<strong>Easy long run.</strong> Hills welcome but stay aerobic. Bring water and a gel for the back half. Conversation possible the whole way — that\'s the rule.'
-  },
-  0:{ // Sun
-    type:'rest', name:'Rest Day',
-    short:'Active recovery only',
-    tasks:[
-      'Walk 30 min outdoors',
-      '10 min mobility (hips, ankles, thoracic)',
-      'Hydrate · 3 L water minimum',
-      'Bed before 23:00',
-    ]
-  },
+/* ───────── 8-WEEK RACE-AWARE PROGRAM
+   Phased periodisation: each block matches a race or build phase.
+   Auto-shifts based on date. Day 0=Sun, 1=Mon ... 6=Sat.
+
+   Reusable session templates ───────────────────────────────────── */
+
+/* Strength templates */
+const STR = {
+  A_FULL:{type:'strength',name:'Strength A · Push & Squat',short:'6 lifts · ~50 min',exercises:[
+    {name:'Back Squat',sets:4,reps:'6',weight:'80 kg',rest:180,note:'Below parallel · brace hard'},
+    {name:'Bench Press',sets:4,reps:'6',weight:'70 kg',rest:180,note:'Pause 1s on chest'},
+    {name:'Romanian Deadlift',sets:3,reps:'8',weight:'70 kg',rest:150,note:'Hinge · soft knees'},
+    {name:'Dips',sets:3,reps:'AMRAP',weight:'BW',rest:120,note:'Add weight if >12 reps'},
+    {name:'Walking Lunges',sets:3,reps:'12 / leg',weight:'16 kg DBs',rest:90,note:'Long stride · knee tracks toe'},
+    {name:'Plank',sets:3,reps:'60s',weight:'BW',rest:45,note:'Glutes squeezed · neutral spine'},
+  ]},
+  A_LIGHT:{type:'strength',name:'Strength A · Light',short:'5 lifts · ~35 min · 60% intensity',exercises:[
+    {name:'Goblet Squat',sets:3,reps:'10',weight:'24 kg',rest:90,note:'Recovery volume · clean reps'},
+    {name:'Push-ups',sets:3,reps:'12',weight:'BW',rest:60,note:'Slow tempo'},
+    {name:'Romanian Deadlift',sets:3,reps:'8',weight:'50 kg',rest:90,note:'Light · grease the groove'},
+    {name:'Bird Dog',sets:3,reps:'10 / side',weight:'BW',rest:45,note:'Slow · controlled'},
+    {name:'Dead Hang',sets:3,reps:'30s',weight:'BW',rest:60,note:'Grip endurance'},
+  ]},
+  B_FULL:{type:'strength',name:'Strength B · Pull & Hinge',short:'6 lifts · ~50 min',exercises:[
+    {name:'Deadlift',sets:4,reps:'5',weight:'100 kg',rest:180,note:'Brace · neutral spine · drive floor away'},
+    {name:'Pull-ups',sets:4,reps:'AMRAP',weight:'BW',rest:150,note:'Full hang to chin over bar'},
+    {name:'Overhead Press',sets:3,reps:'8',weight:'45 kg',rest:150,note:'Tight glutes · ribs down'},
+    {name:'Bent Row',sets:3,reps:'8',weight:'60 kg',rest:90,note:'Pull to belly · pause'},
+    {name:'Bulgarian Split Squat',sets:3,reps:'10 / leg',weight:'14 kg DBs',rest:90,note:'Front foot forward · sink low'},
+    {name:'Pallof Press',sets:3,reps:'12 / side',weight:'15 kg cable',rest:45,note:'Anti-rotation · slow tempo'},
+  ]},
+  B_OBSTACLE:{type:'strength',name:'Strength B · Obstacle Prep',short:'7 movements · Tough Mudder specific',exercises:[
+    {name:'Pull-ups',sets:4,reps:'AMRAP',weight:'BW',rest:150,note:'Monkey bars · walls · grip endurance'},
+    {name:'Dead Hang',sets:3,reps:'45s',weight:'BW',rest:90,note:'Pure grip endurance'},
+    {name:'Farmer\'s Carry',sets:4,reps:'40m',weight:'24 kg / hand',rest:120,note:'Heavy carry · sandbag/log prep'},
+    {name:'Burpees',sets:3,reps:'10',weight:'BW',rest:90,note:'Obstacle-to-running transition'},
+    {name:'Dips',sets:3,reps:'10',weight:'BW',rest:90,note:'Push under fatigue'},
+    {name:'Bear Crawl',sets:3,reps:'20m',weight:'BW',rest:60,note:'Under barbed wire crawl prep'},
+    {name:'Hanging Leg Raise',sets:3,reps:'10',weight:'BW',rest:60,note:'Core grip combo'},
+  ]},
 };
+
+/* Run templates */
+const RUN = {
+  EASY:dist=>({type:'run',name:`Easy ${dist} km`,short:`Aerobic Z2 · cap HR 145`,
+    target:[['Distance',`${dist} km`],['HR cap','145'],['Pace','5:00–5:20']],
+    detail:'<strong>Conversation pace only.</strong> If HR drifts above 150, walk it down. Aerobic base needs deposits.'}),
+  EASY_HILLS:dist=>({type:'run',name:`Hilly easy ${dist} km`,short:`Trail prep · cap HR 150`,
+    target:[['Distance',`${dist} km`],['HR cap','150'],['Elevation','100m+']],
+    detail:'<strong>Find hills.</strong> Trail or grass if possible. Walk the steep ups, run the flats. Seven Sisters specificity.'}),
+  TEMPO:({type:'run',name:'Tempo 6 km',short:'Lactate threshold work',
+    target:[['Distance','6 km'],['Tempo','4:30–4:40'],['Set','4 km @ T']],
+    detail:'<strong>Warm:</strong> 1 km easy + 4 strides.<br><strong>Work:</strong> 4 km at tempo (~4:30–4:40/km, HR ~170).<br><strong>Cool:</strong> 1 km easy.'}),
+  SHORT_TEMPO:({type:'run',name:'Sharpener 4 km',short:'Race-week tune-up',
+    target:[['Distance','4 km'],['Set','3×1km @ T'],['Recovery','90s jog']],
+    detail:'<strong>Warm:</strong> 5 min easy.<br><strong>Work:</strong> 3 × 1 km at tempo, 90s jog between.<br><strong>Cool:</strong> 5 min easy. Feel the gears, leave them sharp.'}),
+  LONG:(dist,hills)=>({type:'run',name:`Long Run ${dist} km`,short:hills?'Aerobic build · hilly':'Aerobic build · flat',
+    target:[['Distance',`${dist} km`],['HR cap','150'],['Pace','5:10–5:30']],
+    detail:hills?'<strong>Hills welcome.</strong> Stay aerobic on climbs (walk if needed). Bring water + 1 gel for the back half.':'<strong>Easy long run.</strong> Bring water and a gel for the back half. Conversation possible the whole way.'}),
+  SHAKEOUT:({type:'run',name:'Shakeout 3 km',short:'Race-eve loosener',
+    target:[['Distance','3 km'],['Pace','easy'],['Effort','very low']],
+    detail:'Just turn the legs over. 4 strides at the end. In bed early.'}),
+};
+
+/* Cycling templates */
+const BIKE = {
+  Z2:(min,note)=>({type:'cycling',name:`Cycling ${min} min`,short:'L2B base · steady aerobic',
+    target:[['Duration',`${min} min`],['HR','130–145'],['Cadence','85–95']],
+    detail:`<strong>Steady Z2.</strong> Stay seated on hills, spin smoothly, don't push wattage. ${note||''}`.trim()}),
+  LONG:(hours,km,climb)=>({type:'cycling',name:`Long ride ${hours}h`,short:`L2B build · ~${km} km`,
+    target:[['Duration',`${hours}h`],['Distance',`~${km} km`],['Climbing',`${climb}m`]],
+    detail:'<strong>Long aerobic ride.</strong> Eat 60–80g carbs/hour from hour 1. Drink 500ml/hour. Practice your race nutrition.'}),
+  HILLS:({type:'cycling',name:'Hill repeats 90 min',short:'L2B climbing prep',
+    target:[['Duration','90 min'],['Sets','5 × 4 min @ T'],['Recovery','spin down']],
+    detail:'<strong>Warm:</strong> 20 min easy.<br><strong>Work:</strong> 5 × 4 min seated climb @ tempo HR (160–170), spin down between.<br><strong>Cool:</strong> 15 min easy.'}),
+  SPIN:({type:'cycling',name:'Easy spin 30 min',short:'Recovery · keep legs fresh',
+    target:[['Duration','30 min'],['HR','<130'],['Cadence','90+']],
+    detail:'Just turn the pedals. Very easy. Z1 only.'}),
+};
+
+/* Mobility / yoga */
+const MOB = {
+  YOGA30:({type:'mobility',name:'Yoga & Mobility',short:'30 min · full body',
+    target:[['Duration','30 min'],['Focus','Hips · spine'],['Intensity','Z1']],
+    detail:'Hips · hamstrings · thoracic · ankles. 30 minutes of slow flow. Bonus: 5 min meditation at the end. Drink 500ml water before bed.'}),
+  YOGA45:({type:'mobility',name:'Yoga 45 min',short:'Race recovery flow',
+    target:[['Duration','45 min'],['Focus','Hips · IT band · calves'],['Intensity','Z1']],
+    detail:'Restorative session. Long holds (60s+). Drink electrolytes. Massage legs after.'}),
+  PRERACE:({type:'mobility',name:'Pre-race mobility',short:'15 min · loosen',
+    target:[['Duration','15 min'],['Focus','Hips · ankles'],['Tomorrow','Race day']],
+    detail:'Light. Just loosen the hips, ankles, calves. Foam roll. No stretching cold. Carb-load dinner. Bed by 22:00.'}),
+};
+
+/* Rest & race */
+const REST_BASIC = {type:'rest',name:'Rest Day',short:'Active recovery only',
+  tasks:['Walk 30 min outdoors','10 min mobility (hips, ankles)','Hydrate · 3 L minimum','Bed before 23:00']};
+const RECOVERY_WALK = {type:'rest',name:'Recovery Walk',short:'Post-race restoration',
+  tasks:['Walk 45 min easy outdoors','15 min gentle stretching','Hydrate · 4 L + electrolytes','Eat back what the race took','Massage / foam roll calves']};
+
+const RACE = (name,dist,date,goal,detail)=>({type:'race',name,short:dist,date,target:[['Race',name.split(' ')[0]],['Distance',dist],['Goal',goal]],detail});
+
+/* ───────── 8-WEEK PHASE PLAN ───────── */
+const PHASES = [
+  {weekStart:'2026-04-20',name:'Half Marathon Week',sub:'Tapered for Southwark',idx:0,total:8,days:{
+    1:STR.A_LIGHT, 2:RUN.EASY(5), 3:MOB.YOGA30, 4:RUN.SHORT_TEMPO, 5:MOB.PRERACE,
+    6:RACE('Southwark Half Marathon','21.1 km','2026-04-25','Sub 2:00','Race day. Trust the taper. Even pacing — first 5km feels easy. Done — 1:56:46 ✓'),
+    0:RECOVERY_WALK,
+  }},
+  {weekStart:'2026-04-27',name:'Recovery + Maintain',sub:'Coming off Southwark Half · 13d to Tough Mudder',idx:1,total:8,days:{
+    1:STR.A_LIGHT, 2:RUN.EASY(6), 3:BIKE.Z2(60,'First L2B base ride.'),
+    4:RUN.EASY(5), 5:STR.B_OBSTACLE, 6:RUN.LONG(12,false), 0:MOB.YOGA30,
+  }},
+  {weekStart:'2026-05-04',name:'Tough Mudder Week',sub:'Taper · race Saturday',idx:2,total:8,days:{
+    1:MOB.YOGA30, 2:RUN.EASY(5), 3:BIKE.SPIN, 4:RUN.SHORT_TEMPO, 5:MOB.PRERACE,
+    6:RACE('Tough Mudder London West','15 km · 551m · 20 obstacles','2026-05-09','Finish strong','Eat carbs early. Salt the porridge. Pull-up grip = monkey bars. Submerge cold = breath out, not in.'),
+    0:RECOVERY_WALK,
+  }},
+  {weekStart:'2026-05-11',name:'Rebuild + Trail Prep',sub:'Seven Sisters in 12d · add hills',idx:3,total:8,days:{
+    1:MOB.YOGA45, 2:RUN.EASY(7), 3:BIKE.Z2(75,'Steady, no intensity.'),
+    4:RUN.EASY(8), 5:STR.A_LIGHT, 6:RUN.LONG(15,true), 0:REST_BASIC,
+  }},
+  {weekStart:'2026-05-18',name:'Seven Sisters Week',sub:'Taper · trail race Saturday',idx:4,total:8,days:{
+    1:STR.A_LIGHT, 2:RUN.EASY_HILLS(5), 3:MOB.YOGA30, 4:RUN.SHORT_TEMPO, 5:MOB.PRERACE,
+    6:RACE('UKULTRA Seven Sisters','21 km · 580m · trail','2026-05-23','Finish strong on trail','Walk the steep ups. Push the descents (carefully). Carry 500ml + 2 gels. Don\'t race the first hill.'),
+    0:RECOVERY_WALK,
+  }},
+  {weekStart:'2026-05-25',name:'L2B Build — Phase 1',sub:'Cycling becomes primary · 27d to L2B',idx:5,total:8,days:{
+    1:STR.A_FULL, 2:RUN.EASY(6), 3:BIKE.Z2(90,'Building bike base.'),
+    4:RUN.TEMPO, 5:STR.B_FULL, 6:BIKE.LONG(2,60,400), 0:RUN.EASY(8),
+  }},
+  {weekStart:'2026-06-01',name:'L2B Build — Phase 2',sub:'Long rides + intensity · 20d to L2B',idx:6,total:8,days:{
+    1:STR.A_LIGHT, 2:RUN.EASY(6), 3:BIKE.HILLS, 4:RUN.EASY(5),
+    5:STR.B_FULL, 6:BIKE.LONG(3,80,700), 0:MOB.YOGA30,
+  }},
+  {weekStart:'2026-06-08',name:'L2B Peak',sub:'Largest ride of the block · 13d to L2B',idx:7,total:8,days:{
+    1:STR.A_LIGHT, 2:RUN.EASY(5), 3:BIKE.HILLS, 4:MOB.YOGA30,
+    5:STR.B_OBSTACLE, 6:BIKE.LONG(4,100,1000), 0:RUN.EASY(6),
+  }},
+  {weekStart:'2026-06-15',name:'L2B Race Week',sub:'Final taper · race Sunday',idx:8,total:8,days:{
+    1:BIKE.SPIN, 2:MOB.YOGA30, 3:BIKE.SPIN, 4:RUN.EASY(5), 5:MOB.PRERACE,
+    6:BIKE.SPIN,
+    0:RACE('London to Brighton','54 mi · 1058m climbing','2026-06-21','Finish under 5h','Eat 60g carbs/hour from hour 1. Pace the first 30 min slow. Ditchling Beacon at mile 48 — save matches.'),
+  }},
+];
+
+/* Returns the active phase for a given ISO date */
+function getPhase(iso){
+  const t=new Date(iso+'T00:00:00').getTime();
+  let active=PHASES[0];
+  for(const p of PHASES){
+    if(new Date(p.weekStart+'T00:00:00').getTime()<=t)active=p;
+  }
+  return active;
+}
+
+let activePhase = getPhase(TODAY);
+let phaseIndex = PHASES.indexOf(activePhase);
 
 const SVG = {
   run:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/><path d="m5 12 3-3 4 1 2 5-3 3"/><path d="m11 19 3-2 1-3-1-2"/><path d="m17 7 2 2 1 4-2 2"/></svg>',
@@ -1528,7 +1680,7 @@ const DAY_LABELS = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
 const TODAY_DOW = new Date(TODAY+'T00:00:00').getDay();
 let viewedDOW = TODAY_DOW;
 
-function progKey(d){return `workout-progress-${TODAY}-${d}`;}
+function progKey(d){return `workout-progress-${activePhase.weekStart}-${d}`;}
 function loadProgress(d){try{return JSON.parse(localStorage.getItem(progKey(d))||'{}');}catch(e){return{};}}
 function saveProgress(d,p){localStorage.setItem(progKey(d),JSON.stringify(p));}
 function clearProgress(d){localStorage.removeItem(progKey(d));}
@@ -1552,16 +1704,15 @@ function chime(){
   }catch(e){console.warn('audio',e);}
 }
 
-/* ── Day picker render ── */
+/* ── Day picker render — uses active phase week ── */
 function renderDayPicker(){
-  const today=new Date(TODAY+'T00:00:00');
-  const dow=today.getDay();
-  const monday=new Date(today);
-  monday.setDate(today.getDate()-((dow+6)%7));
+  const monday=new Date(activePhase.weekStart+'T00:00:00');
+  const isCurrentPhase = activePhase === getPhase(TODAY);
   const days=[];
   for(let i=0;i<7;i++){
     const d=new Date(monday);d.setDate(monday.getDate()+i);
-    days.push({dow:d.getDay(),date:d.getDate(),isToday:d.getDay()===TODAY_DOW});
+    const iso=d.toISOString().slice(0,10);
+    days.push({dow:d.getDay(),date:d.getDate(),iso,isToday:isCurrentPhase && d.getDay()===TODAY_DOW});
   }
   document.getElementById('day-picker').innerHTML=days.map(d=>`
     <button class="day-pill ${d.isToday?'today':''} ${d.dow===viewedDOW?'active':''}" data-dow="${d.dow}">
@@ -1580,23 +1731,68 @@ function renderDayPicker(){
 
 /* ── Title for workout section ── */
 function workoutTitle(){
-  if(viewedDOW===TODAY_DOW)return "Today's workout";
+  const isCurrentPhase = activePhase === getPhase(TODAY);
+  if(isCurrentPhase && viewedDOW===TODAY_DOW)return "Today's workout";
   return DAY_LABELS[viewedDOW][0]+DAY_LABELS[viewedDOW].slice(1).toLowerCase()+"'s workout";
+}
+
+/* ── Render the phase navigator ── */
+function renderPhaseNav(){
+  const wrap=document.getElementById('phase-nav');
+  if(!wrap)return;
+  const isCurrent = activePhase === getPhase(TODAY);
+  const date = new Date(activePhase.weekStart+'T00:00:00');
+  const endDate = new Date(date); endDate.setDate(date.getDate()+6);
+  const fmt = d => d.toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+  wrap.innerHTML=`
+    <button class="phase-arrow" id="phase-prev" ${phaseIndex===0?'disabled':''}>‹</button>
+    <div class="phase-info">
+      <div class="phase-week">PHASE ${activePhase.idx} OF ${activePhase.total} · ${fmt(date)} – ${fmt(endDate)}</div>
+      <div class="phase-name">${activePhase.name}</div>
+      <div class="phase-sub">${activePhase.sub}</div>
+      ${!isCurrent?`<div class="phase-jump"><button id="phase-jumptoday">Jump to current week →</button></div>`:''}
+    </div>
+    <button class="phase-arrow" id="phase-next" ${phaseIndex===PHASES.length-1?'disabled':''}>›</button>
+  `;
+  document.getElementById('phase-prev')?.addEventListener('click',()=>{if(phaseIndex>0){phaseIndex--;activePhase=PHASES[phaseIndex];refreshWorkout();}});
+  document.getElementById('phase-next')?.addEventListener('click',()=>{if(phaseIndex<PHASES.length-1){phaseIndex++;activePhase=PHASES[phaseIndex];refreshWorkout();}});
+  document.getElementById('phase-jumptoday')?.addEventListener('click',()=>{activePhase=getPhase(TODAY);phaseIndex=PHASES.indexOf(activePhase);viewedDOW=TODAY_DOW;refreshWorkout();});
+}
+
+function refreshWorkout(){
+  renderPhaseNav();
+  renderDayPicker();
+  renderWorkout();
 }
 
 /* ── Render workout for the selected day ── */
 function renderWorkout(){
   document.getElementById('workout-title').textContent=workoutTitle();
-  const session=PROGRAM[viewedDOW];
+  const session = activePhase.days[viewedDOW];
   const wrap=document.getElementById('workout');
-  if(!session){wrap.innerHTML='';return;}
+  if(!session){wrap.innerHTML='<div class="glass rest-day"><div class="title">No session</div><div class="body">No workout scheduled for this day in this phase.</div></div>';return;}
+
+  /* RACE DAY */
+  if(session.type==='race'){
+    wrap.innerHTML=`
+      <div class="glass race-day-card">
+        <div class="rdc-tag">RACE DAY</div>
+        <div class="rdc-name">${session.name}</div>
+        <div class="rdc-meta">${session.short}</div>
+        <div class="run-prescription">
+          ${session.target.map(([k,v])=>`<div class="run-cell"><div class="v">${v}</div><div class="l">${k}</div></div>`).join('')}
+        </div>
+        <div class="run-detail">${session.detail}</div>
+      </div>`;
+    return;
+  }
 
   if(session.type==='rest'){
     const progress=loadProgress(viewedDOW);
     wrap.innerHTML=`
       <div class="glass rest-day">
         <div class="title">${session.name}</div>
-        <div class="body">Day off the hard stuff. Move gently, hydrate, sleep.</div>
+        <div class="body">${session.short==='Post-race restoration'?'Post-race restoration. Move gently, eat back the deficit.':'Day off the hard stuff. Move gently, hydrate, sleep.'}</div>
         <div class="rest-day-tasks">
           ${session.tasks.map((t,i)=>`<div class="rest-task ${progress['t'+i]?'done':''}" data-t="${i}"><div class="dot"></div><span>${t}</span></div>`).join('')}
         </div>
@@ -1611,10 +1807,11 @@ function renderWorkout(){
     return;
   }
 
-  if(session.type==='run' || session.type==='mobility'){
+  if(session.type==='run' || session.type==='mobility' || session.type==='cycling'){
+    const tagMap={run:'Run',mobility:'Mobility',cycling:'Cycling'};
     wrap.innerHTML=`
       <div class="glass session-overview">
-        <div class="type-tag">${session.type==='run'?'Run':'Mobility'}</div>
+        <div class="type-tag">${tagMap[session.type]}</div>
         <div class="name">${session.name}</div>
         <div class="meta">${session.short}</div>
         <div class="run-prescription">
@@ -1696,7 +1893,7 @@ function renderWorkout(){
 
 /* ── Reset workout button ── */
 document.getElementById('reset-workout').addEventListener('click',()=>{
-  if(confirm("Reset today's workout progress?")){
+  if(confirm("Reset this day's workout progress?")){
     clearProgress(viewedDOW);
     cancelRestTimer();
     renderWorkout();
@@ -1832,8 +2029,7 @@ async function boot(){
   renderSleep(d);
   renderLoad(d);
   renderFeed(d);
-  renderDayPicker();
-  renderWorkout();
+  refreshWorkout();
   renderRaces();
   renderPred(d);
   renderMetrics(d);
