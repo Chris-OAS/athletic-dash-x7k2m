@@ -31,10 +31,13 @@ jobs:
         run: pip install --quiet garminconnect
 
       - name: Restore Garmin auth token
+        env:
+          GARMIN_TOKEN: ${{ secrets.GARMIN_TOKEN }}
         run: |
           mkdir -p ~/.garminconnect
-          printf '%s' "${{ secrets.GARMIN_TOKEN }}" > ~/.garminconnect/garmin_tokens.json
+          printf '%s' "$GARMIN_TOKEN" > ~/.garminconnect/garmin_tokens.json
           test -s ~/.garminconnect/garmin_tokens.json
+          echo "Token file size: $(wc -c < ~/.garminconnect/garmin_tokens.json) bytes"
 
       - name: Fetch Garmin data
         run: python3 garmin_fetch.py
