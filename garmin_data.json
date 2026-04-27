@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Strength",
+      "type": "strength_training",
+      "date": "2026-04-27",
+      "distance_m": 0.0,
+      "duration_s": 1833.1689453125,
+      "avg_hr": 95.0,
+      "max_hr": 140.0,
+      "calories": 129.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 0.30000001192092896,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - W13 Sat Long Run - Half Marathon",
       "type": "running",
       "date": "2026-04-25",
@@ -269,20 +283,6 @@
       "avg_speed": 2.9849998950958248,
       "aerobic_te": 4.599999904632568,
       "vo2max": 48.0
-    },
-    {
-      "name": "Strength",
-      "type": "strength_training",
-      "date": "2026-03-23",
-      "distance_m": 0.0,
-      "duration_s": 2222.373046875,
-      "avg_hr": 116.0,
-      "max_hr": 167.0,
-      "calories": 237.0,
-      "elevation_m": 0,
-      "avg_speed": 0.0,
-      "aerobic_te": 1.7999999523162842,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -328,14 +328,14 @@
     "lowest": 90
   },
   "training_readiness": {
-    "score": 22,
-    "level": "POOR",
+    "score": 26,
+    "level": "LOW",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_3",
-    "load": 546,
-    "load_chronic": 627,
+    "load": 552,
+    "load_chronic": 628,
     "acwr": 0.8,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 3,
@@ -677,6 +677,14 @@
   },
   "scheduled_workouts": [
     {
+      "date": "2026-04-27",
+      "title": "Strength",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
+    {
       "date": "2026-04-28",
       "title": "W14 Tue Hills - Hill Repeats (10.8km)",
       "sport": "running",
@@ -742,5 +750,5 @@
     }
   ],
   "fetched_at": "2026-04-27",
-  "fetched_time": "09:45"
+  "fetched_time": "11:55"
 }
