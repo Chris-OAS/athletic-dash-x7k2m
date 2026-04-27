@@ -241,25 +241,30 @@ svg{display:block;}
 
 /* Morning hero: huge readiness number */
 .hero-mega{
-  display:flex;align-items:flex-start;gap:18px;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  align-items:end;gap:18px;
   margin:8px 0 14px;
+  min-height:140px;
 }
 .hero-num{
   font-family:var(--display);font-weight:800;
-  font-size:clamp(120px,32vw,180px);
+  font-size:clamp(110px,28vw,160px);
   line-height:.82;letter-spacing:-0.06em;
   color:var(--ink);
   font-feature-settings:"tnum" 1,"ss01" 1;
-  position:relative;
+  display:flex;align-items:flex-start;gap:4px;
+  white-space:nowrap;
 }
 .hero-num .denom{
-  font-size:0.18em;font-weight:600;color:var(--ink-3);
+  font-size:0.20em;font-weight:600;color:var(--ink-3);
   letter-spacing:-0.02em;
-  position:absolute;top:8%;
-  margin-left:-2px;
+  margin-top:0.18em;
+  display:inline-block;
 }
 .hero-side{
-  flex:1;padding-top:14px;
+  min-width:0;padding-bottom:8px;
+  display:flex;flex-direction:column;justify-content:flex-end;
 }
 .hero-side .lbl{
   font-family:var(--mono);font-size:10.5px;
@@ -1103,12 +1108,25 @@ svg{display:block;}
 /* When rest timer visible, give content extra bottom padding so workout doesn't scroll under it */
 body.has-rest .app{padding-bottom:calc(186px + env(safe-area-inset-bottom));}
 
-/* Chrome iOS: the bottom URL bar is not covered by safe-area-inset-bottom.
+/* Mobile browser (Chrome iOS / Safari iOS not in standalone): URL bar isn't covered by safe-area.
    Push tabbar + timer + content padding up to clear it. */
-body.chrome-ui .tabbar{bottom:calc(94px + env(safe-area-inset-bottom));}
-body.chrome-ui .rest-timer{bottom:calc(170px + env(safe-area-inset-bottom));}
-body.chrome-ui .app{padding-bottom:calc(190px + env(safe-area-inset-bottom));}
-body.chrome-ui.has-rest .app{padding-bottom:calc(280px + env(safe-area-inset-bottom));}
+body.mobile-browser-ui .tabbar{bottom:calc(94px + env(safe-area-inset-bottom));}
+body.mobile-browser-ui .rest-timer{bottom:calc(94px + env(safe-area-inset-bottom));}
+body.mobile-browser-ui .app{padding-bottom:calc(190px + env(safe-area-inset-bottom));}
+
+/* When rest timer is active, REPLACE the tab bar visually (hide tabbar, show timer in its place).
+   This avoids stacking & overlap, and focuses the user on the workout. */
+body.has-rest .tabbar{
+  transform:translateX(-50%) translateY(120%);
+  opacity:0;pointer-events:none;
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .25s;
+}
+body.has-rest .rest-timer{
+  bottom:calc(14px + env(safe-area-inset-bottom));
+}
+body.mobile-browser-ui.has-rest .rest-timer{
+  bottom:calc(94px + env(safe-area-inset-bottom));
+}
 
 /* Make the "GO" state of timer much more prominent */
 .rest-timer.done{
@@ -1391,10 +1409,10 @@ let TODAY = (function(){
 })();
 const HOUR = NOW.getHours();
 
-/* Chrome iOS detection — its bottom URL bar isn't covered by env(safe-area-inset-bottom) */
+/* iOS browser detection — Safari/Chrome iOS bottom URL bar isn't covered by env(safe-area-inset-bottom) */
 const IS_STANDALONE = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-const IS_CHROME_IOS = /CriOS/.test(navigator.userAgent);
-if (!IS_STANDALONE && IS_CHROME_IOS) document.body.classList.add('chrome-ui');
+const IS_IOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+if (!IS_STANDALONE && IS_IOS) document.body.classList.add('mobile-browser-ui');
 
 const RACES = [
   {date:'2026-04-25',name:'Southwark Half Marathon',place:'London · road',badge:'1:56:46',done:true},
@@ -1890,51 +1908,110 @@ function loadProgress(d){try{return JSON.parse(localStorage.getItem(progKey(d))|
 function saveProgress(d,p){localStorage.setItem(progKey(d),JSON.stringify(p));}
 function clearProgress(d){localStorage.removeItem(progKey(d));}
 
-/* ── Audio chime via Web Audio API
-   iOS Safari requires AudioContext to be created/resumed inside a user gesture.
-   We prime the context every time the user taps a set, so it's awake by the time
-   the timer fires the chime later. ── */
+/* ── Audio chime — multi-strategy for iOS reliability
+   1. Prime AudioContext on every set tap (user gesture)
+   2. Pre-load an HTML5 <audio> element with a base64 WAV beep (more reliable on iOS)
+   3. When timer fires: play HTML5 audio AND Web Audio (whichever works)
+   IMPORTANT: iOS Safari mutes Web Audio when the ringer/silent switch is on. */
 let audioCtx=null;
+let beepAudio=null;
+
+/* Pre-built 0.5s 880Hz beep as base64 WAV (small, plays even on iOS silent mode via HTML5 Audio
+   when invoked inside a user gesture or after one). Using Audio() with data URL works on iOS
+   for short beeps after first user interaction. */
+const BEEP_WAV_DATA_URL = (() => {
+  /* Generate a sine-wave WAV in JS so we don't ship a binary blob. */
+  const sr = 22050, dur = 0.6;
+  const n = Math.floor(sr * dur);
+  const buf = new Uint8Array(44 + n * 2);
+  const view = new DataView(buf.buffer);
+  /* RIFF header */
+  const setStr = (off, s) => { for (let i = 0; i < s.length; i++) buf[off + i] = s.charCodeAt(i); };
+  setStr(0, 'RIFF'); view.setUint32(4, 36 + n*2, true); setStr(8, 'WAVE');
+  setStr(12, 'fmt '); view.setUint32(16, 16, true); view.setUint16(20, 1, true);
+  view.setUint16(22, 1, true); view.setUint32(24, sr, true);
+  view.setUint32(28, sr*2, true); view.setUint16(32, 2, true); view.setUint16(34, 16, true);
+  setStr(36, 'data'); view.setUint32(40, n*2, true);
+  /* Three rising tones: 660 Hz, 880 Hz, 1320 Hz */
+  for (let i = 0; i < n; i++) {
+    const t = i / sr;
+    const seg = Math.floor(t / 0.18);
+    const freq = [660, 880, 1320][seg] || 1320;
+    const env = Math.exp(-((t % 0.18) * 8));
+    const v = Math.sin(2 * Math.PI * freq * t) * env * 0.5;
+    view.setInt16(44 + i*2, v * 32767, true);
+  }
+  /* Convert to base64 */
+  let bin = '';
+  for (let i = 0; i < buf.length; i++) bin += String.fromCharCode(buf[i]);
+  return 'data:audio/wav;base64,' + btoa(bin);
+})();
 
 function primeAudio(){
   try{
+    /* Web Audio prime */
     if(!audioCtx){
       audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     }
     if(audioCtx.state === 'suspended'){
       audioCtx.resume();
     }
-    /* Play a 1-sample silent buffer to fully wake the context on iOS */
+    /* Silent buffer to fully wake iOS */
     const buf = audioCtx.createBuffer(1, 1, 22050);
     const src = audioCtx.createBufferSource();
     src.buffer = buf;
     src.connect(audioCtx.destination);
     src.start(0);
+
+    /* HTML5 audio prime — load and silent-play to unlock iOS audio for later autoplay */
+    if(!beepAudio){
+      beepAudio = new Audio(BEEP_WAV_DATA_URL);
+      beepAudio.volume = 0.0001;
+      beepAudio.play().then(() => {
+        beepAudio.pause();
+        beepAudio.currentTime = 0;
+        beepAudio.volume = 1.0;
+      }).catch(()=>{ /* will play on next user gesture */ });
+    }
   }catch(e){console.warn('audio prime',e);}
 }
 
 function chime(){
+  /* Strategy 1: HTML5 Audio (most reliable on iOS once primed) */
   try{
-    if(!audioCtx)return;
-    /* Make sure context is running */
-    if(audioCtx.state === 'suspended') audioCtx.resume();
-    const t = audioCtx.currentTime;
-    /* Three-beep pattern: low → mid → high — clearly audible "go" cue */
-    [660, 880, 1320].forEach((freq, i) => {
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-      osc.type = 'sine';
-      osc.frequency.value = freq;
-      const start = t + i * 0.16;
-      gain.gain.setValueAtTime(0.0001, start);
-      gain.gain.exponentialRampToValueAtTime(0.5, start + 0.02);
-      gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.4);
-      osc.start(start);
-      osc.stop(start + 0.45);
-    });
-  }catch(e){console.warn('chime',e);}
+    if(beepAudio){
+      beepAudio.volume = 1.0;
+      beepAudio.currentTime = 0;
+      beepAudio.play().catch(e => console.warn('html5 audio',e));
+    } else {
+      /* Cold-start fallback */
+      const a = new Audio(BEEP_WAV_DATA_URL);
+      a.volume = 1.0;
+      a.play().catch(()=>{});
+    }
+  }catch(e){console.warn('chime html5',e);}
+
+  /* Strategy 2: Web Audio (works with silent mode if AudioSession set, otherwise muted) */
+  try{
+    if(audioCtx){
+      if(audioCtx.state === 'suspended') audioCtx.resume();
+      const t = audioCtx.currentTime + 0.05;
+      [660, 880, 1320].forEach((freq, i) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.type = 'sine';
+        osc.frequency.value = freq;
+        const start = t + i * 0.18;
+        gain.gain.setValueAtTime(0.0001, start);
+        gain.gain.exponentialRampToValueAtTime(0.5, start + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.45);
+        osc.start(start);
+        osc.stop(start + 0.5);
+      });
+    }
+  }catch(e){console.warn('chime webaudio',e);}
 }
 
 /* ── Day picker render — uses active phase week ── */
