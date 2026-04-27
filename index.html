@@ -179,6 +179,22 @@ svg{display:block;}
   box-shadow:0 0 12px var(--accent-glow);
   animation:pulse 2s ease-in-out infinite;
 }
+.refresh-btn{
+  margin-left:auto;
+  display:flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;
+  color:var(--ink-2);
+  background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.25);
+  transition:transform .25s,background .2s;
+}
+@media (prefers-color-scheme:dark){
+  .refresh-btn{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.10);}
+}
+.refresh-btn:active{transform:scale(.92);}
+.refresh-btn svg{width:14px;height:14px;}
+.refresh-btn.loading svg{animation:spin .9s linear infinite;}
+.refresh-btn.success{color:var(--good);background:rgba(22,163,74,0.15);border-color:rgba(22,163,74,0.3);}
+.title-eye{display:flex;align-items:center;gap:8px;}
 @keyframes pulse{0%,100%{opacity:.6;transform:scale(.85);}50%{opacity:1;transform:scale(1);}}
 .title-h1{
   font-family:var(--display);font-weight:700;
@@ -1228,6 +1244,12 @@ body.mobile-browser-ui.has-rest .rest-timer{
     <div class="title-eye">
       <span class="dot"></span>
       <span id="t-eye">— · —</span>
+      <button class="refresh-btn" id="refresh-btn" title="Refresh data" aria-label="Refresh">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12a9 9 0 1 1-2.64-6.36"/>
+          <path d="M21 4v6h-6"/>
+        </svg>
+      </button>
     </div>
     <h1 class="title-h1" id="t-title">Today<span class="light">.</span></h1>
   </div>
@@ -2739,6 +2761,44 @@ async function boot(){
 }
 
 boot();
+
+/* ───────── REFRESH BUTTON ───────── */
+
+document.getElementById('refresh-btn').addEventListener('click', async () => {
+  const btn = document.getElementById('refresh-btn');
+  if(btn.classList.contains('loading')) return;
+  btn.classList.remove('success');
+  btn.classList.add('loading');
+  const prevFetched = APP_DATA.fetched_time;
+  try{
+    /* Bypass HTTP cache + service-worker by adding fresh query string */
+    const res = await fetch('garmin_data.json?refresh=' + Date.now(), {cache:'no-store'});
+    if(res.ok){
+      const d = await res.json();
+      APP_DATA = d;
+      syncToday(d.fetched_at);
+
+      /* Re-render every section with the fresh data */
+      renderUpNext(d);
+      renderTitleBar(d);
+      renderHero(d);
+      renderRecovery(d);
+      renderSleep(d);
+      renderLoad(d);
+      renderFeed(d);
+      refreshWorkout();
+      renderRaces();
+      renderPred(d);
+      renderMetrics(d);
+    }
+  } catch(e){console.warn('refresh failed', e);}
+  btn.classList.remove('loading');
+  /* Quick success flash if data actually changed */
+  if(APP_DATA.fetched_time !== prevFetched){
+    btn.classList.add('success');
+    setTimeout(()=>btn.classList.remove('success'), 1500);
+  }
+});
 </script>
 </body>
 </html>
