@@ -286,38 +286,38 @@
     }
   ],
   "sleep": {
-    "score": 89,
-    "duration_s": 27816,
-    "deep_s": 4860,
-    "rem_s": 7260,
-    "light_s": 15720,
-    "awake_s": 360,
-    "avg_spo2": 95.0,
-    "avg_resp": 13.0,
+    "score": 45,
+    "duration_s": 23197,
+    "deep_s": 3960,
+    "rem_s": 1200,
+    "light_s": 18060,
+    "awake_s": 4560,
+    "avg_spo2": 96.0,
+    "avg_resp": 14.0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 63,
+    "weekly_avg": 0,
     "last_night": 0,
-    "status": "BALANCED",
+    "status": "unknown",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 25,
-    "drained": 16,
-    "end_val": "2026-04-26T18:14:00.0"
+    "charged": 34,
+    "drained": 0,
+    "end_val": "2026-04-27T02:07:00.0"
   },
   "heart_rate": {
-    "resting": 48,
-    "max": 141,
-    "min": 44,
+    "resting": 44,
+    "max": 70,
+    "min": 42,
     "last_7d_avg_resting": 45
   },
   "stress": {
-    "avg": 39,
-    "max": 99,
+    "avg": 8,
+    "max": 33,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -325,64 +325,422 @@
   },
   "spo2": {
     "avg": 95.0,
-    "lowest": 85
+    "lowest": 91
   },
   "training_readiness": {
-    "score": 6,
-    "level": "POOR",
+    "score": 0,
+    "level": "",
     "feedback": ""
   },
   "training_status": {
-    "status": "PRODUCTIVE_3",
-    "load": 641,
-    "load_chronic": 650,
-    "acwr": 0.9,
-    "acwr_status": "OPTIMAL",
-    "fitness_trend": 3,
-    "load_balance": "AEROBIC_LOW_SHORTAGE",
-    "monthly_aerobic_low": 56.15776,
-    "monthly_aerobic_high": 2504.433,
-    "monthly_anaerobic": 252.0902,
-    "vo2max": 48.7
+    "status": "",
+    "load": 0,
+    "load_chronic": 0,
+    "acwr": 0,
+    "acwr_status": "",
+    "fitness_trend": 0,
+    "load_balance": "",
+    "monthly_aerobic_low": 0,
+    "monthly_aerobic_high": 0,
+    "monthly_anaerobic": 0,
+    "vo2max": 0
   },
   "vo2max": {
-    "value": 48.7
+    "value": 0
   },
   "respiration": {
     "avg": 13.0,
-    "highest": 21.0,
-    "lowest": 6.0
+    "highest": 16.0,
+    "lowest": 7.0
   },
   "race_predictions": {
     "five_k": 1402,
     "ten_k": 2950,
     "half_marathon": 6634,
-    "marathon": 14720
+    "marathon": 14722
   },
   "endurance_score": {
-    "overall": 6049,
-    "level": 3
+    "overall": 0,
+    "level": ""
   },
   "hill_score": {
     "value": 0,
     "level": ""
   },
   "steps": {
-    "weekly_total": 106302,
-    "daily_avg": 13287
+    "weekly_total": 99353,
+    "daily_avg": 12419
   },
   "intensity": {
-    "moderate": 52,
-    "vigorous": 206,
+    "moderate": 0,
+    "vigorous": 0,
     "goal": 150
   },
   "running_tolerance": {
     "value": 0
   },
   "morning_readiness": {
-    "score": 6,
-    "level": "POOR"
+    "score": 0,
+    "level": ""
   },
-  "fetched_at": "2026-04-26",
-  "fetched_time": "22:27"
+  "history": {
+    "sleep": [
+      {
+        "date": "2026-04-14",
+        "value": 92
+      },
+      {
+        "date": "2026-04-15",
+        "value": 84
+      },
+      {
+        "date": "2026-04-16",
+        "value": 93
+      },
+      {
+        "date": "2026-04-17",
+        "value": 83
+      },
+      {
+        "date": "2026-04-18",
+        "value": 91
+      },
+      {
+        "date": "2026-04-19",
+        "value": 91
+      },
+      {
+        "date": "2026-04-20",
+        "value": 79
+      },
+      {
+        "date": "2026-04-21",
+        "value": 81
+      },
+      {
+        "date": "2026-04-22",
+        "value": 96
+      },
+      {
+        "date": "2026-04-23",
+        "value": 94
+      },
+      {
+        "date": "2026-04-24",
+        "value": 89
+      },
+      {
+        "date": "2026-04-25",
+        "value": 89
+      },
+      {
+        "date": "2026-04-26",
+        "value": 45
+      },
+      {
+        "date": "2026-04-27",
+        "value": 0
+      }
+    ],
+    "hrv": [
+      {
+        "date": "2026-04-14",
+        "value": 65
+      },
+      {
+        "date": "2026-04-15",
+        "value": 70
+      },
+      {
+        "date": "2026-04-16",
+        "value": 71
+      },
+      {
+        "date": "2026-04-17",
+        "value": 58
+      },
+      {
+        "date": "2026-04-18",
+        "value": 71
+      },
+      {
+        "date": "2026-04-19",
+        "value": 72
+      },
+      {
+        "date": "2026-04-20",
+        "value": 62
+      },
+      {
+        "date": "2026-04-21",
+        "value": 62
+      },
+      {
+        "date": "2026-04-22",
+        "value": 72
+      },
+      {
+        "date": "2026-04-23",
+        "value": 68
+      },
+      {
+        "date": "2026-04-24",
+        "value": 64
+      },
+      {
+        "date": "2026-04-25",
+        "value": 67
+      },
+      {
+        "date": "2026-04-26",
+        "value": 48
+      },
+      {
+        "date": "2026-04-27",
+        "value": 0
+      }
+    ],
+    "rhr": [
+      {
+        "date": "2026-04-14",
+        "value": 44
+      },
+      {
+        "date": "2026-04-15",
+        "value": 47
+      },
+      {
+        "date": "2026-04-16",
+        "value": 44
+      },
+      {
+        "date": "2026-04-17",
+        "value": 47
+      },
+      {
+        "date": "2026-04-18",
+        "value": 43
+      },
+      {
+        "date": "2026-04-19",
+        "value": 43
+      },
+      {
+        "date": "2026-04-20",
+        "value": 44
+      },
+      {
+        "date": "2026-04-21",
+        "value": 45
+      },
+      {
+        "date": "2026-04-22",
+        "value": 42
+      },
+      {
+        "date": "2026-04-23",
+        "value": 45
+      },
+      {
+        "date": "2026-04-24",
+        "value": 43
+      },
+      {
+        "date": "2026-04-25",
+        "value": 45
+      },
+      {
+        "date": "2026-04-26",
+        "value": 48
+      },
+      {
+        "date": "2026-04-27",
+        "value": 44
+      }
+    ],
+    "bb": [
+      {
+        "date": "2026-04-14",
+        "value": 56
+      },
+      {
+        "date": "2026-04-15",
+        "value": 64
+      },
+      {
+        "date": "2026-04-16",
+        "value": 64
+      },
+      {
+        "date": "2026-04-17",
+        "value": 50
+      },
+      {
+        "date": "2026-04-18",
+        "value": 74
+      },
+      {
+        "date": "2026-04-19",
+        "value": 59
+      },
+      {
+        "date": "2026-04-20",
+        "value": 60
+      },
+      {
+        "date": "2026-04-21",
+        "value": 54
+      },
+      {
+        "date": "2026-04-22",
+        "value": 65
+      },
+      {
+        "date": "2026-04-23",
+        "value": 67
+      },
+      {
+        "date": "2026-04-24",
+        "value": 56
+      },
+      {
+        "date": "2026-04-25",
+        "value": 57
+      },
+      {
+        "date": "2026-04-26",
+        "value": 38
+      },
+      {
+        "date": "2026-04-27",
+        "value": 34
+      }
+    ],
+    "stress": [
+      {
+        "date": "2026-04-14",
+        "value": 29
+      },
+      {
+        "date": "2026-04-15",
+        "value": 22
+      },
+      {
+        "date": "2026-04-16",
+        "value": 29
+      },
+      {
+        "date": "2026-04-17",
+        "value": 29
+      },
+      {
+        "date": "2026-04-18",
+        "value": 24
+      },
+      {
+        "date": "2026-04-19",
+        "value": 24
+      },
+      {
+        "date": "2026-04-20",
+        "value": 26
+      },
+      {
+        "date": "2026-04-21",
+        "value": 27
+      },
+      {
+        "date": "2026-04-22",
+        "value": 21
+      },
+      {
+        "date": "2026-04-23",
+        "value": 22
+      },
+      {
+        "date": "2026-04-24",
+        "value": 25
+      },
+      {
+        "date": "2026-04-25",
+        "value": 38
+      },
+      {
+        "date": "2026-04-26",
+        "value": 33
+      },
+      {
+        "date": "2026-04-27",
+        "value": 8
+      }
+    ]
+  },
+  "scheduled_workouts": [
+    {
+      "date": "2026-04-28",
+      "title": "W14 Tue Hills - Hill Repeats (10.8km)",
+      "sport": "running",
+      "workout_id": 1541900783,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-04-30",
+      "title": "W14 Thu Easy Run - 10km Easy Run (10km)",
+      "sport": "running",
+      "workout_id": 1541900793,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-05-02",
+      "title": "W14 Sat Long Run - 19km Long Run (19km)",
+      "sport": "running",
+      "workout_id": 1541900803,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-05-05",
+      "title": "W15 Tue Tempo - Under and Overs 2km (9km)",
+      "sport": "running",
+      "workout_id": 1549059695,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-05-07",
+      "title": "W15 Thu Easy Run - 10km Easy Run (10km)",
+      "sport": "running",
+      "workout_id": 1549059704,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-05-09",
+      "title": "Tough Mudder London West (Saturday 15K)",
+      "sport": null,
+      "workout_id": null,
+      "is_race": true,
+      "item_type": "event"
+    },
+    {
+      "date": "2026-05-09",
+      "title": "W15 Sat Long Run - 16km Hilly Long Run (16km)",
+      "sport": "running",
+      "workout_id": 1549059714,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-05-23",
+      "title": "UK Ultra South Downs 21k",
+      "sport": null,
+      "workout_id": null,
+      "is_race": true,
+      "item_type": "event"
+    }
+  ],
+  "fetched_at": "2026-04-27",
+  "fetched_time": "07:08"
 }
