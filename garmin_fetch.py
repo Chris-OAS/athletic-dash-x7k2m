@@ -68,8 +68,8 @@ def run():
         })
     data['activities'] = act_list
 
-    print("Fetching sleep data...")
-    sleep = safe(client.get_sleep_data, yesterday) or {}
+    print("Fetching sleep data (last night — Garmin labels by wake date)...")
+    sleep = safe(client.get_sleep_data, today) or {}
     sd = sleep.get('dailySleepDTO', {}) if sleep else {}
     data['sleep'] = {
         'score': sd.get('sleepScores', {}).get('overall', {}).get('value', 0) if sd else 0,

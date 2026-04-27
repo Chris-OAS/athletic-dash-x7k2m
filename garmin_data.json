@@ -286,14 +286,14 @@
     }
   ],
   "sleep": {
-    "score": 45,
-    "duration_s": 23197,
-    "deep_s": 3960,
-    "rem_s": 1200,
-    "light_s": 18060,
-    "awake_s": 4560,
+    "score": 97,
+    "duration_s": 29637,
+    "deep_s": 6840,
+    "rem_s": 6420,
+    "light_s": 16380,
+    "awake_s": 240,
     "avg_spo2": 96.0,
-    "avg_resp": 14.0,
+    "avg_resp": 12.0,
     "restless": 0,
     "avg_hrv": 0
   },
@@ -742,5 +742,5 @@
     }
   ],
   "fetched_at": "2026-04-27",
-  "fetched_time": "09:37"
+  "fetched_time": "09:45"
 }
