@@ -1,0 +1,56 @@
+name: Sync Garmin data
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # every hour at :00 UTC
+  workflow_dispatch:      # allows manual trigger from GitHub UI / CLI
+
+permissions:
+  contents: write
+
+# Only one sync at a time; new runs cancel queued ones
+concurrency:
+  group: garmin-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install --quiet garminconnect
+
+      - name: Restore Garmin auth token
+        run: |
+          mkdir -p ~/.garminconnect
+          printf '%s' "${{ secrets.GARMIN_TOKEN }}" > ~/.garminconnect/garmin_tokens.json
+          test -s ~/.garminconnect/garmin_tokens.json
+
+      - name: Fetch Garmin data
+        run: python3 garmin_fetch.py
+        env:
+          TZ: Europe/London
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add garmin_data.json
+          if git diff --cached --quiet; then
+            echo "No data changes"
+          else
+            git commit -m "Auto-sync $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git pull --rebase --autostash origin main || true
+            git push origin main
+            echo "Pushed updated data"
+          fi
