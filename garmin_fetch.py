@@ -263,6 +263,44 @@ def run():
         'level': mr.get('level', ''),
     }
 
+    print("Fetching 14-day history (sleep / HRV / RHR / battery / stress)...")
+    history = {'sleep': [], 'hrv': [], 'rhr': [], 'bb': [], 'stress': []}
+    for i in range(14):
+        d = (date.today() - timedelta(days=i)).isoformat()
+        try:
+            s = client.get_sleep_data(d) or {}
+            sd = s.get('dailySleepDTO', {}) if isinstance(s, dict) else {}
+            score = sd.get('sleepScores', {}).get('overall', {}).get('value', 0) if isinstance(sd, dict) else 0
+            history['sleep'].append({'date': d, 'value': score})
+        except Exception:
+            history['sleep'].append({'date': d, 'value': 0})
+        try:
+            h = client.get_hrv_data(d) or {}
+            hs = h.get('hrvSummary', {}) if isinstance(h, dict) else {}
+            history['hrv'].append({'date': d, 'value': hs.get('lastNightAvg', 0) or hs.get('weeklyAvg', 0)})
+        except Exception:
+            history['hrv'].append({'date': d, 'value': 0})
+        try:
+            hr = client.get_heart_rates(d) or {}
+            history['rhr'].append({'date': d, 'value': hr.get('restingHeartRate', 0) if isinstance(hr, dict) else 0})
+        except Exception:
+            history['rhr'].append({'date': d, 'value': 0})
+        try:
+            bb = client.get_body_battery(d, d) or []
+            bv = bb[0].get('charged', 0) if bb and isinstance(bb[0], dict) else 0
+            history['bb'].append({'date': d, 'value': bv})
+        except Exception:
+            history['bb'].append({'date': d, 'value': 0})
+        try:
+            st = client.get_stress_data(d) or {}
+            history['stress'].append({'date': d, 'value': st.get('avgStressLevel', 0) if isinstance(st, dict) else 0})
+        except Exception:
+            history['stress'].append({'date': d, 'value': 0})
+    for k in history:
+        history[k].reverse()
+    data['history'] = history
+    print(f"  History: {len(history['sleep'])} days each")
+
     print("Fetching scheduled workouts (Runna sync)...")
     today_d = date.today()
     today_iso = today_d.isoformat()

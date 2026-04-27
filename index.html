@@ -654,6 +654,120 @@ svg{display:block;}
   color:var(--ink);font-feature-settings:"tnum" 1;
 }
 
+/* ─────────── INSIGHTS / TRENDS / ZONE / VO2 / PRED CARDS ─────────── */
+
+.insight{
+  padding:16px 18px;border-radius:18px;margin-bottom:8px;
+  border-left:3px solid var(--accent);
+}
+.insight.good{border-left-color:var(--good);}
+.insight.warn{border-left-color:var(--warn);}
+.insight.bad{border-left-color:var(--bad);}
+.insight-tag{
+  font-family:var(--mono);font-size:9.5px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--accent);margin-bottom:4px;
+}
+.insight.good .insight-tag{color:var(--good);}
+.insight.warn .insight-tag{color:var(--warn);}
+.insight.bad .insight-tag{color:var(--bad);}
+.insight-text{
+  font-family:var(--display);font-weight:500;
+  font-size:14.5px;line-height:1.45;letter-spacing:-0.01em;color:var(--ink);
+}
+.insight-text strong{font-weight:700;}
+
+/* Trend grid (3 sparkline cards) */
+.trend-grid{display:grid;grid-template-columns:1fr;gap:10px;}
+@media (min-width:560px){.trend-grid{grid-template-columns:repeat(3,1fr);}}
+.trend{padding:16px 18px;border-radius:18px;}
+.trend-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;}
+.trend-lbl{font-family:var(--mono);font-size:10px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.12em;font-weight:500;}
+.trend-arrow{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:-0.01em;}
+.trend-arrow.up{color:var(--good);}
+.trend-arrow.dn{color:var(--bad);}
+.trend-arrow.flat{color:var(--ink-3);}
+.trend-val{font-family:var(--display);font-weight:700;font-size:32px;letter-spacing:-0.035em;line-height:1;font-feature-settings:"tnum" 1;margin-bottom:4px;}
+.trend-val .u{font-size:13px;color:var(--ink-3);font-weight:500;margin-left:2px;}
+.trend-meta{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);letter-spacing:-0.005em;margin-bottom:10px;}
+.trend-spark{height:48px;width:100%;color:var(--accent);}
+.trend-spark svg{width:100%;height:100%;display:block;}
+.trend.good .trend-spark{color:var(--good);}
+.trend.warn .trend-spark{color:var(--warn);}
+.trend.bad .trend-spark{color:var(--bad);}
+
+/* HR Zone donut card */
+.zone-card{padding:20px;}
+.zone-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;}
+.zone-title{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-0.02em;}
+.zone-stat{font-family:var(--display);font-weight:800;font-size:32px;letter-spacing:-0.035em;line-height:1;font-feature-settings:"tnum" 1;}
+.zone-stat .denom{font-size:13px;color:var(--ink-3);font-weight:500;}
+.zone-vis{display:flex;align-items:center;gap:18px;margin-bottom:14px;}
+.zone-vis svg{flex-shrink:0;}
+.zone-legend{flex:1;display:flex;flex-direction:column;gap:7px;font-size:13px;}
+.zone-row{display:flex;align-items:center;gap:8px;}
+.zone-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0;}
+.zone-row .name{flex:1;color:var(--ink-2);}
+.zone-row .v{font-family:var(--mono);font-weight:500;color:var(--ink);font-feature-settings:"tnum" 1;}
+.zone-insight{
+  padding:12px 14px;background:rgba(0,102,255,0.08);border:1px solid rgba(0,102,255,0.20);
+  border-radius:12px;font-size:13.5px;color:var(--ink-2);line-height:1.5;
+}
+.zone-insight strong{color:var(--ink);font-weight:700;}
+
+/* VO2 trajectory card */
+.vo2-card{padding:20px;}
+.vo2-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;}
+.vo2-now{
+  font-family:var(--display);font-weight:800;font-size:54px;letter-spacing:-0.045em;line-height:.9;
+  font-feature-settings:"tnum" 1;color:var(--ink);
+}
+.vo2-now .delta{font-size:14px;color:var(--ink-3);font-weight:500;letter-spacing:-0.01em;margin-left:8px;display:inline-block;vertical-align:middle;}
+.vo2-now .delta.up{color:var(--good);}
+.vo2-now .delta.dn{color:var(--bad);}
+.vo2-target{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.12em;font-weight:500;text-align:right;}
+.vo2-target strong{color:var(--ink);}
+.vo2-chart{height:80px;margin-bottom:12px;}
+.vo2-chart svg{width:100%;height:100%;display:block;}
+
+/* Predicted vs actual */
+.pa-card{padding:20px;}
+.pa-row{display:grid;grid-template-columns:60px 1fr auto auto;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.12);}
+.pa-row:last-child{border-bottom:none;}
+@media (prefers-color-scheme:dark){.pa-row{border-color:rgba(255,255,255,0.06);}}
+.pa-dist{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:-0.015em;color:var(--ink);}
+.pa-times{display:flex;flex-direction:column;font-family:var(--mono);font-size:11.5px;}
+.pa-times .lbl{color:var(--ink-3);font-size:9px;text-transform:uppercase;letter-spacing:.14em;font-weight:500;}
+.pa-times .v{color:var(--ink);font-weight:500;font-feature-settings:"tnum" 1;}
+.pa-pred{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-0.025em;color:var(--ink-2);font-feature-settings:"tnum" 1;text-align:right;line-height:1;}
+.pa-actual{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-0.025em;color:var(--ink);font-feature-settings:"tnum" 1;text-align:right;line-height:1;}
+.pa-delta{font-family:var(--mono);font-size:11px;font-weight:500;text-align:right;display:block;margin-top:2px;}
+.pa-delta.faster{color:var(--good);}
+.pa-delta.slower{color:var(--bad);}
+
+/* Up next on home */
+.upnext{
+  padding:14px 18px;border-radius:18px;margin-bottom:8px;
+  display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;
+}
+.upnext-day{
+  text-align:center;width:42px;flex-shrink:0;
+}
+.upnext-day .d{font-family:var(--mono);font-size:9.5px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.14em;font-weight:500;}
+.upnext-day .n{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-0.03em;color:var(--ink);font-feature-settings:"tnum" 1;}
+.upnext-info{min-width:0;}
+.upnext-info .name{font-family:var(--display);font-weight:600;font-size:14.5px;letter-spacing:-0.015em;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.upnext-info .meta{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:-0.005em;margin-top:2px;}
+.upnext-tag{
+  font-family:var(--mono);font-size:9.5px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:#fff;
+  padding:4px 9px;border-radius:6px;background:var(--accent);
+}
+.upnext-tag.runna{background:linear-gradient(90deg,#ff4757,#ff6b81);}
+.upnext-tag.race{background:var(--bad);}
+.upnext-tag.rest{background:var(--ink-3);}
+.upnext-tag.strength,.upnext-tag.cycling,.upnext-tag.mobility{background:var(--info);}
+
 /* ─────────── METRICS LIST ─────────── */
 
 .metrics-list{padding:4px 0;}
@@ -989,6 +1103,13 @@ svg{display:block;}
 /* When rest timer visible, give content extra bottom padding so workout doesn't scroll under it */
 body.has-rest .app{padding-bottom:calc(186px + env(safe-area-inset-bottom));}
 
+/* Chrome iOS: the bottom URL bar is not covered by safe-area-inset-bottom.
+   Push tabbar + timer + content padding up to clear it. */
+body.chrome-ui .tabbar{bottom:calc(94px + env(safe-area-inset-bottom));}
+body.chrome-ui .rest-timer{bottom:calc(170px + env(safe-area-inset-bottom));}
+body.chrome-ui .app{padding-bottom:calc(190px + env(safe-area-inset-bottom));}
+body.chrome-ui.has-rest .app{padding-bottom:calc(280px + env(safe-area-inset-bottom));}
+
 /* Make the "GO" state of timer much more prominent */
 .rest-timer.done{
   background:var(--good);
@@ -1118,6 +1239,13 @@ body.has-rest .app{padding-bottom:calc(186px + env(safe-area-inset-bottom));}
       <div class="meta">Last night</div>
     </div>
     <div class="glass sleep-card" id="sleep-card"></div>
+
+    <!-- UP NEXT -->
+    <div class="section-head">
+      <h2>Up next</h2>
+      <div class="meta" id="upnext-meta">From Runna + your plan</div>
+    </div>
+    <div id="upnext-list"></div>
   </section>
 
   <!-- ────── TRAINING PAGE ────── -->
@@ -1160,9 +1288,46 @@ body.has-rest .app{padding-bottom:calc(186px + env(safe-area-inset-bottom));}
 
   <!-- ────── METRICS PAGE ────── -->
   <section class="page" id="page-metrics">
+
+    <!-- Coach insights -->
+    <div class="section-head">
+      <h2>Insights</h2>
+      <div class="meta">Auto-generated from your data</div>
+    </div>
+    <div id="insights"></div>
+
+    <!-- 14-day trend cards -->
+    <div class="section-head">
+      <h2>14-day trends</h2>
+      <div class="meta">Sleep · HRV · RHR</div>
+    </div>
+    <div id="trend-grid"></div>
+
+    <!-- HR Zone analysis (the easy-run problem) -->
+    <div class="section-head">
+      <h2>HR zone analysis</h2>
+      <div class="meta">Last 10 runs</div>
+    </div>
+    <div class="glass" id="zone-card"></div>
+
+    <!-- VO2 max trajectory -->
+    <div class="section-head">
+      <h2>VO₂ max trajectory</h2>
+      <div class="meta">From recent runs</div>
+    </div>
+    <div class="glass" id="vo2-card"></div>
+
+    <!-- Race predictions vs reality -->
+    <div class="section-head">
+      <h2>Predicted vs actual</h2>
+      <div class="meta">Garmin's predictions vs your races</div>
+    </div>
+    <div class="glass" id="pred-actual-card"></div>
+
+    <!-- Raw metrics -->
     <div class="section-head">
       <h2>All metrics</h2>
-      <div class="meta">Today</div>
+      <div class="meta">Today's snapshot</div>
     </div>
     <div class="glass metrics-list" id="metrics"></div>
 
@@ -1217,8 +1382,19 @@ body.has-rest .app{padding-bottom:calc(186px + env(safe-area-inset-bottom));}
 /* ───────── DATA + LOGIC ───────── */
 
 const NOW = new Date();
-const TODAY = '2026-04-26';
+/* TODAY is set dynamically — populated from garmin_data.json fetched_at after boot,
+   falls back to the actual real date. */
+let TODAY = (function(){
+  const d=new Date();
+  const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),dd=String(d.getDate()).padStart(2,'0');
+  return `${y}-${m}-${dd}`;
+})();
 const HOUR = NOW.getHours();
+
+/* Chrome iOS detection — its bottom URL bar isn't covered by env(safe-area-inset-bottom) */
+const IS_STANDALONE = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+const IS_CHROME_IOS = /CriOS/.test(navigator.userAgent);
+if (!IS_STANDALONE && IS_CHROME_IOS) document.body.classList.add('chrome-ui');
 
 const RACES = [
   {date:'2026-04-25',name:'Southwark Half Marathon',place:'London · road',badge:'1:56:46',done:true},
@@ -1385,6 +1561,16 @@ function getPhase(iso){
 
 let activePhase = getPhase(TODAY);
 let phaseIndex = PHASES.indexOf(activePhase);
+
+/* Re-derive date-dependent state when TODAY shifts (e.g. after JSON fetch sets fetched_at) */
+function syncToday(iso){
+  if(!iso) return;
+  TODAY = iso;
+  TODAY_DOW = new Date(TODAY+'T00:00:00').getDay();
+  activePhase = getPhase(TODAY);
+  phaseIndex = PHASES.indexOf(activePhase);
+  viewedDOW = TODAY_DOW;
+}
 
 const SVG = {
   run:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/><path d="m5 12 3-3 4 1 2 5-3 3"/><path d="m11 19 3-2 1-3-1-2"/><path d="m17 7 2 2 1 4-2 2"/></svg>',
@@ -1696,7 +1882,7 @@ function renderFeed(d){
 /* ───────── WORKOUT (interactive) ───────── */
 
 const DAY_LABELS = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
-const TODAY_DOW = new Date(TODAY+'T00:00:00').getDay();
+let TODAY_DOW = new Date(TODAY+'T00:00:00').getDay();
 let viewedDOW = TODAY_DOW;
 
 function progKey(d){return `workout-progress-${activePhase.weekStart}-${d}`;}
@@ -2111,9 +2297,304 @@ function renderPred(d){
   document.getElementById('pred-grid').innerHTML=items.map(([k,v])=>`<div class="glass pred"><div class="pred-d">${k}</div><div class="pred-t">${v}</div></div>`).join('');
 }
 
-/* ───────── RENDER: METRICS ───────── */
+/* ───────── RENDER: METRICS — full rebuild with insights, trends, charts ───────── */
+
+/* SVG sparkline (line chart) */
+function sparkline(values, opts={}){
+  const w = opts.w || 280, h = opts.h || 48;
+  const valid = values.filter(v=>v>0);
+  if(valid.length<2) return `<div style="height:${h}px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;color:var(--ink-3);">No data</div>`;
+  const max = Math.max(...valid), min = Math.min(...valid);
+  const range = max - min || 1;
+  const pts = values.map((v, i) => {
+    if(v<=0) return null;
+    const x = (i / (values.length - 1)) * (w-4) + 2;
+    const y = h - ((v - min) / range) * (h - 8) - 4;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).filter(Boolean).join(' ');
+  /* Gradient area underneath */
+  const lastIdx = values.length - 1;
+  const lastX = (lastIdx / (values.length - 1)) * (w-4) + 2;
+  const lastV = values[lastIdx];
+  const lastY = lastV>0 ? h - ((lastV - min) / range) * (h - 8) - 4 : h/2;
+  const firstX = 2;
+  return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+    <defs><linearGradient id="sg-${opts.id||'x'}" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="currentColor" stop-opacity="0.3"/><stop offset="100%" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs>
+    <polygon points="${firstX},${h} ${pts} ${lastX},${h}" fill="url(#sg-${opts.id||'x'})"/>
+    <polyline points="${pts}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="${lastX}" cy="${lastY}" r="3" fill="currentColor"/>
+  </svg>`;
+}
+
+/* Average a numeric array (skipping zeros for sparse data) */
+const avgNZ = arr => {
+  const v = arr.filter(x=>x>0);
+  return v.length ? v.reduce((s,x)=>s+x,0)/v.length : 0;
+};
+
+/* ── Trend cards (sleep, HRV, RHR) ── */
+function renderTrends(d){
+  const h = d.history || {};
+  const cards = [
+    {key:'sleep', lbl:'Sleep score', unit:'/100', goodHigh:true, target:85, data:(h.sleep||[]).map(x=>x.value)},
+    {key:'hrv', lbl:'HRV', unit:'ms', goodHigh:true, target:60, data:(h.hrv||[]).map(x=>x.value)},
+    {key:'rhr', lbl:'Resting HR', unit:'bpm', goodHigh:false, target:50, data:(h.rhr||[]).map(x=>x.value)},
+  ];
+  document.getElementById('trend-grid').className='trend-grid';
+  document.getElementById('trend-grid').innerHTML = cards.map(c => {
+    const v = c.data.filter(x=>x>0);
+    const last = v[v.length-1] || 0;
+    const recent7 = v.slice(-7);
+    const prior7 = v.slice(-14,-7);
+    const avgRecent = avgNZ(recent7);
+    const avgPrior = avgNZ(prior7);
+    const delta = avgPrior ? (avgRecent-avgPrior) : 0;
+    const trendDir = Math.abs(delta) < 0.5 ? 'flat' : (c.goodHigh ? (delta > 0 ? 'up' : 'dn') : (delta < 0 ? 'up' : 'dn'));
+    const cls = trendDir === 'up' ? 'good' : trendDir === 'dn' ? 'bad' : '';
+    const arrow = trendDir === 'up' ? '↗' : trendDir === 'dn' ? '↘' : '·';
+    return `<div class="glass trend ${cls}">
+      <div class="trend-head">
+        <div class="trend-lbl">${c.lbl}</div>
+        <div class="trend-arrow ${trendDir}">${arrow} ${delta>0?'+':''}${delta.toFixed(1)}</div>
+      </div>
+      <div class="trend-val">${last||'—'}<span class="u">${c.unit}</span></div>
+      <div class="trend-meta">7d avg ${avgRecent.toFixed(0)} · target ${c.goodHigh?'≥':'≤'}${c.target}</div>
+      <div class="trend-spark">${sparkline(c.data, {id:c.key})}</div>
+    </div>`;
+  }).join('');
+}
+
+/* ── HR Zone analysis from recent runs ── */
+function renderZones(d){
+  const acts = (d.activities||[]).filter(a=>a.type==='running' && a.avg_hr>0).slice(0,10);
+  if(acts.length===0){document.getElementById('zone-card').innerHTML='<div style="padding:20px;color:var(--ink-3);">Not enough run data</div>';return;}
+  const maxHR = 203; /* user's observed max */
+  /* Zones by % of maxHR */
+  const buckets = [
+    {key:'z2', lbl:'Z2 (easy aerobic)', max:0.70*maxHR, color:'#16a34a'}, /* ≤142 */
+    {key:'z3', lbl:'Z3 (steady)', max:0.80*maxHR, color:'#eab308'},        /* 142–162 */
+    {key:'z4', lbl:'Z4 (threshold)', max:0.90*maxHR, color:'#f97316'},     /* 162–183 */
+    {key:'z5', lbl:'Z5 (max)', max:1.00*maxHR, color:'#ef4444'},           /* >183 */
+  ];
+  const counts = buckets.map(b=>({...b, count:0}));
+  acts.forEach(a => {
+    const z = counts.find(b => a.avg_hr <= b.max) || counts[counts.length-1];
+    z.count++;
+  });
+  const total = acts.length;
+  /* Identify those that were intended as easy */
+  const labelledEasy = acts.filter(a => /easy|recovery/i.test(a.name||''));
+  const easyActuallyZ2 = labelledEasy.filter(a => a.avg_hr <= 0.70*maxHR).length;
+  const easyInGreyZone = labelledEasy.filter(a => a.avg_hr > 0.70*maxHR && a.avg_hr <= 0.85*maxHR).length;
+  const greyTotal = counts[1].count + counts[2].count;
+  const segs = counts.map(c => ({value:c.count, color:c.color, label:c.lbl}));
+  document.getElementById('zone-card').innerHTML = `
+    <div class="zone-card">
+      <div class="zone-head">
+        <div class="zone-title">Where your runs landed</div>
+        <div class="zone-stat">${greyTotal}<span class="denom">/${total} grey-zone</span></div>
+      </div>
+      <div class="zone-vis">
+        ${donut(120, segs)}
+        <div class="zone-legend">
+          ${counts.map(c => `<div class="zone-row"><div class="zone-dot" style="background:${c.color}"></div><div class="name">${c.lbl}</div><div class="v">${c.count}</div></div>`).join('')}
+        </div>
+      </div>
+      <div class="zone-insight">
+        Of <strong>${labelledEasy.length} runs you labelled "easy"</strong>, only <strong>${easyActuallyZ2}</strong> stayed in Zone 2. The other ${labelledEasy.length-easyActuallyZ2} drifted up. Capping at <strong>145 bpm</strong> on recovery runs is the single biggest unlock available.
+      </div>
+    </div>`;
+}
+
+/* ── VO2 max trajectory from recent run vo2max values ── */
+function renderVO2(d){
+  const acts = (d.activities||[]).filter(a=>a.vo2max>0).slice(0,15).reverse();
+  const current = d.vo2max?.value || d.training_status?.vo2max || 0;
+  const peak = 52.1;
+  const target = 55;
+  const series = acts.map(a => a.vo2max);
+  const delta = current - (acts[0]?.vo2max || current);
+  document.getElementById('vo2-card').innerHTML = `
+    <div class="vo2-card">
+      <div class="vo2-head">
+        <div class="vo2-now">${current.toFixed(1)}<span class="delta ${delta>0?'up':delta<0?'dn':''}">${delta>=0?'+':''}${delta.toFixed(1)} vs ${acts.length} runs ago</span></div>
+        <div class="vo2-target">12-mo peak<br><strong>${peak}</strong></div>
+      </div>
+      <div class="vo2-chart" style="color:var(--accent);">
+        ${sparkline(series, {id:'vo2', h:80})}
+      </div>
+      <div class="zone-insight">
+        Stable around <strong>${current.toFixed(1)}</strong>. Target for London Marathon: <strong>${target}+</strong>. To climb, you need 80% of weekly volume in Zone 2 (true easy) plus 1 weekly threshold session — the polarised pattern.
+      </div>
+    </div>`;
+}
+
+/* ── Predicted vs actual race times ── */
+function renderPredVsActual(d){
+  const p = d.race_predictions || {};
+  /* Look for past races in activity feed */
+  const actsWithName = (d.activities||[]).filter(a => /half marathon|marathon|10k|5k/i.test(a.name||''));
+  /* Match each prediction to nearest matching race in history */
+  const mins = s => Math.floor(s/60) + ':' + String(Math.round(s%60)).padStart(2,'0');
+  const fmt = s => {const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sc=Math.round(s%60); return h>0?`${h}:${String(m).padStart(2,'0')}:${String(sc).padStart(2,'0')}`:`${m}:${String(sc).padStart(2,'0')}`;};
+  const rows = [
+    {dist:'5K', distM:5000, pred:p.five_k, key:'5k'},
+    {dist:'10K', distM:10000, pred:p.ten_k, key:'10k'},
+    {dist:'Half', distM:21097, pred:p.half_marathon, key:'half'},
+    {dist:'Marathon', distM:42195, pred:p.marathon, key:'marathon'},
+  ];
+  document.getElementById('pred-actual-card').innerHTML = `
+    <div class="pa-card">
+      ${rows.map(r => {
+        /* Find an activity with distance close to this race distance */
+        const match = actsWithName.find(a => Math.abs(a.distance_m - r.distM) / r.distM < 0.05);
+        const actualSec = match ? match.duration_s : null;
+        const delta = (actualSec && r.pred) ? (actualSec - r.pred) : null;
+        const deltaClass = delta === null ? '' : (delta < 0 ? 'faster' : 'slower');
+        const deltaText = delta === null ? '' : `${delta < 0 ? '−' : '+'}${mins(Math.abs(delta))}`;
+        return `<div class="pa-row">
+          <div class="pa-dist">${r.dist}</div>
+          <div class="pa-times">
+            <span class="lbl">Predicted</span><span class="v">${r.pred?fmt(r.pred):'—'}</span>
+          </div>
+          <div>
+            <div class="pa-actual">${actualSec?fmt(actualSec):'—'}</div>
+            <span class="pa-delta ${deltaClass}">${deltaText||'no run'}</span>
+          </div>
+          <div></div>
+        </div>`;
+      }).join('')}
+      <div class="zone-insight" style="margin-top:14px;">
+        Garmin's predictions are derived from VO₂ max alone — they assume a perfect race day. Your actual times tell you the gap between fitness ceiling and race execution. Bigger gaps = more work needed on race-specific endurance and pacing.
+      </div>
+    </div>`;
+}
+
+/* ── Auto-generated coach insights ── */
+function renderInsights(d){
+  const ins = [];
+  const sleep = d.sleep?.score || 0;
+  const sleepHist = (d.history?.sleep||[]).map(x=>x.value);
+  const sleepAvg = avgNZ(sleepHist.slice(-7));
+  const hrv = d.hrv?.weekly_avg || 0;
+  const rhr = d.heart_rate?.resting || 0;
+  const rhr7 = avgNZ((d.history?.rhr||[]).map(x=>x.value).slice(-7));
+  const tr = d.training_readiness?.score || 0;
+  const lb = d.training_status?.load_balance;
+  const acts = d.activities || [];
+  const easyRuns = acts.filter(a => /easy|recovery/i.test(a.name||'') && a.avg_hr>0);
+  const easyAvgHR = easyRuns.length ? Math.round(avgNZ(easyRuns.map(a=>a.avg_hr))) : 0;
+
+  /* Standing rule */
+  if(easyAvgHR > 145){
+    ins.push({type:'bad', tag:'#1 fix', text:`Your "easy" runs average <strong>${easyAvgHR} bpm</strong> — that's Zone 4, not Zone 2. Cap at <strong>145 bpm</strong> on recovery runs. This is the single biggest unlock in your training.`});
+  }
+
+  /* Sleep status */
+  if(sleepAvg >= 85){
+    ins.push({type:'good', tag:'Sleep', text:`7-day sleep avg is <strong>${sleepAvg.toFixed(0)}/100</strong> — excellent. You're recovering well. Hold the line on bedtime.`});
+  } else if(sleepAvg >= 70){
+    ins.push({type:'warn', tag:'Sleep', text:`7-day sleep avg is <strong>${sleepAvg.toFixed(0)}/100</strong> — decent but room to improve. Bed before 23:00 to push above 85.`});
+  } else if(sleepAvg > 0){
+    ins.push({type:'bad', tag:'Sleep', text:`7-day sleep avg dropped to <strong>${sleepAvg.toFixed(0)}/100</strong>. Recovery will lag here. Prioritise sleep this week.`});
+  }
+
+  /* RHR status */
+  if(rhr && rhr7){
+    if(rhr <= rhr7 - 2){
+      ins.push({type:'good', tag:'RHR', text:`RHR at <strong>${rhr} bpm</strong> — below your 7-day avg of ${rhr7.toFixed(0)}. Body well-adapted to training.`});
+    } else if(rhr >= rhr7 + 4){
+      ins.push({type:'bad', tag:'RHR', text:`RHR jumped to <strong>${rhr} bpm</strong> from 7-day avg ${rhr7.toFixed(0)}. Possible accumulated fatigue or illness — back off intensity.`});
+    }
+  }
+
+  /* HRV */
+  if(hrv >= 60){
+    ins.push({type:'good', tag:'HRV', text:`HRV at <strong>${hrv}ms</strong> · ${(d.hrv?.status||'').toLowerCase()}. Nervous system is well-recovered.`});
+  }
+
+  /* Training readiness */
+  if(tr <= 4){
+    ins.push({type:'bad', tag:'Readiness', text:`Training readiness <strong>${tr}/100</strong>. Active recovery only today — no hard cardio, no heavy lifts.`});
+  } else if(tr >= 75){
+    ins.push({type:'good', tag:'Readiness', text:`Training readiness <strong>${tr}/100</strong> — green light for quality work today.`});
+  }
+
+  /* Load balance */
+  if(lb === 'AEROBIC_LOW_SHORTAGE'){
+    ins.push({type:'warn', tag:'Load balance', text:`Garmin flags <strong>aerobic-low shortage</strong>. Add easy Z2 volume — currently your weekly load skews toward intensity.`});
+  }
+
+  /* Race countdown urgency */
+  const nextRace = RACES.find(r => !r.done && (new Date(r.date+'T00:00:00').getTime() - new Date(TODAY+'T00:00:00').getTime())/86400000 >= 0);
+  if(nextRace){
+    const days = Math.round((new Date(nextRace.date+'T00:00:00').getTime() - new Date(TODAY+'T00:00:00').getTime())/86400000);
+    if(days <= 7){
+      ins.push({type:'warn', tag:'Race week', text:`<strong>${nextRace.name}</strong> in <strong>${days} days</strong>. Sharpen, don't spend. Carb-load Thu–Fri. Mobility Fri. Bed early.`});
+    }
+  }
+
+  document.getElementById('insights').innerHTML = ins.map(i =>
+    `<div class="glass insight ${i.type}"><div class="insight-tag">${i.tag}</div><div class="insight-text">${i.text}</div></div>`
+  ).join('');
+}
+
+/* ── Up Next on home — show next 3 scheduled sessions ── */
+function renderUpNext(d){
+  const sw = d.scheduled_workouts || [];
+  /* Build a list of upcoming sessions: combine Runna scheduled + phase-template days */
+  const upcoming = [];
+  for(let i=1; i<=7; i++){
+    const dt = new Date(TODAY+'T00:00:00');
+    dt.setDate(dt.getDate()+i);
+    const y=dt.getFullYear(),m=String(dt.getMonth()+1).padStart(2,'0'),dd=String(dt.getDate()).padStart(2,'0');
+    const iso=`${y}-${m}-${dd}`;
+    const dow = dt.getDay();
+    const phase = getPhase(iso);
+    const session = phase.days[dow];
+    const runna = sw.find(w => w.date === iso);
+    let label, type, source = '';
+    if(runna){
+      const p = parseRunna(runna.title);
+      label = p.name + (p.dist?` · ${p.dist} km`:'');
+      type = runna.is_race ? 'race' : 'runna';
+      source = p.week + (runna.is_race?' · RACE':' · From Runna');
+    } else if(session){
+      const tmap = {strength:'Strength',cycling:'Cycling',mobility:'Mobility',rest:'Rest',race:'Race',run:'Run'};
+      label = session.name;
+      type = session.type;
+      source = session.short || tmap[session.type] || '';
+    } else {
+      continue;
+    }
+    upcoming.push({iso, dt, dow, label, type, source});
+    if(upcoming.length >= 4) break;
+  }
+  document.getElementById('upnext-list').innerHTML = upcoming.map(u => {
+    const day = u.dt.toLocaleDateString('en-GB',{weekday:'short'}).toUpperCase();
+    const tagText = u.type==='runna' ? 'RUNNA' : u.type==='race' ? 'RACE' : u.type.toUpperCase();
+    return `<div class="glass upnext">
+      <div class="upnext-day">
+        <div class="d">${day}</div>
+        <div class="n">${u.dt.getDate()}</div>
+      </div>
+      <div class="upnext-info">
+        <div class="name">${u.label}</div>
+        <div class="meta">${u.source}</div>
+      </div>
+      <div class="upnext-tag ${u.type}">${tagText}</div>
+    </div>`;
+  }).join('');
+}
 
 function renderMetrics(d){
+  /* All the new analytical sections */
+  renderInsights(d);
+  renderTrends(d);
+  renderZones(d);
+  renderVO2(d);
+  renderPredVsActual(d);
+
   const rows=[
     ['VO₂ max',(d.vo2max?.value||d.training_status?.vo2max||0).toFixed(1)],
     ['Resting HR',`${d.heart_rate?.resting||'—'} bpm`],
@@ -2121,8 +2602,6 @@ function renderMetrics(d){
     ['HRV status',(d.hrv?.status||'—').toLowerCase()],
     ['Sleep score',`${d.sleep?.score||'—'} / 100`],
     ['Sleep duration',formatDur(d.sleep?.duration_s)],
-    ['Deep sleep',formatDur(d.sleep?.deep_s)],
-    ['REM sleep',formatDur(d.sleep?.rem_s)],
     ['Avg SpO₂',d.spo2?.avg?`${d.spo2.avg}%`:'—'],
     ['Avg stress',`${d.stress?.avg||'—'} / 100`],
     ['Body battery',`${d.body_battery?.charged||'—'}↑ ${d.body_battery?.drained||'—'}↓`],
@@ -2162,6 +2641,9 @@ async function boot(){
   }catch(e){console.warn(e);}
 
   APP_DATA = d;
+  /* Sync TODAY to the actual data date so phases / DOW stay accurate */
+  syncToday(d.fetched_at);
+  renderUpNext(d);
   renderTitleBar(d);
   renderHero(d);
   renderRecovery(d);
