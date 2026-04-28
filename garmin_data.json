@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Southwark - W14 Tue Hills - Hill Repeats (10",
+      "type": "running",
+      "date": "2026-04-28",
+      "distance_m": 9472.41015625,
+      "duration_s": 3247.298095703125,
+      "avg_hr": 166.0,
+      "max_hr": 196.0,
+      "calories": 701.0,
+      "elevation_m": 42.0,
+      "avg_speed": 2.9170000553131104,
+      "aerobic_te": 4.099999904632568,
+      "vo2max": 49.0
+    },
+    {
       "name": "Strength",
       "type": "strength_training",
       "date": "2026-04-27",
@@ -269,20 +283,6 @@
       "avg_speed": 0.0,
       "aerobic_te": 1.600000023841858,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - W9 Tue Tempo - Tempo 2km Repeats",
-      "type": "running",
-      "date": "2026-03-24",
-      "distance_m": 8267.169921875,
-      "duration_s": 2769.722900390625,
-      "avg_hr": 174.0,
-      "max_hr": 197.0,
-      "calories": 617.0,
-      "elevation_m": 27.0,
-      "avg_speed": 2.9849998950958248,
-      "aerobic_te": 4.599999904632568,
-      "vo2max": 48.0
     }
   ],
   "sleep": {
@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 65,
-    "drained": 1,
-    "end_val": "2026-04-28T07:35:00.0"
+    "drained": 38,
+    "end_val": "2026-04-28T12:46:00.0"
   },
   "heart_rate": {
     "resting": 45,
-    "max": 73,
+    "max": 186,
     "min": 43,
     "last_7d_avg_resting": 45
   },
   "stress": {
-    "avg": 13,
-    "max": 54,
+    "avg": 16,
+    "max": 78,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,25 +328,25 @@
     "lowest": 87
   },
   "training_readiness": {
-    "score": 75,
-    "level": "HIGH",
+    "score": 38,
+    "level": "LOW",
     "feedback": ""
   },
   "training_status": {
-    "status": "RECOVERY_1",
-    "load": 455,
-    "load_chronic": 605,
-    "acwr": 0.7,
-    "acwr_status": "LOW",
+    "status": "PRODUCTIVE_3",
+    "load": 814,
+    "load_chronic": 669,
+    "acwr": 1.2,
+    "acwr_status": "OPTIMAL",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_SHORTAGE",
     "monthly_aerobic_low": 56.15776,
-    "monthly_aerobic_high": 2250.5557,
-    "monthly_anaerobic": 239.0313,
-    "vo2max": 48.7
+    "monthly_aerobic_high": 2434.0376,
+    "monthly_anaerobic": 337.84845,
+    "vo2max": 49.0
   },
   "vo2max": {
-    "value": 48.7
+    "value": 49.0
   },
   "respiration": {
     "avg": 12.0,
@@ -354,13 +354,13 @@
     "lowest": 8.0
   },
   "race_predictions": {
-    "five_k": 1403,
-    "ten_k": 2953,
-    "half_marathon": 6638,
-    "marathon": 14731
+    "five_k": 1392,
+    "ten_k": 2934,
+    "half_marathon": 6605,
+    "marathon": 14637
   },
   "endurance_score": {
-    "overall": 6046,
+    "overall": 6078,
     "level": 3
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 95591,
-    "daily_avg": 11948
+    "weekly_total": 106033,
+    "daily_avg": 13254
   },
   "intensity": {
     "moderate": 17,
-    "vigorous": 0,
+    "vigorous": 64,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,11 +671,19 @@
       },
       {
         "date": "2026-04-28",
-        "value": 13
+        "value": 16
       }
     ]
   },
   "scheduled_workouts": [
+    {
+      "date": "2026-04-28",
+      "title": "Southwark - W14 Tue Hills - Hill Repeats (10",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
     {
       "date": "2026-04-28",
       "title": "W14 Tue Hills - Hill Repeats (10.8km)",
@@ -742,5 +750,5 @@
     }
   ],
   "fetched_at": "2026-04-28",
-  "fetched_time": "13:23"
+  "fetched_time": "16:22"
 }
