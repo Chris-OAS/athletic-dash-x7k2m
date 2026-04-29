@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Southwark Cycling",
+      "type": "cycling",
+      "date": "2026-04-29",
+      "distance_m": 17272.890625,
+      "duration_s": 3600.930908203125,
+      "avg_hr": 129.0,
+      "max_hr": 165.0,
+      "calories": 453.0,
+      "elevation_m": 206.0,
+      "avg_speed": 4.796999931335449,
+      "aerobic_te": 2.0999999046325684,
+      "vo2max": 0
+    },
+    {
       "name": "Yoga",
       "type": "yoga",
       "date": "2026-04-28",
@@ -269,20 +283,6 @@
       "avg_speed": 0.0,
       "aerobic_te": 1.100000023841858,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - W10 Tue Tempo - Progressive Run",
-      "type": "running",
-      "date": "2026-03-31",
-      "distance_m": 11138.2900390625,
-      "duration_s": 3705.802001953125,
-      "avg_hr": 176.0,
-      "max_hr": 194.0,
-      "calories": 825.0,
-      "elevation_m": 26.0,
-      "avg_speed": 3.00600004196167,
-      "aerobic_te": 5.0,
-      "vo2max": 48.0
     }
   ],
   "sleep": {
@@ -328,21 +328,21 @@
     "lowest": 85
   },
   "training_readiness": {
-    "score": 86,
+    "score": 88,
     "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_3",
-    "load": 706,
-    "load_chronic": 648,
-    "acwr": 1.0,
+    "load": 770,
+    "load_chronic": 659,
+    "acwr": 1.1,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_SHORTAGE",
-    "monthly_aerobic_low": 42.75284,
+    "monthly_aerobic_low": 78.720245,
     "monthly_aerobic_high": 2434.0376,
-    "monthly_anaerobic": 318.99777,
+    "monthly_anaerobic": 332.88052,
     "vo2max": 49.0
   },
   "vo2max": {
@@ -354,13 +354,13 @@
     "lowest": 6.0
   },
   "race_predictions": {
-    "five_k": 1393,
-    "ten_k": 2936,
-    "half_marathon": 6608,
-    "marathon": 14645
+    "five_k": 1390,
+    "ten_k": 2930,
+    "half_marathon": 6599,
+    "marathon": 14624
   },
   "endurance_score": {
-    "overall": 6076,
+    "overall": 6083,
     "level": 3
   },
   "hill_score": {
@@ -677,6 +677,14 @@
   },
   "scheduled_workouts": [
     {
+      "date": "2026-04-29",
+      "title": "Southwark Cycling",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
+    {
       "date": "2026-04-30",
       "title": "W14 Thu Easy Run - 10km Easy Run (10km)",
       "sport": "running",
@@ -734,5 +742,5 @@
     }
   ],
   "fetched_at": "2026-04-29",
-  "fetched_time": "09:04"
+  "fetched_time": "11:48"
 }
