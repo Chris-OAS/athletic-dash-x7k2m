@@ -286,90 +286,90 @@
     }
   ],
   "sleep": {
-    "score": 0,
-    "duration_s": null,
-    "deep_s": null,
-    "rem_s": null,
-    "light_s": null,
-    "awake_s": null,
-    "avg_spo2": 0,
-    "avg_resp": 0,
+    "score": 94,
+    "duration_s": 32334,
+    "deep_s": 6300,
+    "rem_s": 9780,
+    "light_s": 16260,
+    "awake_s": 240,
+    "avg_spo2": 95.0,
+    "avg_resp": 13.0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 0,
+    "weekly_avg": 67,
     "last_night": 0,
-    "status": "unknown",
+    "status": "BALANCED",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": null,
-    "drained": null,
-    "end_val": null
+    "charged": 65,
+    "drained": 4,
+    "end_val": "2026-04-30T07:38:00.0"
   },
   "heart_rate": {
-    "resting": null,
-    "max": null,
-    "min": null,
-    "last_7d_avg_resting": null
+    "resting": 45,
+    "max": 90,
+    "min": 43,
+    "last_7d_avg_resting": 45
   },
   "stress": {
-    "avg": null,
-    "max": null,
+    "avg": 13,
+    "max": 84,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": null,
-    "lowest": null
+    "avg": 94.0,
+    "lowest": 72
   },
   "training_readiness": {
-    "score": 0,
-    "level": "",
+    "score": 100,
+    "level": "PRIME",
     "feedback": ""
   },
   "training_status": {
-    "status": "",
-    "load": 0,
-    "load_chronic": 0,
-    "acwr": 0,
-    "acwr_status": "",
-    "fitness_trend": 0,
-    "load_balance": "",
-    "monthly_aerobic_low": 0,
-    "monthly_aerobic_high": 0,
-    "monthly_anaerobic": 0,
-    "vo2max": 0
+    "status": "PRODUCTIVE_3",
+    "load": 654,
+    "load_chronic": 638,
+    "acwr": 1.0,
+    "acwr_status": "OPTIMAL",
+    "fitness_trend": 3,
+    "load_balance": "AEROBIC_LOW_SHORTAGE",
+    "monthly_aerobic_low": 78.720245,
+    "monthly_aerobic_high": 2236.3325,
+    "monthly_anaerobic": 332.88052,
+    "vo2max": 49.0
   },
   "vo2max": {
-    "value": 0
+    "value": 49.0
   },
   "respiration": {
-    "avg": null,
-    "highest": null,
-    "lowest": null
+    "avg": 12.0,
+    "highest": 19.0,
+    "lowest": 7.0
   },
   "race_predictions": {
-    "five_k": 1390,
-    "ten_k": 2930,
-    "half_marathon": 6599,
-    "marathon": 14624
+    "five_k": 1391,
+    "ten_k": 2932,
+    "half_marathon": 6602,
+    "marathon": 14631
   },
   "endurance_score": {
-    "overall": 0,
-    "level": ""
+    "overall": 6080,
+    "level": 3
   },
   "hill_score": {
     "value": 0,
     "level": ""
   },
   "steps": {
-    "weekly_total": 86619,
-    "daily_avg": 12374
+    "weekly_total": 88946,
+    "daily_avg": 11118
   },
   "intensity": {
     "moderate": 47,
@@ -380,8 +380,8 @@
     "value": 0
   },
   "morning_readiness": {
-    "score": 0,
-    "level": ""
+    "score": 100,
+    "level": "PRIME"
   },
   "history": {
     "sleep": [
@@ -439,7 +439,7 @@
       },
       {
         "date": "2026-04-30",
-        "value": 0
+        "value": 94
       }
     ],
     "hrv": [
@@ -497,7 +497,7 @@
       },
       {
         "date": "2026-04-30",
-        "value": 0
+        "value": 75
       }
     ],
     "rhr": [
@@ -555,7 +555,7 @@
       },
       {
         "date": "2026-04-30",
-        "value": null
+        "value": 45
       }
     ],
     "bb": [
@@ -609,11 +609,11 @@
       },
       {
         "date": "2026-04-29",
-        "value": 68
+        "value": 73
       },
       {
         "date": "2026-04-30",
-        "value": null
+        "value": 65
       }
     ],
     "stress": [
@@ -667,11 +667,11 @@
       },
       {
         "date": "2026-04-29",
-        "value": 18
+        "value": 25
       },
       {
         "date": "2026-04-30",
-        "value": null
+        "value": 13
       }
     ]
   },
@@ -734,5 +734,5 @@
     }
   ],
   "fetched_at": "2026-04-30",
-  "fetched_time": "00:47"
+  "fetched_time": "09:08"
 }
