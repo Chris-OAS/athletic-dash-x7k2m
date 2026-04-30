@@ -286,72 +286,72 @@
     }
   ],
   "sleep": {
-    "score": 94,
-    "duration_s": 32334,
-    "deep_s": 6300,
-    "rem_s": 9780,
-    "light_s": 16260,
-    "awake_s": 240,
-    "avg_spo2": 95.0,
-    "avg_resp": 13.0,
+    "score": 0,
+    "duration_s": null,
+    "deep_s": null,
+    "rem_s": null,
+    "light_s": null,
+    "awake_s": null,
+    "avg_spo2": 0,
+    "avg_resp": 0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 67,
+    "weekly_avg": 0,
     "last_night": 0,
-    "status": "BALANCED",
+    "status": "unknown",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 66,
-    "drained": 51,
-    "end_val": "2026-04-30T16:16:00.0"
+    "charged": null,
+    "drained": null,
+    "end_val": null
   },
   "heart_rate": {
-    "resting": 45,
-    "max": 167,
-    "min": 43,
-    "last_7d_avg_resting": 45
+    "resting": null,
+    "max": null,
+    "min": null,
+    "last_7d_avg_resting": null
   },
   "stress": {
-    "avg": 22,
-    "max": 88,
+    "avg": null,
+    "max": null,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": 95.0,
-    "lowest": 72
+    "avg": null,
+    "lowest": null
   },
   "training_readiness": {
-    "score": 84,
-    "level": "HIGH",
+    "score": 0,
+    "level": "",
     "feedback": ""
   },
   "training_status": {
-    "status": "PRODUCTIVE_3",
-    "load": 833,
-    "load_chronic": 671,
-    "acwr": 1.2,
-    "acwr_status": "OPTIMAL",
-    "fitness_trend": 3,
-    "load_balance": "AEROBIC_LOW_SHORTAGE",
-    "monthly_aerobic_low": 219.43517,
-    "monthly_aerobic_high": 2236.3325,
-    "monthly_anaerobic": 332.88052,
-    "vo2max": 49.1
+    "status": "",
+    "load": 0,
+    "load_chronic": 0,
+    "acwr": 0,
+    "acwr_status": "",
+    "fitness_trend": 0,
+    "load_balance": "",
+    "monthly_aerobic_low": 0,
+    "monthly_aerobic_high": 0,
+    "monthly_anaerobic": 0,
+    "vo2max": 0
   },
   "vo2max": {
-    "value": 49.1
+    "value": 0
   },
   "respiration": {
-    "avg": 12.0,
-    "highest": 19.0,
-    "lowest": 6.0
+    "avg": null,
+    "highest": null,
+    "lowest": null
   },
   "race_predictions": {
     "five_k": 1380,
@@ -360,16 +360,16 @@
     "marathon": 14514
   },
   "endurance_score": {
-    "overall": 6122,
-    "level": 3
+    "overall": 0,
+    "level": ""
   },
   "hill_score": {
     "value": 0,
     "level": ""
   },
   "steps": {
-    "weekly_total": 108466,
-    "daily_avg": 13558
+    "weekly_total": 93500,
+    "daily_avg": 13357
   },
   "intensity": {
     "moderate": 52,
@@ -380,15 +380,11 @@
     "value": 0
   },
   "morning_readiness": {
-    "score": 100,
-    "level": "PRIME"
+    "score": 0,
+    "level": ""
   },
   "history": {
     "sleep": [
-      {
-        "date": "2026-04-17",
-        "value": 83
-      },
       {
         "date": "2026-04-18",
         "value": 91
@@ -440,13 +436,13 @@
       {
         "date": "2026-04-30",
         "value": 94
+      },
+      {
+        "date": "2026-05-01",
+        "value": 0
       }
     ],
     "hrv": [
-      {
-        "date": "2026-04-17",
-        "value": 58
-      },
       {
         "date": "2026-04-18",
         "value": 71
@@ -498,13 +494,13 @@
       {
         "date": "2026-04-30",
         "value": 75
+      },
+      {
+        "date": "2026-05-01",
+        "value": 0
       }
     ],
     "rhr": [
-      {
-        "date": "2026-04-17",
-        "value": 47
-      },
       {
         "date": "2026-04-18",
         "value": 43
@@ -556,13 +552,13 @@
       {
         "date": "2026-04-30",
         "value": 45
+      },
+      {
+        "date": "2026-05-01",
+        "value": null
       }
     ],
     "bb": [
-      {
-        "date": "2026-04-17",
-        "value": 50
-      },
       {
         "date": "2026-04-18",
         "value": 74
@@ -614,13 +610,13 @@
       {
         "date": "2026-04-30",
         "value": 66
+      },
+      {
+        "date": "2026-05-01",
+        "value": null
       }
     ],
     "stress": [
-      {
-        "date": "2026-04-17",
-        "value": 29
-      },
       {
         "date": "2026-04-18",
         "value": 24
@@ -672,26 +668,14 @@
       {
         "date": "2026-04-30",
         "value": 22
+      },
+      {
+        "date": "2026-05-01",
+        "value": null
       }
     ]
   },
   "scheduled_workouts": [
-    {
-      "date": "2026-04-30",
-      "title": "Southwark - W14 Thu Easy Run - 10km Easy Run",
-      "sport": null,
-      "workout_id": null,
-      "is_race": null,
-      "item_type": "activity"
-    },
-    {
-      "date": "2026-04-30",
-      "title": "W14 Thu Easy Run - 10km Easy Run (10km)",
-      "sport": "running",
-      "workout_id": 1541900793,
-      "is_race": null,
-      "item_type": "workout"
-    },
     {
       "date": "2026-05-02",
       "title": "W14 Sat Long Run - 19km Long Run (19km)",
@@ -741,6 +725,6 @@
       "item_type": "event"
     }
   ],
-  "fetched_at": "2026-04-30",
-  "fetched_time": "23:44"
+  "fetched_at": "2026-05-01",
+  "fetched_time": "00:44"
 }
