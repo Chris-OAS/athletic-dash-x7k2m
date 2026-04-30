@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Southwark - W14 Thu Easy Run - 10km Easy Run",
+      "type": "running",
+      "date": "2026-04-30",
+      "distance_m": 10026.2099609375,
+      "duration_s": 3656.071044921875,
+      "avg_hr": 160.0,
+      "max_hr": 171.0,
+      "calories": 751.0,
+      "elevation_m": 26.0,
+      "avg_speed": 2.7420001029968257,
+      "aerobic_te": 3.5999999046325684,
+      "vo2max": 49.0
+    },
+    {
       "name": "Southwark Cycling",
       "type": "cycling",
       "date": "2026-04-29",
@@ -269,20 +283,6 @@
       "avg_speed": 2.867000102996826,
       "aerobic_te": 4.599999904632568,
       "vo2max": 48.0
-    },
-    {
-      "name": "Strength",
-      "type": "strength_training",
-      "date": "2026-04-01",
-      "distance_m": 0.0,
-      "duration_s": 2650.6689453125,
-      "avg_hr": 117.0,
-      "max_hr": 154.0,
-      "calories": 268.0,
-      "elevation_m": 0,
-      "avg_speed": 0.0,
-      "aerobic_te": 1.100000023841858,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,17 +306,17 @@
   },
   "body_battery": {
     "charged": 65,
-    "drained": 4,
-    "end_val": "2026-04-30T07:38:00.0"
+    "drained": 29,
+    "end_val": "2026-04-30T10:41:00.0"
   },
   "heart_rate": {
     "resting": 45,
-    "max": 90,
+    "max": 167,
     "min": 43,
     "last_7d_avg_resting": 45
   },
   "stress": {
-    "avg": 13,
+    "avg": 15,
     "max": 84,
     "rest_duration": 0,
     "low_duration": 0,
@@ -328,25 +328,25 @@
     "lowest": 72
   },
   "training_readiness": {
-    "score": 100,
-    "level": "PRIME",
+    "score": 84,
+    "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_3",
-    "load": 654,
-    "load_chronic": 638,
-    "acwr": 1.0,
+    "load": 833,
+    "load_chronic": 671,
+    "acwr": 1.2,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_SHORTAGE",
-    "monthly_aerobic_low": 78.720245,
+    "monthly_aerobic_low": 219.43517,
     "monthly_aerobic_high": 2236.3325,
     "monthly_anaerobic": 332.88052,
-    "vo2max": 49.0
+    "vo2max": 49.1
   },
   "vo2max": {
-    "value": 49.0
+    "value": 49.1
   },
   "respiration": {
     "avg": 12.0,
@@ -354,13 +354,13 @@
     "lowest": 7.0
   },
   "race_predictions": {
-    "five_k": 1391,
-    "ten_k": 2932,
-    "half_marathon": 6602,
-    "marathon": 14631
+    "five_k": 1380,
+    "ten_k": 2909,
+    "half_marathon": 6552,
+    "marathon": 14514
   },
   "endurance_score": {
-    "overall": 6080,
+    "overall": 6122,
     "level": 3
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 88946,
-    "daily_avg": 11118
+    "weekly_total": 100340,
+    "daily_avg": 12542
   },
   "intensity": {
-    "moderate": 47,
-    "vigorous": 91,
+    "moderate": 52,
+    "vigorous": 152,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,11 +671,19 @@
       },
       {
         "date": "2026-04-30",
-        "value": 13
+        "value": 15
       }
     ]
   },
   "scheduled_workouts": [
+    {
+      "date": "2026-04-30",
+      "title": "Southwark - W14 Thu Easy Run - 10km Easy Run",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
     {
       "date": "2026-04-30",
       "title": "W14 Thu Easy Run - 10km Easy Run (10km)",
@@ -734,5 +742,5 @@
     }
   ],
   "fetched_at": "2026-04-30",
-  "fetched_time": "09:08"
+  "fetched_time": "11:48"
 }
