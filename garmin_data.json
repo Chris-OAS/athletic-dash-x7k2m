@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Strength",
+      "type": "strength_training",
+      "date": "2026-05-01",
+      "distance_m": 0.0,
+      "duration_s": 2930.705078125,
+      "avg_hr": 103.0,
+      "max_hr": 152.0,
+      "calories": 241.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 0.800000011920929,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - W14 Thu Easy Run - 10km Easy Run",
       "type": "running",
       "date": "2026-04-30",
@@ -269,20 +283,6 @@
       "avg_speed": 3.0179998874664307,
       "aerobic_te": 5.0,
       "vo2max": 48.0
-    },
-    {
-      "name": "Southwark - W10 Thu Easy Run - 11km Easy Run",
-      "type": "running",
-      "date": "2026-04-02",
-      "distance_m": 11023.23046875,
-      "duration_s": 3845.093994140625,
-      "avg_hr": 171.0,
-      "max_hr": 182.0,
-      "calories": 826.0,
-      "elevation_m": 30.0,
-      "avg_speed": 2.867000102996826,
-      "aerobic_te": 4.599999904632568,
-      "vo2max": 48.0
     }
   ],
   "sleep": {
@@ -328,19 +328,19 @@
     "lowest": 86
   },
   "training_readiness": {
-    "score": 90,
+    "score": 93,
     "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_3",
-    "load": 700,
-    "load_chronic": 651,
-    "acwr": 1.0,
+    "load": 727,
+    "load_chronic": 656,
+    "acwr": 1.1,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_SHORTAGE",
-    "monthly_aerobic_low": 219.43517,
+    "monthly_aerobic_low": 231.06854,
     "monthly_aerobic_high": 2236.3325,
     "monthly_anaerobic": 332.88052,
     "vo2max": 49.1
@@ -354,13 +354,13 @@
     "lowest": 6.0
   },
   "race_predictions": {
-    "five_k": 1380,
-    "ten_k": 2908,
-    "half_marathon": 6551,
-    "marathon": 14512
+    "five_k": 1379,
+    "ten_k": 2907,
+    "half_marathon": 6548,
+    "marathon": 14507
   },
   "endurance_score": {
-    "overall": 6123,
+    "overall": 6125,
     "level": 3
   },
   "hill_score": {
@@ -677,6 +677,14 @@
   },
   "scheduled_workouts": [
     {
+      "date": "2026-05-01",
+      "title": "Strength",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
+    {
       "date": "2026-05-02",
       "title": "W14 Sat Long Run - 19km Long Run (19km)",
       "sport": "running",
@@ -726,5 +734,5 @@
     }
   ],
   "fetched_at": "2026-05-01",
-  "fetched_time": "09:55"
+  "fetched_time": "11:18"
 }
