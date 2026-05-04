@@ -7,6 +7,20 @@
     {
       "name": "Strength",
       "type": "strength_training",
+      "date": "2026-05-04",
+      "distance_m": 0.0,
+      "duration_s": 2230.549072265625,
+      "avg_hr": 108.0,
+      "max_hr": 151.0,
+      "calories": 213.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 0.8999999761581421,
+      "vo2max": 0
+    },
+    {
+      "name": "Strength",
+      "type": "strength_training",
       "date": "2026-05-01",
       "distance_m": 0.0,
       "duration_s": 2930.705078125,
@@ -269,20 +283,6 @@
       "avg_speed": 0.0,
       "aerobic_te": 1.100000023841858,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - W10 Sat Long Run - 16km Hilly Lo",
-      "type": "running",
-      "date": "2026-04-04",
-      "distance_m": 16015.26953125,
-      "duration_s": 5307.4619140625,
-      "avg_hr": 174.0,
-      "max_hr": 203.0,
-      "calories": 1164.0,
-      "elevation_m": 86.0,
-      "avg_speed": 3.0179998874664307,
-      "aerobic_te": 5.0,
-      "vo2max": 48.0
     }
   ],
   "sleep": {
@@ -334,13 +334,13 @@
   },
   "training_status": {
     "status": "PEAKING_1",
-    "load": 349,
-    "load_chronic": 593,
-    "acwr": 0.5,
+    "load": 366,
+    "load_chronic": 596,
+    "acwr": 0.6,
     "acwr_status": "LOW",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_SHORTAGE",
-    "monthly_aerobic_low": 217.32751,
+    "monthly_aerobic_low": 229.3825,
     "monthly_aerobic_high": 1941.8398,
     "monthly_anaerobic": 267.0509,
     "vo2max": 49.1
@@ -354,13 +354,13 @@
     "lowest": 8.0
   },
   "race_predictions": {
-    "five_k": 1381,
-    "ten_k": 2911,
-    "half_marathon": 6562,
-    "marathon": 14543
+    "five_k": 1380,
+    "ten_k": 2909,
+    "half_marathon": 6558,
+    "marathon": 14535
   },
   "endurance_score": {
-    "overall": 6112,
+    "overall": 6115,
     "level": 3
   },
   "hill_score": {
@@ -677,6 +677,14 @@
   },
   "scheduled_workouts": [
     {
+      "date": "2026-05-04",
+      "title": "Strength",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
+    {
       "date": "2026-05-05",
       "title": "W15 Tue Tempo - Under and Overs 2km (9km)",
       "sport": "running",
@@ -742,5 +750,5 @@
     }
   ],
   "fetched_at": "2026-05-04",
-  "fetched_time": "13:22"
+  "fetched_time": "16:06"
 }
