@@ -709,6 +709,30 @@
       "item_type": "workout"
     },
     {
+      "date": "2026-05-12",
+      "title": "W16 Tue Tempo - Over and Unders 1km (7.5km)",
+      "sport": "running",
+      "workout_id": 1556560452,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-05-14",
+      "title": "W16 Thu Easy Run - 10km Easy Run (10km)",
+      "sport": "running",
+      "workout_id": 1556560461,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-05-16",
+      "title": "W16 Sat Long Run - 12km Hilly Progressive Long Run (12km)",
+      "sport": "running",
+      "workout_id": 1556560477,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
       "date": "2026-05-23",
       "title": "UK Ultra South Downs 21k",
       "sport": null,
@@ -718,5 +742,5 @@
     }
   ],
   "fetched_at": "2026-05-04",
-  "fetched_time": "03:06"
+  "fetched_time": "06:57"
 }
