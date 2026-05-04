@@ -305,27 +305,27 @@
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": null,
-    "drained": null,
-    "end_val": null
+    "charged": 20,
+    "drained": 0,
+    "end_val": "2026-05-04T00:48:00.0"
   },
   "heart_rate": {
-    "resting": null,
-    "max": null,
-    "min": null,
-    "last_7d_avg_resting": null
+    "resting": 45,
+    "max": 66,
+    "min": 43,
+    "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": null,
-    "max": null,
+    "avg": 11,
+    "max": 21,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": null,
-    "lowest": null
+    "avg": 95.0,
+    "lowest": 90
   },
   "training_readiness": {
     "score": 0,
@@ -349,15 +349,15 @@
     "value": 0
   },
   "respiration": {
-    "avg": null,
-    "highest": null,
-    "lowest": null
+    "avg": 13.0,
+    "highest": 17.0,
+    "lowest": 8.0
   },
   "race_predictions": {
-    "five_k": 1379,
-    "ten_k": 2907,
-    "half_marathon": 6554,
-    "marathon": 14528
+    "five_k": 1381,
+    "ten_k": 2911,
+    "half_marathon": 6562,
+    "marathon": 14543
   },
   "endurance_score": {
     "overall": 0,
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 72331,
-    "daily_avg": 10333
+    "weekly_total": 72767,
+    "daily_avg": 9095
   },
   "intensity": {
     "moderate": 0,
@@ -555,7 +555,7 @@
       },
       {
         "date": "2026-05-04",
-        "value": null
+        "value": 45
       }
     ],
     "bb": [
@@ -609,11 +609,11 @@
       },
       {
         "date": "2026-05-03",
-        "value": 64
+        "value": 67
       },
       {
         "date": "2026-05-04",
-        "value": null
+        "value": 20
       }
     ],
     "stress": [
@@ -667,11 +667,11 @@
       },
       {
         "date": "2026-05-03",
-        "value": 21
+        "value": 22
       },
       {
         "date": "2026-05-04",
-        "value": null
+        "value": 11
       }
     ]
   },
@@ -718,5 +718,5 @@
     }
   ],
   "fetched_at": "2026-05-04",
-  "fetched_time": "00:37"
+  "fetched_time": "03:06"
 }
