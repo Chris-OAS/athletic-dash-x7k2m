@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Southwark - W15 Tue Tempo - Under and Overs",
+      "type": "running",
+      "date": "2026-05-05",
+      "distance_m": 9158.7802734375,
+      "duration_s": 3071.783935546875,
+      "avg_hr": 163.0,
+      "max_hr": 187.0,
+      "calories": 657.0,
+      "elevation_m": 38.0,
+      "avg_speed": 2.9820001125335693,
+      "aerobic_te": 3.799999952316284,
+      "vo2max": 49.0
+    },
+    {
       "name": "Strength",
       "type": "strength_training",
       "date": "2026-05-04",
@@ -269,20 +283,6 @@
       "avg_speed": 2.9130001068115234,
       "aerobic_te": 4.599999904632568,
       "vo2max": 48.0
-    },
-    {
-      "name": "Strength",
-      "type": "strength_training",
-      "date": "2026-04-06",
-      "distance_m": 0.0,
-      "duration_s": 2624.574951171875,
-      "avg_hr": 112.0,
-      "max_hr": 164.0,
-      "calories": 250.0,
-      "elevation_m": 0,
-      "avg_speed": 0.0,
-      "aerobic_te": 1.100000023841858,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -305,19 +305,19 @@
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 50,
-    "drained": 3,
-    "end_val": "2026-05-05T07:44:00.0"
+    "charged": 52,
+    "drained": 28,
+    "end_val": "2026-05-05T13:26:00.0"
   },
   "heart_rate": {
     "resting": 46,
-    "max": 85,
+    "max": 181,
     "min": 44,
     "last_7d_avg_resting": 44
   },
   "stress": {
     "avg": 20,
-    "max": 70,
+    "max": 75,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,39 +328,39 @@
     "lowest": 88
   },
   "training_readiness": {
-    "score": 96,
-    "level": "PRIME",
+    "score": 68,
+    "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
-    "status": "RECOVERY_2",
-    "load": 256,
-    "load_chronic": 572,
-    "acwr": 0.4,
+    "status": "PEAKING_1",
+    "load": 451,
+    "load_chronic": 607,
+    "acwr": 0.7,
     "acwr_status": "LOW",
-    "fitness_trend": 2,
+    "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_SHORTAGE",
     "monthly_aerobic_low": 229.3825,
-    "monthly_aerobic_high": 1730.0288,
+    "monthly_aerobic_high": 1883.1057,
     "monthly_anaerobic": 171.80418,
-    "vo2max": 49.1
+    "vo2max": 49.4
   },
   "vo2max": {
-    "value": 49.1
+    "value": 49.4
   },
   "respiration": {
     "avg": 13.0,
     "highest": 20.0,
-    "lowest": 7.0
+    "lowest": 6.0
   },
   "race_predictions": {
-    "five_k": 1380,
-    "ten_k": 2909,
-    "half_marathon": 6562,
-    "marathon": 14554
+    "five_k": 1375,
+    "ten_k": 2896,
+    "half_marathon": 6525,
+    "marathon": 14471
   },
   "endurance_score": {
-    "overall": 6108,
+    "overall": 6138,
     "level": 3
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 76544,
-    "daily_avg": 9568
+    "weekly_total": 87071,
+    "daily_avg": 10883
   },
   "intensity": {
-    "moderate": 21,
-    "vigorous": 5,
+    "moderate": 27,
+    "vigorous": 58,
     "goal": 150
   },
   "running_tolerance": {
@@ -613,7 +613,7 @@
       },
       {
         "date": "2026-05-05",
-        "value": 50
+        "value": 52
       }
     ],
     "stress": [
@@ -676,6 +676,14 @@
     ]
   },
   "scheduled_workouts": [
+    {
+      "date": "2026-05-05",
+      "title": "Southwark - W15 Tue Tempo - Under and Overs",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
     {
       "date": "2026-05-05",
       "title": "W15 Tue Tempo - Under and Overs 2km (9km)",
@@ -742,5 +750,5 @@
     }
   ],
   "fetched_at": "2026-05-05",
-  "fetched_time": "12:59"
+  "fetched_time": "17:19"
 }
