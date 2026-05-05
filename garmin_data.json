@@ -356,8 +356,8 @@
   "race_predictions": {
     "five_k": 1380,
     "ten_k": 2909,
-    "half_marathon": 6558,
-    "marathon": 14535
+    "half_marathon": 6562,
+    "marathon": 14554
   },
   "endurance_score": {
     "overall": 0,
@@ -742,5 +742,5 @@
     }
   ],
   "fetched_at": "2026-05-05",
-  "fetched_time": "00:45"
+  "fetched_time": "03:05"
 }
