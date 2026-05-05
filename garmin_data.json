@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Yoga",
+      "type": "yoga",
+      "date": "2026-05-05",
+      "distance_m": 0,
+      "duration_s": 5066.51611328125,
+      "avg_hr": 59.0,
+      "max_hr": 167.0,
+      "calories": 123.0,
+      "elevation_m": 0,
+      "avg_speed": 0,
+      "aerobic_te": 0.10000000149011612,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - W15 Tue Tempo - Under and Overs",
       "type": "running",
       "date": "2026-05-05",
@@ -269,20 +283,6 @@
       "avg_speed": 0,
       "aerobic_te": 0.10000000149011612,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - W11 Tue Hills - Drop Set Hill Re",
-      "type": "running",
-      "date": "2026-04-07",
-      "distance_m": 10101.849609375,
-      "duration_s": 3467.680908203125,
-      "avg_hr": 170.0,
-      "max_hr": 197.0,
-      "calories": 756.0,
-      "elevation_m": 44.0,
-      "avg_speed": 2.9130001068115234,
-      "aerobic_te": 4.599999904632568,
-      "vo2max": 48.0
     }
   ],
   "sleep": {
@@ -305,9 +305,9 @@
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 52,
-    "drained": 28,
-    "end_val": "2026-05-05T13:26:00.0"
+    "charged": 58,
+    "drained": 43,
+    "end_val": "2026-05-05T18:04:00.0"
   },
   "heart_rate": {
     "resting": 46,
@@ -316,8 +316,8 @@
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 20,
-    "max": 75,
+    "avg": 23,
+    "max": 87,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,14 +328,14 @@
     "lowest": 88
   },
   "training_readiness": {
-    "score": 68,
+    "score": 71,
     "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
     "status": "PEAKING_1",
-    "load": 451,
-    "load_chronic": 607,
+    "load": 456,
+    "load_chronic": 608,
     "acwr": 0.7,
     "acwr_status": "LOW",
     "fitness_trend": 3,
@@ -350,7 +350,7 @@
   },
   "respiration": {
     "avg": 13.0,
-    "highest": 20.0,
+    "highest": 21.0,
     "lowest": 6.0
   },
   "race_predictions": {
@@ -368,11 +368,11 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 87071,
-    "daily_avg": 10883
+    "weekly_total": 90879,
+    "daily_avg": 11359
   },
   "intensity": {
-    "moderate": 27,
+    "moderate": 28,
     "vigorous": 58,
     "goal": 150
   },
@@ -613,7 +613,7 @@
       },
       {
         "date": "2026-05-05",
-        "value": 52
+        "value": 58
       }
     ],
     "stress": [
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-05-05",
-        "value": 20
+        "value": 23
       }
     ]
   },
@@ -691,6 +691,14 @@
       "workout_id": 1549059695,
       "is_race": null,
       "item_type": "workout"
+    },
+    {
+      "date": "2026-05-05",
+      "title": "Yoga",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
     },
     {
       "date": "2026-05-07",
@@ -750,5 +758,5 @@
     }
   ],
   "fetched_at": "2026-05-05",
-  "fetched_time": "17:19"
+  "fetched_time": "19:06"
 }
