@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Wycombe Running",
+      "type": "running",
+      "date": "2026-05-09",
+      "distance_m": 15211.669921875,
+      "duration_s": 5739.0908203125,
+      "avg_hr": 171.0,
+      "max_hr": 195.0,
+      "calories": 1257.0,
+      "elevation_m": 500.0,
+      "avg_speed": 2.6510000228881836,
+      "aerobic_te": 4.800000190734863,
+      "vo2max": 49.0
+    },
+    {
       "name": "Yoga",
       "type": "yoga",
       "date": "2026-05-05",
@@ -269,20 +283,6 @@
       "avg_speed": 2.868000030517578,
       "aerobic_te": 3.9000000953674316,
       "vo2max": 48.0
-    },
-    {
-      "name": "Yoga",
-      "type": "yoga",
-      "date": "2026-04-07",
-      "distance_m": 0,
-      "duration_s": 5444.2431640625,
-      "avg_hr": 65.0,
-      "max_hr": 113.0,
-      "calories": 143.0,
-      "elevation_m": 0,
-      "avg_speed": 0,
-      "aerobic_te": 0.10000000149011612,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,8 +306,8 @@
   },
   "body_battery": {
     "charged": 57,
-    "drained": 57,
-    "end_val": "2026-05-09T11:05:00.0"
+    "drained": 59,
+    "end_val": "2026-05-09T11:54:00.0"
   },
   "heart_rate": {
     "resting": 43,
@@ -316,7 +316,7 @@
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 22,
+    "avg": 23,
     "max": 98,
     "rest_duration": 0,
     "low_duration": 0,
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 100780,
-    "daily_avg": 12597
+    "weekly_total": 102216,
+    "daily_avg": 12777
   },
   "intensity": {
     "moderate": 38,
-    "vigorous": 265,
+    "vigorous": 274,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-05-09",
-        "value": 22
+        "value": 23
       }
     ]
   },
@@ -691,6 +691,14 @@
       "workout_id": 1549059714,
       "is_race": null,
       "item_type": "workout"
+    },
+    {
+      "date": "2026-05-09",
+      "title": "Wycombe Running",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
     },
     {
       "date": "2026-05-12",
@@ -726,5 +734,5 @@
     }
   ],
   "fetched_at": "2026-05-09",
-  "fetched_time": "12:43"
+  "fetched_time": "13:59"
 }
