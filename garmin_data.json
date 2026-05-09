@@ -286,72 +286,72 @@
     }
   ],
   "sleep": {
-    "score": 81,
-    "duration_s": 23280,
-    "deep_s": 4620,
-    "rem_s": 3420,
-    "light_s": 15240,
-    "awake_s": 0,
-    "avg_spo2": 96.0,
-    "avg_resp": 13.0,
+    "score": 0,
+    "duration_s": null,
+    "deep_s": null,
+    "rem_s": null,
+    "light_s": null,
+    "awake_s": null,
+    "avg_spo2": 0,
+    "avg_resp": 0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 68,
+    "weekly_avg": 0,
     "last_night": 0,
-    "status": "BALANCED",
+    "status": "unknown",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 59,
-    "drained": 82,
-    "end_val": "2026-05-09T20:14:00.0"
+    "charged": null,
+    "drained": null,
+    "end_val": null
   },
   "heart_rate": {
-    "resting": 43,
-    "max": 193,
-    "min": 42,
-    "last_7d_avg_resting": 44
+    "resting": null,
+    "max": null,
+    "min": null,
+    "last_7d_avg_resting": null
   },
   "stress": {
-    "avg": 37,
-    "max": 98,
+    "avg": null,
+    "max": null,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": 94.0,
-    "lowest": 85
+    "avg": null,
+    "lowest": null
   },
   "training_readiness": {
-    "score": 16,
-    "level": "POOR",
+    "score": 0,
+    "level": "",
     "feedback": ""
   },
   "training_status": {
-    "status": "PRODUCTIVE_3",
-    "load": 561,
-    "load_chronic": 573,
-    "acwr": 0.9,
-    "acwr_status": "OPTIMAL",
-    "fitness_trend": 3,
-    "load_balance": "AEROBIC_LOW_SHORTAGE",
-    "monthly_aerobic_low": 218.42497,
-    "monthly_aerobic_high": 1663.6814,
-    "monthly_anaerobic": 205.92807,
-    "vo2max": 49.5
+    "status": "",
+    "load": 0,
+    "load_chronic": 0,
+    "acwr": 0,
+    "acwr_status": "",
+    "fitness_trend": 0,
+    "load_balance": "",
+    "monthly_aerobic_low": 0,
+    "monthly_aerobic_high": 0,
+    "monthly_anaerobic": 0,
+    "vo2max": 0
   },
   "vo2max": {
-    "value": 49.5
+    "value": 0
   },
   "respiration": {
-    "avg": 14.0,
-    "highest": 24.0,
-    "lowest": 6.0
+    "avg": null,
+    "highest": null,
+    "lowest": null
   },
   "race_predictions": {
     "five_k": 1355,
@@ -360,16 +360,16 @@
     "marathon": 14375
   },
   "endurance_score": {
-    "overall": 6173,
-    "level": 3
+    "overall": 0,
+    "level": ""
   },
   "hill_score": {
     "value": 0,
     "level": ""
   },
   "steps": {
-    "weekly_total": 106065,
-    "daily_avg": 13258
+    "weekly_total": 99197,
+    "daily_avg": 14171
   },
   "intensity": {
     "moderate": 38,
@@ -380,15 +380,11 @@
     "value": 0
   },
   "morning_readiness": {
-    "score": 94,
-    "level": "HIGH"
+    "score": 0,
+    "level": ""
   },
   "history": {
     "sleep": [
-      {
-        "date": "2026-04-26",
-        "value": 45
-      },
       {
         "date": "2026-04-27",
         "value": 97
@@ -440,13 +436,13 @@
       {
         "date": "2026-05-09",
         "value": 81
+      },
+      {
+        "date": "2026-05-10",
+        "value": 0
       }
     ],
     "hrv": [
-      {
-        "date": "2026-04-26",
-        "value": 48
-      },
       {
         "date": "2026-04-27",
         "value": 77
@@ -498,13 +494,13 @@
       {
         "date": "2026-05-09",
         "value": 66
+      },
+      {
+        "date": "2026-05-10",
+        "value": 0
       }
     ],
     "rhr": [
-      {
-        "date": "2026-04-26",
-        "value": 48
-      },
       {
         "date": "2026-04-27",
         "value": 44
@@ -556,13 +552,13 @@
       {
         "date": "2026-05-09",
         "value": 43
+      },
+      {
+        "date": "2026-05-10",
+        "value": null
       }
     ],
     "bb": [
-      {
-        "date": "2026-04-26",
-        "value": 38
-      },
       {
         "date": "2026-04-27",
         "value": 73
@@ -614,13 +610,13 @@
       {
         "date": "2026-05-09",
         "value": 59
+      },
+      {
+        "date": "2026-05-10",
+        "value": null
       }
     ],
     "stress": [
-      {
-        "date": "2026-04-26",
-        "value": 33
-      },
       {
         "date": "2026-04-27",
         "value": 22
@@ -672,34 +668,14 @@
       {
         "date": "2026-05-09",
         "value": 37
+      },
+      {
+        "date": "2026-05-10",
+        "value": null
       }
     ]
   },
   "scheduled_workouts": [
-    {
-      "date": "2026-05-09",
-      "title": "Tough Mudder London West (Saturday 15K)",
-      "sport": null,
-      "workout_id": null,
-      "is_race": true,
-      "item_type": "event"
-    },
-    {
-      "date": "2026-05-09",
-      "title": "W15 Sat Long Run - 16km Hilly Long Run (16km)",
-      "sport": "running",
-      "workout_id": 1549059714,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-05-09",
-      "title": "Wycombe Running",
-      "sport": null,
-      "workout_id": null,
-      "is_race": null,
-      "item_type": "activity"
-    },
     {
       "date": "2026-05-12",
       "title": "W16 Tue Tempo - Over and Unders 1km (7.5km)",
@@ -733,6 +709,6 @@
       "item_type": "event"
     }
   ],
-  "fetched_at": "2026-05-09",
-  "fetched_time": "23:35"
+  "fetched_at": "2026-05-10",
+  "fetched_time": "00:39"
 }
