@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 57,
-    "drained": 1,
-    "end_val": "2026-05-09T03:56:00.0"
+    "drained": 57,
+    "end_val": "2026-05-09T11:05:00.0"
   },
   "heart_rate": {
     "resting": 43,
-    "max": 85,
+    "max": 193,
     "min": 42,
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 10,
-    "max": 81,
+    "avg": 22,
+    "max": 98,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,39 +328,39 @@
     "lowest": 85
   },
   "training_readiness": {
-    "score": 94,
-    "level": "HIGH",
+    "score": 16,
+    "level": "POOR",
     "feedback": ""
   },
   "training_status": {
-    "status": "PEAKING_1",
-    "load": 152,
-    "load_chronic": 499,
-    "acwr": 0.3,
-    "acwr_status": "LOW",
+    "status": "PRODUCTIVE_3",
+    "load": 561,
+    "load_chronic": 573,
+    "acwr": 0.9,
+    "acwr_status": "OPTIMAL",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_SHORTAGE",
     "monthly_aerobic_low": 218.42497,
-    "monthly_aerobic_high": 1418.9452,
-    "monthly_anaerobic": 129.42812,
-    "vo2max": 49.4
+    "monthly_aerobic_high": 1663.6814,
+    "monthly_anaerobic": 205.92807,
+    "vo2max": 49.5
   },
   "vo2max": {
-    "value": 49.4
+    "value": 49.5
   },
   "respiration": {
-    "avg": 14.0,
-    "highest": 17.0,
-    "lowest": 9.0
+    "avg": 13.0,
+    "highest": 18.0,
+    "lowest": 7.0
   },
   "race_predictions": {
-    "five_k": 1379,
-    "ten_k": 2905,
-    "half_marathon": 6545,
-    "marathon": 14509
+    "five_k": 1355,
+    "ten_k": 2866,
+    "half_marathon": 6464,
+    "marathon": 14375
   },
   "endurance_score": {
-    "overall": 6124,
+    "overall": 6173,
     "level": 3
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 78472,
-    "daily_avg": 9809
+    "weekly_total": 100780,
+    "daily_avg": 12597
   },
   "intensity": {
-    "moderate": 33,
-    "vigorous": 62,
+    "moderate": 38,
+    "vigorous": 265,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-05-09",
-        "value": 10
+        "value": 22
       }
     ]
   },
@@ -726,5 +726,5 @@
     }
   ],
   "fetched_at": "2026-05-09",
-  "fetched_time": "11:51"
+  "fetched_time": "12:43"
 }
