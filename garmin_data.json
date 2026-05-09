@@ -286,81 +286,81 @@
     }
   ],
   "sleep": {
-    "score": 90,
-    "duration_s": 29100,
-    "deep_s": 5580,
-    "rem_s": 6720,
-    "light_s": 16800,
-    "awake_s": 900,
-    "avg_spo2": 97.0,
+    "score": 81,
+    "duration_s": 23280,
+    "deep_s": 4620,
+    "rem_s": 3420,
+    "light_s": 15240,
+    "awake_s": 0,
+    "avg_spo2": 96.0,
     "avg_resp": 13.0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 70,
+    "weekly_avg": 68,
     "last_night": 0,
     "status": "BALANCED",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 63,
-    "drained": 66,
-    "end_val": "2026-05-08T20:26:00.0"
+    "charged": 57,
+    "drained": 1,
+    "end_val": "2026-05-09T03:56:00.0"
   },
   "heart_rate": {
-    "resting": 47,
-    "max": 127,
-    "min": 45,
-    "last_7d_avg_resting": 45
+    "resting": 43,
+    "max": 85,
+    "min": 42,
+    "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 36,
-    "max": 98,
+    "avg": 10,
+    "max": 81,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": 94.0,
-    "lowest": 90
+    "avg": 95.0,
+    "lowest": 85
   },
   "training_readiness": {
-    "score": 98,
-    "level": "PRIME",
+    "score": 94,
+    "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
     "status": "PEAKING_1",
-    "load": 200,
-    "load_chronic": 530,
+    "load": 152,
+    "load_chronic": 499,
     "acwr": 0.3,
     "acwr_status": "LOW",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_SHORTAGE",
     "monthly_aerobic_low": 218.42497,
-    "monthly_aerobic_high": 1722.6605,
-    "monthly_anaerobic": 154.1026,
+    "monthly_aerobic_high": 1418.9452,
+    "monthly_anaerobic": 129.42812,
     "vo2max": 49.4
   },
   "vo2max": {
     "value": 49.4
   },
   "respiration": {
-    "avg": 13.0,
-    "highest": 20.0,
-    "lowest": 7.0
+    "avg": 14.0,
+    "highest": 17.0,
+    "lowest": 9.0
   },
   "race_predictions": {
-    "five_k": 1378,
-    "ten_k": 2903,
-    "half_marathon": 6541,
-    "marathon": 14501
+    "five_k": 1379,
+    "ten_k": 2905,
+    "half_marathon": 6545,
+    "marathon": 14509
   },
   "endurance_score": {
-    "overall": 6127,
+    "overall": 6124,
     "level": 3
   },
   "hill_score": {
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 88303,
-    "daily_avg": 11037
+    "weekly_total": 78472,
+    "daily_avg": 9809
   },
   "intensity": {
     "moderate": 33,
@@ -380,15 +380,11 @@
     "value": 0
   },
   "morning_readiness": {
-    "score": 98,
-    "level": "PRIME"
+    "score": 94,
+    "level": "HIGH"
   },
   "history": {
     "sleep": [
-      {
-        "date": "2026-04-25",
-        "value": 89
-      },
       {
         "date": "2026-04-26",
         "value": 45
@@ -440,13 +436,13 @@
       {
         "date": "2026-05-08",
         "value": 90
+      },
+      {
+        "date": "2026-05-09",
+        "value": 81
       }
     ],
     "hrv": [
-      {
-        "date": "2026-04-25",
-        "value": 67
-      },
       {
         "date": "2026-04-26",
         "value": 48
@@ -498,13 +494,13 @@
       {
         "date": "2026-05-08",
         "value": 63
+      },
+      {
+        "date": "2026-05-09",
+        "value": 66
       }
     ],
     "rhr": [
-      {
-        "date": "2026-04-25",
-        "value": 45
-      },
       {
         "date": "2026-04-26",
         "value": 48
@@ -556,13 +552,13 @@
       {
         "date": "2026-05-08",
         "value": 47
+      },
+      {
+        "date": "2026-05-09",
+        "value": 43
       }
     ],
     "bb": [
-      {
-        "date": "2026-04-25",
-        "value": 57
-      },
       {
         "date": "2026-04-26",
         "value": 38
@@ -613,14 +609,14 @@
       },
       {
         "date": "2026-05-08",
-        "value": 63
+        "value": 76
+      },
+      {
+        "date": "2026-05-09",
+        "value": 57
       }
     ],
     "stress": [
-      {
-        "date": "2026-04-25",
-        "value": 38
-      },
       {
         "date": "2026-04-26",
         "value": 33
@@ -671,7 +667,11 @@
       },
       {
         "date": "2026-05-08",
-        "value": 36
+        "value": 33
+      },
+      {
+        "date": "2026-05-09",
+        "value": 10
       }
     ]
   },
@@ -725,6 +725,6 @@
       "item_type": "event"
     }
   ],
-  "fetched_at": "2026-05-08",
-  "fetched_time": "23:48"
+  "fetched_at": "2026-05-09",
+  "fetched_time": "06:42"
 }
