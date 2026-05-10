@@ -306,8 +306,8 @@
   },
   "body_battery": {
     "charged": 40,
-    "drained": 56,
-    "end_val": "2026-05-10T21:38:00.0"
+    "drained": 57,
+    "end_val": "2026-05-10T22:00:00.0"
   },
   "heart_rate": {
     "resting": 46,
@@ -355,9 +355,9 @@
   },
   "race_predictions": {
     "five_k": 1355,
-    "ten_k": 2867,
-    "half_marathon": 6467,
-    "marathon": 14381
+    "ten_k": 2868,
+    "half_marathon": 6470,
+    "marathon": 14386
   },
   "endurance_score": {
     "overall": 6171,
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 110948,
-    "daily_avg": 13868
+    "weekly_total": 111450,
+    "daily_avg": 13931
   },
   "intensity": {
     "moderate": 44,
@@ -710,5 +710,5 @@
     }
   ],
   "fetched_at": "2026-05-10",
-  "fetched_time": "22:40"
+  "fetched_time": "23:38"
 }
