@@ -286,58 +286,58 @@
     }
   ],
   "sleep": {
-    "score": 80,
-    "duration_s": 24660,
-    "deep_s": 3120,
-    "rem_s": 5640,
-    "light_s": 15900,
-    "awake_s": 660,
-    "avg_spo2": 96.0,
-    "avg_resp": 13.0,
+    "score": 66,
+    "duration_s": 25260,
+    "deep_s": 4500,
+    "rem_s": 3180,
+    "light_s": 17580,
+    "awake_s": 1860,
+    "avg_spo2": 94.0,
+    "avg_resp": 15.0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 66,
+    "weekly_avg": 62,
     "last_night": 0,
     "status": "BALANCED",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 40,
-    "drained": 57,
-    "end_val": "2026-05-10T22:00:00.0"
+    "charged": 41,
+    "drained": 0,
+    "end_val": "2026-05-11T06:26:00.0"
   },
   "heart_rate": {
-    "resting": 46,
-    "max": 124,
-    "min": 45,
+    "resting": 48,
+    "max": 79,
+    "min": 49,
     "last_7d_avg_resting": 45
   },
   "stress": {
-    "avg": 33,
-    "max": 95,
+    "avg": 30,
+    "max": 76,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": 94.0,
-    "lowest": 87
+    "avg": 93.0,
+    "lowest": 81
   },
   "training_readiness": {
-    "score": 11,
+    "score": 6,
     "level": "POOR",
     "feedback": ""
   },
   "training_status": {
-    "status": "PRODUCTIVE_3",
-    "load": 477,
-    "load_chronic": 549,
-    "acwr": 0.8,
-    "acwr_status": "OPTIMAL",
+    "status": "RECOVERY_1",
+    "load": 412,
+    "load_chronic": 521,
+    "acwr": 0.7,
+    "acwr_status": "LOW",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_SHORTAGE",
     "monthly_aerobic_low": 218.42497,
@@ -360,7 +360,7 @@
     "marathon": 14386
   },
   "endurance_score": {
-    "overall": 6171,
+    "overall": 6169,
     "level": 3
   },
   "hill_score": {
@@ -368,27 +368,23 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 111450,
-    "daily_avg": 13931
+    "weekly_total": 105204,
+    "daily_avg": 13150
   },
   "intensity": {
-    "moderate": 44,
-    "vigorous": 274,
+    "moderate": 0,
+    "vigorous": 0,
     "goal": 150
   },
   "running_tolerance": {
     "value": 0
   },
   "morning_readiness": {
-    "score": 11,
+    "score": 6,
     "level": "POOR"
   },
   "history": {
     "sleep": [
-      {
-        "date": "2026-04-27",
-        "value": 97
-      },
       {
         "date": "2026-04-28",
         "value": 93
@@ -440,13 +436,13 @@
       {
         "date": "2026-05-10",
         "value": 80
+      },
+      {
+        "date": "2026-05-11",
+        "value": 66
       }
     ],
     "hrv": [
-      {
-        "date": "2026-04-27",
-        "value": 77
-      },
       {
         "date": "2026-04-28",
         "value": 74
@@ -498,13 +494,13 @@
       {
         "date": "2026-05-10",
         "value": 61
+      },
+      {
+        "date": "2026-05-11",
+        "value": 53
       }
     ],
     "rhr": [
-      {
-        "date": "2026-04-27",
-        "value": 44
-      },
       {
         "date": "2026-04-28",
         "value": 45
@@ -556,13 +552,13 @@
       {
         "date": "2026-05-10",
         "value": 46
+      },
+      {
+        "date": "2026-05-11",
+        "value": 48
       }
     ],
     "bb": [
-      {
-        "date": "2026-04-27",
-        "value": 73
-      },
       {
         "date": "2026-04-28",
         "value": 69
@@ -614,13 +610,13 @@
       {
         "date": "2026-05-10",
         "value": 40
+      },
+      {
+        "date": "2026-05-11",
+        "value": 41
       }
     ],
     "stress": [
-      {
-        "date": "2026-04-27",
-        "value": 22
-      },
       {
         "date": "2026-04-28",
         "value": 26
@@ -672,6 +668,10 @@
       {
         "date": "2026-05-10",
         "value": 33
+      },
+      {
+        "date": "2026-05-11",
+        "value": 30
       }
     ]
   },
@@ -701,14 +701,30 @@
       "item_type": "workout"
     },
     {
+      "date": "2026-05-19",
+      "title": "W17 Tue Taper Intervals - Race Pace Practice K's (7.5km)",
+      "sport": "running",
+      "workout_id": 1563778196,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
       "date": "2026-05-23",
       "title": "UK Ultra South Downs 21k",
       "sport": null,
       "workout_id": null,
       "is_race": true,
       "item_type": "event"
+    },
+    {
+      "date": "2026-05-23",
+      "title": "W17 Sat Race - UKULTRA South Downs Seven Sisters (21.1km)",
+      "sport": "running",
+      "workout_id": 1563778213,
+      "is_race": null,
+      "item_type": "workout"
     }
   ],
-  "fetched_at": "2026-05-10",
-  "fetched_time": "23:38"
+  "fetched_at": "2026-05-11",
+  "fetched_time": "07:31"
 }
