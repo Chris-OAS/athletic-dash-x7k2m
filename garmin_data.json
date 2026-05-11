@@ -305,9 +305,9 @@
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 48,
-    "drained": 12,
-    "end_val": "2026-05-11T11:14:00.0"
+    "charged": 53,
+    "drained": 38,
+    "end_val": "2026-05-11T19:27:00.0"
   },
   "heart_rate": {
     "resting": 48,
@@ -316,8 +316,8 @@
     "last_7d_avg_resting": 45
   },
   "stress": {
-    "avg": 28,
-    "max": 76,
+    "avg": 29,
+    "max": 94,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -349,7 +349,7 @@
     "value": 49.5
   },
   "respiration": {
-    "avg": 13.0,
+    "avg": 14.0,
     "highest": 23.0,
     "lowest": 7.0
   },
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 113508,
-    "daily_avg": 14188
+    "weekly_total": 119790,
+    "daily_avg": 14973
   },
   "intensity": {
     "moderate": 0,
@@ -613,7 +613,7 @@
       },
       {
         "date": "2026-05-11",
-        "value": 48
+        "value": 53
       }
     ],
     "stress": [
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-05-11",
-        "value": 28
+        "value": 29
       }
     ]
   },
@@ -726,5 +726,5 @@
     }
   ],
   "fetched_at": "2026-05-11",
-  "fetched_time": "19:52"
+  "fetched_time": "21:28"
 }
