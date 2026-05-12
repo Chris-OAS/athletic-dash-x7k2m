@@ -678,11 +678,67 @@
   "scheduled_workouts": [
     {
       "date": "2026-05-12",
+      "title": "Easy 40 \u00b7 Z2",
+      "sport": "running",
+      "workout_id": 1565772012,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-05-12",
       "title": "Southwark - Easy 40 \u00b7 Z2",
       "sport": null,
       "workout_id": null,
       "is_race": null,
       "item_type": "activity"
+    },
+    {
+      "date": "2026-05-13",
+      "title": "Strength A \u00b7 Full Body",
+      "sport": "strength_training",
+      "workout_id": 1565772022,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-05-14",
+      "title": "Easy 50 \u00b7 Z2",
+      "sport": "running",
+      "workout_id": 1565772037,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-05-16",
+      "title": "Long Trail \u00b7 90 min",
+      "sport": "running",
+      "workout_id": 1565772048,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-05-18",
+      "title": "Strength A \u00b7 Race Week",
+      "sport": "strength_training",
+      "workout_id": 1565772061,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-05-19",
+      "title": "Easy 30 + 4 strides",
+      "sport": "running",
+      "workout_id": 1565772071,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-05-21",
+      "title": "Race-pace primer",
+      "sport": "running",
+      "workout_id": 1565772079,
+      "is_race": null,
+      "item_type": "workout"
     },
     {
       "date": "2026-05-23",
@@ -694,5 +750,5 @@
     }
   ],
   "fetched_at": "2026-05-12",
-  "fetched_time": "20:30"
+  "fetched_time": "22:11"
 }
