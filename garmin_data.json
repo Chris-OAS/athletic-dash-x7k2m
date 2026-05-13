@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Strength A \u00b7 Full Body",
+      "type": "strength_training",
+      "date": "2026-05-13",
+      "distance_m": 0.0,
+      "duration_s": 3481.782958984375,
+      "avg_hr": 97.0,
+      "max_hr": 155.0,
+      "calories": 246.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 0.6000000238418579,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - Easy 40 \u00b7 Z2",
       "type": "running",
       "date": "2026-05-12",
@@ -269,20 +283,6 @@
       "avg_speed": 2.946000099182129,
       "aerobic_te": 5.0,
       "vo2max": 48.0
-    },
-    {
-      "name": "Strength",
-      "type": "strength_training",
-      "date": "2026-04-10",
-      "distance_m": 0.0,
-      "duration_s": 2466.3291015625,
-      "avg_hr": 113.0,
-      "max_hr": 170.0,
-      "calories": 241.0,
-      "elevation_m": 0,
-      "avg_speed": 0.0,
-      "aerobic_te": 0.8999999761581421,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,17 +306,17 @@
   },
   "body_battery": {
     "charged": 69,
-    "drained": 12,
-    "end_val": "2026-05-13T09:05:00.0"
+    "drained": 40,
+    "end_val": "2026-05-13T14:14:00.0"
   },
   "heart_rate": {
     "resting": 41,
-    "max": 86,
+    "max": 121,
     "min": 40,
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 11,
+    "avg": 16,
     "max": 90,
     "rest_duration": 0,
     "low_duration": 0,
@@ -328,19 +328,19 @@
     "lowest": 89
   },
   "training_readiness": {
-    "score": 94,
+    "score": 93,
     "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_3",
-    "load": 341,
-    "load_chronic": 482,
+    "load": 361,
+    "load_chronic": 485,
     "acwr": 0.7,
     "acwr_status": "LOW",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_SHORTAGE",
-    "monthly_aerobic_low": 265.62866,
+    "monthly_aerobic_low": 273.1976,
     "monthly_aerobic_high": 1454.1776,
     "monthly_anaerobic": 189.19989,
     "vo2max": 49.4
@@ -350,17 +350,17 @@
   },
   "respiration": {
     "avg": 13.0,
-    "highest": 18.0,
+    "highest": 21.0,
     "lowest": 6.0
   },
   "race_predictions": {
     "five_k": 1349,
-    "ten_k": 2859,
-    "half_marathon": 6457,
-    "marathon": 14371
+    "ten_k": 2858,
+    "half_marathon": 6454,
+    "marathon": 14366
   },
   "endurance_score": {
-    "overall": 6175,
+    "overall": 6177,
     "level": 3
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 104885,
-    "daily_avg": 13110
+    "weekly_total": 108237,
+    "daily_avg": 13529
   },
   "intensity": {
-    "moderate": 6,
-    "vigorous": 40,
+    "moderate": 34,
+    "vigorous": 41,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-05-13",
-        "value": 11
+        "value": 16
       }
     ]
   },
@@ -734,5 +734,5 @@
     }
   ],
   "fetched_at": "2026-05-13",
-  "fetched_time": "12:57"
+  "fetched_time": "15:29"
 }
