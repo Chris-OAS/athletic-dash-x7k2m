@@ -306,8 +306,8 @@
   },
   "body_battery": {
     "charged": 57,
-    "drained": 6,
-    "end_val": "2026-05-14T07:27:00.0"
+    "drained": 7,
+    "end_val": "2026-05-14T07:39:00.0"
   },
   "heart_rate": {
     "resting": 42,
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 100723,
-    "daily_avg": 12590
+    "weekly_total": 100882,
+    "daily_avg": 12610
   },
   "intensity": {
     "moderate": 34,
@@ -726,5 +726,5 @@
     }
   ],
   "fetched_at": "2026-05-14",
-  "fetched_time": "08:38"
+  "fetched_time": "11:08"
 }
