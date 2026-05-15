@@ -307,7 +307,7 @@
   "body_battery": {
     "charged": 56,
     "drained": 43,
-    "end_val": "2026-05-15T20:49:00.0"
+    "end_val": "2026-05-15T20:54:00.0"
   },
   "heart_rate": {
     "resting": 46,
@@ -718,5 +718,5 @@
     }
   ],
   "fetched_at": "2026-05-15",
-  "fetched_time": "21:53"
+  "fetched_time": "22:52"
 }
