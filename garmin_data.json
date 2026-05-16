@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Southwark - Long Trail \u00b7 90 min",
+      "type": "running",
+      "date": "2026-05-16",
+      "distance_m": 15408.3701171875,
+      "duration_s": 5403.5908203125,
+      "avg_hr": 159.0,
+      "max_hr": 175.0,
+      "calories": 1121.0,
+      "elevation_m": 53.0,
+      "avg_speed": 2.8519999980926514,
+      "aerobic_te": 4.400000095367432,
+      "vo2max": 49.0
+    },
+    {
       "name": "Southwark - Easy 50 \u00b7 Z2",
       "type": "running",
       "date": "2026-05-14",
@@ -269,20 +283,6 @@
       "avg_speed": 0,
       "aerobic_te": 0.4000000059604645,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - W12 Tue Time Trial - 5km Time Tr",
-      "type": "running",
-      "date": "2026-04-14",
-      "distance_m": 8041.2900390625,
-      "duration_s": 2710.512939453125,
-      "avg_hr": 170.0,
-      "max_hr": 194.0,
-      "calories": 589.0,
-      "elevation_m": 39.0,
-      "avg_speed": 2.9670000076293945,
-      "aerobic_te": 4.300000190734863,
-      "vo2max": 49.0
     }
   ],
   "sleep": {
@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 68,
-    "drained": 5,
-    "end_val": "2026-05-16T07:34:00.0"
+    "drained": 37,
+    "end_val": "2026-05-16T10:40:00.0"
   },
   "heart_rate": {
     "resting": 43,
-    "max": 77,
+    "max": 167,
     "min": 41,
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 9,
-    "max": 77,
+    "avg": 10,
+    "max": 82,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,39 +328,39 @@
     "lowest": 86
   },
   "training_readiness": {
-    "score": 100,
-    "level": "PRIME",
+    "score": 29,
+    "level": "LOW",
     "feedback": ""
   },
   "training_status": {
-    "status": "RECOVERY_1",
-    "load": 232,
-    "load_chronic": 432,
-    "acwr": 0.5,
-    "acwr_status": "LOW",
+    "status": "PRODUCTIVE_3",
+    "load": 486,
+    "load_chronic": 477,
+    "acwr": 1.0,
+    "acwr_status": "OPTIMAL",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_SHORTAGE",
     "monthly_aerobic_low": 331.21716,
-    "monthly_aerobic_high": 1120.3954,
+    "monthly_aerobic_high": 1318.8394,
     "monthly_anaerobic": 189.19989,
-    "vo2max": 49.4
+    "vo2max": 49.5
   },
   "vo2max": {
-    "value": 49.4
+    "value": 49.5
   },
   "respiration": {
-    "avg": 12.0,
+    "avg": 13.0,
     "highest": 19.0,
     "lowest": 8.0
   },
   "race_predictions": {
-    "five_k": 1339,
-    "ten_k": 2845,
-    "half_marathon": 6433,
-    "marathon": 14342
+    "five_k": 1333,
+    "ten_k": 2833,
+    "half_marathon": 6402,
+    "marathon": 14285
   },
   "endurance_score": {
-    "overall": 6186,
+    "overall": 6207,
     "level": 3
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 100399,
-    "daily_avg": 12549
+    "weekly_total": 117575,
+    "daily_avg": 14696
   },
   "intensity": {
-    "moderate": 50,
-    "vigorous": 92,
+    "moderate": 56,
+    "vigorous": 183,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-05-16",
-        "value": 9
+        "value": 10
       }
     ]
   },
@@ -683,6 +683,14 @@
       "workout_id": 1565772048,
       "is_race": null,
       "item_type": "workout"
+    },
+    {
+      "date": "2026-05-16",
+      "title": "Southwark - Long Trail \u00b7 90 min",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
     },
     {
       "date": "2026-05-18",
@@ -718,5 +726,5 @@
     }
   ],
   "fetched_at": "2026-05-16",
-  "fetched_time": "10:23"
+  "fetched_time": "11:56"
 }
