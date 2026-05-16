@@ -286,45 +286,45 @@
     }
   ],
   "sleep": {
-    "score": 84,
-    "duration_s": 26880,
-    "deep_s": 4980,
-    "rem_s": 5820,
-    "light_s": 16080,
-    "awake_s": 240,
-    "avg_spo2": 96.0,
-    "avg_resp": 14.0,
+    "score": 89,
+    "duration_s": 26940,
+    "deep_s": 7440,
+    "rem_s": 6300,
+    "light_s": 13200,
+    "awake_s": 2220,
+    "avg_spo2": 97.0,
+    "avg_resp": 13.0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 67,
+    "weekly_avg": 68,
     "last_night": 0,
     "status": "BALANCED",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 56,
-    "drained": 43,
-    "end_val": "2026-05-15T20:54:00.0"
+    "charged": 68,
+    "drained": 5,
+    "end_val": "2026-05-16T07:34:00.0"
   },
   "heart_rate": {
-    "resting": 46,
-    "max": 122,
-    "min": 44,
+    "resting": 43,
+    "max": 77,
+    "min": 41,
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 28,
-    "max": 96,
+    "avg": 9,
+    "max": 77,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": 95.0,
+    "avg": 96.0,
     "lowest": 86
   },
   "training_readiness": {
@@ -333,15 +333,15 @@
     "feedback": ""
   },
   "training_status": {
-    "status": "PEAKING_1",
-    "load": 288,
-    "load_chronic": 455,
-    "acwr": 0.6,
+    "status": "RECOVERY_1",
+    "load": 232,
+    "load_chronic": 432,
+    "acwr": 0.5,
     "acwr_status": "LOW",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_SHORTAGE",
     "monthly_aerobic_low": 331.21716,
-    "monthly_aerobic_high": 1301.9978,
+    "monthly_aerobic_high": 1120.3954,
     "monthly_anaerobic": 189.19989,
     "vo2max": 49.4
   },
@@ -349,18 +349,18 @@
     "value": 49.4
   },
   "respiration": {
-    "avg": 13.0,
-    "highest": 21.0,
-    "lowest": 6.0
+    "avg": 12.0,
+    "highest": 19.0,
+    "lowest": 8.0
   },
   "race_predictions": {
     "five_k": 1339,
     "ten_k": 2845,
-    "half_marathon": 6431,
-    "marathon": 14336
+    "half_marathon": 6433,
+    "marathon": 14342
   },
   "endurance_score": {
-    "overall": 6188,
+    "overall": 6186,
     "level": 3
   },
   "hill_score": {
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 114087,
-    "daily_avg": 14260
+    "weekly_total": 100399,
+    "daily_avg": 12549
   },
   "intensity": {
     "moderate": 50,
@@ -385,10 +385,6 @@
   },
   "history": {
     "sleep": [
-      {
-        "date": "2026-05-02",
-        "value": 92
-      },
       {
         "date": "2026-05-03",
         "value": 86
@@ -440,13 +436,13 @@
       {
         "date": "2026-05-15",
         "value": 84
+      },
+      {
+        "date": "2026-05-16",
+        "value": 89
       }
     ],
     "hrv": [
-      {
-        "date": "2026-05-02",
-        "value": 76
-      },
       {
         "date": "2026-05-03",
         "value": 79
@@ -498,13 +494,13 @@
       {
         "date": "2026-05-15",
         "value": 61
+      },
+      {
+        "date": "2026-05-16",
+        "value": 77
       }
     ],
     "rhr": [
-      {
-        "date": "2026-05-02",
-        "value": 45
-      },
       {
         "date": "2026-05-03",
         "value": 42
@@ -556,13 +552,13 @@
       {
         "date": "2026-05-15",
         "value": 46
+      },
+      {
+        "date": "2026-05-16",
+        "value": 43
       }
     ],
     "bb": [
-      {
-        "date": "2026-05-02",
-        "value": 68
-      },
       {
         "date": "2026-05-03",
         "value": 67
@@ -613,14 +609,14 @@
       },
       {
         "date": "2026-05-15",
-        "value": 56
+        "value": 58
+      },
+      {
+        "date": "2026-05-16",
+        "value": 68
       }
     ],
     "stress": [
-      {
-        "date": "2026-05-02",
-        "value": 25
-      },
       {
         "date": "2026-05-03",
         "value": 22
@@ -672,6 +668,10 @@
       {
         "date": "2026-05-15",
         "value": 28
+      },
+      {
+        "date": "2026-05-16",
+        "value": 9
       }
     ]
   },
@@ -717,6 +717,6 @@
       "item_type": "event"
     }
   ],
-  "fetched_at": "2026-05-15",
-  "fetched_time": "23:47"
+  "fetched_at": "2026-05-16",
+  "fetched_time": "08:53"
 }
