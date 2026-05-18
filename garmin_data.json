@@ -354,10 +354,10 @@
     "lowest": null
   },
   "race_predictions": {
-    "five_k": 1334,
-    "ten_k": 2834,
-    "half_marathon": 6409,
-    "marathon": 14300
+    "five_k": 1335,
+    "ten_k": 2835,
+    "half_marathon": 6412,
+    "marathon": 14306
   },
   "endurance_score": {
     "overall": 0,
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 92086,
-    "daily_avg": 13155
+    "weekly_total": 95623,
+    "daily_avg": 13660
   },
   "intensity": {
     "moderate": 0,
@@ -667,7 +667,7 @@
       },
       {
         "date": "2026-05-17",
-        "value": 24
+        "value": 26
       },
       {
         "date": "2026-05-18",
@@ -710,5 +710,5 @@
     }
   ],
   "fetched_at": "2026-05-18",
-  "fetched_time": "00:52"
+  "fetched_time": "03:37"
 }
