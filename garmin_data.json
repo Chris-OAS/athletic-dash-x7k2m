@@ -305,27 +305,27 @@
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": null,
-    "drained": null,
-    "end_val": null
+    "charged": 17,
+    "drained": 0,
+    "end_val": "2026-05-19T01:12:00.0"
   },
   "heart_rate": {
-    "resting": null,
-    "max": null,
-    "min": null,
-    "last_7d_avg_resting": null
+    "resting": 43,
+    "max": 56,
+    "min": 41,
+    "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": null,
-    "max": null,
+    "avg": 12,
+    "max": 24,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": null,
-    "lowest": null
+    "avg": 95.0,
+    "lowest": 90
   },
   "training_readiness": {
     "score": 0,
@@ -349,15 +349,15 @@
     "value": 0
   },
   "respiration": {
-    "avg": null,
-    "highest": null,
-    "lowest": null
+    "avg": 13.0,
+    "highest": 18.0,
+    "lowest": 8.0
   },
   "race_predictions": {
     "five_k": 1335,
-    "ten_k": 2835,
-    "half_marathon": 6412,
-    "marathon": 14306
+    "ten_k": 2836,
+    "half_marathon": 6415,
+    "marathon": 14311
   },
   "endurance_score": {
     "overall": 0,
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 84051,
-    "daily_avg": 12007
+    "weekly_total": 84640,
+    "daily_avg": 10580
   },
   "intensity": {
     "moderate": 0,
@@ -555,7 +555,7 @@
       },
       {
         "date": "2026-05-19",
-        "value": null
+        "value": 43
       }
     ],
     "bb": [
@@ -609,11 +609,11 @@
       },
       {
         "date": "2026-05-18",
-        "value": 50
+        "value": 55
       },
       {
         "date": "2026-05-19",
-        "value": null
+        "value": 17
       }
     ],
     "stress": [
@@ -667,11 +667,11 @@
       },
       {
         "date": "2026-05-18",
-        "value": 27
+        "value": 26
       },
       {
         "date": "2026-05-19",
-        "value": null
+        "value": 12
       }
     ]
   },
@@ -702,5 +702,5 @@
     }
   ],
   "fetched_at": "2026-05-19",
-  "fetched_time": "00:58"
+  "fetched_time": "04:43"
 }
