@@ -306,8 +306,8 @@
   },
   "body_battery": {
     "charged": 67,
-    "drained": 33,
-    "end_val": "2026-05-20T12:22:00.0"
+    "drained": 48,
+    "end_val": "2026-05-20T15:32:00.0"
   },
   "heart_rate": {
     "resting": 44,
@@ -316,7 +316,7 @@
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 20,
+    "avg": 22,
     "max": 90,
     "rest_duration": 0,
     "low_duration": 0,
@@ -324,7 +324,7 @@
     "high_duration": 0
   },
   "spo2": {
-    "avg": 95.0,
+    "avg": 94.0,
     "lowest": 86
   },
   "training_readiness": {
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 84404,
-    "daily_avg": 10550
+    "weekly_total": 85047,
+    "daily_avg": 10630
   },
   "intensity": {
     "moderate": 3,
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-05-20",
-        "value": 20
+        "value": 22
       }
     ]
   },
@@ -686,6 +686,14 @@
     },
     {
       "date": "2026-05-23",
+      "title": "Race \u00b7 UKULTRA Seven Sisters Half",
+      "sport": "running",
+      "workout_id": 1574308538,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-05-23",
       "title": "UK Ultra South Downs 21k",
       "sport": null,
       "workout_id": null,
@@ -694,5 +702,5 @@
     }
   ],
   "fetched_at": "2026-05-20",
-  "fetched_time": "14:33"
+  "fetched_time": "17:48"
 }
