@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Southwark - Race-pace primer",
+      "type": "running",
+      "date": "2026-05-21",
+      "distance_m": 4904.4501953125,
+      "duration_s": 2043.458984375,
+      "avg_hr": 148.0,
+      "max_hr": 173.0,
+      "calories": 352.0,
+      "elevation_m": 7.0,
+      "avg_speed": 2.4000000953674316,
+      "aerobic_te": 2.5,
+      "vo2max": 49.0
+    },
+    {
       "name": "Southwark - Easy 30 + 4 strides",
       "type": "running",
       "date": "2026-05-19",
@@ -269,20 +283,6 @@
       "avg_speed": 2.884000062942505,
       "aerobic_te": 4.0,
       "vo2max": 49.0
-    },
-    {
-      "name": "Southwark - W12 Thu Easy Run - 8km Easy Run",
-      "type": "running",
-      "date": "2026-04-16",
-      "distance_m": 8113.9599609375,
-      "duration_s": 2872.0859375,
-      "avg_hr": 167.0,
-      "max_hr": 177.0,
-      "calories": 612.0,
-      "elevation_m": 19.0,
-      "avg_speed": 2.825000047683716,
-      "aerobic_te": 3.700000047683716,
-      "vo2max": 49.0
     }
   ],
   "sleep": {
@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 52,
-    "drained": 0,
-    "end_val": "2026-05-21T08:04:00.0"
+    "drained": 31,
+    "end_val": "2026-05-21T12:16:00.0"
   },
   "heart_rate": {
     "resting": 42,
-    "max": 64,
+    "max": 163,
     "min": 41,
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 11,
-    "max": 48,
+    "avg": 17,
+    "max": 98,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,39 +328,39 @@
     "lowest": 83
   },
   "training_readiness": {
-    "score": 100,
+    "score": 95,
     "level": "PRIME",
     "feedback": ""
   },
   "training_status": {
     "status": "RECOVERY_1",
-    "load": 223,
-    "load_chronic": 397,
-    "acwr": 0.5,
+    "load": 285,
+    "load_chronic": 409,
+    "acwr": 0.6,
     "acwr_status": "LOW",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_SHORTAGE",
-    "monthly_aerobic_low": 370.76813,
+    "monthly_aerobic_low": 419.64508,
     "monthly_aerobic_high": 1133.9473,
     "monthly_anaerobic": 189.19989,
-    "vo2max": 49.6
+    "vo2max": 49.4
   },
   "vo2max": {
-    "value": 49.6
+    "value": 49.4
   },
   "respiration": {
-    "avg": 11.0,
-    "highest": 18.0,
+    "avg": 16.0,
+    "highest": 34.0,
     "lowest": 7.0
   },
   "race_predictions": {
-    "five_k": 1334,
-    "ten_k": 2835,
+    "five_k": 1333,
+    "ten_k": 2834,
     "half_marathon": 6410,
     "marathon": 14301
   },
   "endurance_score": {
-    "overall": 6201,
+    "overall": 6196,
     "level": 3
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 80825,
-    "daily_avg": 10103
+    "weekly_total": 89678,
+    "daily_avg": 11209
   },
   "intensity": {
-    "moderate": 3,
-    "vigorous": 34,
+    "moderate": 10,
+    "vigorous": 67,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-05-21",
-        "value": 11
+        "value": 17
       }
     ]
   },
@@ -683,6 +683,14 @@
       "workout_id": 1565772079,
       "is_race": null,
       "item_type": "workout"
+    },
+    {
+      "date": "2026-05-21",
+      "title": "Southwark - Race-pace primer",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
     },
     {
       "date": "2026-05-23",
@@ -702,5 +710,5 @@
     }
   ],
   "fetched_at": "2026-05-21",
-  "fetched_time": "11:34"
+  "fetched_time": "15:00"
 }
