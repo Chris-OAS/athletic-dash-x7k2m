@@ -354,10 +354,10 @@
     "lowest": null
   },
   "race_predictions": {
-    "five_k": 1333,
-    "ten_k": 2834,
-    "half_marathon": 6410,
-    "marathon": 14301
+    "five_k": 1334,
+    "ten_k": 2835,
+    "half_marathon": 6417,
+    "marathon": 14321
   },
   "endurance_score": {
     "overall": 0,
@@ -694,5 +694,5 @@
     }
   ],
   "fetched_at": "2026-05-22",
-  "fetched_time": "07:42"
+  "fetched_time": "11:19"
 }
