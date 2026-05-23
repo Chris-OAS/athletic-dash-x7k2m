@@ -306,17 +306,17 @@
   },
   "body_battery": {
     "charged": 55,
-    "drained": 26,
-    "end_val": "2026-05-23T08:41:00.0"
+    "drained": 60,
+    "end_val": "2026-05-23T13:02:00.0"
   },
   "heart_rate": {
     "resting": 43,
-    "max": 106,
+    "max": 200,
     "min": 43,
     "last_7d_avg_resting": 45
   },
   "stress": {
-    "avg": 23,
+    "avg": 25,
     "max": 95,
     "rest_duration": 0,
     "low_duration": 0,
@@ -328,39 +328,39 @@
     "lowest": 82
   },
   "training_readiness": {
-    "score": 80,
-    "level": "HIGH",
+    "score": 9,
+    "level": "POOR",
     "feedback": ""
   },
   "training_status": {
-    "status": "RECOVERY_1",
-    "load": 181,
-    "load_chronic": 370,
-    "acwr": 0.4,
-    "acwr_status": "LOW",
-    "fitness_trend": 3,
+    "status": "MAINTAINING_5",
+    "load": 531,
+    "load_chronic": 433,
+    "acwr": 1.2,
+    "acwr_status": "OPTIMAL",
+    "fitness_trend": 2,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
     "monthly_aerobic_low": 419.64508,
     "monthly_aerobic_high": 779.73914,
     "monthly_anaerobic": 189.19989,
-    "vo2max": 49.4
+    "vo2max": 49.2
   },
   "vo2max": {
-    "value": 49.4
+    "value": 49.2
   },
   "respiration": {
-    "avg": 13.0,
-    "highest": 18.0,
+    "avg": 25.0,
+    "highest": 43.0,
     "lowest": 7.0
   },
   "race_predictions": {
-    "five_k": 1333,
-    "ten_k": 2832,
-    "half_marathon": 6411,
-    "marathon": 14309
+    "five_k": 1320,
+    "ten_k": 2815,
+    "half_marathon": 6351,
+    "marathon": 14171
   },
   "endurance_score": {
-    "overall": 6198,
+    "overall": 6251,
     "level": 3
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 81528,
-    "daily_avg": 10191
+    "weekly_total": 109456,
+    "daily_avg": 13682
   },
   "intensity": {
-    "moderate": 10,
-    "vigorous": 67,
+    "moderate": 60,
+    "vigorous": 245,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-05-23",
-        "value": 23
+        "value": 25
       }
     ]
   },
@@ -694,5 +694,5 @@
     }
   ],
   "fetched_at": "2026-05-23",
-  "fetched_time": "12:55"
+  "fetched_time": "14:11"
 }
