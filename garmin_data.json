@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Eastbourne - UK Ultra South Downs 21k",
+      "type": "running",
+      "date": "2026-05-23",
+      "distance_m": 21643.75,
+      "duration_s": 10203.0830078125,
+      "avg_hr": 164.0,
+      "max_hr": 207.0,
+      "calories": 1854.0,
+      "elevation_m": 593.0,
+      "avg_speed": 2.121000051498413,
+      "aerobic_te": 4.900000095367432,
+      "vo2max": 49.0
+    },
+    {
       "name": "Southwark - Race-pace primer",
       "type": "running",
       "date": "2026-05-21",
@@ -269,20 +283,6 @@
       "avg_speed": 0.0,
       "aerobic_te": 1.399999976158142,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - W12 Sat Long Run - 10km Long Run",
-      "type": "running",
-      "date": "2026-04-18",
-      "distance_m": 10078.48046875,
-      "duration_s": 3494.986083984375,
-      "avg_hr": 167.0,
-      "max_hr": 183.0,
-      "calories": 748.0,
-      "elevation_m": 39.0,
-      "avg_speed": 2.884000062942505,
-      "aerobic_te": 4.0,
-      "vo2max": 49.0
     }
   ],
   "sleep": {
@@ -678,6 +678,14 @@
   "scheduled_workouts": [
     {
       "date": "2026-05-23",
+      "title": "Eastbourne - UK Ultra South Downs 21k",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
+    {
+      "date": "2026-05-23",
       "title": "Race \u00b7 UKULTRA Seven Sisters Half",
       "sport": "running",
       "workout_id": 1574308538,
@@ -694,5 +702,5 @@
     }
   ],
   "fetched_at": "2026-05-23",
-  "fetched_time": "14:11"
+  "fetched_time": "15:54"
 }
