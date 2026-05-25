@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Strength A \u00b7 Race Week",
+      "type": "strength_training",
+      "date": "2026-05-25",
+      "distance_m": 0.0,
+      "duration_s": 2002.93798828125,
+      "avg_hr": 123.0,
+      "max_hr": 163.0,
+      "calories": 227.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 1.7999999523162842,
+      "vo2max": 0
+    },
+    {
       "name": "Eastbourne - UK Ultra South Downs 21k",
       "type": "running",
       "date": "2026-05-23",
@@ -269,20 +283,6 @@
       "avg_speed": 2.874000072479248,
       "aerobic_te": 4.099999904632568,
       "vo2max": 49.0
-    },
-    {
-      "name": "Strength",
-      "type": "strength_training",
-      "date": "2026-04-22",
-      "distance_m": 0.0,
-      "duration_s": 3603.555908203125,
-      "avg_hr": 110.0,
-      "max_hr": 164.0,
-      "calories": 328.0,
-      "elevation_m": 0,
-      "avg_speed": 0.0,
-      "aerobic_te": 1.399999976158142,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 63,
-    "drained": 3,
-    "end_val": "2026-05-25T08:02:00.0"
+    "drained": 22,
+    "end_val": "2026-05-25T12:10:00.0"
   },
   "heart_rate": {
     "resting": 49,
-    "max": 86,
+    "max": 147,
     "min": 47,
     "last_7d_avg_resting": 45
   },
   "stress": {
-    "avg": 16,
-    "max": 78,
+    "avg": 18,
+    "max": 82,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,21 +328,21 @@
     "lowest": 86
   },
   "training_readiness": {
-    "score": 27,
+    "score": 35,
     "level": "LOW",
     "feedback": ""
   },
   "training_status": {
     "status": "MAINTAINING_2",
-    "load": 375,
-    "load_chronic": 402,
-    "acwr": 0.9,
+    "load": 423,
+    "load_chronic": 411,
+    "acwr": 1.0,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 2,
     "load_balance": "AEROBIC_LOW_SHORTAGE",
-    "monthly_aerobic_low": 419.64508,
+    "monthly_aerobic_low": 440.81287,
     "monthly_aerobic_high": 1016.85095,
-    "monthly_anaerobic": 227.4659,
+    "monthly_anaerobic": 244.27756,
     "vo2max": 49.2
   },
   "vo2max": {
@@ -354,13 +354,13 @@
     "lowest": 7.0
   },
   "race_predictions": {
-    "five_k": 1321,
-    "ten_k": 2816,
-    "half_marathon": 6360,
-    "marathon": 14219
+    "five_k": 1319,
+    "ten_k": 2813,
+    "half_marathon": 6352,
+    "marathon": 14207
   },
   "endurance_score": {
-    "overall": 6233,
+    "overall": 6237,
     "level": 3
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 84578,
-    "daily_avg": 10572
+    "weekly_total": 87147,
+    "daily_avg": 10893
   },
   "intensity": {
-    "moderate": 0,
-    "vigorous": 0,
+    "moderate": 16,
+    "vigorous": 10,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-05-25",
-        "value": 16
+        "value": 18
       }
     ]
   },
@@ -838,5 +838,5 @@
     }
   ],
   "fetched_at": "2026-05-25",
-  "fetched_time": "12:46"
+  "fetched_time": "15:39"
 }
