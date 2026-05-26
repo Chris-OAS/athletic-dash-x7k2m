@@ -5,6 +5,34 @@
   },
   "activities": [
     {
+      "name": "Southwark Cycling",
+      "type": "cycling",
+      "date": "2026-05-26",
+      "distance_m": 14198.48046875,
+      "duration_s": 2535.656005859375,
+      "avg_hr": 138.0,
+      "max_hr": 172.0,
+      "calories": 352.0,
+      "elevation_m": 79.0,
+      "avg_speed": 5.599999904632568,
+      "aerobic_te": 2.5999999046325684,
+      "vo2max": 0
+    },
+    {
+      "name": "Southwark - Easy 30 \u00b7 Z2",
+      "type": "running",
+      "date": "2026-05-26",
+      "distance_m": 4059.0400390625,
+      "duration_s": 1805.803955078125,
+      "avg_hr": 144.0,
+      "max_hr": 163.0,
+      "calories": 292.0,
+      "elevation_m": 11.0,
+      "avg_speed": 2.247999906539917,
+      "aerobic_te": 2.0999999046325684,
+      "vo2max": 49.0
+    },
+    {
       "name": "Strength A \u00b7 Race Week",
       "type": "strength_training",
       "date": "2026-05-25",
@@ -255,34 +283,6 @@
       "avg_speed": 0.0,
       "aerobic_te": 0.30000001192092896,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - W13 Sat Long Run - Half Marathon",
-      "type": "running",
-      "date": "2026-04-25",
-      "distance_m": 21123.080078125,
-      "duration_s": 7005.68115234375,
-      "avg_hr": 174.0,
-      "max_hr": 188.0,
-      "calories": 1568.0,
-      "elevation_m": 48.0,
-      "avg_speed": 3.0150001049041752,
-      "aerobic_te": 5.0,
-      "vo2max": 49.0
-    },
-    {
-      "name": "Southwark - W13 Thu Easy Run - 11km Easy Run",
-      "type": "running",
-      "date": "2026-04-23",
-      "distance_m": 11022.6103515625,
-      "duration_s": 3835.251953125,
-      "avg_hr": 169.0,
-      "max_hr": 182.0,
-      "calories": 826.0,
-      "elevation_m": 46.0,
-      "avg_speed": 2.874000072479248,
-      "aerobic_te": 4.099999904632568,
-      "vo2max": 49.0
     }
   ],
   "sleep": {
@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 64,
-    "drained": 0,
-    "end_val": "2026-05-26T07:20:00.0"
+    "drained": 31,
+    "end_val": "2026-05-26T10:54:00.0"
   },
   "heart_rate": {
     "resting": 46,
-    "max": 69,
+    "max": 170,
     "min": 44,
     "last_7d_avg_resting": 46
   },
   "stress": {
-    "avg": 11,
-    "max": 51,
+    "avg": 14,
+    "max": 78,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,39 +328,39 @@
     "lowest": 81
   },
   "training_readiness": {
-    "score": 65,
+    "score": 52,
     "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
     "status": "MAINTAINING_4",
-    "load": 344,
-    "load_chronic": 395,
-    "acwr": 0.8,
+    "load": 454,
+    "load_chronic": 415,
+    "acwr": 1.0,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 2,
     "load_balance": "HIGH_AEROBIC_OVERAGE",
-    "monthly_aerobic_low": 440.81287,
+    "monthly_aerobic_low": 525.0187,
     "monthly_aerobic_high": 833.3689,
     "monthly_anaerobic": 145.46039,
-    "vo2max": 49.2
+    "vo2max": 49.1
   },
   "vo2max": {
-    "value": 49.2
+    "value": 49.1
   },
   "respiration": {
-    "avg": null,
-    "highest": 20.0,
+    "avg": 22.0,
+    "highest": 37.0,
     "lowest": 7.0
   },
   "race_predictions": {
-    "five_k": 1322,
+    "five_k": 1321,
     "ten_k": 2819,
     "half_marathon": 6371,
     "marathon": 14244
   },
   "endurance_score": {
-    "overall": 6223,
+    "overall": 6216,
     "level": 3
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 84840,
-    "daily_avg": 10605
+    "weekly_total": 91555,
+    "daily_avg": 11444
   },
   "intensity": {
-    "moderate": 17,
-    "vigorous": 10,
+    "moderate": 44,
+    "vigorous": 69,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-05-26",
-        "value": 11
+        "value": 14
       }
     ]
   },
@@ -683,6 +683,22 @@
       "workout_id": 1576837781,
       "is_race": null,
       "item_type": "workout"
+    },
+    {
+      "date": "2026-05-26",
+      "title": "Southwark - Easy 30 \u00b7 Z2",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
+    {
+      "date": "2026-05-26",
+      "title": "Southwark Cycling",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
     },
     {
       "date": "2026-05-28",
@@ -830,5 +846,5 @@
     }
   ],
   "fetched_at": "2026-05-26",
-  "fetched_time": "08:38"
+  "fetched_time": "15:50"
 }
