@@ -679,10 +679,10 @@
     {
       "date": "2026-05-27",
       "title": "Calisthenics \u00b7 Skills + Control",
-      "sport": null,
-      "workout_id": null,
+      "sport": "strength_training",
+      "workout_id": 1581649519,
       "is_race": null,
-      "item_type": "activity"
+      "item_type": "workout"
     },
     {
       "date": "2026-05-27",
@@ -733,6 +733,14 @@
       "item_type": "workout"
     },
     {
+      "date": "2026-06-03",
+      "title": "Calisthenics \u00b7 Skills + Control",
+      "sport": "strength_training",
+      "workout_id": 1581649608,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
       "date": "2026-06-04",
       "title": "Calisthenics \u00b7 Skills + Control",
       "sport": "strength_training",
@@ -777,6 +785,14 @@
       "title": "Bike \u00b7 3 \u00d7 10 min @ race pace",
       "sport": "running",
       "workout_id": 1576837815,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-06-10",
+      "title": "Bike \u00b7 4 \u00d7 8 min Z3",
+      "sport": "running",
+      "workout_id": 1581649669,
       "is_race": null,
       "item_type": "workout"
     },
@@ -838,5 +854,5 @@
     }
   ],
   "fetched_at": "2026-05-27",
-  "fetched_time": "18:53"
+  "fetched_time": "21:04"
 }
