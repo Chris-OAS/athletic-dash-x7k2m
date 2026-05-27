@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Calisthenics \u00b7 Skills + Control",
+      "type": "strength_training",
+      "date": "2026-05-27",
+      "distance_m": 0.0,
+      "duration_s": 2447.35595703125,
+      "avg_hr": 112.0,
+      "max_hr": 150.0,
+      "calories": 220.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 0.699999988079071,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark Cycling",
       "type": "cycling",
       "date": "2026-05-27",
@@ -269,20 +283,6 @@
       "avg_speed": 0,
       "aerobic_te": 0.0,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - W14 Tue Hills - Hill Repeats (10",
-      "type": "running",
-      "date": "2026-04-28",
-      "distance_m": 9472.41015625,
-      "duration_s": 3247.298095703125,
-      "avg_hr": 166.0,
-      "max_hr": 196.0,
-      "calories": 701.0,
-      "elevation_m": 42.0,
-      "avg_speed": 2.9170000553131104,
-      "aerobic_te": 4.099999904632568,
-      "vo2max": 49.0
     }
   ],
   "sleep": {
@@ -306,8 +306,8 @@
   },
   "body_battery": {
     "charged": 64,
-    "drained": 32,
-    "end_val": "2026-05-27T14:12:00.0"
+    "drained": 44,
+    "end_val": "2026-05-27T17:18:00.0"
   },
   "heart_rate": {
     "resting": 46,
@@ -316,8 +316,8 @@
     "last_7d_avg_resting": 46
   },
   "stress": {
-    "avg": 20,
-    "max": 85,
+    "avg": 23,
+    "max": 90,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,19 +328,19 @@
     "lowest": 82
   },
   "training_readiness": {
-    "score": 72,
-    "level": "MODERATE",
+    "score": 75,
+    "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
     "status": "MAINTAINING_4",
-    "load": 469,
-    "load_chronic": 410,
+    "load": 481,
+    "load_chronic": 412,
     "acwr": 1.1,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 2,
     "load_balance": "HIGH_AEROBIC_OVERAGE",
-    "monthly_aerobic_low": 542.36395,
+    "monthly_aerobic_low": 551.10614,
     "monthly_aerobic_high": 833.3689,
     "monthly_anaerobic": 131.57762,
     "vo2max": 49.1
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 89108,
-    "daily_avg": 11138
+    "weekly_total": 92881,
+    "daily_avg": 11610
   },
   "intensity": {
-    "moderate": 70,
-    "vigorous": 99,
+    "moderate": 99,
+    "vigorous": 101,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,11 +671,19 @@
       },
       {
         "date": "2026-05-27",
-        "value": 20
+        "value": 23
       }
     ]
   },
   "scheduled_workouts": [
+    {
+      "date": "2026-05-27",
+      "title": "Calisthenics \u00b7 Skills + Control",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
     {
       "date": "2026-05-27",
       "title": "Southwark Cycling",
@@ -830,5 +838,5 @@
     }
   ],
   "fetched_at": "2026-05-27",
-  "fetched_time": "15:22"
+  "fetched_time": "18:53"
 }
