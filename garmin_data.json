@@ -7,6 +7,20 @@
     {
       "name": "Southwark Cycling",
       "type": "cycling",
+      "date": "2026-05-27",
+      "distance_m": 11314.7998046875,
+      "duration_s": 2434.218017578125,
+      "avg_hr": 144.0,
+      "max_hr": 182.0,
+      "calories": 389.0,
+      "elevation_m": 55.0,
+      "avg_speed": 4.6479997634887695,
+      "aerobic_te": 2.5999999046325684,
+      "vo2max": 0
+    },
+    {
+      "name": "Southwark Cycling",
+      "type": "cycling",
       "date": "2026-05-26",
       "distance_m": 14198.48046875,
       "duration_s": 2535.656005859375,
@@ -269,20 +283,6 @@
       "avg_speed": 2.9170000553131104,
       "aerobic_te": 4.099999904632568,
       "vo2max": 49.0
-    },
-    {
-      "name": "Strength",
-      "type": "strength_training",
-      "date": "2026-04-27",
-      "distance_m": 0.0,
-      "duration_s": 1833.1689453125,
-      "avg_hr": 95.0,
-      "max_hr": 140.0,
-      "calories": 129.0,
-      "elevation_m": 0,
-      "avg_speed": 0.0,
-      "aerobic_te": 0.30000001192092896,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,41 +306,41 @@
   },
   "body_battery": {
     "charged": 64,
-    "drained": 12,
-    "end_val": "2026-05-27T10:15:00.0"
+    "drained": 32,
+    "end_val": "2026-05-27T14:12:00.0"
   },
   "heart_rate": {
     "resting": 46,
-    "max": 134,
+    "max": 170,
     "min": 44,
     "last_7d_avg_resting": 46
   },
   "stress": {
-    "avg": 18,
-    "max": 82,
+    "avg": 20,
+    "max": 85,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": 95.0,
+    "avg": 94.0,
     "lowest": 82
   },
   "training_readiness": {
-    "score": 75,
-    "level": "HIGH",
+    "score": 72,
+    "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
     "status": "MAINTAINING_4",
-    "load": 389,
-    "load_chronic": 395,
-    "acwr": 0.9,
+    "load": 469,
+    "load_chronic": 410,
+    "acwr": 1.1,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 2,
     "load_balance": "HIGH_AEROBIC_OVERAGE",
-    "monthly_aerobic_low": 489.05127,
+    "monthly_aerobic_low": 542.36395,
     "monthly_aerobic_high": 833.3689,
     "monthly_anaerobic": 131.57762,
     "vo2max": 49.1
@@ -349,8 +349,8 @@
     "value": 49.1
   },
   "respiration": {
-    "avg": 13.0,
-    "highest": 21.0,
+    "avg": 16.0,
+    "highest": 38.0,
     "lowest": 6.0
   },
   "race_predictions": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 85030,
-    "daily_avg": 10628
+    "weekly_total": 89108,
+    "daily_avg": 11138
   },
   "intensity": {
-    "moderate": 48,
-    "vigorous": 71,
+    "moderate": 70,
+    "vigorous": 99,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,11 +671,19 @@
       },
       {
         "date": "2026-05-27",
-        "value": 18
+        "value": 20
       }
     ]
   },
   "scheduled_workouts": [
+    {
+      "date": "2026-05-27",
+      "title": "Southwark Cycling",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
     {
       "date": "2026-05-28",
       "title": "Calisthenics \u00b7 Skills + Control",
@@ -822,5 +830,5 @@
     }
   ],
   "fetched_at": "2026-05-27",
-  "fetched_time": "11:55"
+  "fetched_time": "15:22"
 }
