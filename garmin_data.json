@@ -286,90 +286,90 @@
     }
   ],
   "sleep": {
-    "score": 90,
-    "duration_s": 29156,
-    "deep_s": 6660,
-    "rem_s": 6000,
-    "light_s": 16500,
-    "awake_s": 300,
-    "avg_spo2": 97.0,
-    "avg_resp": 14.0,
+    "score": 0,
+    "duration_s": null,
+    "deep_s": null,
+    "rem_s": null,
+    "light_s": null,
+    "awake_s": null,
+    "avg_spo2": 0,
+    "avg_resp": 0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 61,
+    "weekly_avg": 0,
     "last_night": 0,
-    "status": "UNBALANCED",
+    "status": "unknown",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 64,
-    "drained": 60,
-    "end_val": "2026-05-27T21:18:00.0"
+    "charged": null,
+    "drained": null,
+    "end_val": null
   },
   "heart_rate": {
-    "resting": 46,
-    "max": 170,
-    "min": 44,
-    "last_7d_avg_resting": 46
+    "resting": null,
+    "max": null,
+    "min": null,
+    "last_7d_avg_resting": null
   },
   "stress": {
-    "avg": 29,
-    "max": 90,
+    "avg": null,
+    "max": null,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": 94.0,
-    "lowest": 82
+    "avg": null,
+    "lowest": null
   },
   "training_readiness": {
-    "score": 75,
-    "level": "HIGH",
+    "score": 69,
+    "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
-    "status": "MAINTAINING_4",
-    "load": 481,
-    "load_chronic": 412,
-    "acwr": 1.1,
-    "acwr_status": "OPTIMAL",
-    "fitness_trend": 2,
-    "load_balance": "HIGH_AEROBIC_OVERAGE",
-    "monthly_aerobic_low": 551.10614,
-    "monthly_aerobic_high": 833.3689,
-    "monthly_anaerobic": 131.57762,
-    "vo2max": 49.1
+    "status": "",
+    "load": 0,
+    "load_chronic": 0,
+    "acwr": 0,
+    "acwr_status": "",
+    "fitness_trend": 0,
+    "load_balance": "",
+    "monthly_aerobic_low": 0,
+    "monthly_aerobic_high": 0,
+    "monthly_anaerobic": 0,
+    "vo2max": 0
   },
   "vo2max": {
-    "value": 49.1
+    "value": 0
   },
   "respiration": {
-    "avg": 15.0,
-    "highest": 38.0,
-    "lowest": 6.0
+    "avg": null,
+    "highest": null,
+    "lowest": null
   },
   "race_predictions": {
-    "five_k": 1323,
-    "ten_k": 2826,
-    "half_marathon": 6391,
-    "marathon": 14282
+    "five_k": 1324,
+    "ten_k": 2827,
+    "half_marathon": 6395,
+    "marathon": 14289
   },
   "endurance_score": {
-    "overall": 6208,
-    "level": 3
+    "overall": 0,
+    "level": ""
   },
   "hill_score": {
     "value": 0,
     "level": ""
   },
   "steps": {
-    "weekly_total": 95701,
-    "daily_avg": 11962
+    "weekly_total": 92107,
+    "daily_avg": 13158
   },
   "intensity": {
     "moderate": 99,
@@ -380,15 +380,11 @@
     "value": 0
   },
   "morning_readiness": {
-    "score": 74,
+    "score": 69,
     "level": "MODERATE"
   },
   "history": {
     "sleep": [
-      {
-        "date": "2026-05-14",
-        "value": 97
-      },
       {
         "date": "2026-05-15",
         "value": 84
@@ -440,13 +436,13 @@
       {
         "date": "2026-05-27",
         "value": 90
+      },
+      {
+        "date": "2026-05-28",
+        "value": 0
       }
     ],
     "hrv": [
-      {
-        "date": "2026-05-14",
-        "value": 73
-      },
       {
         "date": "2026-05-15",
         "value": 61
@@ -498,13 +494,13 @@
       {
         "date": "2026-05-27",
         "value": 63
+      },
+      {
+        "date": "2026-05-28",
+        "value": 0
       }
     ],
     "rhr": [
-      {
-        "date": "2026-05-14",
-        "value": 42
-      },
       {
         "date": "2026-05-15",
         "value": 46
@@ -556,13 +552,13 @@
       {
         "date": "2026-05-27",
         "value": 46
+      },
+      {
+        "date": "2026-05-28",
+        "value": null
       }
     ],
     "bb": [
-      {
-        "date": "2026-05-14",
-        "value": 57
-      },
       {
         "date": "2026-05-15",
         "value": 58
@@ -614,13 +610,13 @@
       {
         "date": "2026-05-27",
         "value": 64
+      },
+      {
+        "date": "2026-05-28",
+        "value": null
       }
     ],
     "stress": [
-      {
-        "date": "2026-05-14",
-        "value": 29
-      },
       {
         "date": "2026-05-15",
         "value": 28
@@ -672,26 +668,14 @@
       {
         "date": "2026-05-27",
         "value": 29
+      },
+      {
+        "date": "2026-05-28",
+        "value": null
       }
     ]
   },
   "scheduled_workouts": [
-    {
-      "date": "2026-05-27",
-      "title": "Calisthenics \u00b7 Skills + Control",
-      "sport": "strength_training",
-      "workout_id": 1581649519,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-05-27",
-      "title": "Southwark Cycling",
-      "sport": null,
-      "workout_id": null,
-      "is_race": null,
-      "item_type": "activity"
-    },
     {
       "date": "2026-05-28",
       "title": "Calisthenics \u00b7 Skills + Control",
@@ -853,6 +837,6 @@
       "item_type": "workout"
     }
   ],
-  "fetched_at": "2026-05-27",
-  "fetched_time": "23:26"
+  "fetched_at": "2026-05-28",
+  "fetched_time": "00:55"
 }
