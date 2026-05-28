@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Southwark - Easy 30 + 4 strides",
+      "type": "running",
+      "date": "2026-05-28",
+      "distance_m": 5128.8798828125,
+      "duration_s": 2108.547119140625,
+      "avg_hr": 145.0,
+      "max_hr": 183.0,
+      "calories": 364.0,
+      "elevation_m": 8.0,
+      "avg_speed": 2.431999921798706,
+      "aerobic_te": 2.700000047683716,
+      "vo2max": 49.0
+    },
+    {
       "name": "Calisthenics \u00b7 Skills + Control",
       "type": "strength_training",
       "date": "2026-05-27",
@@ -269,20 +283,6 @@
       "avg_speed": 4.796999931335449,
       "aerobic_te": 2.0999999046325684,
       "vo2max": 0
-    },
-    {
-      "name": "Yoga",
-      "type": "yoga",
-      "date": "2026-04-28",
-      "distance_m": 0,
-      "duration_s": 5619.7880859375,
-      "avg_hr": 63.0,
-      "max_hr": 108.0,
-      "calories": 149.0,
-      "elevation_m": 0,
-      "avg_speed": 0,
-      "aerobic_te": 0.0,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,12 +306,12 @@
   },
   "body_battery": {
     "charged": 71,
-    "drained": 40,
-    "end_val": "2026-05-28T13:49:00.0"
+    "drained": 56,
+    "end_val": "2026-05-28T17:53:00.0"
   },
   "heart_rate": {
     "resting": 44,
-    "max": 105,
+    "max": 163,
     "min": 42,
     "last_7d_avg_resting": 46
   },
@@ -328,30 +328,30 @@
     "lowest": 82
   },
   "training_readiness": {
-    "score": 83,
-    "level": "HIGH",
+    "score": 70,
+    "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
     "status": "MAINTAINING_4",
-    "load": 406,
-    "load_chronic": 393,
-    "acwr": 1.0,
+    "load": 506,
+    "load_chronic": 411,
+    "acwr": 1.2,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 2,
     "load_balance": "HIGH_AEROBIC_OVERAGE",
-    "monthly_aerobic_low": 410.39124,
+    "monthly_aerobic_low": 464.9212,
     "monthly_aerobic_high": 833.3689,
-    "monthly_anaerobic": 131.57762,
+    "monthly_anaerobic": 155.66577,
     "vo2max": 49.1
   },
   "vo2max": {
     "value": 49.1
   },
   "respiration": {
-    "avg": 13.0,
-    "highest": 20.0,
-    "lowest": 7.0
+    "avg": 14.0,
+    "highest": 35.0,
+    "lowest": 6.0
   },
   "race_predictions": {
     "five_k": 1324,
@@ -360,7 +360,7 @@
     "marathon": 14289
   },
   "endurance_score": {
-    "overall": 6206,
+    "overall": 6200,
     "level": 3
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 95854,
-    "daily_avg": 11981
+    "weekly_total": 102695,
+    "daily_avg": 12836
   },
   "intensity": {
-    "moderate": 99,
-    "vigorous": 101,
+    "moderate": 103,
+    "vigorous": 135,
     "goal": 150
   },
   "running_tolerance": {
@@ -693,6 +693,14 @@
       "item_type": "workout"
     },
     {
+      "date": "2026-05-28",
+      "title": "Southwark - Easy 30 + 4 strides",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
+    {
       "date": "2026-05-30",
       "title": "Easy 60 \u00b7 Z2",
       "sport": "running",
@@ -838,5 +846,5 @@
     }
   ],
   "fetched_at": "2026-05-28",
-  "fetched_time": "15:31"
+  "fetched_time": "18:58"
 }
