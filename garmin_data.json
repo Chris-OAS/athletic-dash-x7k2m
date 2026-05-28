@@ -286,72 +286,72 @@
     }
   ],
   "sleep": {
-    "score": 0,
-    "duration_s": null,
-    "deep_s": null,
-    "rem_s": null,
-    "light_s": null,
-    "awake_s": null,
-    "avg_spo2": 0,
-    "avg_resp": 0,
+    "score": 90,
+    "duration_s": 26160,
+    "deep_s": 6000,
+    "rem_s": 5700,
+    "light_s": 14460,
+    "awake_s": 0,
+    "avg_spo2": 96.0,
+    "avg_resp": 14.0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 0,
+    "weekly_avg": 61,
     "last_night": 0,
-    "status": "unknown",
+    "status": "UNBALANCED",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": null,
-    "drained": null,
-    "end_val": null
+    "charged": 71,
+    "drained": 2,
+    "end_val": "2026-05-28T06:30:00.0"
   },
   "heart_rate": {
-    "resting": null,
-    "max": null,
-    "min": null,
-    "last_7d_avg_resting": null
+    "resting": 44,
+    "max": 85,
+    "min": 42,
+    "last_7d_avg_resting": 46
   },
   "stress": {
-    "avg": null,
-    "max": null,
+    "avg": 12,
+    "max": 83,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": null,
-    "lowest": null
+    "avg": 96.0,
+    "lowest": 82
   },
   "training_readiness": {
-    "score": 69,
-    "level": "MODERATE",
+    "score": 83,
+    "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
-    "status": "",
-    "load": 0,
-    "load_chronic": 0,
-    "acwr": 0,
-    "acwr_status": "",
-    "fitness_trend": 0,
-    "load_balance": "",
-    "monthly_aerobic_low": 0,
-    "monthly_aerobic_high": 0,
-    "monthly_anaerobic": 0,
-    "vo2max": 0
+    "status": "MAINTAINING_4",
+    "load": 406,
+    "load_chronic": 393,
+    "acwr": 1.0,
+    "acwr_status": "OPTIMAL",
+    "fitness_trend": 2,
+    "load_balance": "HIGH_AEROBIC_OVERAGE",
+    "monthly_aerobic_low": 410.39124,
+    "monthly_aerobic_high": 833.3689,
+    "monthly_anaerobic": 131.57762,
+    "vo2max": 49.1
   },
   "vo2max": {
-    "value": 0
+    "value": 49.1
   },
   "respiration": {
-    "avg": null,
-    "highest": null,
-    "lowest": null
+    "avg": 11.0,
+    "highest": 19.0,
+    "lowest": 7.0
   },
   "race_predictions": {
     "five_k": 1324,
@@ -360,16 +360,16 @@
     "marathon": 14289
   },
   "endurance_score": {
-    "overall": 0,
-    "level": ""
+    "overall": 6206,
+    "level": 3
   },
   "hill_score": {
     "value": 0,
     "level": ""
   },
   "steps": {
-    "weekly_total": 92107,
-    "daily_avg": 13158
+    "weekly_total": 92188,
+    "daily_avg": 11523
   },
   "intensity": {
     "moderate": 99,
@@ -380,8 +380,8 @@
     "value": 0
   },
   "morning_readiness": {
-    "score": 69,
-    "level": "MODERATE"
+    "score": 83,
+    "level": "HIGH"
   },
   "history": {
     "sleep": [
@@ -439,7 +439,7 @@
       },
       {
         "date": "2026-05-28",
-        "value": 0
+        "value": 90
       }
     ],
     "hrv": [
@@ -497,7 +497,7 @@
       },
       {
         "date": "2026-05-28",
-        "value": 0
+        "value": 69
       }
     ],
     "rhr": [
@@ -555,7 +555,7 @@
       },
       {
         "date": "2026-05-28",
-        "value": null
+        "value": 44
       }
     ],
     "bb": [
@@ -613,7 +613,7 @@
       },
       {
         "date": "2026-05-28",
-        "value": null
+        "value": 71
       }
     ],
     "stress": [
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-05-28",
-        "value": null
+        "value": 12
       }
     ]
   },
@@ -720,7 +720,7 @@
       "date": "2026-06-03",
       "title": "Calisthenics \u00b7 Skills + Control",
       "sport": "strength_training",
-      "workout_id": 1581649608,
+      "workout_id": 1582041931,
       "is_race": null,
       "item_type": "workout"
     },
@@ -776,7 +776,7 @@
       "date": "2026-06-10",
       "title": "Bike \u00b7 4 \u00d7 8 min Z3",
       "sport": "running",
-      "workout_id": 1581649669,
+      "workout_id": 1582041961,
       "is_race": null,
       "item_type": "workout"
     },
@@ -838,5 +838,5 @@
     }
   ],
   "fetched_at": "2026-05-28",
-  "fetched_time": "00:55"
+  "fetched_time": "07:46"
 }
