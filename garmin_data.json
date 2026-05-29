@@ -704,7 +704,7 @@
       "date": "2026-06-03",
       "title": "Calisthenics \u00b7 Skills + Control",
       "sport": "strength_training",
-      "workout_id": 1582041931,
+      "workout_id": 1582974989,
       "is_race": null,
       "item_type": "workout"
     },
@@ -726,9 +726,25 @@
     },
     {
       "date": "2026-06-06",
+      "title": "Bike \u00b7 long Z2 \u00b7 2.5 hr",
+      "sport": "running",
+      "workout_id": 1582974999,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-06-06",
       "title": "Easy 60 \u00b7 Z2",
       "sport": "running",
       "workout_id": 1576837809,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-06-07",
+      "title": "Bike \u00b7 easy spin \u00b7 60 min",
+      "sport": "running",
+      "workout_id": 1582975004,
       "is_race": null,
       "item_type": "workout"
     },
@@ -758,9 +774,9 @@
     },
     {
       "date": "2026-06-10",
-      "title": "Bike \u00b7 4 \u00d7 8 min Z3",
+      "title": "Bike \u00b7 long Z2 \u00b7 2 hr",
       "sport": "running",
-      "workout_id": 1582041961,
+      "workout_id": 1582975017,
       "is_race": null,
       "item_type": "workout"
     },
@@ -777,6 +793,14 @@
       "title": "Bike \u00b7 long Z2 \u00b7 90 min",
       "sport": "running",
       "workout_id": 1576837823,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-06-13",
+      "title": "Bike \u00b7 opener \u00b7 40 min",
+      "sport": "running",
+      "workout_id": 1582975030,
       "is_race": null,
       "item_type": "workout"
     },
@@ -805,6 +829,14 @@
       "item_type": "workout"
     },
     {
+      "date": "2026-06-17",
+      "title": "Bike \u00b7 long Z2 \u00b7 2 hr",
+      "sport": "running",
+      "workout_id": 1582975050,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
       "date": "2026-06-18",
       "title": "Easy 30 + 4 strides",
       "sport": "running",
@@ -819,8 +851,16 @@
       "workout_id": 1576837833,
       "is_race": null,
       "item_type": "workout"
+    },
+    {
+      "date": "2026-06-20",
+      "title": "Bike \u00b7 opener \u00b7 40 min",
+      "sport": "running",
+      "workout_id": 1582975064,
+      "is_race": null,
+      "item_type": "workout"
     }
   ],
   "fetched_at": "2026-05-29",
-  "fetched_time": "10:39"
+  "fetched_time": "13:43"
 }
