@@ -286,37 +286,37 @@
     }
   ],
   "sleep": {
-    "score": 0,
-    "duration_s": null,
-    "deep_s": null,
-    "rem_s": null,
-    "light_s": null,
-    "awake_s": null,
-    "avg_spo2": 0,
-    "avg_resp": 0,
+    "score": 74,
+    "duration_s": 25540,
+    "deep_s": 5040,
+    "rem_s": 3120,
+    "light_s": 17400,
+    "awake_s": 1260,
+    "avg_spo2": 97.0,
+    "avg_resp": 14.0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 0,
+    "weekly_avg": 65,
     "last_night": 0,
-    "status": "unknown",
+    "status": "BALANCED",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 3,
-    "drained": 4,
-    "end_val": "2026-05-30T00:54:00.0"
+    "charged": 41,
+    "drained": 6,
+    "end_val": "2026-05-30T07:40:00.0"
   },
   "heart_rate": {
     "resting": 50,
     "max": 84,
-    "min": 50,
+    "min": 49,
     "last_7d_avg_resting": 47
   },
   "stress": {
-    "avg": 24,
+    "avg": 21,
     "max": 70,
     "rest_duration": 0,
     "low_duration": 0,
@@ -324,11 +324,11 @@
     "high_duration": 0
   },
   "spo2": {
-    "avg": 94.0,
+    "avg": 96.0,
     "lowest": 82
   },
   "training_readiness": {
-    "score": 94,
+    "score": 86,
     "level": "HIGH",
     "feedback": ""
   },
@@ -349,8 +349,8 @@
     "value": 49.1
   },
   "respiration": {
-    "avg": 15.0,
-    "highest": 18.0,
+    "avg": 12.0,
+    "highest": 20.0,
     "lowest": 7.0
   },
   "race_predictions": {
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 87668,
-    "daily_avg": 10958
+    "weekly_total": 87829,
+    "daily_avg": 10978
   },
   "intensity": {
     "moderate": 105,
@@ -380,7 +380,7 @@
     "value": 0
   },
   "morning_readiness": {
-    "score": 94,
+    "score": 86,
     "level": "HIGH"
   },
   "history": {
@@ -439,7 +439,7 @@
       },
       {
         "date": "2026-05-30",
-        "value": 0
+        "value": 74
       }
     ],
     "hrv": [
@@ -497,7 +497,7 @@
       },
       {
         "date": "2026-05-30",
-        "value": 0
+        "value": 57
       }
     ],
     "rhr": [
@@ -613,7 +613,7 @@
       },
       {
         "date": "2026-05-30",
-        "value": 3
+        "value": 41
       }
     ],
     "stress": [
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-05-30",
-        "value": 24
+        "value": 21
       }
     ]
   },
@@ -862,5 +862,5 @@
     }
   ],
   "fetched_at": "2026-05-30",
-  "fetched_time": "07:17"
+  "fetched_time": "10:10"
 }
