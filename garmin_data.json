@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 64,
-    "drained": 4,
-    "end_val": "2026-05-31T05:38:00.0"
+    "drained": 19,
+    "end_val": "2026-05-31T07:45:00.0"
   },
   "heart_rate": {
     "resting": 43,
-    "max": 91,
+    "max": 99,
     "min": 42,
     "last_7d_avg_resting": 46
   },
   "stress": {
-    "avg": 10,
-    "max": 50,
+    "avg": 15,
+    "max": 84,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -349,8 +349,8 @@
     "value": 49.1
   },
   "respiration": {
-    "avg": 12.0,
-    "highest": 18.0,
+    "avg": 14.0,
+    "highest": 22.0,
     "lowest": 7.0
   },
   "race_predictions": {
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 68675,
-    "daily_avg": 8584
+    "weekly_total": 70687,
+    "daily_avg": 8835
   },
   "intensity": {
     "moderate": 113,
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-05-31",
-        "value": 10
+        "value": 15
       }
     ]
   },
@@ -681,6 +681,14 @@
       "title": "Strength A \u00b7 Race Week",
       "sport": "strength_training",
       "workout_id": 1576837800,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-06-01",
+      "title": "Strength A \u00b7 Travel",
+      "sport": "strength_training",
+      "workout_id": 1584516691,
       "is_race": null,
       "item_type": "workout"
     },
@@ -697,6 +705,14 @@
       "title": "Calisthenics \u00b7 Skills + Control",
       "sport": "strength_training",
       "workout_id": 1582974989,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-06-03",
+      "title": "Calisthenics \u00b7 Travel",
+      "sport": "strength_training",
+      "workout_id": 1584516716,
       "is_race": null,
       "item_type": "workout"
     },
@@ -854,5 +870,5 @@
     }
   ],
   "fetched_at": "2026-05-31",
-  "fetched_time": "07:53"
+  "fetched_time": "10:44"
 }
