@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Betanzos - Easy 30 \u00b7 Z2",
+      "type": "running",
+      "date": "2026-06-02",
+      "distance_m": 4098.919921875,
+      "duration_s": 1802.9510498046875,
+      "avg_hr": 147.0,
+      "max_hr": 165.0,
+      "calories": 304.0,
+      "elevation_m": 44.0,
+      "avg_speed": 2.2730000019073486,
+      "aerobic_te": 2.299999952316284,
+      "vo2max": 49.0
+    },
+    {
       "name": "Southwark - Easy 60 \u00b7 Z2",
       "type": "running",
       "date": "2026-05-30",
@@ -269,119 +283,105 @@
       "avg_speed": 0.0,
       "aerobic_te": 0.800000011920929,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - W14 Thu Easy Run - 10km Easy Run",
-      "type": "running",
-      "date": "2026-04-30",
-      "distance_m": 10026.2099609375,
-      "duration_s": 3656.071044921875,
-      "avg_hr": 160.0,
-      "max_hr": 171.0,
-      "calories": 751.0,
-      "elevation_m": 26.0,
-      "avg_speed": 2.7420001029968257,
-      "aerobic_te": 3.5999999046325684,
-      "vo2max": 49.0
     }
   ],
   "sleep": {
-    "score": 0,
-    "duration_s": null,
-    "deep_s": null,
-    "rem_s": null,
-    "light_s": null,
-    "awake_s": null,
-    "avg_spo2": 0,
-    "avg_resp": 0,
+    "score": 97,
+    "duration_s": 31224,
+    "deep_s": 10440,
+    "rem_s": 7500,
+    "light_s": 13320,
+    "awake_s": 480,
+    "avg_spo2": 95.0,
+    "avg_resp": 13.0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 0,
+    "weekly_avg": 70,
     "last_night": 0,
-    "status": "unknown",
+    "status": "BALANCED",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": null,
-    "drained": null,
-    "end_val": null
+    "charged": 49,
+    "drained": 10,
+    "end_val": "2026-06-02T08:21:00.0"
   },
   "heart_rate": {
-    "resting": null,
-    "max": null,
-    "min": null,
-    "last_7d_avg_resting": null
+    "resting": 41,
+    "max": 159,
+    "min": 39,
+    "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": null,
-    "max": null,
+    "avg": 6,
+    "max": 67,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": null,
-    "lowest": null
+    "avg": 94.0,
+    "lowest": 82
   },
   "training_readiness": {
-    "score": 0,
-    "level": "",
+    "score": 92,
+    "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
-    "status": "",
-    "load": 0,
-    "load_chronic": 0,
-    "acwr": 0,
-    "acwr_status": "",
-    "fitness_trend": 0,
-    "load_balance": "",
-    "monthly_aerobic_low": 0,
-    "monthly_aerobic_high": 0,
-    "monthly_anaerobic": 0,
-    "vo2max": 0
+    "status": "RECOVERY_2",
+    "load": 233,
+    "load_chronic": 365,
+    "acwr": 0.6,
+    "acwr_status": "LOW",
+    "fitness_trend": 2,
+    "load_balance": "ANAEROBIC_SHORTAGE",
+    "monthly_aerobic_low": 541.1957,
+    "monthly_aerobic_high": 680.292,
+    "monthly_anaerobic": 155.66577,
+    "vo2max": 49.0
   },
   "vo2max": {
-    "value": 0
+    "value": 49.0
   },
   "respiration": {
-    "avg": null,
-    "highest": null,
-    "lowest": null
+    "avg": 22.0,
+    "highest": 34.0,
+    "lowest": 7.0
   },
   "race_predictions": {
-    "five_k": 1331,
-    "ten_k": 2843,
-    "half_marathon": 6432,
-    "marathon": 14357
+    "five_k": 1332,
+    "ten_k": 2846,
+    "half_marathon": 6438,
+    "marathon": 14368
   },
   "endurance_score": {
-    "overall": 0,
-    "level": ""
+    "overall": 6164,
+    "level": 3
   },
   "hill_score": {
     "value": 0,
     "level": ""
   },
   "steps": {
-    "weekly_total": 78884,
-    "daily_avg": 11269
+    "weekly_total": 84707,
+    "daily_avg": 10588
   },
   "intensity": {
-    "moderate": 0,
-    "vigorous": 0,
+    "moderate": 3,
+    "vigorous": 29,
     "goal": 150
   },
   "running_tolerance": {
     "value": 0
   },
   "morning_readiness": {
-    "score": 0,
-    "level": ""
+    "score": 100,
+    "level": "PRIME"
   },
   "history": {
     "sleep": [
@@ -439,7 +439,7 @@
       },
       {
         "date": "2026-06-02",
-        "value": 0
+        "value": 97
       }
     ],
     "hrv": [
@@ -497,7 +497,7 @@
       },
       {
         "date": "2026-06-02",
-        "value": 0
+        "value": 83
       }
     ],
     "rhr": [
@@ -555,7 +555,7 @@
       },
       {
         "date": "2026-06-02",
-        "value": null
+        "value": 41
       }
     ],
     "bb": [
@@ -609,11 +609,11 @@
       },
       {
         "date": "2026-06-01",
-        "value": 75
+        "value": 77
       },
       {
         "date": "2026-06-02",
-        "value": null
+        "value": 49
       }
     ],
     "stress": [
@@ -671,11 +671,19 @@
       },
       {
         "date": "2026-06-02",
-        "value": null
+        "value": 6
       }
     ]
   },
   "scheduled_workouts": [
+    {
+      "date": "2026-06-02",
+      "title": "Betanzos - Easy 30 \u00b7 Z2",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
     {
       "date": "2026-06-02",
       "title": "Easy 30 \u00b7 Z2",
@@ -862,5 +870,5 @@
     }
   ],
   "fetched_at": "2026-06-02",
-  "fetched_time": "01:13"
+  "fetched_time": "11:08"
 }
