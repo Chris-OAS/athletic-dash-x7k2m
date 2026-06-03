@@ -305,9 +305,9 @@
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 61,
-    "drained": 28,
-    "end_val": "2026-06-03T12:24:00.0"
+    "charged": 62,
+    "drained": 44,
+    "end_val": "2026-06-03T18:11:00.0"
   },
   "heart_rate": {
     "resting": 44,
@@ -316,7 +316,7 @@
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 19,
+    "avg": 20,
     "max": 82,
     "rest_duration": 0,
     "low_duration": 0,
@@ -324,7 +324,7 @@
     "high_duration": 0
   },
   "spo2": {
-    "avg": 96.0,
+    "avg": 95.0,
     "lowest": 87
   },
   "training_readiness": {
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 85654,
-    "daily_avg": 10706
+    "weekly_total": 87329,
+    "daily_avg": 10916
   },
   "intensity": {
     "moderate": 3,
@@ -613,7 +613,7 @@
       },
       {
         "date": "2026-06-03",
-        "value": 61
+        "value": 62
       }
     ],
     "stress": [
@@ -671,123 +671,11 @@
       },
       {
         "date": "2026-06-03",
-        "value": 19
+        "value": 20
       }
     ]
   },
   "scheduled_workouts": [
-    {
-      "date": "2026-06-03",
-      "title": "Calisthenics \u00b7 Travel",
-      "sport": "strength_training",
-      "workout_id": 1588976902,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-06-04",
-      "title": "Easy 30 + 4 strides",
-      "sport": "running",
-      "workout_id": 1588976909,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-06-06",
-      "title": "Bike \u00b7 long Z2 \u00b7 2.5 hr",
-      "sport": "running",
-      "workout_id": 1588976912,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-06-07",
-      "title": "Bike \u00b7 easy spin \u00b7 60 min",
-      "sport": "running",
-      "workout_id": 1588976916,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-06-08",
-      "title": "Strength A \u00b7 Race Week",
-      "sport": "strength_training",
-      "workout_id": 1588976925,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-06-09",
-      "title": "Easy 30 \u00b7 Z2",
-      "sport": "running",
-      "workout_id": 1588976933,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-06-10",
-      "title": "Bike \u00b7 long Z2 \u00b7 2 hr",
-      "sport": "running",
-      "workout_id": 1588976938,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-06-11",
-      "title": "Easy 30 + 4 strides",
-      "sport": "running",
-      "workout_id": 1588976952,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-06-13",
-      "title": "Bike \u00b7 opener \u00b7 40 min",
-      "sport": "running",
-      "workout_id": 1588976957,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-06-15",
-      "title": "Strength A \u00b7 Race Week",
-      "sport": "strength_training",
-      "workout_id": 1588976966,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-06-16",
-      "title": "Easy 30 \u00b7 Z2",
-      "sport": "running",
-      "workout_id": 1588976975,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-06-17",
-      "title": "Bike \u00b7 long Z2 \u00b7 2 hr",
-      "sport": "running",
-      "workout_id": 1588976981,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-06-18",
-      "title": "Easy 30 + 4 strides",
-      "sport": "running",
-      "workout_id": 1588976985,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-06-20",
-      "title": "Bike \u00b7 opener \u00b7 40 min",
-      "sport": "running",
-      "workout_id": 1588976988,
-      "is_race": null,
-      "item_type": "workout"
-    },
     {
       "date": "2026-09-19",
       "title": "Tough Mudder 15K",
@@ -798,5 +686,5 @@
     }
   ],
   "fetched_at": "2026-06-03",
-  "fetched_time": "14:10"
+  "fetched_time": "19:19"
 }
