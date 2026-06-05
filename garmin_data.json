@@ -305,26 +305,26 @@
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 54,
-    "drained": 55,
-    "end_val": "2026-06-05T18:22:00.0"
+    "charged": 56,
+    "drained": 66,
+    "end_val": "2026-06-05T22:45:00.0"
   },
   "heart_rate": {
     "resting": 41,
-    "max": 103,
+    "max": 108,
     "min": 40,
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 21,
-    "max": 93,
+    "avg": 22,
+    "max": 96,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": 93.0,
+    "avg": 94.0,
     "lowest": 76
   },
   "training_readiness": {
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 78570,
-    "daily_avg": 9821
+    "weekly_total": 80090,
+    "daily_avg": 10011
   },
   "intensity": {
     "moderate": 8,
@@ -385,10 +385,6 @@
   },
   "history": {
     "sleep": [
-      {
-        "date": "2026-05-23",
-        "value": 76
-      },
       {
         "date": "2026-05-24",
         "value": 84
@@ -412,6 +408,10 @@
       {
         "date": "2026-05-29",
         "value": 99
+      },
+      {
+        "date": "2026-05-30",
+        "value": 74
       },
       {
         "date": "2026-05-30",
@@ -444,10 +444,6 @@
     ],
     "hrv": [
       {
-        "date": "2026-05-23",
-        "value": 60
-      },
-      {
         "date": "2026-05-24",
         "value": 57
       },
@@ -470,6 +466,10 @@
       {
         "date": "2026-05-29",
         "value": 84
+      },
+      {
+        "date": "2026-05-30",
+        "value": 57
       },
       {
         "date": "2026-05-30",
@@ -502,10 +502,6 @@
     ],
     "rhr": [
       {
-        "date": "2026-05-23",
-        "value": 43
-      },
-      {
         "date": "2026-05-24",
         "value": 49
       },
@@ -528,6 +524,10 @@
       {
         "date": "2026-05-29",
         "value": 42
+      },
+      {
+        "date": "2026-05-30",
+        "value": 50
       },
       {
         "date": "2026-05-30",
@@ -560,10 +560,6 @@
     ],
     "bb": [
       {
-        "date": "2026-05-23",
-        "value": 55
-      },
-      {
         "date": "2026-05-24",
         "value": 69
       },
@@ -592,6 +588,10 @@
         "value": 43
       },
       {
+        "date": "2026-05-30",
+        "value": 43
+      },
+      {
         "date": "2026-05-31",
         "value": 64
       },
@@ -613,14 +613,10 @@
       },
       {
         "date": "2026-06-05",
-        "value": 54
+        "value": 56
       }
     ],
     "stress": [
-      {
-        "date": "2026-05-23",
-        "value": 42
-      },
       {
         "date": "2026-05-24",
         "value": 25
@@ -650,6 +646,10 @@
         "value": 24
       },
       {
+        "date": "2026-05-30",
+        "value": 24
+      },
+      {
         "date": "2026-05-31",
         "value": 24
       },
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-06-05",
-        "value": 21
+        "value": 22
       }
     ]
   },
@@ -974,5 +974,5 @@
     }
   ],
   "fetched_at": "2026-06-05",
-  "fetched_time": "22:18"
+  "fetched_time": "00:00"
 }
