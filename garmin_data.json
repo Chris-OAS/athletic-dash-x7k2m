@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Southwark - Bike \u00b7 long Z2 \u00b7 2.5 hr",
+      "type": "cycling",
+      "date": "2026-06-07",
+      "distance_m": 52775.6796875,
+      "duration_s": 10626.07421875,
+      "avg_hr": 139.0,
+      "max_hr": 182.0,
+      "calories": 1351.0,
+      "elevation_m": 417.0,
+      "avg_speed": 4.9670000076293945,
+      "aerobic_te": 3.5999999046325684,
+      "vo2max": 0
+    },
+    {
       "name": "Betanzos - Easy 30 \u00b7 Z2",
       "type": "running",
       "date": "2026-06-02",
@@ -269,20 +283,6 @@
       "avg_speed": 0.0,
       "aerobic_te": 0.8999999761581421,
       "vo2max": 0
-    },
-    {
-      "name": "Strength",
-      "type": "strength_training",
-      "date": "2026-05-01",
-      "distance_m": 0.0,
-      "duration_s": 2930.705078125,
-      "avg_hr": 103.0,
-      "max_hr": 152.0,
-      "calories": 241.0,
-      "elevation_m": 0,
-      "avg_speed": 0.0,
-      "aerobic_te": 0.800000011920929,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,8 +306,8 @@
   },
   "body_battery": {
     "charged": 51,
-    "drained": 25,
-    "end_val": "2026-06-07T08:50:00.0"
+    "drained": 40,
+    "end_val": "2026-06-07T10:32:00.0"
   },
   "heart_rate": {
     "resting": 45,
@@ -328,21 +328,21 @@
     "lowest": 90
   },
   "training_readiness": {
-    "score": 100,
-    "level": "PRIME",
+    "score": 78,
+    "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
     "status": "RECOVERY_2",
-    "load": 39,
-    "load_chronic": 292,
-    "acwr": 0.1,
+    "load": 218,
+    "load_chronic": 324,
+    "acwr": 0.6,
     "acwr_status": "LOW",
     "fitness_trend": 2,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
-    "monthly_aerobic_low": 541.1957,
+    "monthly_aerobic_low": 651.2407,
     "monthly_aerobic_high": 435.55576,
-    "monthly_anaerobic": 79.16582,
+    "monthly_anaerobic": 109.7227,
     "vo2max": 49.0
   },
   "vo2max": {
@@ -354,13 +354,13 @@
     "lowest": 8.0
   },
   "race_predictions": {
-    "five_k": 1362,
-    "ten_k": 2910,
-    "half_marathon": 6593,
-    "marathon": 14662
+    "five_k": 1358,
+    "ten_k": 2902,
+    "half_marathon": 6579,
+    "marathon": 14631
   },
   "endurance_score": {
-    "overall": 6070,
+    "overall": 6080,
     "level": 3
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 62358,
-    "daily_avg": 7794
+    "weekly_total": 62710,
+    "daily_avg": 7838
   },
   "intensity": {
-    "moderate": 62,
-    "vigorous": 87,
+    "moderate": 107,
+    "vigorous": 124,
     "goal": 150
   },
   "running_tolerance": {
@@ -685,6 +685,14 @@
       "item_type": "workout"
     },
     {
+      "date": "2026-06-07",
+      "title": "Southwark - Bike \u00b7 long Z2 \u00b7 2.5 hr",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
+    {
       "date": "2026-06-08",
       "title": "Strength A \u00b7 Race Week",
       "sport": "strength_training",
@@ -966,5 +974,5 @@
     }
   ],
   "fetched_at": "2026-06-07",
-  "fetched_time": "11:23"
+  "fetched_time": "13:17"
 }
