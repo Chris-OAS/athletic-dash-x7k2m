@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Strength A \u00b7 Race Week",
+      "type": "strength_training",
+      "date": "2026-06-08",
+      "distance_m": 0.0,
+      "duration_s": 1275.946044921875,
+      "avg_hr": 125.0,
+      "max_hr": 164.0,
+      "calories": 163.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 1.2999999523162842,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - Bike \u00b7 long Z2 \u00b7 2.5 hr",
       "type": "cycling",
       "date": "2026-06-07",
@@ -269,119 +283,105 @@
       "avg_speed": 2.9820001125335693,
       "aerobic_te": 3.799999952316284,
       "vo2max": 49.0
-    },
-    {
-      "name": "Strength",
-      "type": "strength_training",
-      "date": "2026-05-04",
-      "distance_m": 0.0,
-      "duration_s": 2230.549072265625,
-      "avg_hr": 108.0,
-      "max_hr": 151.0,
-      "calories": 213.0,
-      "elevation_m": 0,
-      "avg_speed": 0.0,
-      "aerobic_te": 0.8999999761581421,
-      "vo2max": 0
     }
   ],
   "sleep": {
-    "score": 0,
-    "duration_s": null,
-    "deep_s": null,
-    "rem_s": null,
-    "light_s": null,
-    "awake_s": null,
-    "avg_spo2": 0,
-    "avg_resp": 0,
+    "score": 85,
+    "duration_s": 32520,
+    "deep_s": 3840,
+    "rem_s": 6540,
+    "light_s": 22140,
+    "awake_s": 1200,
+    "avg_spo2": 98.0,
+    "avg_resp": 14.0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 0,
+    "weekly_avg": 70,
     "last_night": 0,
-    "status": "unknown",
+    "status": "BALANCED",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": null,
-    "drained": null,
-    "end_val": null
+    "charged": 76,
+    "drained": 24,
+    "end_val": "2026-06-08T12:18:00.0"
   },
   "heart_rate": {
-    "resting": null,
-    "max": null,
-    "min": null,
-    "last_7d_avg_resting": null
+    "resting": 46,
+    "max": 127,
+    "min": 44,
+    "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": null,
-    "max": null,
+    "avg": 20,
+    "max": 83,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": null,
-    "lowest": null
+    "avg": 96.0,
+    "lowest": 90
   },
   "training_readiness": {
-    "score": 0,
-    "level": "",
+    "score": 83,
+    "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
-    "status": "",
-    "load": 0,
-    "load_chronic": 0,
-    "acwr": 0,
-    "acwr_status": "",
-    "fitness_trend": 0,
-    "load_balance": "",
-    "monthly_aerobic_low": 0,
-    "monthly_aerobic_high": 0,
-    "monthly_anaerobic": 0,
-    "vo2max": 0
+    "status": "RECOVERY_2",
+    "load": 227,
+    "load_chronic": 314,
+    "acwr": 0.7,
+    "acwr_status": "LOW",
+    "fitness_trend": 2,
+    "load_balance": "AEROBIC_HIGH_SHORTAGE",
+    "monthly_aerobic_low": 665.89734,
+    "monthly_aerobic_high": 435.55576,
+    "monthly_anaerobic": 125.65494,
+    "vo2max": 49.0
   },
   "vo2max": {
-    "value": 0
+    "value": 49.0
   },
   "respiration": {
-    "avg": null,
-    "highest": null,
-    "lowest": null
+    "avg": 13.0,
+    "highest": 20.0,
+    "lowest": 8.0
   },
   "race_predictions": {
     "five_k": 1358,
     "ten_k": 2902,
-    "half_marathon": 6579,
-    "marathon": 14631
+    "half_marathon": 6588,
+    "marathon": 14659
   },
   "endurance_score": {
-    "overall": 0,
-    "level": ""
+    "overall": 6071,
+    "level": 3
   },
   "hill_score": {
     "value": 0,
     "level": ""
   },
   "steps": {
-    "weekly_total": 57154,
-    "daily_avg": 8164
+    "weekly_total": 60695,
+    "daily_avg": 7586
   },
   "intensity": {
-    "moderate": 0,
-    "vigorous": 0,
+    "moderate": 6,
+    "vigorous": 1,
     "goal": 150
   },
   "running_tolerance": {
     "value": 0
   },
   "morning_readiness": {
-    "score": 0,
-    "level": ""
+    "score": 84,
+    "level": "HIGH"
   },
   "history": {
     "sleep": [
@@ -439,7 +439,7 @@
       },
       {
         "date": "2026-06-08",
-        "value": 0
+        "value": 85
       }
     ],
     "hrv": [
@@ -497,7 +497,7 @@
       },
       {
         "date": "2026-06-08",
-        "value": 0
+        "value": 59
       }
     ],
     "rhr": [
@@ -555,7 +555,7 @@
       },
       {
         "date": "2026-06-08",
-        "value": null
+        "value": 46
       }
     ],
     "bb": [
@@ -613,7 +613,7 @@
       },
       {
         "date": "2026-06-08",
-        "value": null
+        "value": 76
       }
     ],
     "stress": [
@@ -667,11 +667,11 @@
       },
       {
         "date": "2026-06-07",
-        "value": 33
+        "value": 32
       },
       {
         "date": "2026-06-08",
-        "value": null
+        "value": 20
       }
     ]
   },
@@ -680,7 +680,7 @@
       "date": "2026-06-08",
       "title": "Strength A \u00b7 Race Week",
       "sport": "strength_training",
-      "workout_id": 1591268244,
+      "workout_id": 1594417615,
       "is_race": null,
       "item_type": "workout"
     },
@@ -712,7 +712,7 @@
       "date": "2026-06-15",
       "title": "Strength A \u00b7 Race Week",
       "sport": "strength_training",
-      "workout_id": 1591268244,
+      "workout_id": 1594417615,
       "is_race": null,
       "item_type": "workout"
     },
@@ -752,7 +752,7 @@
       "date": "2026-06-23",
       "title": "Strength A \u00b7 Full Body",
       "sport": "strength_training",
-      "workout_id": 1591268270,
+      "workout_id": 1594417569,
       "is_race": null,
       "item_type": "workout"
     },
@@ -792,7 +792,7 @@
       "date": "2026-06-30",
       "title": "Strength A \u00b7 Full Body",
       "sport": "strength_training",
-      "workout_id": 1591268270,
+      "workout_id": 1594417569,
       "is_race": null,
       "item_type": "workout"
     },
@@ -840,7 +840,7 @@
       "date": "2026-07-07",
       "title": "Strength A \u00b7 Full Body",
       "sport": "strength_training",
-      "workout_id": 1591268270,
+      "workout_id": 1594417569,
       "is_race": null,
       "item_type": "workout"
     },
@@ -872,7 +872,7 @@
       "date": "2026-07-11",
       "title": "Long easy \u00b7 90 min",
       "sport": "running",
-      "workout_id": 1592818370,
+      "workout_id": 1594417600,
       "is_race": null,
       "item_type": "workout"
     },
@@ -888,7 +888,7 @@
       "date": "2026-07-14",
       "title": "Strength A \u00b7 Full Body",
       "sport": "strength_training",
-      "workout_id": 1591268270,
+      "workout_id": 1594417569,
       "is_race": null,
       "item_type": "workout"
     },
@@ -942,5 +942,5 @@
     }
   ],
   "fetched_at": "2026-06-08",
-  "fetched_time": "11:21"
+  "fetched_time": "15:43"
 }
