@@ -693,6 +693,14 @@
       "item_type": "activity"
     },
     {
+      "date": "2026-06-10",
+      "title": "Bike \u00b7 long Z2 \u00b7 2 hr",
+      "sport": "cycling",
+      "workout_id": 1595693240,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
       "date": "2026-06-13",
       "title": "Bike \u00b7 opener \u00b7 40 min",
       "sport": "cycling",
@@ -713,6 +721,14 @@
       "title": "Easy 30 \u00b7 Z2",
       "sport": "running",
       "workout_id": 1595645677,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-06-17",
+      "title": "Bike \u00b7 long Z2 \u00b7 2 hr",
+      "sport": "cycling",
+      "workout_id": 1595693240,
       "is_race": null,
       "item_type": "workout"
     },
@@ -784,7 +800,7 @@
       "date": "2026-06-30",
       "title": "Tempo intervals \u00b7 5 \u00d7 3 min",
       "sport": "running",
-      "workout_id": 1594082780,
+      "workout_id": 1595693249,
       "is_race": null,
       "item_type": "workout"
     },
@@ -856,7 +872,7 @@
       "date": "2026-07-11",
       "title": "Long easy \u00b7 90 min",
       "sport": "running",
-      "workout_id": 1594417600,
+      "workout_id": 1595693265,
       "is_race": null,
       "item_type": "workout"
     },
@@ -904,7 +920,7 @@
       "date": "2026-07-18",
       "title": "Max-HR test",
       "sport": "running",
-      "workout_id": 1594082963,
+      "workout_id": 1595693268,
       "is_race": null,
       "item_type": "workout"
     },
@@ -926,5 +942,5 @@
     }
   ],
   "fetched_at": "2026-06-09",
-  "fetched_time": "14:39"
+  "fetched_time": "17:27"
 }
