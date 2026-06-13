@@ -829,14 +829,6 @@
       "item_type": "workout"
     },
     {
-      "date": "2026-07-07",
-      "title": "Threshold \u00b7 4 \u00d7 5 min",
-      "sport": "running",
-      "workout_id": 1598189582,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
       "date": "2026-07-09",
       "title": "Easy 50 \u00b7 Z2",
       "sport": "running",
@@ -918,5 +910,5 @@
     }
   ],
   "fetched_at": "2026-06-13",
-  "fetched_time": "12:49"
+  "fetched_time": "14:42"
 }
