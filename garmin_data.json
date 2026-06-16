@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Yoga",
+      "type": "yoga",
+      "date": "2026-06-16",
+      "distance_m": 0,
+      "duration_s": 6336.64501953125,
+      "avg_hr": 64.0,
+      "max_hr": 118.0,
+      "calories": 167.0,
+      "elevation_m": 0,
+      "avg_speed": 0,
+      "aerobic_te": 0.10000000149011612,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - Easy 30 \u00b7 Z2",
       "type": "running",
       "date": "2026-06-16",
@@ -269,20 +283,6 @@
       "avg_speed": 0.0,
       "aerobic_te": 0.6000000238418579,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - Easy 40 \u00b7 Z2",
-      "type": "running",
-      "date": "2026-05-12",
-      "distance_m": 5691.97998046875,
-      "duration_s": 2406.547119140625,
-      "avg_hr": 141.0,
-      "max_hr": 151.0,
-      "calories": 418.0,
-      "elevation_m": 20.0,
-      "avg_speed": 2.365000009536743,
-      "aerobic_te": 2.4000000953674316,
-      "vo2max": 49.0
     }
   ],
   "sleep": {
@@ -305,19 +305,19 @@
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 71,
-    "drained": 43,
-    "end_val": "2026-06-16T16:24:00.0"
+    "charged": 74,
+    "drained": 50,
+    "end_val": "2026-06-16T18:22:00.0"
   },
   "heart_rate": {
     "resting": 49,
     "max": 159,
-    "min": 47,
+    "min": 45,
     "last_7d_avg_resting": 47
   },
   "stress": {
     "avg": 26,
-    "max": 87,
+    "max": 99,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,19 +328,19 @@
     "lowest": 92
   },
   "training_readiness": {
-    "score": 39,
+    "score": 44,
     "level": "LOW",
     "feedback": ""
   },
   "training_status": {
     "status": "STRAINED_3",
-    "load": 158,
-    "load_chronic": 253,
+    "load": 160,
+    "load_chronic": 254,
     "acwr": 0.6,
     "acwr_status": "LOW",
     "fitness_trend": 2,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
-    "monthly_aerobic_low": 667.46844,
+    "monthly_aerobic_low": 669.02405,
     "monthly_aerobic_high": 237.11183,
     "monthly_anaerobic": 160.4574,
     "vo2max": 48.5
@@ -351,7 +351,7 @@
   "respiration": {
     "avg": 15.0,
     "highest": 32.0,
-    "lowest": 7.0
+    "lowest": 6.0
   },
   "race_predictions": {
     "five_k": 1379,
@@ -368,11 +368,11 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 72147,
-    "daily_avg": 9018
+    "weekly_total": 74362,
+    "daily_avg": 9295
   },
   "intensity": {
-    "moderate": 9,
+    "moderate": 10,
     "vigorous": 49,
     "goal": 150
   },
@@ -613,7 +613,7 @@
       },
       {
         "date": "2026-06-16",
-        "value": 71
+        "value": 74
       }
     ],
     "stress": [
@@ -687,6 +687,14 @@
     {
       "date": "2026-06-16",
       "title": "Southwark - Easy 30 \u00b7 Z2",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
+    {
+      "date": "2026-06-16",
+      "title": "Yoga",
       "sport": null,
       "workout_id": null,
       "is_race": null,
@@ -918,5 +926,5 @@
     }
   ],
   "fetched_at": "2026-06-16",
-  "fetched_time": "18:57"
+  "fetched_time": "21:47"
 }
