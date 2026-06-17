@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Southwark - Bike \u00b7 long Z2 \u00b7 2 hr",
+      "type": "cycling",
+      "date": "2026-06-17",
+      "distance_m": 29571.740234375,
+      "duration_s": 6055.01611328125,
+      "avg_hr": 147.0,
+      "max_hr": 184.0,
+      "calories": 835.0,
+      "elevation_m": 349.0,
+      "avg_speed": 4.883999824523926,
+      "aerobic_te": 3.4000000953674316,
+      "vo2max": 0
+    },
+    {
       "name": "Yoga",
       "type": "yoga",
       "date": "2026-06-16",
@@ -269,20 +283,6 @@
       "avg_speed": 2.2820000648498535,
       "aerobic_te": 2.700000047683716,
       "vo2max": 49.0
-    },
-    {
-      "name": "Strength A \u00b7 Full Body",
-      "type": "strength_training",
-      "date": "2026-05-13",
-      "distance_m": 0.0,
-      "duration_s": 3481.782958984375,
-      "avg_hr": 97.0,
-      "max_hr": 155.0,
-      "calories": 246.0,
-      "elevation_m": 0,
-      "avg_speed": 0.0,
-      "aerobic_te": 0.6000000238418579,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,12 +306,12 @@
   },
   "body_battery": {
     "charged": 67,
-    "drained": 39,
-    "end_val": "2026-06-17T13:47:00.0"
+    "drained": 58,
+    "end_val": "2026-06-17T15:57:00.0"
   },
   "heart_rate": {
     "resting": 44,
-    "max": 100,
+    "max": 179,
     "min": 43,
     "last_7d_avg_resting": 47
   },
@@ -328,29 +328,29 @@
     "lowest": 90
   },
   "training_readiness": {
-    "score": 80,
-    "level": "HIGH",
+    "score": 53,
+    "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
-    "status": "STRAINED_3",
-    "load": 112,
-    "load_chronic": 244,
-    "acwr": 0.4,
-    "acwr_status": "LOW",
+    "status": "STRAINED_4",
+    "load": 275,
+    "load_chronic": 273,
+    "acwr": 1.0,
+    "acwr_status": "OPTIMAL",
     "fitness_trend": 2,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
-    "monthly_aerobic_low": 669.02405,
+    "monthly_aerobic_low": 765.98987,
     "monthly_aerobic_high": 237.11183,
-    "monthly_anaerobic": 160.4574,
+    "monthly_anaerobic": 191.9361,
     "vo2max": 48.5
   },
   "vo2max": {
     "value": 48.5
   },
   "respiration": {
-    "avg": 13.0,
-    "highest": 21.0,
+    "avg": 18.0,
+    "highest": 39.0,
     "lowest": 6.0
   },
   "race_predictions": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 69789,
-    "daily_avg": 8723
+    "weekly_total": 70643,
+    "daily_avg": 8830
   },
   "intensity": {
-    "moderate": 10,
-    "vigorous": 49,
+    "moderate": 56,
+    "vigorous": 104,
     "goal": 150
   },
   "running_tolerance": {
@@ -685,6 +685,14 @@
       "item_type": "workout"
     },
     {
+      "date": "2026-06-17",
+      "title": "Southwark - Bike \u00b7 long Z2 \u00b7 2 hr",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
+    {
       "date": "2026-06-18",
       "title": "Easy 30 + 4 strides",
       "sport": "running",
@@ -902,5 +910,5 @@
     }
   ],
   "fetched_at": "2026-06-17",
-  "fetched_time": "15:55"
+  "fetched_time": "18:46"
 }
