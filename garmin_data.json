@@ -306,8 +306,8 @@
   },
   "body_battery": {
     "charged": 67,
-    "drained": 58,
-    "end_val": "2026-06-17T15:57:00.0"
+    "drained": 83,
+    "end_val": "2026-06-17T22:40:00.0"
   },
   "heart_rate": {
     "resting": 44,
@@ -316,7 +316,7 @@
     "last_7d_avg_resting": 47
   },
   "stress": {
-    "avg": 20,
+    "avg": 32,
     "max": 99,
     "rest_duration": 0,
     "low_duration": 0,
@@ -349,7 +349,7 @@
     "value": 48.5
   },
   "respiration": {
-    "avg": 18.0,
+    "avg": 16.0,
     "highest": 39.0,
     "lowest": 6.0
   },
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 70643,
-    "daily_avg": 8830
+    "weekly_total": 73386,
+    "daily_avg": 9173
   },
   "intensity": {
     "moderate": 56,
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-06-17",
-        "value": 20
+        "value": 32
       }
     ]
   },
@@ -696,7 +696,7 @@
       "date": "2026-06-18",
       "title": "Easy 30 + 4 strides",
       "sport": "running",
-      "workout_id": 1602757444,
+      "workout_id": 1604061428,
       "is_race": null,
       "item_type": "workout"
     },
@@ -712,7 +712,7 @@
       "date": "2026-06-23",
       "title": "Easy 30 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1602757405,
+      "workout_id": 1604061352,
       "is_race": null,
       "item_type": "workout"
     },
@@ -720,7 +720,7 @@
       "date": "2026-06-23",
       "title": "Strength A \u00b7 Full Body",
       "sport": "strength_training",
-      "workout_id": 1602757482,
+      "workout_id": 1604061439,
       "is_race": null,
       "item_type": "workout"
     },
@@ -728,7 +728,7 @@
       "date": "2026-06-25",
       "title": "Easy 30 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1602757405,
+      "workout_id": 1604061352,
       "is_race": null,
       "item_type": "workout"
     },
@@ -760,7 +760,7 @@
       "date": "2026-06-30",
       "title": "Strength A \u00b7 Full Body",
       "sport": "strength_training",
-      "workout_id": 1602757482,
+      "workout_id": 1604061439,
       "is_race": null,
       "item_type": "workout"
     },
@@ -768,7 +768,7 @@
       "date": "2026-06-30",
       "title": "Tempo intervals \u00b7 5 \u00d7 3 min",
       "sport": "running",
-      "workout_id": 1602757448,
+      "workout_id": 1604061371,
       "is_race": null,
       "item_type": "workout"
     },
@@ -776,7 +776,7 @@
       "date": "2026-07-02",
       "title": "Easy 50 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1602757398,
+      "workout_id": 1604061290,
       "is_race": null,
       "item_type": "workout"
     },
@@ -808,7 +808,7 @@
       "date": "2026-07-07",
       "title": "Strength A \u00b7 Full Body",
       "sport": "strength_training",
-      "workout_id": 1602757482,
+      "workout_id": 1604061439,
       "is_race": null,
       "item_type": "workout"
     },
@@ -816,7 +816,7 @@
       "date": "2026-07-07",
       "title": "Threshold \u00b7 4 \u00d7 5 min",
       "sport": "running",
-      "workout_id": 1602757473,
+      "workout_id": 1604061391,
       "is_race": null,
       "item_type": "workout"
     },
@@ -824,7 +824,7 @@
       "date": "2026-07-09",
       "title": "Easy 50 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1602757398,
+      "workout_id": 1604061290,
       "is_race": null,
       "item_type": "workout"
     },
@@ -856,7 +856,7 @@
       "date": "2026-07-14",
       "title": "Strength A \u00b7 Full Body",
       "sport": "strength_training",
-      "workout_id": 1602757482,
+      "workout_id": 1604061439,
       "is_race": null,
       "item_type": "workout"
     },
@@ -872,7 +872,7 @@
       "date": "2026-07-16",
       "title": "Easy 30 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1602757405,
+      "workout_id": 1604061352,
       "is_race": null,
       "item_type": "workout"
     },
@@ -880,7 +880,7 @@
       "date": "2026-07-17",
       "title": "Calisthenics \u00b7 Skills + Control",
       "sport": "strength_training",
-      "workout_id": 1602757526,
+      "workout_id": 1604061318,
       "is_race": null,
       "item_type": "workout"
     },
@@ -910,5 +910,5 @@
     }
   ],
   "fetched_at": "2026-06-17",
-  "fetched_time": "21:04"
+  "fetched_time": "23:41"
 }
