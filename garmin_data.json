@@ -286,57 +286,57 @@
     }
   ],
   "sleep": {
-    "score": 84,
-    "duration_s": 36300,
-    "deep_s": 3360,
-    "rem_s": 7440,
-    "light_s": 25500,
-    "awake_s": 360,
-    "avg_spo2": 98.0,
+    "score": 96,
+    "duration_s": 29957,
+    "deep_s": 6780,
+    "rem_s": 6300,
+    "light_s": 16920,
+    "awake_s": 300,
+    "avg_spo2": 97.0,
     "avg_resp": 13.0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 51,
+    "weekly_avg": 52,
     "last_night": 0,
     "status": "LOW",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 74,
-    "drained": 50,
-    "end_val": "2026-06-16T18:22:00.0"
+    "charged": 67,
+    "drained": 0,
+    "end_val": "2026-06-17T07:20:00.0"
   },
   "heart_rate": {
-    "resting": 49,
-    "max": 159,
-    "min": 45,
+    "resting": 44,
+    "max": 65,
+    "min": 43,
     "last_7d_avg_resting": 47
   },
   "stress": {
-    "avg": 26,
-    "max": 99,
+    "avg": 11,
+    "max": 31,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": 97.0,
-    "lowest": 92
+    "avg": 96.0,
+    "lowest": 90
   },
   "training_readiness": {
-    "score": 44,
-    "level": "LOW",
+    "score": 80,
+    "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
     "status": "STRAINED_3",
-    "load": 160,
-    "load_chronic": 254,
-    "acwr": 0.6,
+    "load": 112,
+    "load_chronic": 244,
+    "acwr": 0.4,
     "acwr_status": "LOW",
     "fitness_trend": 2,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
@@ -349,18 +349,18 @@
     "value": 48.5
   },
   "respiration": {
-    "avg": 15.0,
-    "highest": 32.0,
+    "avg": null,
+    "highest": 18.0,
     "lowest": 6.0
   },
   "race_predictions": {
-    "five_k": 1379,
-    "ten_k": 2958,
-    "half_marathon": 6718,
-    "marathon": 15007
+    "five_k": 1380,
+    "ten_k": 2961,
+    "half_marathon": 6726,
+    "marathon": 15044
   },
   "endurance_score": {
-    "overall": 5948,
+    "overall": 5941,
     "level": 3
   },
   "hill_score": {
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 74362,
-    "daily_avg": 9295
+    "weekly_total": 66274,
+    "daily_avg": 8284
   },
   "intensity": {
     "moderate": 10,
@@ -380,15 +380,11 @@
     "value": 0
   },
   "morning_readiness": {
-    "score": 55,
-    "level": "MODERATE"
+    "score": 80,
+    "level": "HIGH"
   },
   "history": {
     "sleep": [
-      {
-        "date": "2026-06-03",
-        "value": 81
-      },
       {
         "date": "2026-06-04",
         "value": 81
@@ -440,13 +436,13 @@
       {
         "date": "2026-06-16",
         "value": 84
+      },
+      {
+        "date": "2026-06-17",
+        "value": 96
       }
     ],
     "hrv": [
-      {
-        "date": "2026-06-03",
-        "value": 63
-      },
       {
         "date": "2026-06-04",
         "value": 63
@@ -498,13 +494,13 @@
       {
         "date": "2026-06-16",
         "value": 60
+      },
+      {
+        "date": "2026-06-17",
+        "value": 69
       }
     ],
     "rhr": [
-      {
-        "date": "2026-06-03",
-        "value": 44
-      },
       {
         "date": "2026-06-04",
         "value": 46
@@ -556,13 +552,13 @@
       {
         "date": "2026-06-16",
         "value": 49
+      },
+      {
+        "date": "2026-06-17",
+        "value": 44
       }
     ],
     "bb": [
-      {
-        "date": "2026-06-03",
-        "value": 64
-      },
       {
         "date": "2026-06-04",
         "value": 57
@@ -613,14 +609,14 @@
       },
       {
         "date": "2026-06-16",
-        "value": 74
+        "value": 80
+      },
+      {
+        "date": "2026-06-17",
+        "value": 67
       }
     ],
     "stress": [
-      {
-        "date": "2026-06-03",
-        "value": 22
-      },
       {
         "date": "2026-06-04",
         "value": 22
@@ -671,35 +667,15 @@
       },
       {
         "date": "2026-06-16",
-        "value": 26
+        "value": 28
+      },
+      {
+        "date": "2026-06-17",
+        "value": 11
       }
     ]
   },
   "scheduled_workouts": [
-    {
-      "date": "2026-06-16",
-      "title": "Easy 30 \u00b7 Z2",
-      "sport": "running",
-      "workout_id": 1602757405,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-06-16",
-      "title": "Southwark - Easy 30 \u00b7 Z2",
-      "sport": null,
-      "workout_id": null,
-      "is_race": null,
-      "item_type": "activity"
-    },
-    {
-      "date": "2026-06-16",
-      "title": "Yoga",
-      "sport": null,
-      "workout_id": null,
-      "is_race": null,
-      "item_type": "activity"
-    },
     {
       "date": "2026-06-17",
       "title": "Bike \u00b7 long Z2 \u00b7 2 hr",
@@ -925,6 +901,6 @@
       "item_type": "event"
     }
   ],
-  "fetched_at": "2026-06-16",
-  "fetched_time": "23:49"
+  "fetched_at": "2026-06-17",
+  "fetched_time": "12:30"
 }
