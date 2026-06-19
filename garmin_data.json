@@ -306,8 +306,8 @@
   },
   "body_battery": {
     "charged": 57,
-    "drained": 48,
-    "end_val": "2026-06-19T15:45:00.0"
+    "drained": 67,
+    "end_val": "2026-06-19T22:28:00.0"
   },
   "heart_rate": {
     "resting": 47,
@@ -316,7 +316,7 @@
     "last_7d_avg_resting": 48
   },
   "stress": {
-    "avg": 29,
+    "avg": 33,
     "max": 97,
     "rest_duration": 0,
     "low_duration": 0,
@@ -349,8 +349,8 @@
     "value": 48.3
   },
   "respiration": {
-    "avg": 13.0,
-    "highest": 19.0,
+    "avg": 14.0,
+    "highest": 21.0,
     "lowest": 6.0
   },
   "race_predictions": {
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 81922,
-    "daily_avg": 10240
+    "weekly_total": 84628,
+    "daily_avg": 10578
   },
   "intensity": {
     "moderate": 63,
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-06-19",
-        "value": 29
+        "value": 33
       }
     ]
   },
@@ -681,6 +681,14 @@
       "title": "Bike \u00b7 opener \u00b7 40 min",
       "sport": "cycling",
       "workout_id": 1605326411,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-06-21",
+      "title": "Race \u00b7 London \u2192 Brighton (BHF)",
+      "sport": "cycling",
+      "workout_id": 1605613808,
       "is_race": null,
       "item_type": "workout"
     },
@@ -886,5 +894,5 @@
     }
   ],
   "fetched_at": "2026-06-19",
-  "fetched_time": "22:03"
+  "fetched_time": "23:46"
 }
