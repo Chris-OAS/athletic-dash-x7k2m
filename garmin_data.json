@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Southwark - Bike \u00b7 opener \u00b7 40 min",
+      "type": "cycling",
+      "date": "2026-06-20",
+      "distance_m": 9899.669921875,
+      "duration_s": 2168.10498046875,
+      "avg_hr": 123.0,
+      "max_hr": 161.0,
+      "calories": 236.0,
+      "elevation_m": 51.0,
+      "avg_speed": 4.565999984741211,
+      "aerobic_te": 1.5,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - Easy 30 + 4 strides",
       "type": "running",
       "date": "2026-06-18",
@@ -269,20 +283,6 @@
       "avg_speed": 2.572000026702881,
       "aerobic_te": 2.700000047683716,
       "vo2max": 50.0
-    },
-    {
-      "name": "Southwark - Long Trail \u00b7 90 min",
-      "type": "running",
-      "date": "2026-05-16",
-      "distance_m": 15408.3701171875,
-      "duration_s": 5403.5908203125,
-      "avg_hr": 159.0,
-      "max_hr": 175.0,
-      "calories": 1121.0,
-      "elevation_m": 53.0,
-      "avg_speed": 2.8519999980926514,
-      "aerobic_te": 4.400000095367432,
-      "vo2max": 49.0
     }
   ],
   "sleep": {
@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 72,
-    "drained": 3,
-    "end_val": "2026-06-20T08:03:00.0"
+    "drained": 14,
+    "end_val": "2026-06-20T10:22:00.0"
   },
   "heart_rate": {
     "resting": 46,
-    "max": 70,
+    "max": 140,
     "min": 42,
     "last_7d_avg_resting": 48
   },
   "stress": {
-    "avg": 16,
-    "max": 61,
+    "avg": 17,
+    "max": 78,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,19 +328,19 @@
     "lowest": 83
   },
   "training_readiness": {
-    "score": 67,
+    "score": 63,
     "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
     "status": "STRAINED_4",
-    "load": 208,
-    "load_chronic": 252,
+    "load": 229,
+    "load_chronic": 256,
     "acwr": 0.8,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 2,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
-    "monthly_aerobic_low": 761.21454,
+    "monthly_aerobic_low": 776.7108,
     "monthly_aerobic_high": 0.0,
     "monthly_anaerobic": 169.06781,
     "vo2max": 48.3
@@ -349,8 +349,8 @@
     "value": 48.3
   },
   "respiration": {
-    "avg": 14.0,
-    "highest": 21.0,
+    "avg": 15.0,
+    "highest": 26.0,
     "lowest": 7.0
   },
   "race_predictions": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 76091,
-    "daily_avg": 9511
+    "weekly_total": 77992,
+    "daily_avg": 9749
   },
   "intensity": {
-    "moderate": 63,
-    "vigorous": 138,
+    "moderate": 77,
+    "vigorous": 148,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-06-20",
-        "value": 16
+        "value": 17
       }
     ]
   },
@@ -683,6 +683,14 @@
       "workout_id": 1605863492,
       "is_race": null,
       "item_type": "workout"
+    },
+    {
+      "date": "2026-06-20",
+      "title": "Southwark - Bike \u00b7 opener \u00b7 40 min",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
     },
     {
       "date": "2026-06-21",
@@ -894,5 +902,5 @@
     }
   ],
   "fetched_at": "2026-06-20",
-  "fetched_time": "09:43"
+  "fetched_time": "12:10"
 }
