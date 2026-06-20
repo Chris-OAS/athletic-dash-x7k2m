@@ -306,8 +306,8 @@
   },
   "body_battery": {
     "charged": 72,
-    "drained": 57,
-    "end_val": "2026-06-20T17:13:00.0"
+    "drained": 59,
+    "end_val": "2026-06-20T17:46:00.0"
   },
   "heart_rate": {
     "resting": 46,
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 79153,
-    "daily_avg": 9894
+    "weekly_total": 79377,
+    "daily_avg": 9922
   },
   "intensity": {
     "moderate": 90,
@@ -694,9 +694,17 @@
     },
     {
       "date": "2026-06-21",
+      "title": "London \u2192 Brighton (BHF)",
+      "sport": null,
+      "workout_id": null,
+      "is_race": true,
+      "item_type": "event"
+    },
+    {
+      "date": "2026-06-21",
       "title": "Race \u00b7 London \u2192 Brighton (BHF)",
       "sport": "cycling",
-      "workout_id": 1606005893,
+      "workout_id": 1606180440,
       "is_race": null,
       "item_type": "workout"
     },
@@ -902,5 +910,5 @@
     }
   ],
   "fetched_at": "2026-06-20",
-  "fetched_time": "18:17"
+  "fetched_time": "20:13"
 }
