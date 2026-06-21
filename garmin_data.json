@@ -286,11 +286,11 @@
     }
   ],
   "sleep": {
-    "score": 88,
-    "duration_s": 29724,
-    "deep_s": 4200,
-    "rem_s": 6420,
-    "light_s": 19140,
+    "score": 76,
+    "duration_s": 23580,
+    "deep_s": 4800,
+    "rem_s": 4800,
+    "light_s": 13980,
     "awake_s": 540,
     "avg_spo2": 96.0,
     "avg_resp": 14.0,
@@ -298,26 +298,26 @@
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 56,
+    "weekly_avg": 57,
     "last_night": 0,
-    "status": "LOW",
+    "status": "UNBALANCED",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 72,
-    "drained": 59,
-    "end_val": "2026-06-20T17:46:00.0"
+    "charged": 49,
+    "drained": 1,
+    "end_val": "2026-06-21T04:54:00.0"
   },
   "heart_rate": {
     "resting": 46,
-    "max": 140,
-    "min": 42,
-    "last_7d_avg_resting": 48
+    "max": 82,
+    "min": 44,
+    "last_7d_avg_resting": 47
   },
   "stress": {
-    "avg": 31,
-    "max": 89,
+    "avg": 18,
+    "max": 87,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -325,17 +325,17 @@
   },
   "spo2": {
     "avg": 95.0,
-    "lowest": 83
+    "lowest": 85
   },
   "training_readiness": {
-    "score": 63,
+    "score": 59,
     "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
-    "status": "STRAINED_4",
-    "load": 229,
-    "load_chronic": 256,
+    "status": "MAINTAINING_2",
+    "load": 197,
+    "load_chronic": 244,
     "acwr": 0.8,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 2,
@@ -349,18 +349,18 @@
     "value": 48.3
   },
   "respiration": {
-    "avg": 14.0,
-    "highest": 29.0,
+    "avg": 11.0,
+    "highest": 19.0,
     "lowest": 6.0
   },
   "race_predictions": {
-    "five_k": 1409,
-    "ten_k": 3013,
-    "half_marathon": 6840,
-    "marathon": 15321
+    "five_k": 1412,
+    "ten_k": 3017,
+    "half_marathon": 6857,
+    "marathon": 15355
   },
   "endurance_score": {
-    "overall": 5853,
+    "overall": 5843,
     "level": 3
   },
   "hill_score": {
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 79377,
-    "daily_avg": 9922
+    "weekly_total": 70533,
+    "daily_avg": 8816
   },
   "intensity": {
     "moderate": 90,
@@ -380,15 +380,11 @@
     "value": 0
   },
   "morning_readiness": {
-    "score": 67,
+    "score": 59,
     "level": "MODERATE"
   },
   "history": {
     "sleep": [
-      {
-        "date": "2026-06-07",
-        "value": 78
-      },
       {
         "date": "2026-06-08",
         "value": 85
@@ -440,13 +436,13 @@
       {
         "date": "2026-06-20",
         "value": 88
+      },
+      {
+        "date": "2026-06-21",
+        "value": 76
       }
     ],
     "hrv": [
-      {
-        "date": "2026-06-07",
-        "value": 57
-      },
       {
         "date": "2026-06-08",
         "value": 59
@@ -498,13 +494,13 @@
       {
         "date": "2026-06-20",
         "value": 72
+      },
+      {
+        "date": "2026-06-21",
+        "value": 57
       }
     ],
     "rhr": [
-      {
-        "date": "2026-06-07",
-        "value": 45
-      },
       {
         "date": "2026-06-08",
         "value": 46
@@ -556,13 +552,13 @@
       {
         "date": "2026-06-20",
         "value": 46
+      },
+      {
+        "date": "2026-06-21",
+        "value": 46
       }
     ],
     "bb": [
-      {
-        "date": "2026-06-07",
-        "value": 51
-      },
       {
         "date": "2026-06-08",
         "value": 79
@@ -613,14 +609,14 @@
       },
       {
         "date": "2026-06-20",
-        "value": 72
+        "value": 75
+      },
+      {
+        "date": "2026-06-21",
+        "value": 49
       }
     ],
     "stress": [
-      {
-        "date": "2026-06-07",
-        "value": 32
-      },
       {
         "date": "2026-06-08",
         "value": 22
@@ -671,27 +667,15 @@
       },
       {
         "date": "2026-06-20",
-        "value": 31
+        "value": 32
+      },
+      {
+        "date": "2026-06-21",
+        "value": 18
       }
     ]
   },
   "scheduled_workouts": [
-    {
-      "date": "2026-06-20",
-      "title": "Bike \u00b7 opener \u00b7 40 min",
-      "sport": "cycling",
-      "workout_id": 1605863492,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-06-20",
-      "title": "Southwark - Bike \u00b7 opener \u00b7 40 min",
-      "sport": null,
-      "workout_id": null,
-      "is_race": null,
-      "item_type": "activity"
-    },
     {
       "date": "2026-06-21",
       "title": "London \u2192 Brighton (BHF)",
@@ -909,6 +893,6 @@
       "item_type": "event"
     }
   ],
-  "fetched_at": "2026-06-20",
-  "fetched_time": "23:59"
+  "fetched_at": "2026-06-21",
+  "fetched_time": "06:55"
 }
