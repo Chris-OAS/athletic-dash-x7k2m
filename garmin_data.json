@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Wandsworth Cycling",
+      "type": "cycling",
+      "date": "2026-06-21",
+      "distance_m": 76471.6015625,
+      "duration_s": 13779.287109375,
+      "avg_hr": 153.0,
+      "max_hr": 190.0,
+      "calories": 2162.0,
+      "elevation_m": 871.0,
+      "avg_speed": 5.550000190734863,
+      "aerobic_te": 5.0,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - Bike \u00b7 opener \u00b7 40 min",
       "type": "cycling",
       "date": "2026-06-20",
@@ -269,20 +283,6 @@
       "avg_speed": 2.4000000953674316,
       "aerobic_te": 2.5,
       "vo2max": 49.0
-    },
-    {
-      "name": "Southwark - Easy 30 + 4 strides",
-      "type": "running",
-      "date": "2026-05-19",
-      "distance_m": 5326.830078125,
-      "duration_s": 2070.98291015625,
-      "avg_hr": 142.0,
-      "max_hr": 166.0,
-      "calories": 384.0,
-      "elevation_m": 28.0,
-      "avg_speed": 2.572000026702881,
-      "aerobic_te": 2.700000047683716,
-      "vo2max": 50.0
     }
   ],
   "sleep": {
@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 49,
-    "drained": 1,
-    "end_val": "2026-06-21T04:54:00.0"
+    "drained": 31,
+    "end_val": "2026-06-21T08:41:00.0"
   },
   "heart_rate": {
     "resting": 46,
-    "max": 82,
+    "max": 183,
     "min": 44,
     "last_7d_avg_resting": 47
   },
   "stress": {
-    "avg": 18,
-    "max": 87,
+    "avg": 28,
+    "max": 99,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,29 +328,29 @@
     "lowest": 85
   },
   "training_readiness": {
-    "score": 59,
-    "level": "MODERATE",
+    "score": 1,
+    "level": "POOR",
     "feedback": ""
   },
   "training_status": {
-    "status": "MAINTAINING_2",
-    "load": 197,
-    "load_chronic": 244,
-    "acwr": 0.8,
-    "acwr_status": "OPTIMAL",
+    "status": "PRODUCTIVE_8",
+    "load": 530,
+    "load_chronic": 304,
+    "acwr": 1.7,
+    "acwr_status": "HIGH",
     "fitness_trend": 2,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
-    "monthly_aerobic_low": 776.7108,
+    "monthly_aerobic_low": 992.9959,
     "monthly_aerobic_high": 0.0,
-    "monthly_anaerobic": 169.06781,
+    "monthly_anaerobic": 213.99178,
     "vo2max": 48.3
   },
   "vo2max": {
     "value": 48.3
   },
   "respiration": {
-    "avg": 11.0,
-    "highest": 19.0,
+    "avg": 26.0,
+    "highest": 36.0,
     "lowest": 6.0
   },
   "race_predictions": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 70533,
-    "daily_avg": 8816
+    "weekly_total": 71417,
+    "daily_avg": 8927
   },
   "intensity": {
-    "moderate": 90,
-    "vigorous": 143,
+    "moderate": 142,
+    "vigorous": 209,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-06-21",
-        "value": 18
+        "value": 28
       }
     ]
   },
@@ -691,6 +691,14 @@
       "workout_id": 1606595298,
       "is_race": null,
       "item_type": "workout"
+    },
+    {
+      "date": "2026-06-21",
+      "title": "Wandsworth Cycling",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
     },
     {
       "date": "2026-06-23",
@@ -894,5 +902,5 @@
     }
   ],
   "fetched_at": "2026-06-21",
-  "fetched_time": "10:38"
+  "fetched_time": "13:06"
 }
