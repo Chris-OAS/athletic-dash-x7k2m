@@ -704,7 +704,7 @@
       "date": "2026-06-28",
       "title": "Bike \u00b7 easy spin \u00b7 60 min",
       "sport": "cycling",
-      "workout_id": 1610052307,
+      "workout_id": 1610888102,
       "is_race": null,
       "item_type": "workout"
     },
@@ -773,6 +773,14 @@
       "item_type": "workout"
     },
     {
+      "date": "2026-07-09",
+      "title": "Easy 50 \u00b7 Z2",
+      "sport": "running",
+      "workout_id": 1610803473,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
       "date": "2026-07-10",
       "title": "Calisthenics \u00b7 Skills + Control",
       "sport": "strength_training",
@@ -837,14 +845,6 @@
       "item_type": "workout"
     },
     {
-      "date": "2026-07-19",
-      "title": "Bike \u00b7 easy spin \u00b7 60 min",
-      "sport": "cycling",
-      "workout_id": 1610052307,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
       "date": "2026-09-19",
       "title": "Tough Mudder 15K",
       "sport": null,
@@ -854,5 +854,5 @@
     }
   ],
   "fetched_at": "2026-06-24",
-  "fetched_time": "14:12"
+  "fetched_time": "17:10"
 }
