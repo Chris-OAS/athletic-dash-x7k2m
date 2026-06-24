@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 73,
-    "drained": 3,
-    "end_val": "2026-06-24T07:31:00.0"
+    "drained": 36,
+    "end_val": "2026-06-24T13:03:00.0"
   },
   "heart_rate": {
     "resting": 46,
-    "max": 83,
+    "max": 101,
     "min": 44,
     "last_7d_avg_resting": 47
   },
   "stress": {
-    "avg": 12,
-    "max": 70,
+    "avg": 22,
+    "max": 96,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -350,7 +350,7 @@
   },
   "respiration": {
     "avg": 12.0,
-    "highest": 18.0,
+    "highest": 22.0,
     "lowest": 6.0
   },
   "race_predictions": {
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 71271,
-    "daily_avg": 8908
+    "weekly_total": 72469,
+    "daily_avg": 9058
   },
   "intensity": {
     "moderate": 27,
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-06-24",
-        "value": 12
+        "value": 22
       }
     ]
   },
@@ -688,7 +688,7 @@
       "date": "2026-06-26",
       "title": "Calisthenics \u00b7 Skills + Control",
       "sport": "strength_training",
-      "workout_id": 1610052317,
+      "workout_id": 1610803316,
       "is_race": null,
       "item_type": "workout"
     },
@@ -712,7 +712,7 @@
       "date": "2026-06-30",
       "title": "Strength A \u00b7 Full Body",
       "sport": "strength_training",
-      "workout_id": 1610052343,
+      "workout_id": 1610803434,
       "is_race": null,
       "item_type": "workout"
     },
@@ -728,7 +728,7 @@
       "date": "2026-07-02",
       "title": "Easy 50 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1610052301,
+      "workout_id": 1610803473,
       "is_race": null,
       "item_type": "workout"
     },
@@ -736,7 +736,7 @@
       "date": "2026-07-03",
       "title": "Calisthenics \u00b7 Skills + Control",
       "sport": "strength_training",
-      "workout_id": 1610052317,
+      "workout_id": 1610803316,
       "is_race": null,
       "item_type": "workout"
     },
@@ -760,7 +760,7 @@
       "date": "2026-07-07",
       "title": "Strength A \u00b7 Full Body",
       "sport": "strength_training",
-      "workout_id": 1610052343,
+      "workout_id": 1610803434,
       "is_race": null,
       "item_type": "workout"
     },
@@ -768,15 +768,7 @@
       "date": "2026-07-07",
       "title": "Threshold \u00b7 4 \u00d7 5 min",
       "sport": "running",
-      "workout_id": 1610052357,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-07-09",
-      "title": "Easy 50 \u00b7 Z2",
-      "sport": "running",
-      "workout_id": 1610052301,
+      "workout_id": 1610803447,
       "is_race": null,
       "item_type": "workout"
     },
@@ -784,7 +776,7 @@
       "date": "2026-07-10",
       "title": "Calisthenics \u00b7 Skills + Control",
       "sport": "strength_training",
-      "workout_id": 1610052317,
+      "workout_id": 1610803316,
       "is_race": null,
       "item_type": "workout"
     },
@@ -792,7 +784,7 @@
       "date": "2026-07-11",
       "title": "Long easy \u00b7 90 min",
       "sport": "running",
-      "workout_id": 1610052378,
+      "workout_id": 1610727104,
       "is_race": null,
       "item_type": "workout"
     },
@@ -808,7 +800,7 @@
       "date": "2026-07-14",
       "title": "Strength A \u00b7 Full Body",
       "sport": "strength_training",
-      "workout_id": 1610052343,
+      "workout_id": 1610803434,
       "is_race": null,
       "item_type": "workout"
     },
@@ -816,7 +808,7 @@
       "date": "2026-07-14",
       "title": "Tempo \u00b7 20 min",
       "sport": "running",
-      "workout_id": 1610052305,
+      "workout_id": 1610803141,
       "is_race": null,
       "item_type": "workout"
     },
@@ -832,7 +824,7 @@
       "date": "2026-07-17",
       "title": "Calisthenics \u00b7 Skills + Control",
       "sport": "strength_training",
-      "workout_id": 1610052317,
+      "workout_id": 1610803316,
       "is_race": null,
       "item_type": "workout"
     },
@@ -862,5 +854,5 @@
     }
   ],
   "fetched_at": "2026-06-24",
-  "fetched_time": "11:15"
+  "fetched_time": "14:12"
 }
