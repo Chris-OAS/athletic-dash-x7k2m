@@ -286,63 +286,63 @@
     }
   ],
   "sleep": {
-    "score": 91,
-    "duration_s": 30383,
-    "deep_s": 4800,
-    "rem_s": 7140,
-    "light_s": 18480,
-    "awake_s": 0,
-    "avg_spo2": 95.0,
-    "avg_resp": 13.0,
+    "score": 87,
+    "duration_s": 28140,
+    "deep_s": 4380,
+    "rem_s": 6180,
+    "light_s": 17580,
+    "awake_s": 720,
+    "avg_spo2": 94.0,
+    "avg_resp": 14.0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 62,
+    "weekly_avg": 65,
     "last_night": 0,
     "status": "BALANCED",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 73,
-    "drained": 55,
-    "end_val": "2026-06-24T19:30:00.0"
+    "charged": 61,
+    "drained": 6,
+    "end_val": "2026-06-25T08:00:00.0"
   },
   "heart_rate": {
     "resting": 46,
-    "max": 109,
-    "min": 44,
+    "max": 77,
+    "min": 43,
     "last_7d_avg_resting": 47
   },
   "stress": {
-    "avg": 24,
-    "max": 96,
+    "avg": 15,
+    "max": 76,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": 94.0,
-    "lowest": 84
+    "avg": 93.0,
+    "lowest": 75
   },
   "training_readiness": {
-    "score": 56,
-    "level": "MODERATE",
+    "score": 79,
+    "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
-    "status": "PRODUCTIVE_6",
-    "load": 449,
-    "load_chronic": 301,
-    "acwr": 1.4,
+    "status": "PRODUCTIVE_2",
+    "load": 372,
+    "load_chronic": 293,
+    "acwr": 1.2,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 2,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
-    "monthly_aerobic_low": 921.86444,
+    "monthly_aerobic_low": 867.3345,
     "monthly_aerobic_high": 0.0,
-    "monthly_anaerobic": 197.18011,
+    "monthly_anaerobic": 173.09196,
     "vo2max": 48.4
   },
   "vo2max": {
@@ -350,26 +350,26 @@
   },
   "respiration": {
     "avg": 12.0,
-    "highest": 22.0,
-    "lowest": 6.0
+    "highest": 19.0,
+    "lowest": 5.0
   },
   "race_predictions": {
-    "five_k": 1423,
-    "ten_k": 3033,
-    "half_marathon": 6916,
-    "marathon": 15474
+    "five_k": 1426,
+    "ten_k": 3038,
+    "half_marathon": 6935,
+    "marathon": 15511
   },
   "endurance_score": {
-    "overall": 5807,
-    "level": 3
+    "overall": 5796,
+    "level": 2
   },
   "hill_score": {
     "value": 0,
     "level": ""
   },
   "steps": {
-    "weekly_total": 77391,
-    "daily_avg": 9673
+    "weekly_total": 70661,
+    "daily_avg": 8832
   },
   "intensity": {
     "moderate": 27,
@@ -380,15 +380,11 @@
     "value": 0
   },
   "morning_readiness": {
-    "score": 56,
-    "level": "MODERATE"
+    "score": 79,
+    "level": "HIGH"
   },
   "history": {
     "sleep": [
-      {
-        "date": "2026-06-11",
-        "value": 76
-      },
       {
         "date": "2026-06-12",
         "value": 78
@@ -440,13 +436,13 @@
       {
         "date": "2026-06-24",
         "value": 91
+      },
+      {
+        "date": "2026-06-25",
+        "value": 87
       }
     ],
     "hrv": [
-      {
-        "date": "2026-06-11",
-        "value": 60
-      },
       {
         "date": "2026-06-12",
         "value": 50
@@ -498,13 +494,13 @@
       {
         "date": "2026-06-24",
         "value": 73
+      },
+      {
+        "date": "2026-06-25",
+        "value": 79
       }
     ],
     "rhr": [
-      {
-        "date": "2026-06-11",
-        "value": 44
-      },
       {
         "date": "2026-06-12",
         "value": 48
@@ -556,13 +552,13 @@
       {
         "date": "2026-06-24",
         "value": 46
+      },
+      {
+        "date": "2026-06-25",
+        "value": 46
       }
     ],
     "bb": [
-      {
-        "date": "2026-06-11",
-        "value": 59
-      },
       {
         "date": "2026-06-12",
         "value": 50
@@ -613,14 +609,14 @@
       },
       {
         "date": "2026-06-24",
-        "value": 73
+        "value": 76
+      },
+      {
+        "date": "2026-06-25",
+        "value": 61
       }
     ],
     "stress": [
-      {
-        "date": "2026-06-11",
-        "value": 24
-      },
       {
         "date": "2026-06-12",
         "value": 31
@@ -672,6 +668,10 @@
       {
         "date": "2026-06-24",
         "value": 24
+      },
+      {
+        "date": "2026-06-25",
+        "value": 15
       }
     ]
   },
@@ -680,15 +680,15 @@
       "date": "2026-06-25",
       "title": "Easy 30 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1610052336,
+      "workout_id": 1611391537,
       "is_race": null,
       "item_type": "workout"
     },
     {
       "date": "2026-06-26",
-      "title": "Calisthenics \u00b7 Skills + Control",
+      "title": "Upper + Swim-Proof",
       "sport": "strength_training",
-      "workout_id": 1610803316,
+      "workout_id": 1611391546,
       "is_race": null,
       "item_type": "workout"
     },
@@ -696,7 +696,7 @@
       "date": "2026-06-27",
       "title": "Easy 60 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1610052327,
+      "workout_id": 1611391514,
       "is_race": null,
       "item_type": "workout"
     },
@@ -710,9 +710,9 @@
     },
     {
       "date": "2026-06-30",
-      "title": "Strength A \u00b7 Full Body",
+      "title": "Lower + Run-Proof",
       "sport": "strength_training",
-      "workout_id": 1610803434,
+      "workout_id": 1611391518,
       "is_race": null,
       "item_type": "workout"
     },
@@ -720,7 +720,7 @@
       "date": "2026-06-30",
       "title": "Tempo intervals \u00b7 5 \u00d7 3 min",
       "sport": "running",
-      "workout_id": 1610052310,
+      "workout_id": 1611391531,
       "is_race": null,
       "item_type": "workout"
     },
@@ -728,15 +728,15 @@
       "date": "2026-07-02",
       "title": "Easy 50 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1610803473,
+      "workout_id": 1611391484,
       "is_race": null,
       "item_type": "workout"
     },
     {
       "date": "2026-07-03",
-      "title": "Calisthenics \u00b7 Skills + Control",
+      "title": "Upper + Swim-Proof",
       "sport": "strength_training",
-      "workout_id": 1610803316,
+      "workout_id": 1611391546,
       "is_race": null,
       "item_type": "workout"
     },
@@ -744,7 +744,7 @@
       "date": "2026-07-04",
       "title": "Long easy \u00b7 75 min",
       "sport": "running",
-      "workout_id": 1610052375,
+      "workout_id": 1611391594,
       "is_race": null,
       "item_type": "workout"
     },
@@ -752,15 +752,15 @@
       "date": "2026-07-05",
       "title": "Bike \u00b7 long Z2 \u00b7 90 min",
       "sport": "cycling",
-      "workout_id": 1610052365,
+      "workout_id": 1611391497,
       "is_race": null,
       "item_type": "workout"
     },
     {
       "date": "2026-07-07",
-      "title": "Strength A \u00b7 Full Body",
+      "title": "Lower + Run-Proof",
       "sport": "strength_training",
-      "workout_id": 1610803434,
+      "workout_id": 1611391518,
       "is_race": null,
       "item_type": "workout"
     },
@@ -768,7 +768,7 @@
       "date": "2026-07-07",
       "title": "Threshold \u00b7 4 \u00d7 5 min",
       "sport": "running",
-      "workout_id": 1610803447,
+      "workout_id": 1611391631,
       "is_race": null,
       "item_type": "workout"
     },
@@ -776,15 +776,15 @@
       "date": "2026-07-09",
       "title": "Easy 50 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1610803473,
+      "workout_id": 1611391484,
       "is_race": null,
       "item_type": "workout"
     },
     {
       "date": "2026-07-10",
-      "title": "Calisthenics \u00b7 Skills + Control",
+      "title": "Upper + Swim-Proof",
       "sport": "strength_training",
-      "workout_id": 1610803316,
+      "workout_id": 1611391546,
       "is_race": null,
       "item_type": "workout"
     },
@@ -792,7 +792,7 @@
       "date": "2026-07-11",
       "title": "Long easy \u00b7 90 min",
       "sport": "running",
-      "workout_id": 1610727104,
+      "workout_id": 1611391507,
       "is_race": null,
       "item_type": "workout"
     },
@@ -800,15 +800,15 @@
       "date": "2026-07-12",
       "title": "Bike \u00b7 long Z2 \u00b7 90 min",
       "sport": "cycling",
-      "workout_id": 1610052365,
+      "workout_id": 1611391497,
       "is_race": null,
       "item_type": "workout"
     },
     {
       "date": "2026-07-14",
-      "title": "Strength A \u00b7 Full Body",
+      "title": "Lower + Run-Proof",
       "sport": "strength_training",
-      "workout_id": 1610803434,
+      "workout_id": 1611391518,
       "is_race": null,
       "item_type": "workout"
     },
@@ -816,7 +816,7 @@
       "date": "2026-07-14",
       "title": "Tempo \u00b7 20 min",
       "sport": "running",
-      "workout_id": 1610803141,
+      "workout_id": 1611391575,
       "is_race": null,
       "item_type": "workout"
     },
@@ -824,15 +824,15 @@
       "date": "2026-07-16",
       "title": "Easy 30 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1610052336,
+      "workout_id": 1611391537,
       "is_race": null,
       "item_type": "workout"
     },
     {
       "date": "2026-07-17",
-      "title": "Calisthenics \u00b7 Skills + Control",
+      "title": "Upper + Swim-Proof",
       "sport": "strength_training",
-      "workout_id": 1610803316,
+      "workout_id": 1611391546,
       "is_race": null,
       "item_type": "workout"
     },
@@ -840,7 +840,7 @@
       "date": "2026-07-18",
       "title": "Max-HR test",
       "sport": "running",
-      "workout_id": 1610052312,
+      "workout_id": 1611391612,
       "is_race": null,
       "item_type": "workout"
     },
@@ -861,6 +861,6 @@
       "item_type": "event"
     }
   ],
-  "fetched_at": "2026-06-24",
-  "fetched_time": "23:10"
+  "fetched_at": "2026-06-25",
+  "fetched_time": "09:22"
 }
