@@ -286,37 +286,37 @@
     }
   ],
   "sleep": {
-    "score": 0,
-    "duration_s": null,
-    "deep_s": null,
-    "rem_s": null,
-    "light_s": null,
-    "awake_s": null,
-    "avg_spo2": 0,
-    "avg_resp": 0,
+    "score": 75,
+    "duration_s": 24522,
+    "deep_s": 2580,
+    "rem_s": 5400,
+    "light_s": 16560,
+    "awake_s": 900,
+    "avg_spo2": 95.0,
+    "avg_resp": 14.0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 0,
+    "weekly_avg": 66,
     "last_night": 0,
-    "status": "unknown",
+    "status": "BALANCED",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 0,
-    "drained": 4,
-    "end_val": "2026-06-27T00:40:00.0"
+    "charged": 54,
+    "drained": 5,
+    "end_val": "2026-06-27T08:44:00.0"
   },
   "heart_rate": {
-    "resting": 51,
+    "resting": 49,
     "max": 102,
-    "min": 62,
-    "last_7d_avg_resting": 48
+    "min": 47,
+    "last_7d_avg_resting": 47
   },
   "stress": {
-    "avg": 50,
+    "avg": 25,
     "max": 96,
     "rest_duration": 0,
     "low_duration": 0,
@@ -324,34 +324,34 @@
     "high_duration": 0
   },
   "spo2": {
-    "avg": 93.0,
+    "avg": 94.0,
     "lowest": 85
   },
   "training_readiness": {
-    "score": 71,
+    "score": 63,
     "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
-    "status": "",
-    "load": 0,
-    "load_chronic": 0,
-    "acwr": 0,
-    "acwr_status": "",
-    "fitness_trend": 0,
-    "load_balance": "",
-    "monthly_aerobic_low": 0,
-    "monthly_aerobic_high": 0,
-    "monthly_anaerobic": 0,
-    "vo2max": 0
+    "status": "PRODUCTIVE_2",
+    "load": 331,
+    "load_chronic": 303,
+    "acwr": 1.0,
+    "acwr_status": "OPTIMAL",
+    "fitness_trend": 2,
+    "load_balance": "AEROBIC_HIGH_SHORTAGE",
+    "monthly_aerobic_low": 890.2482,
+    "monthly_aerobic_high": 0.0,
+    "monthly_anaerobic": 188.54817,
+    "vo2max": 48.0
   },
   "vo2max": {
-    "value": 0
+    "value": 48.0
   },
   "respiration": {
-    "avg": 14.0,
+    "avg": 12.0,
     "highest": 20.0,
-    "lowest": 9.0
+    "lowest": 6.0
   },
   "race_predictions": {
     "five_k": 1444,
@@ -360,16 +360,16 @@
     "marathon": 15647
   },
   "endurance_score": {
-    "overall": 0,
-    "level": ""
+    "overall": 5757,
+    "level": 2
   },
   "hill_score": {
     "value": 0,
     "level": ""
   },
   "steps": {
-    "weekly_total": 61093,
-    "daily_avg": 7636
+    "weekly_total": 61180,
+    "daily_avg": 7647
   },
   "intensity": {
     "moderate": 68,
@@ -380,7 +380,7 @@
     "value": 0
   },
   "morning_readiness": {
-    "score": 71,
+    "score": 63,
     "level": "MODERATE"
   },
   "history": {
@@ -439,7 +439,7 @@
       },
       {
         "date": "2026-06-27",
-        "value": 0
+        "value": 75
       }
     ],
     "hrv": [
@@ -497,7 +497,7 @@
       },
       {
         "date": "2026-06-27",
-        "value": 0
+        "value": 59
       }
     ],
     "rhr": [
@@ -555,7 +555,7 @@
       },
       {
         "date": "2026-06-27",
-        "value": 51
+        "value": 49
       }
     ],
     "bb": [
@@ -613,7 +613,7 @@
       },
       {
         "date": "2026-06-27",
-        "value": 0
+        "value": 54
       }
     ],
     "stress": [
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-06-27",
-        "value": 50
+        "value": 25
       }
     ]
   },
@@ -846,5 +846,5 @@
     }
   ],
   "fetched_at": "2026-06-27",
-  "fetched_time": "07:26"
+  "fetched_time": "10:24"
 }
