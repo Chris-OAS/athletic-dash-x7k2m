@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Southwark - Easy 60 \u00b7 Z2",
+      "type": "running",
+      "date": "2026-06-27",
+      "distance_m": 8876.8896484375,
+      "duration_s": 3605.153076171875,
+      "avg_hr": 159.0,
+      "max_hr": 174.0,
+      "calories": 652.0,
+      "elevation_m": 13.0,
+      "avg_speed": 2.4619998931884766,
+      "aerobic_te": 3.5999999046325684,
+      "vo2max": 47.0
+    },
+    {
       "name": "Upper + Swim-Proof",
       "type": "strength_training",
       "date": "2026-06-26",
@@ -269,20 +283,6 @@
       "avg_speed": 4.6479997634887695,
       "aerobic_te": 2.5999999046325684,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark Cycling",
-      "type": "cycling",
-      "date": "2026-05-26",
-      "distance_m": 14198.48046875,
-      "duration_s": 2535.656005859375,
-      "avg_hr": 138.0,
-      "max_hr": 172.0,
-      "calories": 352.0,
-      "elevation_m": 79.0,
-      "avg_speed": 5.599999904632568,
-      "aerobic_te": 2.5999999046325684,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,12 +306,12 @@
   },
   "body_battery": {
     "charged": 54,
-    "drained": 19,
-    "end_val": "2026-06-27T11:06:00.0"
+    "drained": 31,
+    "end_val": "2026-06-27T12:17:00.0"
   },
   "heart_rate": {
     "resting": 49,
-    "max": 102,
+    "max": 170,
     "min": 47,
     "last_7d_avg_resting": 47
   },
@@ -328,29 +328,29 @@
     "lowest": 85
   },
   "training_readiness": {
-    "score": 63,
-    "level": "MODERATE",
+    "score": 27,
+    "level": "LOW",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_2",
-    "load": 331,
-    "load_chronic": 303,
-    "acwr": 1.0,
+    "load": 471,
+    "load_chronic": 329,
+    "acwr": 1.4,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 2,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
     "monthly_aerobic_low": 890.2482,
-    "monthly_aerobic_high": 0.0,
+    "monthly_aerobic_high": 109.95932,
     "monthly_anaerobic": 188.54817,
-    "vo2max": 48.0
+    "vo2max": 47.5
   },
   "vo2max": {
-    "value": 48.0
+    "value": 47.5
   },
   "respiration": {
-    "avg": 13.0,
-    "highest": 20.0,
+    "avg": 22.0,
+    "highest": 37.0,
     "lowest": 6.0
   },
   "race_predictions": {
@@ -360,7 +360,7 @@
     "marathon": 15647
   },
   "endurance_score": {
-    "overall": 5757,
+    "overall": 5753,
     "level": 2
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 61587,
-    "daily_avg": 7698
+    "weekly_total": 71830,
+    "daily_avg": 8978
   },
   "intensity": {
-    "moderate": 68,
-    "vigorous": 82,
+    "moderate": 86,
+    "vigorous": 134,
     "goal": 150
   },
   "running_tolerance": {
@@ -685,6 +685,14 @@
       "item_type": "workout"
     },
     {
+      "date": "2026-06-27",
+      "title": "Southwark - Easy 60 \u00b7 Z2",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
+    {
       "date": "2026-06-28",
       "title": "Bike \u00b7 easy spin \u00b7 60 min",
       "sport": "cycling",
@@ -846,5 +854,5 @@
     }
   ],
   "fetched_at": "2026-06-27",
-  "fetched_time": "12:22"
+  "fetched_time": "14:16"
 }
