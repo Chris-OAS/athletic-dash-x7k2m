@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "City of Westminster Cycling",
+      "type": "cycling",
+      "date": "2026-06-28",
+      "distance_m": 8651.8095703125,
+      "duration_s": 1808.6639404296875,
+      "avg_hr": 102.0,
+      "max_hr": 127.0,
+      "calories": 133.0,
+      "elevation_m": 23.0,
+      "avg_speed": 4.783999919891357,
+      "aerobic_te": 0.30000001192092896,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark Cycling",
       "type": "cycling",
       "date": "2026-06-28",
@@ -269,20 +283,6 @@
       "avg_speed": 2.431999921798706,
       "aerobic_te": 2.700000047683716,
       "vo2max": 49.0
-    },
-    {
-      "name": "Calisthenics \u00b7 Skills + Control",
-      "type": "strength_training",
-      "date": "2026-05-27",
-      "distance_m": 0.0,
-      "duration_s": 2447.35595703125,
-      "avg_hr": 112.0,
-      "max_hr": 150.0,
-      "calories": 220.0,
-      "elevation_m": 0,
-      "avg_speed": 0.0,
-      "aerobic_te": 0.699999988079071,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -328,19 +328,19 @@
     "lowest": 85
   },
   "training_readiness": {
-    "score": 54,
+    "score": 56,
     "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_2",
-    "load": 396,
-    "load_chronic": 325,
+    "load": 402,
+    "load_chronic": 326,
     "acwr": 1.2,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 2,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
-    "monthly_aerobic_low": 890.2482,
+    "monthly_aerobic_low": 900.45386,
     "monthly_aerobic_high": 109.95932,
     "monthly_anaerobic": 188.54817,
     "vo2max": 47.5
@@ -686,6 +686,14 @@
     },
     {
       "date": "2026-06-28",
+      "title": "City of Westminster Cycling",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
+    {
+      "date": "2026-06-28",
       "title": "Southwark Cycling",
       "sport": null,
       "workout_id": null,
@@ -846,5 +854,5 @@
     }
   ],
   "fetched_at": "2026-06-28",
-  "fetched_time": "13:18"
+  "fetched_time": "15:44"
 }
