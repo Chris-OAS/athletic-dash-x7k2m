@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Southwark Cycling",
+      "type": "cycling",
+      "date": "2026-06-28",
+      "distance_m": 7964.06982421875,
+      "duration_s": 2169.60693359375,
+      "avg_hr": 100.0,
+      "max_hr": 139.0,
+      "calories": 155.0,
+      "elevation_m": 48.0,
+      "avg_speed": 3.6710000038146973,
+      "aerobic_te": 0.5,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - Easy 60 \u00b7 Z2",
       "type": "running",
       "date": "2026-06-27",
@@ -269,20 +283,6 @@
       "avg_speed": 0.0,
       "aerobic_te": 0.699999988079071,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark Cycling",
-      "type": "cycling",
-      "date": "2026-05-27",
-      "distance_m": 11314.7998046875,
-      "duration_s": 2434.218017578125,
-      "avg_hr": 144.0,
-      "max_hr": 182.0,
-      "calories": 389.0,
-      "elevation_m": 55.0,
-      "avg_speed": 4.6479997634887695,
-      "aerobic_te": 2.5999999046325684,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -328,14 +328,14 @@
     "lowest": 85
   },
   "training_readiness": {
-    "score": 50,
+    "score": 54,
     "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_2",
-    "load": 389,
-    "load_chronic": 323,
+    "load": 396,
+    "load_chronic": 325,
     "acwr": 1.2,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 2,
@@ -685,6 +685,14 @@
       "item_type": "workout"
     },
     {
+      "date": "2026-06-28",
+      "title": "Southwark Cycling",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
+    {
       "date": "2026-06-30",
       "title": "Lower + Run-Proof",
       "sport": "strength_training",
@@ -838,5 +846,5 @@
     }
   ],
   "fetched_at": "2026-06-28",
-  "fetched_time": "12:00"
+  "fetched_time": "13:18"
 }
