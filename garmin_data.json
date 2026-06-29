@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Pool Swim",
+      "type": "lap_swimming",
+      "date": "2026-06-29",
+      "distance_m": 1125.0,
+      "duration_s": 2146.9208984375,
+      "avg_hr": 125.0,
+      "max_hr": 157.0,
+      "calories": 266.0,
+      "elevation_m": 0,
+      "avg_speed": 0.8650000095367433,
+      "aerobic_te": 2.0,
+      "vo2max": 0
+    },
+    {
       "name": "City of Westminster Cycling",
       "type": "cycling",
       "date": "2026-06-28",
@@ -269,20 +283,6 @@
       "avg_speed": 2.378000020980835,
       "aerobic_te": 2.799999952316284,
       "vo2max": 49.0
-    },
-    {
-      "name": "Southwark - Easy 30 + 4 strides",
-      "type": "running",
-      "date": "2026-05-28",
-      "distance_m": 5128.8798828125,
-      "duration_s": 2108.547119140625,
-      "avg_hr": 145.0,
-      "max_hr": 183.0,
-      "calories": 364.0,
-      "elevation_m": 8.0,
-      "avg_speed": 2.431999921798706,
-      "aerobic_te": 2.700000047683716,
-      "vo2max": 49.0
     }
   ],
   "sleep": {
@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 64,
-    "drained": 1,
-    "end_val": "2026-06-29T07:36:00.0"
+    "drained": 29,
+    "end_val": "2026-06-29T12:28:00.0"
   },
   "heart_rate": {
     "resting": 44,
-    "max": 72,
+    "max": 157,
     "min": 42,
     "last_7d_avg_resting": 47
   },
   "stress": {
-    "avg": 11,
-    "max": 48,
+    "avg": 13,
+    "max": 99,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,28 +328,28 @@
     "lowest": 83
   },
   "training_readiness": {
-    "score": 91,
+    "score": 78,
     "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
     "status": "MAINTAINING_2",
-    "load": 325,
-    "load_chronic": 319,
-    "acwr": 1.0,
+    "load": 386,
+    "load_chronic": 330,
+    "acwr": 1.1,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 2,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
-    "monthly_aerobic_low": 900.45386,
+    "monthly_aerobic_low": 925.6701,
     "monthly_aerobic_high": 109.95932,
-    "monthly_anaerobic": 188.54817,
+    "monthly_anaerobic": 210.99208,
     "vo2max": 47.5
   },
   "vo2max": {
     "value": 47.5
   },
   "respiration": {
-    "avg": 11.0,
+    "avg": 12.0,
     "highest": 19.0,
     "lowest": 6.0
   },
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 78571,
-    "daily_avg": 9821
+    "weekly_total": 84451,
+    "daily_avg": 10556
   },
   "intensity": {
-    "moderate": 0,
-    "vigorous": 0,
+    "moderate": 24,
+    "vigorous": 22,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,11 +671,19 @@
       },
       {
         "date": "2026-06-29",
-        "value": 11
+        "value": 13
       }
     ]
   },
   "scheduled_workouts": [
+    {
+      "date": "2026-06-29",
+      "title": "Pool Swim",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
     {
       "date": "2026-06-30",
       "title": "Lower + Run-Proof",
@@ -830,5 +838,5 @@
     }
   ],
   "fetched_at": "2026-06-29",
-  "fetched_time": "11:26"
+  "fetched_time": "15:43"
 }
