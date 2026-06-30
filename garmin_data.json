@@ -5,6 +5,34 @@
   },
   "activities": [
     {
+      "name": "Lower + Run-Proof",
+      "type": "strength_training",
+      "date": "2026-06-30",
+      "distance_m": 0.0,
+      "duration_s": 2156.0830078125,
+      "avg_hr": 121.0,
+      "max_hr": 154.0,
+      "calories": 219.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 1.2000000476837158,
+      "vo2max": 0
+    },
+    {
+      "name": "Southwark - Tempo intervals \u00b7 5 \u00d7 3 min",
+      "type": "obstacle_run",
+      "date": "2026-06-30",
+      "distance_m": 6458.7998046875,
+      "duration_s": 2555.9599609375,
+      "avg_hr": 150.0,
+      "max_hr": 173.0,
+      "calories": 456.0,
+      "elevation_m": 18.0,
+      "avg_speed": 2.5269999504089355,
+      "aerobic_te": 3.200000047683716,
+      "vo2max": 0
+    },
+    {
       "name": "Pool Swim",
       "type": "lap_swimming",
       "date": "2026-06-29",
@@ -255,34 +283,6 @@
       "avg_speed": 4.9670000076293945,
       "aerobic_te": 3.5999999046325684,
       "vo2max": 0
-    },
-    {
-      "name": "Betanzos - Easy 30 \u00b7 Z2",
-      "type": "running",
-      "date": "2026-06-02",
-      "distance_m": 4098.919921875,
-      "duration_s": 1802.9510498046875,
-      "avg_hr": 147.0,
-      "max_hr": 165.0,
-      "calories": 304.0,
-      "elevation_m": 44.0,
-      "avg_speed": 2.2730000019073486,
-      "aerobic_te": 2.299999952316284,
-      "vo2max": 49.0
-    },
-    {
-      "name": "Southwark - Easy 60 \u00b7 Z2",
-      "type": "running",
-      "date": "2026-05-30",
-      "distance_m": 8570.76953125,
-      "duration_s": 3603.4560546875,
-      "avg_hr": 142.0,
-      "max_hr": 158.0,
-      "calories": 607.0,
-      "elevation_m": 31.0,
-      "avg_speed": 2.378000020980835,
-      "aerobic_te": 2.799999952316284,
-      "vo2max": 49.0
     }
   ],
   "sleep": {
@@ -306,12 +306,12 @@
   },
   "body_battery": {
     "charged": 71,
-    "drained": 18,
-    "end_val": "2026-06-30T12:20:00.0"
+    "drained": 39,
+    "end_val": "2026-06-30T16:01:00.0"
   },
   "heart_rate": {
     "resting": 46,
-    "max": 87,
+    "max": 169,
     "min": 43,
     "last_7d_avg_resting": 47
   },
@@ -328,19 +328,19 @@
     "lowest": 82
   },
   "training_readiness": {
-    "score": 94,
+    "score": 78,
     "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
     "status": "UNPRODUCTIVE_3",
-    "load": 304,
-    "load_chronic": 325,
-    "acwr": 0.9,
+    "load": 430,
+    "load_chronic": 347,
+    "acwr": 1.2,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 1,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
-    "monthly_aerobic_low": 888.9015,
+    "monthly_aerobic_low": 988.31506,
     "monthly_aerobic_high": 109.95932,
     "monthly_anaerobic": 210.99208,
     "vo2max": 47.5
@@ -349,18 +349,18 @@
     "value": 47.5
   },
   "respiration": {
-    "avg": 12.0,
-    "highest": 20.0,
+    "avg": 15.0,
+    "highest": 36.0,
     "lowest": 6.0
   },
   "race_predictions": {
-    "five_k": 1455,
-    "ten_k": 3080,
-    "half_marathon": 7058,
-    "marathon": 15746
+    "five_k": 1450,
+    "ten_k": 3073,
+    "half_marathon": 7046,
+    "marathon": 15712
   },
   "endurance_score": {
-    "overall": 5729,
+    "overall": 5738,
     "level": 2
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 81681,
-    "daily_avg": 10210
+    "weekly_total": 90903,
+    "daily_avg": 11362
   },
   "intensity": {
-    "moderate": 36,
-    "vigorous": 22,
+    "moderate": 62,
+    "vigorous": 70,
     "goal": 150
   },
   "running_tolerance": {
@@ -686,6 +686,14 @@
     },
     {
       "date": "2026-06-30",
+      "title": "Southwark - Tempo intervals \u00b7 5 \u00d7 3 min",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
+    {
+      "date": "2026-06-30",
       "title": "Tempo intervals \u00b7 5 \u00d7 3 min",
       "sport": "running",
       "workout_id": 1617255593,
@@ -830,5 +838,5 @@
     }
   ],
   "fetched_at": "2026-06-30",
-  "fetched_time": "14:05"
+  "fetched_time": "17:17"
 }
