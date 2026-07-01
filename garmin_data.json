@@ -286,37 +286,37 @@
     }
   ],
   "sleep": {
-    "score": 0,
-    "duration_s": null,
-    "deep_s": null,
-    "rem_s": null,
-    "light_s": null,
-    "awake_s": null,
-    "avg_spo2": 0,
-    "avg_resp": 0,
+    "score": 68,
+    "duration_s": 26220,
+    "deep_s": 2700,
+    "rem_s": 4320,
+    "light_s": 19200,
+    "awake_s": 3360,
+    "avg_spo2": 96.0,
+    "avg_resp": 15.0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 0,
+    "weekly_avg": 68,
     "last_night": 0,
-    "status": "unknown",
+    "status": "BALANCED",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 40,
+    "charged": 48,
     "drained": 5,
-    "end_val": "2026-07-01T07:44:00.0"
+    "end_val": "2026-07-01T09:45:00.0"
   },
   "heart_rate": {
-    "resting": 51,
+    "resting": 50,
     "max": 107,
-    "min": 48,
+    "min": 47,
     "last_7d_avg_resting": 47
   },
   "stress": {
-    "avg": 36,
+    "avg": 33,
     "max": 89,
     "rest_duration": 0,
     "low_duration": 0,
@@ -328,7 +328,7 @@
     "lowest": 85
   },
   "training_readiness": {
-    "score": 67,
+    "score": 64,
     "level": "MODERATE",
     "feedback": ""
   },
@@ -349,7 +349,7 @@
     "value": 47.5
   },
   "respiration": {
-    "avg": 15.0,
+    "avg": 13.0,
     "highest": 22.0,
     "lowest": 6.0
   },
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 89166,
-    "daily_avg": 11145
+    "weekly_total": 89409,
+    "daily_avg": 11176
   },
   "intensity": {
     "moderate": 68,
@@ -380,7 +380,7 @@
     "value": 0
   },
   "morning_readiness": {
-    "score": 67,
+    "score": 64,
     "level": "MODERATE"
   },
   "history": {
@@ -439,7 +439,7 @@
       },
       {
         "date": "2026-07-01",
-        "value": 0
+        "value": 68
       }
     ],
     "hrv": [
@@ -497,7 +497,7 @@
       },
       {
         "date": "2026-07-01",
-        "value": 0
+        "value": 59
       }
     ],
     "rhr": [
@@ -555,7 +555,7 @@
       },
       {
         "date": "2026-07-01",
-        "value": 51
+        "value": 50
       }
     ],
     "bb": [
@@ -613,7 +613,7 @@
       },
       {
         "date": "2026-07-01",
-        "value": 40
+        "value": 48
       }
     ],
     "stress": [
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-07-01",
-        "value": 36
+        "value": 33
       }
     ]
   },
@@ -814,5 +814,5 @@
     }
   ],
   "fetched_at": "2026-07-01",
-  "fetched_time": "09:45"
+  "fetched_time": "12:54"
 }
