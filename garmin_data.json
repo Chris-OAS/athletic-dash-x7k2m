@@ -328,8 +328,8 @@
     "lowest": 88
   },
   "training_readiness": {
-    "score": 73,
-    "level": "MODERATE",
+    "score": 75,
+    "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
@@ -822,5 +822,5 @@
     }
   ],
   "fetched_at": "2026-07-02",
-  "fetched_time": "18:31"
+  "fetched_time": "20:12"
 }
