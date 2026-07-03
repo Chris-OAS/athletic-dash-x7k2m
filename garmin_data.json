@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Upper + Swim-Proof",
+      "type": "strength_training",
+      "date": "2026-07-03",
+      "distance_m": 0.0,
+      "duration_s": 3287.256103515625,
+      "avg_hr": 108.0,
+      "max_hr": 164.0,
+      "calories": 274.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 1.399999976158142,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - Easy 50 \u00b7 Z2",
       "type": "running",
       "date": "2026-07-02",
@@ -269,20 +283,6 @@
       "avg_speed": 2.378999948501587,
       "aerobic_te": 2.4000000953674316,
       "vo2max": 49.0
-    },
-    {
-      "name": "Strength A \u00b7 Race Week",
-      "type": "strength_training",
-      "date": "2026-06-08",
-      "distance_m": 0.0,
-      "duration_s": 1275.946044921875,
-      "avg_hr": 125.0,
-      "max_hr": 164.0,
-      "calories": 163.0,
-      "elevation_m": 0,
-      "avg_speed": 0.0,
-      "aerobic_te": 1.2999999523162842,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -305,19 +305,19 @@
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 69,
-    "drained": 1,
-    "end_val": "2026-07-03T07:35:00.0"
+    "charged": 72,
+    "drained": 17,
+    "end_val": "2026-07-03T13:05:00.0"
   },
   "heart_rate": {
     "resting": 46,
-    "max": 78,
+    "max": 100,
     "min": 44,
     "last_7d_avg_resting": 47
   },
   "stress": {
     "avg": 15,
-    "max": 75,
+    "max": 90,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,15 +328,15 @@
     "lowest": 85
   },
   "training_readiness": {
-    "score": 76,
-    "level": "HIGH",
+    "score": 72,
+    "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
     "status": "UNPRODUCTIVE_3",
-    "load": 338,
-    "load_chronic": 352,
-    "acwr": 0.9,
+    "load": 388,
+    "load_chronic": 361,
+    "acwr": 1.0,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 1,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
@@ -349,9 +349,9 @@
     "value": 47.4
   },
   "respiration": {
-    "avg": 12.0,
+    "avg": 13.0,
     "highest": 21.0,
-    "lowest": 8.0
+    "lowest": 7.0
   },
   "race_predictions": {
     "five_k": 1457,
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 99229,
-    "daily_avg": 12403
+    "weekly_total": 100907,
+    "daily_avg": 12613
   },
   "intensity": {
     "moderate": 94,
@@ -613,7 +613,7 @@
       },
       {
         "date": "2026-07-03",
-        "value": 69
+        "value": 72
       }
     ],
     "stress": [
@@ -680,7 +680,7 @@
       "date": "2026-07-03",
       "title": "Upper + Swim-Proof",
       "sport": "strength_training",
-      "workout_id": 1619027527,
+      "workout_id": 1619779967,
       "is_race": null,
       "item_type": "workout"
     },
@@ -688,7 +688,7 @@
       "date": "2026-07-04",
       "title": "Long easy \u00b7 75 min",
       "sport": "running",
-      "workout_id": 1619027554,
+      "workout_id": 1619779980,
       "is_race": null,
       "item_type": "workout"
     },
@@ -696,7 +696,7 @@
       "date": "2026-07-05",
       "title": "Bike \u00b7 long Z2 \u00b7 90 min",
       "sport": "cycling",
-      "workout_id": 1619027472,
+      "workout_id": 1619780015,
       "is_race": null,
       "item_type": "workout"
     },
@@ -704,7 +704,7 @@
       "date": "2026-07-07",
       "title": "Lower + Run-Proof",
       "sport": "strength_training",
-      "workout_id": 1619027457,
+      "workout_id": 1619779937,
       "is_race": null,
       "item_type": "workout"
     },
@@ -712,7 +712,7 @@
       "date": "2026-07-07",
       "title": "Threshold \u00b7 4 \u00d7 5 min",
       "sport": "running",
-      "workout_id": 1619027448,
+      "workout_id": 1619779924,
       "is_race": null,
       "item_type": "workout"
     },
@@ -720,7 +720,7 @@
       "date": "2026-07-09",
       "title": "Easy 50 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1619027430,
+      "workout_id": 1619780133,
       "is_race": null,
       "item_type": "workout"
     },
@@ -728,7 +728,7 @@
       "date": "2026-07-10",
       "title": "Upper + Swim-Proof",
       "sport": "strength_training",
-      "workout_id": 1619027527,
+      "workout_id": 1619779967,
       "is_race": null,
       "item_type": "workout"
     },
@@ -736,7 +736,7 @@
       "date": "2026-07-11",
       "title": "Long easy \u00b7 90 min",
       "sport": "running",
-      "workout_id": 1619027496,
+      "workout_id": 1619780041,
       "is_race": null,
       "item_type": "workout"
     },
@@ -744,7 +744,7 @@
       "date": "2026-07-12",
       "title": "Bike \u00b7 long Z2 \u00b7 90 min",
       "sport": "cycling",
-      "workout_id": 1619027472,
+      "workout_id": 1619780015,
       "is_race": null,
       "item_type": "workout"
     },
@@ -752,7 +752,7 @@
       "date": "2026-07-14",
       "title": "Lower + Run-Proof",
       "sport": "strength_training",
-      "workout_id": 1619027457,
+      "workout_id": 1619779937,
       "is_race": null,
       "item_type": "workout"
     },
@@ -760,7 +760,7 @@
       "date": "2026-07-14",
       "title": "Tempo \u00b7 20 min",
       "sport": "running",
-      "workout_id": 1619027483,
+      "workout_id": 1619780071,
       "is_race": null,
       "item_type": "workout"
     },
@@ -768,7 +768,7 @@
       "date": "2026-07-16",
       "title": "Easy 30 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1619027558,
+      "workout_id": 1619780085,
       "is_race": null,
       "item_type": "workout"
     },
@@ -776,7 +776,7 @@
       "date": "2026-07-17",
       "title": "Upper + Swim-Proof",
       "sport": "strength_training",
-      "workout_id": 1619027527,
+      "workout_id": 1619779967,
       "is_race": null,
       "item_type": "workout"
     },
@@ -784,7 +784,7 @@
       "date": "2026-07-18",
       "title": "Max-HR test",
       "sport": "running",
-      "workout_id": 1619027510,
+      "workout_id": 1619779952,
       "is_race": null,
       "item_type": "workout"
     },
@@ -806,5 +806,5 @@
     }
   ],
   "fetched_at": "2026-07-03",
-  "fetched_time": "13:02"
+  "fetched_time": "16:03"
 }
