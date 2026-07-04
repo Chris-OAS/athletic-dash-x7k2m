@@ -305,27 +305,27 @@
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": null,
-    "drained": null,
-    "end_val": null
+    "charged": 0,
+    "drained": 4,
+    "end_val": "2026-07-04T00:48:00.0"
   },
   "heart_rate": {
-    "resting": null,
-    "max": null,
-    "min": null,
-    "last_7d_avg_resting": null
+    "resting": 50,
+    "max": 84,
+    "min": 49,
+    "last_7d_avg_resting": 47
   },
   "stress": {
-    "avg": null,
-    "max": null,
+    "avg": 37,
+    "max": 80,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": null,
-    "lowest": null
+    "avg": 94.0,
+    "lowest": 84
   },
   "training_readiness": {
     "score": 0,
@@ -333,46 +333,46 @@
     "feedback": ""
   },
   "training_status": {
-    "status": "",
-    "load": 0,
-    "load_chronic": 0,
-    "acwr": 0,
-    "acwr_status": "",
-    "fitness_trend": 0,
-    "load_balance": "",
-    "monthly_aerobic_low": 0,
-    "monthly_aerobic_high": 0,
-    "monthly_anaerobic": 0,
-    "vo2max": 0
+    "status": "UNPRODUCTIVE_3",
+    "load": 323,
+    "load_chronic": 353,
+    "acwr": 0.9,
+    "acwr_status": "OPTIMAL",
+    "fitness_trend": 1,
+    "load_balance": "AEROBIC_HIGH_SHORTAGE",
+    "monthly_aerobic_low": 1109.5068,
+    "monthly_aerobic_high": 109.95932,
+    "monthly_anaerobic": 234.15068,
+    "vo2max": 47.4
   },
   "vo2max": {
-    "value": 0
+    "value": 47.4
   },
   "respiration": {
-    "avg": null,
+    "avg": 14.0,
     "highest": null,
     "lowest": null
   },
   "race_predictions": {
-    "five_k": 1457,
-    "ten_k": 3087,
-    "half_marathon": 7065,
-    "marathon": 15759
+    "five_k": 1463,
+    "ten_k": 3096,
+    "half_marathon": 7073,
+    "marathon": 15803
   },
   "endurance_score": {
-    "overall": 0,
-    "level": ""
+    "overall": 5713,
+    "level": 2
   },
   "hill_score": {
     "value": 0,
     "level": ""
   },
   "steps": {
-    "weekly_total": 102963,
-    "daily_avg": 14709
+    "weekly_total": 108586,
+    "daily_avg": 13573
   },
   "intensity": {
-    "moderate": 128,
+    "moderate": 135,
     "vigorous": 128,
     "goal": 150
   },
@@ -555,7 +555,7 @@
       },
       {
         "date": "2026-07-04",
-        "value": null
+        "value": 50
       }
     ],
     "bb": [
@@ -613,7 +613,7 @@
       },
       {
         "date": "2026-07-04",
-        "value": null
+        "value": 0
       }
     ],
     "stress": [
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-07-04",
-        "value": null
+        "value": 37
       }
     ]
   },
@@ -798,5 +798,5 @@
     }
   ],
   "fetched_at": "2026-07-04",
-  "fetched_time": "00:07"
+  "fetched_time": "03:07"
 }
