@@ -306,8 +306,8 @@
   },
   "body_battery": {
     "charged": 76,
-    "drained": 37,
-    "end_val": "2026-07-06T16:14:00.0"
+    "drained": 51,
+    "end_val": "2026-07-06T19:24:00.0"
   },
   "heart_rate": {
     "resting": 44,
@@ -316,7 +316,7 @@
     "last_7d_avg_resting": 45
   },
   "stress": {
-    "avg": 16,
+    "avg": 18,
     "max": 94,
     "rest_duration": 0,
     "low_duration": 0,
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 125762,
-    "daily_avg": 15720
+    "weekly_total": 127076,
+    "daily_avg": 15884
   },
   "intensity": {
     "moderate": 22,
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-07-06",
-        "value": 16
+        "value": 18
       }
     ]
   },
@@ -685,102 +685,6 @@
       "item_type": "activity"
     },
     {
-      "date": "2026-07-07",
-      "title": "Lower + Run-Proof",
-      "sport": "strength_training",
-      "workout_id": 1623431013,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-07-07",
-      "title": "Threshold \u00b7 4 \u00d7 5 min",
-      "sport": "running",
-      "workout_id": 1623431007,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-07-09",
-      "title": "Easy 50 \u00b7 Z2",
-      "sport": "running",
-      "workout_id": 1623431027,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-07-10",
-      "title": "Upper + Swim-Proof",
-      "sport": "strength_training",
-      "workout_id": 1623431062,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-07-11",
-      "title": "Long easy \u00b7 90 min",
-      "sport": "running",
-      "workout_id": 1623431087,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-07-12",
-      "title": "Bike \u00b7 long Z2 \u00b7 90 min",
-      "sport": "cycling",
-      "workout_id": 1623430999,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-07-14",
-      "title": "Lower + Run-Proof",
-      "sport": "strength_training",
-      "workout_id": 1623431013,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-07-14",
-      "title": "Tempo \u00b7 20 min",
-      "sport": "running",
-      "workout_id": 1623431041,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-07-16",
-      "title": "Easy 30 \u00b7 Z2",
-      "sport": "running",
-      "workout_id": 1623430944,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-07-17",
-      "title": "Upper + Swim-Proof",
-      "sport": "strength_training",
-      "workout_id": 1623431062,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-07-18",
-      "title": "Max-HR test",
-      "sport": "running",
-      "workout_id": 1623430988,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-07-19",
-      "title": "Bike \u00b7 easy spin \u00b7 60 min",
-      "sport": "cycling",
-      "workout_id": 1610888102,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
       "date": "2026-09-19",
       "title": "Tough Mudder 15K",
       "sport": null,
@@ -790,5 +694,5 @@
     }
   ],
   "fetched_at": "2026-07-06",
-  "fetched_time": "19:51"
+  "fetched_time": "21:48"
 }
