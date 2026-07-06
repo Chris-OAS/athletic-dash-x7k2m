@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Southwark Cycling",
+      "type": "cycling",
+      "date": "2026-07-06",
+      "distance_m": 10718.26953125,
+      "duration_s": 2089.85498046875,
+      "avg_hr": 112.0,
+      "max_hr": 146.0,
+      "calories": 191.0,
+      "elevation_m": 45.0,
+      "avg_speed": 5.129000186920166,
+      "aerobic_te": 0.800000011920929,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - Long easy \u00b7 75 min",
       "type": "running",
       "date": "2026-07-04",
@@ -269,20 +283,6 @@
       "avg_speed": 2.4590001106262207,
       "aerobic_te": 2.5,
       "vo2max": 48.0
-    },
-    {
-      "name": "Southwark - Bike \u00b7 long Z2 \u00b7 2 hr",
-      "type": "cycling",
-      "date": "2026-06-10",
-      "distance_m": 25024.689453125,
-      "duration_s": 5239.72314453125,
-      "avg_hr": 147.0,
-      "max_hr": 183.0,
-      "calories": 764.0,
-      "elevation_m": 119.0,
-      "avg_speed": 4.776000022888184,
-      "aerobic_te": 3.299999952316284,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -307,11 +307,11 @@
   "body_battery": {
     "charged": 76,
     "drained": 1,
-    "end_val": "2026-07-06T07:56:00.0"
+    "end_val": "2026-07-06T12:26:00.0"
   },
   "heart_rate": {
     "resting": 44,
-    "max": 100,
+    "max": 138,
     "min": 41,
     "last_7d_avg_resting": 45
   },
@@ -334,13 +334,13 @@
   },
   "training_status": {
     "status": "UNPRODUCTIVE_3",
-    "load": 367,
-    "load_chronic": 376,
-    "acwr": 0.9,
+    "load": 378,
+    "load_chronic": 378,
+    "acwr": 1.0,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 1,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
-    "monthly_aerobic_low": 1147.7533,
+    "monthly_aerobic_low": 1156.8901,
     "monthly_aerobic_high": 109.95932,
     "monthly_anaerobic": 187.66156,
     "vo2max": 47.4
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 123379,
-    "daily_avg": 15422
+    "weekly_total": 124185,
+    "daily_avg": 15523
   },
   "intensity": {
-    "moderate": 0,
-    "vigorous": 0,
+    "moderate": 8,
+    "vigorous": 9,
     "goal": 150
   },
   "running_tolerance": {
@@ -677,10 +677,18 @@
   },
   "scheduled_workouts": [
     {
+      "date": "2026-07-06",
+      "title": "Southwark Cycling",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
+    {
       "date": "2026-07-07",
       "title": "Lower + Run-Proof",
       "sport": "strength_training",
-      "workout_id": 1621657249,
+      "workout_id": 1623431013,
       "is_race": null,
       "item_type": "workout"
     },
@@ -688,7 +696,7 @@
       "date": "2026-07-07",
       "title": "Threshold \u00b7 4 \u00d7 5 min",
       "sport": "running",
-      "workout_id": 1621657268,
+      "workout_id": 1623431007,
       "is_race": null,
       "item_type": "workout"
     },
@@ -696,7 +704,7 @@
       "date": "2026-07-09",
       "title": "Easy 50 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1621657347,
+      "workout_id": 1623431027,
       "is_race": null,
       "item_type": "workout"
     },
@@ -704,7 +712,7 @@
       "date": "2026-07-10",
       "title": "Upper + Swim-Proof",
       "sport": "strength_training",
-      "workout_id": 1621657358,
+      "workout_id": 1623431062,
       "is_race": null,
       "item_type": "workout"
     },
@@ -712,7 +720,7 @@
       "date": "2026-07-11",
       "title": "Long easy \u00b7 90 min",
       "sport": "running",
-      "workout_id": 1621657225,
+      "workout_id": 1623431087,
       "is_race": null,
       "item_type": "workout"
     },
@@ -720,7 +728,7 @@
       "date": "2026-07-12",
       "title": "Bike \u00b7 long Z2 \u00b7 90 min",
       "sport": "cycling",
-      "workout_id": 1621657282,
+      "workout_id": 1623430999,
       "is_race": null,
       "item_type": "workout"
     },
@@ -728,7 +736,7 @@
       "date": "2026-07-14",
       "title": "Lower + Run-Proof",
       "sport": "strength_training",
-      "workout_id": 1621657249,
+      "workout_id": 1623431013,
       "is_race": null,
       "item_type": "workout"
     },
@@ -736,7 +744,7 @@
       "date": "2026-07-14",
       "title": "Tempo \u00b7 20 min",
       "sport": "running",
-      "workout_id": 1621657322,
+      "workout_id": 1623431041,
       "is_race": null,
       "item_type": "workout"
     },
@@ -744,7 +752,7 @@
       "date": "2026-07-16",
       "title": "Easy 30 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1621657236,
+      "workout_id": 1623430944,
       "is_race": null,
       "item_type": "workout"
     },
@@ -752,7 +760,7 @@
       "date": "2026-07-17",
       "title": "Upper + Swim-Proof",
       "sport": "strength_training",
-      "workout_id": 1621657358,
+      "workout_id": 1623431062,
       "is_race": null,
       "item_type": "workout"
     },
@@ -760,7 +768,7 @@
       "date": "2026-07-18",
       "title": "Max-HR test",
       "sport": "running",
-      "workout_id": 1621657299,
+      "workout_id": 1623430988,
       "is_race": null,
       "item_type": "workout"
     },
@@ -782,5 +790,5 @@
     }
   ],
   "fetched_at": "2026-07-06",
-  "fetched_time": "09:12"
+  "fetched_time": "13:38"
 }
