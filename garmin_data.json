@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Machico Hiking",
+      "type": "hiking",
+      "date": "2026-07-08",
+      "distance_m": 2073.530029296875,
+      "duration_s": 2358.39697265625,
+      "avg_hr": 103.0,
+      "max_hr": 153.0,
+      "calories": 187.0,
+      "elevation_m": 118.0,
+      "avg_speed": 0.8790000081062317,
+      "aerobic_te": 0.699999988079071,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark Cycling",
       "type": "cycling",
       "date": "2026-07-06",
@@ -269,20 +283,6 @@
       "avg_speed": 0,
       "aerobic_te": 0.10000000149011612,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - Easy 30 \u00b7 Z2",
-      "type": "running",
-      "date": "2026-06-16",
-      "distance_m": 4433.77978515625,
-      "duration_s": 1803.2469482421875,
-      "avg_hr": 145.0,
-      "max_hr": 160.0,
-      "calories": 317.0,
-      "elevation_m": 6.0,
-      "avg_speed": 2.4590001106262207,
-      "aerobic_te": 2.5,
-      "vo2max": 48.0
     }
   ],
   "sleep": {
@@ -306,17 +306,17 @@
   },
   "body_battery": {
     "charged": 61,
-    "drained": 37,
-    "end_val": "2026-07-08T15:26:00.0"
+    "drained": 51,
+    "end_val": "2026-07-08T18:03:00.0"
   },
   "heart_rate": {
     "resting": 42,
-    "max": 94,
+    "max": 137,
     "min": 40,
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 15,
+    "avg": 16,
     "max": 88,
     "rest_duration": 0,
     "low_duration": 0,
@@ -334,13 +334,13 @@
   },
   "training_status": {
     "status": "UNPRODUCTIVE_3",
-    "load": 244,
-    "load_chronic": 359,
-    "acwr": 0.6,
+    "load": 254,
+    "load_chronic": 361,
+    "acwr": 0.7,
     "acwr_status": "LOW",
     "fitness_trend": 1,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
-    "monthly_aerobic_low": 1027.2023,
+    "monthly_aerobic_low": 1035.1527,
     "monthly_aerobic_high": 109.95932,
     "monthly_anaerobic": 152.8591,
     "vo2max": 47.4
@@ -349,7 +349,7 @@
     "value": 47.4
   },
   "respiration": {
-    "avg": 12.0,
+    "avg": 13.0,
     "highest": 20.0,
     "lowest": 7.0
   },
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 105873,
-    "daily_avg": 13234
+    "weekly_total": 111855,
+    "daily_avg": 13981
   },
   "intensity": {
-    "moderate": 22,
-    "vigorous": 6,
+    "moderate": 43,
+    "vigorous": 7,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,11 +671,19 @@
       },
       {
         "date": "2026-07-08",
-        "value": 15
+        "value": 16
       }
     ]
   },
   "scheduled_workouts": [
+    {
+      "date": "2026-07-08",
+      "title": "Machico Hiking",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
     {
       "date": "2026-07-09",
       "title": "Easy 50 \u00b7 Z2",
@@ -766,5 +774,5 @@
     }
   ],
   "fetched_at": "2026-07-08",
-  "fetched_time": "18:21"
+  "fetched_time": "20:11"
 }
