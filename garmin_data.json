@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Calheta (R.A.M.) Hiking",
+      "type": "hiking",
+      "date": "2026-07-10",
+      "distance_m": 22202.529296875,
+      "duration_s": 11993.9326171875,
+      "avg_hr": 101.0,
+      "max_hr": 160.0,
+      "calories": 900.0,
+      "elevation_m": 669.0,
+      "avg_speed": 1.8509999513626099,
+      "aerobic_te": 2.0999999046325684,
+      "vo2max": 0
+    },
+    {
       "name": "Machico Hiking",
       "type": "hiking",
       "date": "2026-07-08",
@@ -269,20 +283,6 @@
       "avg_speed": 4.883999824523926,
       "aerobic_te": 3.4000000953674316,
       "vo2max": 0
-    },
-    {
-      "name": "Yoga",
-      "type": "yoga",
-      "date": "2026-06-16",
-      "distance_m": 0,
-      "duration_s": 6336.64501953125,
-      "avg_hr": 64.0,
-      "max_hr": 118.0,
-      "calories": 167.0,
-      "elevation_m": 0,
-      "avg_speed": 0,
-      "aerobic_te": 0.10000000149011612,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,41 +306,41 @@
   },
   "body_battery": {
     "charged": 46,
-    "drained": 1,
-    "end_val": "2026-07-10T06:25:00.0"
+    "drained": 23,
+    "end_val": "2026-07-10T11:43:00.0"
   },
   "heart_rate": {
     "resting": 47,
-    "max": 68,
+    "max": 151,
     "min": 49,
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 20,
-    "max": 51,
+    "avg": 21,
+    "max": 81,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": 96.0,
+    "avg": 95.0,
     "lowest": 86
   },
   "training_readiness": {
-    "score": 97,
-    "level": "PRIME",
+    "score": 89,
+    "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
     "status": "UNPRODUCTIVE_3",
-    "load": 140,
-    "load_chronic": 339,
-    "acwr": 0.4,
+    "load": 177,
+    "load_chronic": 345,
+    "acwr": 0.5,
     "acwr_status": "LOW",
     "fitness_trend": 1,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
-    "monthly_aerobic_low": 1035.1527,
+    "monthly_aerobic_low": 1063.3374,
     "monthly_aerobic_high": 109.95932,
     "monthly_anaerobic": 152.8591,
     "vo2max": 47.4
@@ -349,9 +349,9 @@
     "value": 47.4
   },
   "respiration": {
-    "avg": 12.0,
+    "avg": 13.0,
     "highest": 19.0,
-    "lowest": 9.0
+    "lowest": 8.0
   },
   "race_predictions": {
     "five_k": 1472,
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 101269,
-    "daily_avg": 12658
+    "weekly_total": 117323,
+    "daily_avg": 14665
   },
   "intensity": {
-    "moderate": 43,
-    "vigorous": 7,
+    "moderate": 121,
+    "vigorous": 24,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,16 +671,24 @@
       },
       {
         "date": "2026-07-10",
-        "value": 20
+        "value": 21
       }
     ]
   },
   "scheduled_workouts": [
     {
       "date": "2026-07-10",
+      "title": "Calheta (R.A.M.) Hiking",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
+    {
+      "date": "2026-07-10",
       "title": "Calisthenics \u00b7 Travel",
       "sport": "strength_training",
-      "workout_id": 1626138653,
+      "workout_id": 1627012314,
       "is_race": null,
       "item_type": "workout"
     },
@@ -712,15 +720,7 @@
       "date": "2026-07-14",
       "title": "Tempo \u00b7 20 min",
       "sport": "running",
-      "workout_id": 1626138690,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-07-16",
-      "title": "Easy 30 \u00b7 Z2",
-      "sport": "running",
-      "workout_id": 1626138710,
+      "workout_id": 1627012215,
       "is_race": null,
       "item_type": "workout"
     },
@@ -758,5 +758,5 @@
     }
   ],
   "fetched_at": "2026-07-10",
-  "fetched_time": "11:16"
+  "fetched_time": "14:05"
 }
