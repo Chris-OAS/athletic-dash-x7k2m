@@ -286,72 +286,72 @@
     }
   ],
   "sleep": {
-    "score": 76,
-    "duration_s": 25140,
-    "deep_s": 3480,
-    "rem_s": 5280,
-    "light_s": 16380,
-    "awake_s": 720,
-    "avg_spo2": 97.0,
-    "avg_resp": 15.0,
+    "score": 0,
+    "duration_s": null,
+    "deep_s": null,
+    "rem_s": null,
+    "light_s": null,
+    "awake_s": null,
+    "avg_spo2": 0,
+    "avg_resp": 0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 68,
+    "weekly_avg": 0,
     "last_night": 0,
-    "status": "BALANCED",
+    "status": "unknown",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 46,
-    "drained": 34,
-    "end_val": "2026-07-10T14:13:00.0"
+    "charged": null,
+    "drained": null,
+    "end_val": null
   },
   "heart_rate": {
-    "resting": 47,
-    "max": 151,
-    "min": 49,
-    "last_7d_avg_resting": 44
+    "resting": null,
+    "max": null,
+    "min": null,
+    "last_7d_avg_resting": null
   },
   "stress": {
-    "avg": 28,
-    "max": 92,
+    "avg": null,
+    "max": null,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": 95.0,
-    "lowest": 86
+    "avg": null,
+    "lowest": null
   },
   "training_readiness": {
-    "score": 95,
-    "level": "PRIME",
+    "score": 0,
+    "level": "",
     "feedback": ""
   },
   "training_status": {
-    "status": "UNPRODUCTIVE_3",
-    "load": 177,
-    "load_chronic": 345,
-    "acwr": 0.5,
-    "acwr_status": "LOW",
-    "fitness_trend": 1,
-    "load_balance": "AEROBIC_HIGH_SHORTAGE",
-    "monthly_aerobic_low": 1063.3374,
-    "monthly_aerobic_high": 109.95932,
-    "monthly_anaerobic": 152.8591,
-    "vo2max": 47.4
+    "status": "",
+    "load": 0,
+    "load_chronic": 0,
+    "acwr": 0,
+    "acwr_status": "",
+    "fitness_trend": 0,
+    "load_balance": "",
+    "monthly_aerobic_low": 0,
+    "monthly_aerobic_high": 0,
+    "monthly_anaerobic": 0,
+    "vo2max": 0
   },
   "vo2max": {
-    "value": 47.4
+    "value": 0
   },
   "respiration": {
-    "avg": 13.0,
-    "highest": 19.0,
-    "lowest": 8.0
+    "avg": null,
+    "highest": null,
+    "lowest": null
   },
   "race_predictions": {
     "five_k": 1472,
@@ -360,16 +360,16 @@
     "marathon": 15902
   },
   "endurance_score": {
-    "overall": 5685,
-    "level": 2
+    "overall": 0,
+    "level": ""
   },
   "hill_score": {
     "value": 0,
     "level": ""
   },
   "steps": {
-    "weekly_total": 120654,
-    "daily_avg": 15081
+    "weekly_total": 106021,
+    "daily_avg": 15145
   },
   "intensity": {
     "moderate": 121,
@@ -380,15 +380,11 @@
     "value": 0
   },
   "morning_readiness": {
-    "score": 97,
-    "level": "PRIME"
+    "score": 0,
+    "level": ""
   },
   "history": {
     "sleep": [
-      {
-        "date": "2026-06-27",
-        "value": 75
-      },
       {
         "date": "2026-06-28",
         "value": 77
@@ -440,13 +436,13 @@
       {
         "date": "2026-07-10",
         "value": 76
+      },
+      {
+        "date": "2026-07-11",
+        "value": 0
       }
     ],
     "hrv": [
-      {
-        "date": "2026-06-27",
-        "value": 59
-      },
       {
         "date": "2026-06-28",
         "value": 67
@@ -498,13 +494,13 @@
       {
         "date": "2026-07-10",
         "value": 57
+      },
+      {
+        "date": "2026-07-11",
+        "value": 0
       }
     ],
     "rhr": [
-      {
-        "date": "2026-06-27",
-        "value": 49
-      },
       {
         "date": "2026-06-28",
         "value": 49
@@ -556,13 +552,13 @@
       {
         "date": "2026-07-10",
         "value": 47
+      },
+      {
+        "date": "2026-07-11",
+        "value": null
       }
     ],
     "bb": [
-      {
-        "date": "2026-06-27",
-        "value": 54
-      },
       {
         "date": "2026-06-28",
         "value": 66
@@ -614,13 +610,13 @@
       {
         "date": "2026-07-10",
         "value": 46
+      },
+      {
+        "date": "2026-07-11",
+        "value": null
       }
     ],
     "stress": [
-      {
-        "date": "2026-06-27",
-        "value": 38
-      },
       {
         "date": "2026-06-28",
         "value": 26
@@ -672,26 +668,14 @@
       {
         "date": "2026-07-10",
         "value": 28
+      },
+      {
+        "date": "2026-07-11",
+        "value": null
       }
     ]
   },
   "scheduled_workouts": [
-    {
-      "date": "2026-07-10",
-      "title": "Calheta (R.A.M.) Hiking",
-      "sport": null,
-      "workout_id": null,
-      "is_race": null,
-      "item_type": "activity"
-    },
-    {
-      "date": "2026-07-10",
-      "title": "Calisthenics \u00b7 Travel",
-      "sport": "strength_training",
-      "workout_id": 1627012314,
-      "is_race": null,
-      "item_type": "workout"
-    },
     {
       "date": "2026-07-11",
       "title": "Long easy \u00b7 90 min",
@@ -757,6 +741,6 @@
       "item_type": "event"
     }
   ],
-  "fetched_at": "2026-07-10",
-  "fetched_time": "23:53"
+  "fetched_at": "2026-07-11",
+  "fetched_time": "00:52"
 }
