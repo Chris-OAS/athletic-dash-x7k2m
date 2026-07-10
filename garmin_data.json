@@ -696,7 +696,7 @@
       "date": "2026-07-11",
       "title": "Long easy \u00b7 90 min",
       "sport": "running",
-      "workout_id": 1626138629,
+      "workout_id": 1627254603,
       "is_race": null,
       "item_type": "workout"
     },
@@ -704,7 +704,7 @@
       "date": "2026-07-12",
       "title": "Easy 60 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1626138668,
+      "workout_id": 1627254659,
       "is_race": null,
       "item_type": "workout"
     },
@@ -712,7 +712,7 @@
       "date": "2026-07-14",
       "title": "Strength A \u00b7 Travel",
       "sport": "strength_training",
-      "workout_id": 1626138541,
+      "workout_id": 1627254623,
       "is_race": null,
       "item_type": "workout"
     },
@@ -728,7 +728,7 @@
       "date": "2026-07-17",
       "title": "Upper + Swim-Proof",
       "sport": "strength_training",
-      "workout_id": 1626138702,
+      "workout_id": 1627254636,
       "is_race": null,
       "item_type": "workout"
     },
@@ -736,7 +736,7 @@
       "date": "2026-07-18",
       "title": "Max-HR test",
       "sport": "running",
-      "workout_id": 1626138500,
+      "workout_id": 1627254613,
       "is_race": null,
       "item_type": "workout"
     },
@@ -758,5 +758,5 @@
     }
   ],
   "fetched_at": "2026-07-10",
-  "fetched_time": "17:16"
+  "fetched_time": "19:17"
 }
