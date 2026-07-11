@@ -286,37 +286,37 @@
     }
   ],
   "sleep": {
-    "score": 0,
-    "duration_s": null,
-    "deep_s": null,
-    "rem_s": null,
-    "light_s": null,
-    "awake_s": null,
-    "avg_spo2": 0,
-    "avg_resp": 0,
+    "score": 86,
+    "duration_s": 34380,
+    "deep_s": 3780,
+    "rem_s": 7560,
+    "light_s": 23040,
+    "awake_s": 780,
+    "avg_spo2": 96.0,
+    "avg_resp": 13.0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 0,
+    "weekly_avg": 66,
     "last_night": 0,
-    "status": "unknown",
+    "status": "BALANCED",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 26,
-    "drained": 1,
-    "end_val": "2026-07-11T02:13:00.0"
+    "charged": 62,
+    "drained": 3,
+    "end_val": "2026-07-11T08:25:00.0"
   },
   "heart_rate": {
-    "resting": 48,
+    "resting": 43,
     "max": 83,
-    "min": 48,
-    "last_7d_avg_resting": 45
+    "min": 41,
+    "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 20,
+    "avg": 16,
     "max": 81,
     "rest_duration": 0,
     "low_duration": 0,
@@ -324,12 +324,12 @@
     "high_duration": 0
   },
   "spo2": {
-    "avg": 94.0,
-    "lowest": 83
+    "avg": 95.0,
+    "lowest": 81
   },
   "training_readiness": {
-    "score": 0,
-    "level": "",
+    "score": 96,
+    "level": "PRIME",
     "feedback": ""
   },
   "training_status": {
@@ -349,9 +349,9 @@
     "value": 47.4
   },
   "respiration": {
-    "avg": 14.0,
-    "highest": 18.0,
-    "lowest": 7.0
+    "avg": 13.0,
+    "highest": 19.0,
+    "lowest": 6.0
   },
   "race_predictions": {
     "five_k": 1474,
@@ -360,16 +360,16 @@
     "marathon": 15965
   },
   "endurance_score": {
-    "overall": 0,
-    "level": ""
+    "overall": 5668,
+    "level": 2
   },
   "hill_score": {
     "value": 0,
     "level": ""
   },
   "steps": {
-    "weekly_total": 107844,
-    "daily_avg": 13480
+    "weekly_total": 107890,
+    "daily_avg": 13486
   },
   "intensity": {
     "moderate": 121,
@@ -380,8 +380,8 @@
     "value": 0
   },
   "morning_readiness": {
-    "score": 0,
-    "level": ""
+    "score": 96,
+    "level": "PRIME"
   },
   "history": {
     "sleep": [
@@ -439,7 +439,7 @@
       },
       {
         "date": "2026-07-11",
-        "value": 0
+        "value": 86
       }
     ],
     "hrv": [
@@ -497,7 +497,7 @@
       },
       {
         "date": "2026-07-11",
-        "value": 0
+        "value": 63
       }
     ],
     "rhr": [
@@ -555,7 +555,7 @@
       },
       {
         "date": "2026-07-11",
-        "value": 48
+        "value": 43
       }
     ],
     "bb": [
@@ -613,7 +613,7 @@
       },
       {
         "date": "2026-07-11",
-        "value": 26
+        "value": 62
       }
     ],
     "stress": [
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-07-11",
-        "value": 20
+        "value": 16
       }
     ]
   },
@@ -742,5 +742,5 @@
     }
   ],
   "fetched_at": "2026-07-11",
-  "fetched_time": "08:10"
+  "fetched_time": "10:19"
 }
