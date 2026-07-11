@@ -333,20 +333,20 @@
     "feedback": ""
   },
   "training_status": {
-    "status": "",
-    "load": 0,
-    "load_chronic": 0,
-    "acwr": 0,
-    "acwr_status": "",
-    "fitness_trend": 0,
-    "load_balance": "",
-    "monthly_aerobic_low": 0,
-    "monthly_aerobic_high": 0,
-    "monthly_anaerobic": 0,
-    "vo2max": 0
+    "status": "UNPRODUCTIVE_3",
+    "load": 132,
+    "load_chronic": 332,
+    "acwr": 0.3,
+    "acwr_status": "LOW",
+    "fitness_trend": 1,
+    "load_balance": "AEROBIC_HIGH_SHORTAGE",
+    "monthly_aerobic_low": 1063.3374,
+    "monthly_aerobic_high": 109.95932,
+    "monthly_anaerobic": 152.8591,
+    "vo2max": 47.4
   },
   "vo2max": {
-    "value": 0
+    "value": 47.4
   },
   "respiration": {
     "avg": null,
@@ -354,10 +354,10 @@
     "lowest": null
   },
   "race_predictions": {
-    "five_k": 1472,
-    "ten_k": 3126,
-    "half_marathon": 7102,
-    "marathon": 15902
+    "five_k": 1474,
+    "ten_k": 3139,
+    "half_marathon": 7115,
+    "marathon": 15965
   },
   "endurance_score": {
     "overall": 0,
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 106021,
-    "daily_avg": 15145
+    "weekly_total": 107810,
+    "daily_avg": 15401
   },
   "intensity": {
     "moderate": 121,
@@ -609,7 +609,7 @@
       },
       {
         "date": "2026-07-10",
-        "value": 46
+        "value": 51
       },
       {
         "date": "2026-07-11",
@@ -667,7 +667,7 @@
       },
       {
         "date": "2026-07-10",
-        "value": 28
+        "value": 27
       },
       {
         "date": "2026-07-11",
@@ -742,5 +742,5 @@
     }
   ],
   "fetched_at": "2026-07-11",
-  "fetched_time": "00:52"
+  "fetched_time": "02:54"
 }
