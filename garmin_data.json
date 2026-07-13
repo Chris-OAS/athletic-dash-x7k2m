@@ -306,8 +306,8 @@
   },
   "body_battery": {
     "charged": 52,
-    "drained": 29,
-    "end_val": "2026-07-13T11:37:00.0"
+    "drained": 42,
+    "end_val": "2026-07-13T16:00:00.0"
   },
   "heart_rate": {
     "resting": 42,
@@ -316,7 +316,7 @@
     "last_7d_avg_resting": 43
   },
   "stress": {
-    "avg": 14,
+    "avg": 17,
     "max": 99,
     "rest_duration": 0,
     "low_duration": 0,
@@ -350,7 +350,7 @@
   },
   "respiration": {
     "avg": 12.0,
-    "highest": 19.0,
+    "highest": 22.0,
     "lowest": 8.0
   },
   "race_predictions": {
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 111210,
-    "daily_avg": 13901
+    "weekly_total": 114093,
+    "daily_avg": 14261
   },
   "intensity": {
     "moderate": 4,
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-07-13",
-        "value": 14
+        "value": 17
       }
     ]
   },
@@ -680,7 +680,7 @@
       "date": "2026-07-14",
       "title": "Strength A \u00b7 Travel",
       "sport": "strength_training",
-      "workout_id": 1629410730,
+      "workout_id": 1630918153,
       "is_race": null,
       "item_type": "workout"
     },
@@ -688,7 +688,7 @@
       "date": "2026-07-14",
       "title": "Tempo \u00b7 20 min",
       "sport": "running",
-      "workout_id": 1629410652,
+      "workout_id": 1630918072,
       "is_race": null,
       "item_type": "workout"
     },
@@ -696,7 +696,7 @@
       "date": "2026-07-16",
       "title": "Easy 30 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1629410760,
+      "workout_id": 1630918205,
       "is_race": null,
       "item_type": "workout"
     },
@@ -704,7 +704,7 @@
       "date": "2026-07-17",
       "title": "Upper + Swim-Proof",
       "sport": "strength_training",
-      "workout_id": 1629410773,
+      "workout_id": 1630918122,
       "is_race": null,
       "item_type": "workout"
     },
@@ -712,7 +712,7 @@
       "date": "2026-07-18",
       "title": "Max-HR test",
       "sport": "running",
-      "workout_id": 1629410720,
+      "workout_id": 1630918184,
       "is_race": null,
       "item_type": "workout"
     },
@@ -734,5 +734,5 @@
     }
   ],
   "fetched_at": "2026-07-13",
-  "fetched_time": "15:12"
+  "fetched_time": "18:09"
 }
