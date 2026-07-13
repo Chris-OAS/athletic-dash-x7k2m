@@ -305,27 +305,27 @@
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": null,
-    "drained": null,
-    "end_val": null
+    "charged": 18,
+    "drained": 0,
+    "end_val": "2026-07-13T00:37:00.0"
   },
   "heart_rate": {
-    "resting": null,
-    "max": null,
-    "min": null,
-    "last_7d_avg_resting": null
+    "resting": 44,
+    "max": 54,
+    "min": 43,
+    "last_7d_avg_resting": 43
   },
   "stress": {
-    "avg": null,
-    "max": null,
+    "avg": 8,
+    "max": 22,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": null,
-    "lowest": null
+    "avg": 95.0,
+    "lowest": 89
   },
   "training_readiness": {
     "score": 0,
@@ -333,31 +333,31 @@
     "feedback": ""
   },
   "training_status": {
-    "status": "",
-    "load": 0,
-    "load_chronic": 0,
-    "acwr": 0,
-    "acwr_status": "",
-    "fitness_trend": 0,
-    "load_balance": "",
-    "monthly_aerobic_low": 0,
-    "monthly_aerobic_high": 0,
-    "monthly_anaerobic": 0,
-    "vo2max": 0
+    "status": "DETRAINING",
+    "load": 55,
+    "load_chronic": 303,
+    "acwr": 0.1,
+    "acwr_status": "LOW",
+    "fitness_trend": 1,
+    "load_balance": "AEROBIC_HIGH_SHORTAGE",
+    "monthly_aerobic_low": 1063.3374,
+    "monthly_aerobic_high": 109.95932,
+    "monthly_anaerobic": 152.8591,
+    "vo2max": 47.4
   },
   "vo2max": {
-    "value": 0
+    "value": 47.4
   },
   "respiration": {
-    "avg": null,
-    "highest": null,
-    "lowest": null
+    "avg": 13.0,
+    "highest": 16.0,
+    "lowest": 10.0
   },
   "race_predictions": {
-    "five_k": 1477,
-    "ten_k": 3154,
-    "half_marathon": 7129,
-    "marathon": 16026
+    "five_k": 1478,
+    "ten_k": 3161,
+    "half_marathon": 7135,
+    "marathon": 16050
   },
   "endurance_score": {
     "overall": 0,
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 97501,
-    "daily_avg": 13928
+    "weekly_total": 98859,
+    "daily_avg": 12357
   },
   "intensity": {
     "moderate": 0,
@@ -555,7 +555,7 @@
       },
       {
         "date": "2026-07-13",
-        "value": null
+        "value": 44
       }
     ],
     "bb": [
@@ -609,11 +609,11 @@
       },
       {
         "date": "2026-07-12",
-        "value": 66
+        "value": 72
       },
       {
         "date": "2026-07-13",
-        "value": null
+        "value": 18
       }
     ],
     "stress": [
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-07-13",
-        "value": null
+        "value": 8
       }
     ]
   },
@@ -734,5 +734,5 @@
     }
   ],
   "fetched_at": "2026-07-13",
-  "fetched_time": "00:44"
+  "fetched_time": "03:00"
 }
