@@ -680,7 +680,7 @@
       "date": "2026-07-16",
       "title": "Easy 30 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1631676796,
+      "workout_id": 1632631185,
       "is_race": null,
       "item_type": "workout"
     },
@@ -688,7 +688,7 @@
       "date": "2026-07-17",
       "title": "Upper + Swim-Proof",
       "sport": "strength_training",
-      "workout_id": 1631676804,
+      "workout_id": 1632631156,
       "is_race": null,
       "item_type": "workout"
     },
@@ -696,7 +696,7 @@
       "date": "2026-07-18",
       "title": "Max-HR test",
       "sport": "running",
-      "workout_id": 1631676771,
+      "workout_id": 1632631165,
       "is_race": null,
       "item_type": "workout"
     },
@@ -718,5 +718,5 @@
     }
   ],
   "fetched_at": "2026-07-15",
-  "fetched_time": "10:53"
+  "fetched_time": "12:23"
 }
