@@ -286,90 +286,90 @@
     }
   ],
   "sleep": {
-    "score": 0,
-    "duration_s": null,
-    "deep_s": null,
-    "rem_s": null,
-    "light_s": null,
-    "awake_s": null,
-    "avg_spo2": 0,
-    "avg_resp": 0,
+    "score": 98,
+    "duration_s": 31320,
+    "deep_s": 7380,
+    "rem_s": 7860,
+    "light_s": 16080,
+    "awake_s": 180,
+    "avg_spo2": 95.0,
+    "avg_resp": 14.0,
     "restless": 0,
     "avg_hrv": 0
   },
   "hrv": {
-    "weekly_avg": 0,
+    "weekly_avg": 69,
     "last_night": 0,
-    "status": "unknown",
+    "status": "BALANCED",
     "balanced_low": 0,
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": null,
-    "drained": null,
-    "end_val": null
+    "charged": 84,
+    "drained": 1,
+    "end_val": "2026-07-16T08:34:00.0"
   },
   "heart_rate": {
-    "resting": null,
-    "max": null,
-    "min": null,
-    "last_7d_avg_resting": null
+    "resting": 43,
+    "max": 95,
+    "min": 42,
+    "last_7d_avg_resting": 43
   },
   "stress": {
-    "avg": null,
-    "max": null,
+    "avg": 13,
+    "max": 70,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": null,
-    "lowest": null
+    "avg": 94.0,
+    "lowest": 82
   },
   "training_readiness": {
-    "score": 0,
-    "level": "",
+    "score": 100,
+    "level": "PRIME",
     "feedback": ""
   },
   "training_status": {
-    "status": "",
-    "load": 0,
-    "load_chronic": 0,
-    "acwr": 0,
-    "acwr_status": "",
-    "fitness_trend": 0,
-    "load_balance": "",
-    "monthly_aerobic_low": 0,
-    "monthly_aerobic_high": 0,
-    "monthly_anaerobic": 0,
-    "vo2max": 0
+    "status": "DETRAINING",
+    "load": 17,
+    "load_chronic": 254,
+    "acwr": 0.0,
+    "acwr_status": "LOW",
+    "fitness_trend": 1,
+    "load_balance": "AEROBIC_HIGH_SHORTAGE",
+    "monthly_aerobic_low": 878.4336,
+    "monthly_aerobic_high": 109.95932,
+    "monthly_anaerobic": 105.98268,
+    "vo2max": 47.4
   },
   "vo2max": {
-    "value": 0
+    "value": 47.4
   },
   "respiration": {
-    "avg": null,
-    "highest": null,
-    "lowest": null
+    "avg": 11.0,
+    "highest": 20.0,
+    "lowest": 8.0
   },
   "race_predictions": {
-    "five_k": 1480,
-    "ten_k": 3172,
-    "half_marathon": 7147,
-    "marathon": 16099
+    "five_k": 1481,
+    "ten_k": 3176,
+    "half_marathon": 7154,
+    "marathon": 16136
   },
   "endurance_score": {
-    "overall": 0,
-    "level": ""
+    "overall": 5623,
+    "level": 2
   },
   "hill_score": {
     "value": 0,
     "level": ""
   },
   "steps": {
-    "weekly_total": 116231,
-    "daily_avg": 16604
+    "weekly_total": 117805,
+    "daily_avg": 14725
   },
   "intensity": {
     "moderate": 6,
@@ -380,8 +380,8 @@
     "value": 0
   },
   "morning_readiness": {
-    "score": 0,
-    "level": ""
+    "score": 100,
+    "level": "PRIME"
   },
   "history": {
     "sleep": [
@@ -439,7 +439,7 @@
       },
       {
         "date": "2026-07-16",
-        "value": 0
+        "value": 98
       }
     ],
     "hrv": [
@@ -497,7 +497,7 @@
       },
       {
         "date": "2026-07-16",
-        "value": 0
+        "value": 70
       }
     ],
     "rhr": [
@@ -555,7 +555,7 @@
       },
       {
         "date": "2026-07-16",
-        "value": null
+        "value": 43
       }
     ],
     "bb": [
@@ -613,7 +613,7 @@
       },
       {
         "date": "2026-07-16",
-        "value": null
+        "value": 84
       }
     ],
     "stress": [
@@ -667,11 +667,11 @@
       },
       {
         "date": "2026-07-15",
-        "value": 31
+        "value": 32
       },
       {
         "date": "2026-07-16",
-        "value": null
+        "value": 13
       }
     ]
   },
@@ -680,7 +680,7 @@
       "date": "2026-07-16",
       "title": "Easy 30 \u00b7 Z2",
       "sport": "running",
-      "workout_id": 1632631185,
+      "workout_id": 1633299261,
       "is_race": null,
       "item_type": "workout"
     },
@@ -688,7 +688,7 @@
       "date": "2026-07-17",
       "title": "Upper + Swim-Proof",
       "sport": "strength_training",
-      "workout_id": 1632631156,
+      "workout_id": 1633299238,
       "is_race": null,
       "item_type": "workout"
     },
@@ -696,7 +696,7 @@
       "date": "2026-07-18",
       "title": "Max-HR test",
       "sport": "running",
-      "workout_id": 1632631165,
+      "workout_id": 1633299249,
       "is_race": null,
       "item_type": "workout"
     },
@@ -718,5 +718,5 @@
     }
   ],
   "fetched_at": "2026-07-16",
-  "fetched_time": "08:18"
+  "fetched_time": "10:59"
 }
