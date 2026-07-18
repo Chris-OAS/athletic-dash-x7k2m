@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Southwark - Max-HR test",
+      "type": "running",
+      "date": "2026-07-18",
+      "distance_m": 6818.6201171875,
+      "duration_s": 2641.989990234375,
+      "avg_hr": 160.0,
+      "max_hr": 204.0,
+      "calories": 488.0,
+      "elevation_m": 24.0,
+      "avg_speed": 2.5810000896453857,
+      "aerobic_te": 3.700000047683716,
+      "vo2max": 48.0
+    },
+    {
       "name": "Southwark - Easy 30 \u00b7 Z2",
       "type": "running",
       "date": "2026-07-16",
@@ -269,20 +283,6 @@
       "avg_speed": 4.565999984741211,
       "aerobic_te": 1.5,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - Easy 30 + 4 strides",
-      "type": "running",
-      "date": "2026-06-18",
-      "distance_m": 4777.0498046875,
-      "duration_s": 2105.052001953125,
-      "avg_hr": 145.0,
-      "max_hr": 175.0,
-      "calories": 339.0,
-      "elevation_m": 10.0,
-      "avg_speed": 2.2690000534057617,
-      "aerobic_te": 2.5,
-      "vo2max": 48.0
     }
   ],
   "sleep": {
@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 80,
-    "drained": 1,
-    "end_val": "2026-07-18T08:32:00.0"
+    "drained": 38,
+    "end_val": "2026-07-18T12:12:00.0"
   },
   "heart_rate": {
     "resting": 46,
-    "max": 70,
+    "max": 198,
     "min": 43,
     "last_7d_avg_resting": 43
   },
   "stress": {
-    "avg": 13,
-    "max": 54,
+    "avg": 20,
+    "max": 90,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,39 +328,39 @@
     "lowest": 80
   },
   "training_readiness": {
-    "score": 98,
-    "level": "PRIME",
+    "score": 53,
+    "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
-    "status": "RECOVERY_2",
-    "load": 102,
-    "load_chronic": 244,
-    "acwr": 0.4,
-    "acwr_status": "LOW",
+    "status": "PRODUCTIVE_2",
+    "load": 389,
+    "load_chronic": 296,
+    "acwr": 1.3,
+    "acwr_status": "OPTIMAL",
     "fitness_trend": 2,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
     "monthly_aerobic_low": 955.38696,
-    "monthly_aerobic_high": 109.95932,
-    "monthly_anaerobic": 105.98268,
-    "vo2max": 48.0
+    "monthly_aerobic_high": 237.51785,
+    "monthly_anaerobic": 204.1843,
+    "vo2max": 48.2
   },
   "vo2max": {
-    "value": 48.0
+    "value": 48.2
   },
   "respiration": {
-    "avg": 13.0,
-    "highest": 18.0,
+    "avg": 18.0,
+    "highest": 41.0,
     "lowest": 7.0
   },
   "race_predictions": {
-    "five_k": 1478,
-    "ten_k": 3160,
-    "half_marathon": 7139,
-    "marathon": 16031
+    "five_k": 1469,
+    "ten_k": 3120,
+    "half_marathon": 7099,
+    "marathon": 15804
   },
   "endurance_score": {
-    "overall": 5651,
+    "overall": 5712,
     "level": 2
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 110708,
-    "daily_avg": 13838
+    "weekly_total": 119143,
+    "daily_avg": 14892
   },
   "intensity": {
-    "moderate": 11,
-    "vigorous": 39,
+    "moderate": 18,
+    "vigorous": 76,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-07-18",
-        "value": 13
+        "value": 20
       }
     ]
   },
@@ -683,6 +683,14 @@
       "workout_id": 1634850339,
       "is_race": null,
       "item_type": "workout"
+    },
+    {
+      "date": "2026-07-18",
+      "title": "Southwark - Max-HR test",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
     },
     {
       "date": "2026-07-19",
@@ -702,5 +710,5 @@
     }
   ],
   "fetched_at": "2026-07-18",
-  "fetched_time": "12:46"
+  "fetched_time": "13:56"
 }
