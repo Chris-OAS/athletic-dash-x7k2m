@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Southwark - Bike \u00b7 easy spin \u00b7 60 min",
+      "type": "cycling",
+      "date": "2026-07-19",
+      "distance_m": 13553.3203125,
+      "duration_s": 2978.64404296875,
+      "avg_hr": 124.0,
+      "max_hr": 164.0,
+      "calories": 367.0,
+      "elevation_m": 69.0,
+      "avg_speed": 4.550000190734863,
+      "aerobic_te": 2.0,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - Max-HR test",
       "type": "running",
       "date": "2026-07-18",
@@ -269,20 +283,6 @@
       "avg_speed": 5.550000190734863,
       "aerobic_te": 5.0,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - Bike \u00b7 opener \u00b7 40 min",
-      "type": "cycling",
-      "date": "2026-06-20",
-      "distance_m": 9899.669921875,
-      "duration_s": 2168.10498046875,
-      "avg_hr": 123.0,
-      "max_hr": 161.0,
-      "calories": 236.0,
-      "elevation_m": 51.0,
-      "avg_speed": 4.565999984741211,
-      "aerobic_te": 1.5,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,17 +306,17 @@
   },
   "body_battery": {
     "charged": 43,
-    "drained": 5,
-    "end_val": "2026-07-19T08:43:00.0"
+    "drained": 29,
+    "end_val": "2026-07-19T16:12:00.0"
   },
   "heart_rate": {
     "resting": 47,
-    "max": 114,
+    "max": 147,
     "min": 47,
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 29,
+    "avg": 30,
     "max": 93,
     "rest_duration": 0,
     "low_duration": 0,
@@ -328,30 +328,30 @@
     "lowest": 88
   },
   "training_readiness": {
-    "score": 47,
-    "level": "LOW",
+    "score": 51,
+    "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_2",
-    "load": 345,
-    "load_chronic": 282,
-    "acwr": 1.2,
+    "load": 393,
+    "load_chronic": 291,
+    "acwr": 1.3,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 2,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
-    "monthly_aerobic_low": 739.10187,
+    "monthly_aerobic_low": 761.035,
     "monthly_aerobic_high": 237.51785,
-    "monthly_anaerobic": 159.26033,
+    "monthly_anaerobic": 175.49748,
     "vo2max": 48.2
   },
   "vo2max": {
     "value": 48.2
   },
   "respiration": {
-    "avg": 12.0,
+    "avg": 13.0,
     "highest": 23.0,
-    "lowest": 8.0
+    "lowest": 7.0
   },
   "race_predictions": {
     "five_k": 1471,
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 114257,
-    "daily_avg": 14282
+    "weekly_total": 125209,
+    "daily_avg": 15651
   },
   "intensity": {
-    "moderate": 21,
-    "vigorous": 76,
+    "moderate": 42,
+    "vigorous": 141,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-07-19",
-        "value": 29
+        "value": 30
       }
     ]
   },
@@ -685,6 +685,14 @@
       "item_type": "workout"
     },
     {
+      "date": "2026-07-19",
+      "title": "Southwark - Bike \u00b7 easy spin \u00b7 60 min",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
+    {
       "date": "2026-09-19",
       "title": "Tough Mudder 15K",
       "sport": null,
@@ -694,5 +702,5 @@
     }
   ],
   "fetched_at": "2026-07-19",
-  "fetched_time": "16:50"
+  "fetched_time": "17:48"
 }
