@@ -5,6 +5,34 @@
   },
   "activities": [
     {
+      "name": "Southwark - Tempo intervals \u00b7 5 \u00d7 3 min",
+      "type": "running",
+      "date": "2026-07-21",
+      "distance_m": 6793.4599609375,
+      "duration_s": 2560.159912109375,
+      "avg_hr": 165.0,
+      "max_hr": 193.0,
+      "calories": 494.0,
+      "elevation_m": 13.0,
+      "avg_speed": 2.6540000438690186,
+      "aerobic_te": 3.799999952316284,
+      "vo2max": 48.0
+    },
+    {
+      "name": "Lower + Run-Proof",
+      "type": "strength_training",
+      "date": "2026-07-21",
+      "distance_m": 0.0,
+      "duration_s": 2345.1220703125,
+      "avg_hr": 122.0,
+      "max_hr": 171.0,
+      "calories": 269.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 2.0,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - Bike \u00b7 easy spin \u00b7 60 min",
       "type": "cycling",
       "date": "2026-07-19",
@@ -255,34 +283,6 @@
       "avg_speed": 0.0,
       "aerobic_te": 2.0,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - Easy 30 \u00b7 Z2",
-      "type": "running",
-      "date": "2026-06-23",
-      "distance_m": 4522.419921875,
-      "duration_s": 1806.2640380859375,
-      "avg_hr": 155.0,
-      "max_hr": 170.0,
-      "calories": 343.0,
-      "elevation_m": 27.0,
-      "avg_speed": 2.5039999485015865,
-      "aerobic_te": 3.0999999046325684,
-      "vo2max": 48.0
-    },
-    {
-      "name": "Wandsworth Cycling",
-      "type": "cycling",
-      "date": "2026-06-21",
-      "distance_m": 76471.6015625,
-      "duration_s": 13779.287109375,
-      "avg_hr": 153.0,
-      "max_hr": 190.0,
-      "calories": 2162.0,
-      "elevation_m": 871.0,
-      "avg_speed": 5.550000190734863,
-      "aerobic_te": 5.0,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 60,
-    "drained": 2,
-    "end_val": "2026-07-21T07:47:00.0"
+    "drained": 15,
+    "end_val": "2026-07-21T11:38:00.0"
   },
   "heart_rate": {
     "resting": 44,
-    "max": 73,
+    "max": 154,
     "min": 42,
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 12,
-    "max": 68,
+    "avg": 15,
+    "max": 75,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,39 +328,39 @@
     "lowest": 80
   },
   "training_readiness": {
-    "score": 90,
-    "level": "HIGH",
+    "score": 46,
+    "level": "LOW",
     "feedback": ""
   },
   "training_status": {
-    "status": "PRODUCTIVE_3",
-    "load": 299,
-    "load_chronic": 264,
-    "acwr": 1.1,
-    "acwr_status": "OPTIMAL",
+    "status": "PRODUCTIVE_9",
+    "load": 589,
+    "load_chronic": 316,
+    "acwr": 1.8,
+    "acwr_status": "HIGH",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
-    "monthly_aerobic_low": 664.73804,
-    "monthly_aerobic_high": 237.51785,
-    "monthly_anaerobic": 175.49748,
+    "monthly_aerobic_low": 688.28625,
+    "monthly_aerobic_high": 367.00455,
+    "monthly_anaerobic": 250.8163,
     "vo2max": 48.2
   },
   "vo2max": {
     "value": 48.2
   },
   "respiration": {
-    "avg": 11.0,
-    "highest": 21.0,
-    "lowest": 8.0
+    "avg": 13.0,
+    "highest": 22.0,
+    "lowest": 7.0
   },
   "race_predictions": {
-    "five_k": 1475,
-    "ten_k": 3145,
-    "half_marathon": 7125,
-    "marathon": 15933
+    "five_k": 1459,
+    "ten_k": 3104,
+    "half_marathon": 7086,
+    "marathon": 15723
   },
   "endurance_score": {
-    "overall": 5677,
+    "overall": 5735,
     "level": 2
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 93911,
-    "daily_avg": 11738
+    "weekly_total": 96017,
+    "daily_avg": 12002
   },
   "intensity": {
-    "moderate": 0,
-    "vigorous": 0,
+    "moderate": 16,
+    "vigorous": 14,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-07-21",
-        "value": 12
+        "value": 15
       }
     ]
   },
@@ -683,6 +683,14 @@
       "workout_id": 1638860443,
       "is_race": null,
       "item_type": "workout"
+    },
+    {
+      "date": "2026-07-21",
+      "title": "Southwark - Tempo intervals \u00b7 5 \u00d7 3 min",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
     },
     {
       "date": "2026-07-21",
@@ -1022,5 +1030,5 @@
     }
   ],
   "fetched_at": "2026-07-21",
-  "fetched_time": "11:59"
+  "fetched_time": "13:24"
 }
