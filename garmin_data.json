@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Pool Swim",
+      "type": "lap_swimming",
+      "date": "2026-07-22",
+      "distance_m": 1300.0,
+      "duration_s": 2110.43798828125,
+      "avg_hr": 151.0,
+      "max_hr": 173.0,
+      "calories": 180.0,
+      "elevation_m": 0,
+      "avg_speed": 0.8190000057220459,
+      "aerobic_te": 3.0999999046325684,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - Tempo intervals \u00b7 5 \u00d7 3 min",
       "type": "running",
       "date": "2026-07-21",
@@ -269,20 +283,6 @@
       "avg_speed": 2.5469999313354488,
       "aerobic_te": 3.0999999046325684,
       "vo2max": 48.0
-    },
-    {
-      "name": "Strength A \u00b7 Full Body",
-      "type": "strength_training",
-      "date": "2026-06-23",
-      "distance_m": 0.0,
-      "duration_s": 2407.81103515625,
-      "avg_hr": 129.0,
-      "max_hr": 162.0,
-      "calories": 295.0,
-      "elevation_m": 0,
-      "avg_speed": 0.0,
-      "aerobic_te": 2.0,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -305,13 +305,13 @@
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": 63,
-    "drained": 20,
-    "end_val": "2026-07-22T10:42:00.0"
+    "charged": 64,
+    "drained": 35,
+    "end_val": "2026-07-22T12:14:00.0"
   },
   "heart_rate": {
     "resting": 44,
-    "max": 85,
+    "max": 163,
     "min": 42,
     "last_7d_avg_resting": 45
   },
@@ -328,21 +328,21 @@
     "lowest": 87
   },
   "training_readiness": {
-    "score": 82,
-    "level": "HIGH",
+    "score": 68,
+    "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_9",
-    "load": 515,
-    "load_chronic": 305,
-    "acwr": 1.6,
+    "load": 646,
+    "load_chronic": 329,
+    "acwr": 1.9,
     "acwr_status": "HIGH",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_HIGH_SHORTAGE",
-    "monthly_aerobic_low": 688.28625,
+    "monthly_aerobic_low": 767.4624,
     "monthly_aerobic_high": 367.00455,
-    "monthly_anaerobic": 250.8163,
+    "monthly_anaerobic": 274.54422,
     "vo2max": 48.2
   },
   "vo2max": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 100543,
-    "daily_avg": 12567
+    "weekly_total": 104066,
+    "daily_avg": 13008
   },
   "intensity": {
-    "moderate": 27,
-    "vigorous": 52,
+    "moderate": 44,
+    "vigorous": 92,
     "goal": 150
   },
   "running_tolerance": {
@@ -613,7 +613,7 @@
       },
       {
         "date": "2026-07-22",
-        "value": 63
+        "value": 64
       }
     ],
     "stress": [
@@ -676,6 +676,14 @@
     ]
   },
   "scheduled_workouts": [
+    {
+      "date": "2026-07-22",
+      "title": "Pool Swim",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
     {
       "date": "2026-07-23",
       "title": "Easy 40 \u00b7 Z2",
@@ -1342,5 +1350,5 @@
     }
   ],
   "fetched_at": "2026-07-22",
-  "fetched_time": "11:59"
+  "fetched_time": "13:27"
 }
