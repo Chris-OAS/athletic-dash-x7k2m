@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Upper + Swim-Proof",
+      "type": "strength_training",
+      "date": "2026-07-24",
+      "distance_m": 0.0,
+      "duration_s": 2934.62890625,
+      "avg_hr": 107.0,
+      "max_hr": 158.0,
+      "calories": 248.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 1.0,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - Easy 40 \u00b7 Z2",
       "type": "running",
       "date": "2026-07-23",
@@ -269,20 +283,6 @@
       "avg_speed": 2.4619998931884766,
       "aerobic_te": 3.5999999046325684,
       "vo2max": 47.0
-    },
-    {
-      "name": "Upper + Swim-Proof",
-      "type": "strength_training",
-      "date": "2026-06-26",
-      "distance_m": 0.0,
-      "duration_s": 3284.05810546875,
-      "avg_hr": 119.0,
-      "max_hr": 177.0,
-      "calories": 326.0,
-      "elevation_m": 0,
-      "avg_speed": 0.0,
-      "aerobic_te": 1.600000023841858,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 64,
-    "drained": 18,
-    "end_val": "2026-07-24T09:46:00.0"
+    "drained": 28,
+    "end_val": "2026-07-24T11:14:00.0"
   },
   "heart_rate": {
     "resting": 46,
-    "max": 84,
+    "max": 93,
     "min": 42,
     "last_7d_avg_resting": 45
   },
   "stress": {
-    "avg": 16,
-    "max": 76,
+    "avg": 19,
+    "max": 81,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,21 +328,21 @@
     "lowest": 89
   },
   "training_readiness": {
-    "score": 62,
+    "score": 66,
     "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_9",
-    "load": 603,
-    "load_chronic": 340,
-    "acwr": 1.7,
+    "load": 643,
+    "load_chronic": 347,
+    "acwr": 1.8,
     "acwr_status": "HIGH",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_FOCUS",
-    "monthly_aerobic_low": 681.35443,
+    "monthly_aerobic_low": 693.68475,
     "monthly_aerobic_high": 480.65775,
-    "monthly_anaerobic": 259.088,
+    "monthly_anaerobic": 278.35867,
     "vo2max": 48.0
   },
   "vo2max": {
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 87006,
-    "daily_avg": 10875
+    "weekly_total": 88129,
+    "daily_avg": 11016
   },
   "intensity": {
     "moderate": 54,
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-07-24",
-        "value": 16
+        "value": 19
       }
     ]
   },
@@ -1438,5 +1438,5 @@
     }
   ],
   "fetched_at": "2026-07-24",
-  "fetched_time": "11:55"
+  "fetched_time": "13:15"
 }
