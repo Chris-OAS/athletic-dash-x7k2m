@@ -306,8 +306,8 @@
   },
   "body_battery": {
     "charged": 74,
-    "drained": 42,
-    "end_val": "2026-07-25T11:56:00.0"
+    "drained": 47,
+    "end_val": "2026-07-25T12:12:00.0"
   },
   "heart_rate": {
     "resting": 45,
@@ -349,7 +349,7 @@
     "value": 47.8
   },
   "respiration": {
-    "avg": 25.0,
+    "avg": 23.0,
     "highest": 37.0,
     "lowest": 6.0
   },
@@ -1454,5 +1454,5 @@
     }
   ],
   "fetched_at": "2026-07-25",
-  "fetched_time": "12:58"
+  "fetched_time": "14:25"
 }
