@@ -1294,6 +1294,14 @@
     },
     {
       "date": "2026-10-20",
+      "title": "Lower + Run-Proof",
+      "sport": "strength_training",
+      "workout_id": 1642858032,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-10-20",
       "title": "Tempo intervals \u00b7 5 \u00d7 3 min",
       "sport": "running",
       "workout_id": 1642858006,
@@ -1406,5 +1414,5 @@
     }
   ],
   "fetched_at": "2026-07-26",
-  "fetched_time": "09:11"
+  "fetched_time": "11:37"
 }
