@@ -5,6 +5,34 @@
   },
   "activities": [
     {
+      "name": "Lower + Run-Proof",
+      "type": "strength_training",
+      "date": "2026-07-28",
+      "distance_m": 0.0,
+      "duration_s": 2336.113037109375,
+      "avg_hr": 120.0,
+      "max_hr": 159.0,
+      "calories": 246.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 1.600000023841858,
+      "vo2max": 0
+    },
+    {
+      "name": "Southwark - Threshold \u00b7 4 \u00d7 5 min",
+      "type": "track_running",
+      "date": "2026-07-28",
+      "distance_m": 8350.0,
+      "duration_s": 2951.883056640625,
+      "avg_hr": 166.0,
+      "max_hr": 194.0,
+      "calories": 583.0,
+      "elevation_m": 1.0,
+      "avg_speed": 2.8289999961853027,
+      "aerobic_te": 4.099999904632568,
+      "vo2max": 48.0
+    },
+    {
       "name": "Southwark - Bike \u00b7 easy spin \u00b7 60 min",
       "type": "cycling",
       "date": "2026-07-26",
@@ -255,34 +283,6 @@
       "avg_speed": 2.5269999504089355,
       "aerobic_te": 3.200000047683716,
       "vo2max": 0
-    },
-    {
-      "name": "Pool Swim",
-      "type": "lap_swimming",
-      "date": "2026-06-29",
-      "distance_m": 1125.0,
-      "duration_s": 2146.9208984375,
-      "avg_hr": 125.0,
-      "max_hr": 157.0,
-      "calories": 266.0,
-      "elevation_m": 0,
-      "avg_speed": 0.8650000095367433,
-      "aerobic_te": 2.0,
-      "vo2max": 0
-    },
-    {
-      "name": "City of Westminster Cycling",
-      "type": "cycling",
-      "date": "2026-06-28",
-      "distance_m": 8651.8095703125,
-      "duration_s": 1808.6639404296875,
-      "avg_hr": 102.0,
-      "max_hr": 127.0,
-      "calories": 133.0,
-      "elevation_m": 23.0,
-      "avg_speed": 4.783999919891357,
-      "aerobic_te": 0.30000001192092896,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,12 +306,12 @@
   },
   "body_battery": {
     "charged": 45,
-    "drained": 22,
-    "end_val": "2026-07-28T10:03:00.0"
+    "drained": 48,
+    "end_val": "2026-07-28T12:25:00.0"
   },
   "heart_rate": {
     "resting": 43,
-    "max": 142,
+    "max": 190,
     "min": 41,
     "last_7d_avg_resting": 45
   },
@@ -328,39 +328,39 @@
     "lowest": 81
   },
   "training_readiness": {
-    "score": 96,
-    "level": "PRIME",
+    "score": 50,
+    "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
-    "status": "PRODUCTIVE_3",
-    "load": 419,
-    "load_chronic": 376,
-    "acwr": 1.1,
-    "acwr_status": "OPTIMAL",
+    "status": "PRODUCTIVE_9",
+    "load": 789,
+    "load_chronic": 443,
+    "acwr": 1.7,
+    "acwr_status": "HIGH",
     "fitness_trend": 3,
-    "load_balance": "AEROBIC_HIGH_SHORTAGE",
-    "monthly_aerobic_low": 754.4601,
-    "monthly_aerobic_high": 370.69843,
-    "monthly_anaerobic": 255.91476,
-    "vo2max": 47.8
+    "load_balance": "AEROBIC_LOW_FOCUS",
+    "monthly_aerobic_low": 773.48706,
+    "monthly_aerobic_high": 538.4917,
+    "monthly_anaerobic": 352.74924,
+    "vo2max": 48.0
   },
   "vo2max": {
-    "value": 47.8
+    "value": 48.0
   },
   "respiration": {
-    "avg": 13.0,
-    "highest": 20.0,
+    "avg": 18.0,
+    "highest": 41.0,
     "lowest": 6.0
   },
   "race_predictions": {
-    "five_k": 1472,
-    "ten_k": 3121,
-    "half_marathon": 7105,
-    "marathon": 15855
+    "five_k": 1459,
+    "ten_k": 3079,
+    "half_marathon": 7014,
+    "marathon": 15625
   },
   "endurance_score": {
-    "overall": 5698,
+    "overall": 5763,
     "level": 2
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 77467,
-    "daily_avg": 9683
+    "weekly_total": 87262,
+    "daily_avg": 10907
   },
   "intensity": {
-    "moderate": 0,
-    "vigorous": 3,
+    "moderate": 29,
+    "vigorous": 62,
     "goal": 150
   },
   "running_tolerance": {
@@ -683,6 +683,14 @@
       "workout_id": 1642858032,
       "is_race": null,
       "item_type": "workout"
+    },
+    {
+      "date": "2026-07-28",
+      "title": "Southwark - Threshold \u00b7 4 \u00d7 5 min",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
     },
     {
       "date": "2026-07-28",
@@ -1422,5 +1430,5 @@
     }
   ],
   "fetched_at": "2026-07-28",
-  "fetched_time": "11:26"
+  "fetched_time": "13:49"
 }
