@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Technique & easy",
+      "type": "lap_swimming",
+      "date": "2026-07-29",
+      "distance_m": 1375.0,
+      "duration_s": 1949.89697265625,
+      "avg_hr": 151.0,
+      "max_hr": 169.0,
+      "calories": 349.0,
+      "elevation_m": 0,
+      "avg_speed": 0.800000011920929,
+      "aerobic_te": 2.9000000953674316,
+      "vo2max": 0
+    },
+    {
       "name": "Lower + Run-Proof",
       "type": "strength_training",
       "date": "2026-07-28",
@@ -269,20 +283,6 @@
       "avg_speed": 0.0,
       "aerobic_te": 1.2000000476837158,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - Tempo intervals \u00b7 5 \u00d7 3 min",
-      "type": "obstacle_run",
-      "date": "2026-06-30",
-      "distance_m": 6458.7998046875,
-      "duration_s": 2555.9599609375,
-      "avg_hr": 150.0,
-      "max_hr": 173.0,
-      "calories": 456.0,
-      "elevation_m": 18.0,
-      "avg_speed": 2.5269999504089355,
-      "aerobic_te": 3.200000047683716,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -334,15 +334,15 @@
   },
   "training_status": {
     "status": "PRODUCTIVE_9",
-    "load": 661,
-    "load_chronic": 439,
-    "acwr": 1.5,
+    "load": 773,
+    "load_chronic": 459,
+    "acwr": 1.6,
     "acwr_status": "HIGH",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_FOCUS",
-    "monthly_aerobic_low": 773.48706,
+    "monthly_aerobic_low": 844.92456,
     "monthly_aerobic_high": 538.4917,
-    "monthly_anaerobic": 352.74924,
+    "monthly_anaerobic": 369.2182,
     "vo2max": 48.0
   },
   "vo2max": {
@@ -1390,5 +1390,5 @@
     }
   ],
   "fetched_at": "2026-07-29",
-  "fetched_time": "12:15"
+  "fetched_time": "14:50"
 }
