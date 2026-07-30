@@ -328,8 +328,8 @@
     "lowest": null
   },
   "training_readiness": {
-    "score": 0,
-    "level": "",
+    "score": 67,
+    "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
@@ -354,10 +354,10 @@
     "lowest": null
   },
   "race_predictions": {
-    "five_k": 1459,
+    "five_k": 1460,
     "ten_k": 3079,
-    "half_marathon": 7014,
-    "marathon": 15626
+    "half_marathon": 7015,
+    "marathon": 15627
   },
   "endurance_score": {
     "overall": 0,
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 76818,
-    "daily_avg": 10974
+    "weekly_total": 76891,
+    "daily_avg": 10984
   },
   "intensity": {
     "moderate": 39,
@@ -380,8 +380,8 @@
     "value": 0
   },
   "morning_readiness": {
-    "score": 0,
-    "level": ""
+    "score": 67,
+    "level": "MODERATE"
   },
   "history": {
     "sleep": [
@@ -609,7 +609,7 @@
       },
       {
         "date": "2026-07-29",
-        "value": 81
+        "value": 83
       },
       {
         "date": "2026-07-30",
@@ -1382,5 +1382,5 @@
     }
   ],
   "fetched_at": "2026-07-30",
-  "fetched_time": "00:55"
+  "fetched_time": "02:45"
 }
