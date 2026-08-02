@@ -305,27 +305,27 @@
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": null,
-    "drained": null,
-    "end_val": null
+    "charged": 17,
+    "drained": 1,
+    "end_val": "2026-08-02T02:14:00.0"
   },
   "heart_rate": {
-    "resting": null,
-    "max": null,
-    "min": null,
-    "last_7d_avg_resting": null
+    "resting": 48,
+    "max": 86,
+    "min": 47,
+    "last_7d_avg_resting": 45
   },
   "stress": {
-    "avg": null,
-    "max": null,
+    "avg": 18,
+    "max": 75,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": null,
-    "lowest": null
+    "avg": 91.0,
+    "lowest": 80
   },
   "training_readiness": {
     "score": 12,
@@ -349,9 +349,9 @@
     "value": 0
   },
   "respiration": {
-    "avg": null,
-    "highest": null,
-    "lowest": null
+    "avg": 13.0,
+    "highest": 19.0,
+    "lowest": 8.0
   },
   "race_predictions": {
     "five_k": 1453,
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 78575,
-    "daily_avg": 11225
+    "weekly_total": 79025,
+    "daily_avg": 9878
   },
   "intensity": {
     "moderate": 66,
@@ -555,7 +555,7 @@
       },
       {
         "date": "2026-08-02",
-        "value": null
+        "value": 48
       }
     ],
     "bb": [
@@ -613,7 +613,7 @@
       },
       {
         "date": "2026-08-02",
-        "value": null
+        "value": 17
       }
     ],
     "stress": [
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-08-02",
-        "value": null
+        "value": 18
       }
     ]
   },
@@ -1382,5 +1382,5 @@
     }
   ],
   "fetched_at": "2026-08-02",
-  "fetched_time": "03:00"
+  "fetched_time": "06:32"
 }
