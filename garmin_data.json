@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Tower Hamlets Cycling",
+      "type": "cycling",
+      "date": "2026-08-02",
+      "distance_m": 5183.02978515625,
+      "duration_s": 944.6119995117188,
+      "avg_hr": 114.0,
+      "max_hr": 151.0,
+      "calories": 100.0,
+      "elevation_m": 16.0,
+      "avg_speed": 5.486999988555908,
+      "aerobic_te": 0.6000000238418579,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - Long easy \u00b7 90 min",
       "type": "running",
       "date": "2026-08-01",
@@ -269,20 +283,6 @@
       "avg_speed": 5.129000186920166,
       "aerobic_te": 0.800000011920929,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - Long easy \u00b7 75 min",
-      "type": "running",
-      "date": "2026-07-04",
-      "distance_m": 12128.169921875,
-      "duration_s": 4505.48095703125,
-      "avg_hr": 162.0,
-      "max_hr": 176.0,
-      "calories": 887.0,
-      "elevation_m": 42.0,
-      "avg_speed": 2.691999912261963,
-      "aerobic_te": 4.0,
-      "vo2max": 47.0
     }
   ],
   "sleep": {
@@ -306,41 +306,41 @@
   },
   "body_battery": {
     "charged": 67,
-    "drained": 31,
-    "end_val": "2026-08-02T14:14:00.0"
+    "drained": 60,
+    "end_val": "2026-08-02T21:06:00.0"
   },
   "heart_rate": {
     "resting": 45,
-    "max": 98,
+    "max": 126,
     "min": 44,
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 19,
-    "max": 85,
+    "avg": 24,
+    "max": 96,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": 94.0,
+    "avg": 95.0,
     "lowest": 80
   },
   "training_readiness": {
-    "score": 25,
+    "score": 34,
     "level": "LOW",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_6",
-    "load": 653,
-    "load_chronic": 515,
+    "load": 670,
+    "load_chronic": 519,
     "acwr": 1.2,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 2,
     "load_balance": "BALANCED",
-    "monthly_aerobic_low": 639.17896,
+    "monthly_aerobic_low": 646.9675,
     "monthly_aerobic_high": 745.945,
     "monthly_anaerobic": 368.54462,
     "vo2max": 48.3
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 82514,
-    "daily_avg": 10314
+    "weekly_total": 85172,
+    "daily_avg": 10646
   },
   "intensity": {
-    "moderate": 66,
-    "vigorous": 230,
+    "moderate": 77,
+    "vigorous": 233,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-08-02",
-        "value": 19
+        "value": 24
       }
     ]
   },
@@ -683,6 +683,14 @@
       "workout_id": 1650497657,
       "is_race": null,
       "item_type": "workout"
+    },
+    {
+      "date": "2026-08-02",
+      "title": "Tower Hamlets Cycling",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
     },
     {
       "date": "2026-08-04",
@@ -1382,5 +1390,5 @@
     }
   ],
   "fetched_at": "2026-08-02",
-  "fetched_time": "21:10"
+  "fetched_time": "22:46"
 }
