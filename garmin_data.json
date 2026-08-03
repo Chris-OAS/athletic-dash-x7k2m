@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Southwark Cycling",
+      "type": "cycling",
+      "date": "2026-08-03",
+      "distance_m": 9625.099609375,
+      "duration_s": 2014.8330078125,
+      "avg_hr": 127.0,
+      "max_hr": 157.0,
+      "calories": 263.0,
+      "elevation_m": 55.0,
+      "avg_speed": 4.7769999504089355,
+      "aerobic_te": 1.399999976158142,
+      "vo2max": 0
+    },
+    {
       "name": "Tower Hamlets Cycling",
       "type": "cycling",
       "date": "2026-08-02",
@@ -269,20 +283,6 @@
       "avg_speed": 0.8790000081062317,
       "aerobic_te": 0.699999988079071,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark Cycling",
-      "type": "cycling",
-      "date": "2026-07-06",
-      "distance_m": 10718.26953125,
-      "duration_s": 2089.85498046875,
-      "avg_hr": 112.0,
-      "max_hr": 146.0,
-      "calories": 191.0,
-      "elevation_m": 45.0,
-      "avg_speed": 5.129000186920166,
-      "aerobic_te": 0.800000011920929,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,37 +306,37 @@
   },
   "body_battery": {
     "charged": 71,
-    "drained": 1,
-    "end_val": "2026-08-03T07:56:00.0"
+    "drained": 37,
+    "end_val": "2026-08-03T17:06:00.0"
   },
   "heart_rate": {
     "resting": 43,
-    "max": 84,
+    "max": 143,
     "min": 41,
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 11,
-    "max": 80,
+    "avg": 14,
+    "max": 87,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": 94.0,
+    "avg": 95.0,
     "lowest": 86
   },
   "training_readiness": {
-    "score": 60,
+    "score": 69,
     "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
     "status": "MAINTAINING_3",
-    "load": 550,
-    "load_chronic": 511,
-    "acwr": 1.0,
+    "load": 577,
+    "load_chronic": 516,
+    "acwr": 1.1,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 2,
     "load_balance": "BALANCED",
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 81713,
-    "daily_avg": 10214
+    "weekly_total": 85010,
+    "daily_avg": 10626
   },
   "intensity": {
-    "moderate": 0,
-    "vigorous": 0,
+    "moderate": 15,
+    "vigorous": 16,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,11 +671,19 @@
       },
       {
         "date": "2026-08-03",
-        "value": 11
+        "value": 14
       }
     ]
   },
   "scheduled_workouts": [
+    {
+      "date": "2026-08-03",
+      "title": "Southwark Cycling",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
     {
       "date": "2026-08-04",
       "title": "Lower + Run-Proof",
@@ -1374,5 +1382,5 @@
     }
   ],
   "fetched_at": "2026-08-03",
-  "fetched_time": "17:15"
+  "fetched_time": "19:43"
 }
