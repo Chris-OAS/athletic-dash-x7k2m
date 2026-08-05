@@ -5,6 +5,48 @@
   },
   "activities": [
     {
+      "name": "Lower + Run-Proof",
+      "type": "strength_training",
+      "date": "2026-08-05",
+      "distance_m": 0.0,
+      "duration_s": 2268.365966796875,
+      "avg_hr": 118.0,
+      "max_hr": 158.0,
+      "calories": 239.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 1.2000000476837158,
+      "vo2max": 0
+    },
+    {
+      "name": "Strength",
+      "type": "strength_training",
+      "date": "2026-08-05",
+      "distance_m": 0.0,
+      "duration_s": 46.250999450683594,
+      "avg_hr": 102.0,
+      "max_hr": 112.0,
+      "calories": 4.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 0.0,
+      "vo2max": 0
+    },
+    {
+      "name": "Technique & easy",
+      "type": "lap_swimming",
+      "date": "2026-08-05",
+      "distance_m": 1350.0,
+      "duration_s": 1874.073974609375,
+      "avg_hr": 156.0,
+      "max_hr": 177.0,
+      "calories": 372.0,
+      "elevation_m": 0,
+      "avg_speed": 0.8320000171661377,
+      "aerobic_te": 3.200000047683716,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - Threshold \u00b7 4 \u00d7 5 min",
       "type": "running",
       "date": "2026-08-04",
@@ -241,48 +283,6 @@
       "avg_speed": 4.550000190734863,
       "aerobic_te": 2.0,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - Max-HR test",
-      "type": "running",
-      "date": "2026-07-18",
-      "distance_m": 6818.6201171875,
-      "duration_s": 2641.989990234375,
-      "avg_hr": 160.0,
-      "max_hr": 204.0,
-      "calories": 488.0,
-      "elevation_m": 24.0,
-      "avg_speed": 2.5810000896453857,
-      "aerobic_te": 3.700000047683716,
-      "vo2max": 48.0
-    },
-    {
-      "name": "Southwark - Easy 30 \u00b7 Z2",
-      "type": "running",
-      "date": "2026-07-16",
-      "distance_m": 4941.240234375,
-      "duration_s": 1803.9200439453125,
-      "avg_hr": 155.0,
-      "max_hr": 171.0,
-      "calories": 357.0,
-      "elevation_m": 11.0,
-      "avg_speed": 2.739000082015991,
-      "aerobic_te": 3.4000000953674316,
-      "vo2max": 47.0
-    },
-    {
-      "name": "Calheta (R.A.M.) Hiking",
-      "type": "hiking",
-      "date": "2026-07-10",
-      "distance_m": 22202.529296875,
-      "duration_s": 11993.9326171875,
-      "avg_hr": 101.0,
-      "max_hr": 160.0,
-      "calories": 900.0,
-      "elevation_m": 669.0,
-      "avg_speed": 1.8509999513626099,
-      "aerobic_te": 2.0999999046325684,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 81,
-    "drained": 0,
-    "end_val": "2026-08-05T08:08:00.0"
+    "drained": 24,
+    "end_val": "2026-08-05T11:55:00.0"
   },
   "heart_rate": {
     "resting": 44,
-    "max": 66,
+    "max": 166,
     "min": 41,
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 11,
-    "max": 38,
+    "avg": 14,
+    "max": 83,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,28 +328,28 @@
     "lowest": 80
   },
   "training_readiness": {
-    "score": 96,
-    "level": "PRIME",
+    "score": 83,
+    "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_3",
-    "load": 567,
-    "load_chronic": 540,
-    "acwr": 1.0,
+    "load": 793,
+    "load_chronic": 581,
+    "acwr": 1.3,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 3,
-    "load_balance": "AEROBIC_HIGH_FOCUS",
-    "monthly_aerobic_low": 646.87646,
+    "load_balance": "ABOVE_TARGETS",
+    "monthly_aerobic_low": 759.2551,
     "monthly_aerobic_high": 899.03503,
-    "monthly_anaerobic": 394.6931,
+    "monthly_anaerobic": 459.12396,
     "vo2max": 48.7
   },
   "vo2max": {
     "value": 48.7
   },
   "respiration": {
-    "avg": 13.0,
+    "avg": 12.0,
     "highest": 18.0,
     "lowest": 6.0
   },
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 79694,
-    "daily_avg": 9961
+    "weekly_total": 82614,
+    "daily_avg": 10326
   },
   "intensity": {
-    "moderate": 23,
-    "vigorous": 56,
+    "moderate": 29,
+    "vigorous": 100,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,11 +671,27 @@
       },
       {
         "date": "2026-08-05",
-        "value": 11
+        "value": 14
       }
     ]
   },
   "scheduled_workouts": [
+    {
+      "date": "2026-08-05",
+      "title": "Lower + Run-Proof",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
+    {
+      "date": "2026-08-05",
+      "title": "Strength",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
+    },
     {
       "date": "2026-08-05",
       "title": "Technique & easy",
@@ -1422,5 +1438,5 @@
     }
   ],
   "fetched_at": "2026-08-05",
-  "fetched_time": "12:12"
+  "fetched_time": "14:47"
 }
