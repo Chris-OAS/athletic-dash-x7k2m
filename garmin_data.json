@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Southwark - Easy 50 \u00b7 Z2",
+      "type": "running",
+      "date": "2026-08-06",
+      "distance_m": 8208.580078125,
+      "duration_s": 3005.794921875,
+      "avg_hr": 149.0,
+      "max_hr": 169.0,
+      "calories": 591.0,
+      "elevation_m": 30.0,
+      "avg_speed": 2.7309999465942383,
+      "aerobic_te": 3.4000000953674316,
+      "vo2max": 49.0
+    },
+    {
       "name": "Lower + Run-Proof",
       "type": "strength_training",
       "date": "2026-08-05",
@@ -269,20 +283,6 @@
       "avg_speed": 0.0,
       "aerobic_te": 2.0,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - Bike \u00b7 easy spin \u00b7 60 min",
-      "type": "cycling",
-      "date": "2026-07-19",
-      "distance_m": 13553.3203125,
-      "duration_s": 2978.64404296875,
-      "avg_hr": 124.0,
-      "max_hr": 164.0,
-      "calories": 367.0,
-      "elevation_m": 69.0,
-      "avg_speed": 4.550000190734863,
-      "aerobic_te": 2.0,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 51,
-    "drained": 3,
-    "end_val": "2026-08-06T07:39:00.0"
+    "drained": 33,
+    "end_val": "2026-08-06T11:37:00.0"
   },
   "heart_rate": {
     "resting": 44,
-    "max": 79,
+    "max": 163,
     "min": 43,
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 11,
-    "max": 72,
+    "avg": 13,
+    "max": 86,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,25 +328,25 @@
     "lowest": 84
   },
   "training_readiness": {
-    "score": 100,
-    "level": "PRIME",
+    "score": 87,
+    "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_3",
-    "load": 653,
-    "load_chronic": 574,
-    "acwr": 1.1,
+    "load": 794,
+    "load_chronic": 599,
+    "acwr": 1.3,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 3,
     "load_balance": "ABOVE_TARGETS",
-    "monthly_aerobic_low": 759.2551,
+    "monthly_aerobic_low": 869.5581,
     "monthly_aerobic_high": 899.03503,
     "monthly_anaerobic": 459.12396,
-    "vo2max": 48.7
+    "vo2max": 49.0
   },
   "vo2max": {
-    "value": 48.7
+    "value": 49.0
   },
   "respiration": {
     "avg": 13.0,
@@ -354,13 +354,13 @@
     "lowest": 6.0
   },
   "race_predictions": {
-    "five_k": 1449,
-    "ten_k": 3056,
-    "half_marathon": 6921,
-    "marathon": 15442
+    "five_k": 1445,
+    "ten_k": 3050,
+    "half_marathon": 6901,
+    "marathon": 15382
   },
   "endurance_score": {
-    "overall": 5817,
+    "overall": 5835,
     "level": 3
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 82429,
-    "daily_avg": 10303
+    "weekly_total": 92141,
+    "daily_avg": 11517
   },
   "intensity": {
-    "moderate": 52,
-    "vigorous": 107,
+    "moderate": 54,
+    "vigorous": 162,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-08-06",
-        "value": 11
+        "value": 13
       }
     ]
   },
@@ -683,6 +683,14 @@
       "workout_id": 1643167631,
       "is_race": null,
       "item_type": "workout"
+    },
+    {
+      "date": "2026-08-06",
+      "title": "Southwark - Easy 50 \u00b7 Z2",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
     },
     {
       "date": "2026-08-07",
@@ -1462,5 +1470,5 @@
     }
   ],
   "fetched_at": "2026-08-06",
-  "fetched_time": "11:30"
+  "fetched_time": "13:51"
 }
