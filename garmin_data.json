@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Upper + Swim-Proof",
+      "type": "strength_training",
+      "date": "2026-08-07",
+      "distance_m": 0.0,
+      "duration_s": 2392.73095703125,
+      "avg_hr": 101.0,
+      "max_hr": 156.0,
+      "calories": 189.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 0.5,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - Easy 50 \u00b7 Z2",
       "type": "running",
       "date": "2026-08-06",
@@ -269,20 +283,6 @@
       "avg_speed": 2.6540000438690186,
       "aerobic_te": 3.799999952316284,
       "vo2max": 48.0
-    },
-    {
-      "name": "Lower + Run-Proof",
-      "type": "strength_training",
-      "date": "2026-07-21",
-      "distance_m": 0.0,
-      "duration_s": 2345.1220703125,
-      "avg_hr": 122.0,
-      "max_hr": 171.0,
-      "calories": 269.0,
-      "elevation_m": 0,
-      "avg_speed": 0.0,
-      "aerobic_te": 2.0,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,8 +306,8 @@
   },
   "body_battery": {
     "charged": 48,
-    "drained": 9,
-    "end_val": "2026-08-07T09:40:00.0"
+    "drained": 17,
+    "end_val": "2026-08-07T10:55:00.0"
   },
   "heart_rate": {
     "resting": 48,
@@ -328,19 +328,19 @@
     "lowest": 92
   },
   "training_readiness": {
-    "score": 75,
-    "level": "HIGH",
+    "score": 74,
+    "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_3",
-    "load": 641,
-    "load_chronic": 594,
-    "acwr": 1.0,
+    "load": 662,
+    "load_chronic": 598,
+    "acwr": 1.1,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 3,
     "load_balance": "ABOVE_TARGETS",
-    "monthly_aerobic_low": 841.3734,
+    "monthly_aerobic_low": 848.15295,
     "monthly_aerobic_high": 899.03503,
     "monthly_anaerobic": 459.12396,
     "vo2max": 49.0
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 92758,
-    "daily_avg": 11594
+    "weekly_total": 93584,
+    "daily_avg": 11698
   },
   "intensity": {
     "moderate": 56,
@@ -1454,5 +1454,5 @@
     }
   ],
   "fetched_at": "2026-08-07",
-  "fetched_time": "11:43"
+  "fetched_time": "12:39"
 }
