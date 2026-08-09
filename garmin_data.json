@@ -306,25 +306,25 @@
   },
   "body_battery": {
     "charged": 67,
-    "drained": 1,
-    "end_val": "2026-08-09T07:45:00.0"
+    "drained": 33,
+    "end_val": "2026-08-09T12:50:00.0"
   },
   "heart_rate": {
     "resting": 43,
-    "max": 67,
+    "max": 104,
     "min": 41,
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 10,
-    "max": 53,
+    "avg": 18,
+    "max": 96,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": 95.0,
+    "avg": 94.0,
     "lowest": 86
   },
   "training_readiness": {
@@ -349,7 +349,7 @@
     "value": 49.1
   },
   "respiration": {
-    "avg": 14.0,
+    "avg": 13.0,
     "highest": 21.0,
     "lowest": 7.0
   },
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 88242,
-    "daily_avg": 11030
+    "weekly_total": 96463,
+    "daily_avg": 12057
   },
   "intensity": {
     "moderate": 87,
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-08-09",
-        "value": 10
+        "value": 18
       }
     ]
   },
@@ -901,6 +901,14 @@
       "item_type": "workout"
     },
     {
+      "date": "2026-09-05",
+      "title": "Long Hilly Trail \u00b7 120 min",
+      "sport": "running",
+      "workout_id": 1658375932,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
       "date": "2026-09-06",
       "title": "Bike \u00b7 long Z2 \u00b7 90 min",
       "sport": "cycling",
@@ -1013,6 +1021,14 @@
       "item_type": "workout"
     },
     {
+      "date": "2026-09-19",
+      "title": "Long Hilly Trail \u00b7 120 min",
+      "sport": "running",
+      "workout_id": 1658375932,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
       "date": "2026-09-20",
       "title": "Bike \u00b7 long Z2 \u00b7 90 min",
       "sport": "cycling",
@@ -1065,6 +1081,14 @@
       "title": "Upper + Swim-Proof",
       "sport": "strength_training",
       "workout_id": 1657312815,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-09-26",
+      "title": "Long Hilly Trail \u00b7 120 min",
+      "sport": "running",
+      "workout_id": 1658375932,
       "is_race": null,
       "item_type": "workout"
     },
@@ -1181,6 +1205,14 @@
       "item_type": "workout"
     },
     {
+      "date": "2026-10-10",
+      "title": "Long Hilly Trail \u00b7 120 min",
+      "sport": "running",
+      "workout_id": 1658375932,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
       "date": "2026-10-11",
       "title": "Bike \u00b7 long Z2 \u00b7 90 min",
       "sport": "cycling",
@@ -1225,6 +1257,14 @@
       "title": "Upper + Swim-Proof",
       "sport": "strength_training",
       "workout_id": 1657312815,
+      "is_race": null,
+      "item_type": "workout"
+    },
+    {
+      "date": "2026-10-17",
+      "title": "Long Hilly Trail \u00b7 120 min",
+      "sport": "running",
+      "workout_id": 1658375932,
       "is_race": null,
       "item_type": "workout"
     },
@@ -1301,14 +1341,6 @@
       "item_type": "workout"
     },
     {
-      "date": "2026-10-27",
-      "title": "Lower + Run-Proof",
-      "sport": "strength_training",
-      "workout_id": 1657312102,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
       "date": "2026-10-28",
       "title": "Technique & easy",
       "sport": "swimming",
@@ -1352,15 +1384,7 @@
       "date": "2026-11-03",
       "title": "Easy 30 + 4 strides",
       "sport": "running",
-      "workout_id": 1657312050,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
-      "date": "2026-11-03",
-      "title": "Lower + Run-Proof",
-      "sport": "strength_training",
-      "workout_id": 1657312102,
+      "workout_id": 1658376192,
       "is_race": null,
       "item_type": "workout"
     },
@@ -1398,5 +1422,5 @@
     }
   ],
   "fetched_at": "2026-08-09",
-  "fetched_time": "13:33"
+  "fetched_time": "14:42"
 }
