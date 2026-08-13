@@ -6,7 +6,7 @@
   "activities": [
     {
       "name": "Technique & easy",
-      "type": "lap_swimming",
+      "type": "open_water_swimming",
       "date": "2026-08-13",
       "distance_m": 825.0,
       "duration_s": 1187.5479736328125,
@@ -306,8 +306,8 @@
   },
   "body_battery": {
     "charged": 55,
-    "drained": 57,
-    "end_val": "2026-08-13T20:12:00.0"
+    "drained": 60,
+    "end_val": "2026-08-13T22:04:00.0"
   },
   "heart_rate": {
     "resting": 43,
@@ -316,15 +316,15 @@
     "last_7d_avg_resting": 43
   },
   "stress": {
-    "avg": 18,
-    "max": 84,
+    "avg": 19,
+    "max": 93,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": 96.0,
+    "avg": 95.0,
     "lowest": 86
   },
   "training_readiness": {
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 116830,
-    "daily_avg": 14603
+    "weekly_total": 117664,
+    "daily_avg": 14708
   },
   "intensity": {
     "moderate": 49,
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-08-13",
-        "value": 18
+        "value": 19
       }
     ]
   },
@@ -1374,5 +1374,5 @@
     }
   ],
   "fetched_at": "2026-08-13",
-  "fetched_time": "22:36"
+  "fetched_time": "23:32"
 }
