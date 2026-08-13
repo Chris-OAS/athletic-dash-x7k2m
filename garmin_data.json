@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Technique & easy",
+      "type": "lap_swimming",
+      "date": "2026-08-13",
+      "distance_m": 825.0,
+      "duration_s": 1187.5479736328125,
+      "avg_hr": 140.0,
+      "max_hr": 169.0,
+      "calories": 189.0,
+      "elevation_m": 0,
+      "avg_speed": 0.7110000252723694,
+      "aerobic_te": 2.5,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - Easy 40 \u00b7 Z2",
       "type": "running",
       "date": "2026-08-12",
@@ -269,20 +283,6 @@
       "avg_speed": 4.631999969482422,
       "aerobic_te": 1.7000000476837158,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - Long easy \u00b7 90 min",
-      "type": "running",
-      "date": "2026-07-25",
-      "distance_m": 14569.4404296875,
-      "duration_s": 5403.091796875,
-      "avg_hr": 161.0,
-      "max_hr": 176.0,
-      "calories": 1061.0,
-      "elevation_m": 51.0,
-      "avg_speed": 2.697000026702881,
-      "aerobic_te": 4.300000190734863,
-      "vo2max": 48.0
     }
   ],
   "sleep": {
@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 55,
-    "drained": 0,
-    "end_val": "2026-08-13T07:32:00.0"
+    "drained": 40,
+    "end_val": "2026-08-13T16:12:00.0"
   },
   "heart_rate": {
     "resting": 43,
-    "max": 68,
+    "max": 159,
     "min": 41,
     "last_7d_avg_resting": 43
   },
   "stress": {
-    "avg": 9,
-    "max": 52,
+    "avg": 14,
+    "max": 84,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,19 +328,19 @@
     "lowest": 86
   },
   "training_readiness": {
-    "score": 91,
+    "score": 81,
     "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_3",
-    "load": 496,
-    "load_chronic": 631,
-    "acwr": 0.7,
-    "acwr_status": "LOW",
+    "load": 585,
+    "load_chronic": 647,
+    "acwr": 0.9,
+    "acwr_status": "OPTIMAL",
     "fitness_trend": 3,
     "load_balance": "ABOVE_TARGETS",
-    "monthly_aerobic_low": 940.0013,
+    "monthly_aerobic_low": 997.90533,
     "monthly_aerobic_high": 1138.3813,
     "monthly_anaerobic": 482.1574,
     "vo2max": 49.4
@@ -350,8 +350,8 @@
   },
   "respiration": {
     "avg": 11.0,
-    "highest": 19.0,
-    "lowest": 7.0
+    "highest": 20.0,
+    "lowest": 6.0
   },
   "race_predictions": {
     "five_k": 1425,
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 109623,
-    "daily_avg": 13702
+    "weekly_total": 113987,
+    "daily_avg": 14248
   },
   "intensity": {
-    "moderate": 28,
-    "vigorous": 79,
+    "moderate": 35,
+    "vigorous": 101,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-08-13",
-        "value": 9
+        "value": 14
       }
     ]
   },
@@ -1374,5 +1374,5 @@
     }
   ],
   "fetched_at": "2026-08-13",
-  "fetched_time": "16:51"
+  "fetched_time": "17:47"
 }
