@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Upper + Swim-Proof",
+      "type": "strength_training",
+      "date": "2026-08-14",
+      "distance_m": 0.0,
+      "duration_s": 3155.18896484375,
+      "avg_hr": 117.0,
+      "max_hr": 181.0,
+      "calories": 335.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 1.7000000476837158,
+      "vo2max": 0
+    },
+    {
       "name": "Technique & easy",
       "type": "open_water_swimming",
       "date": "2026-08-13",
@@ -269,20 +283,6 @@
       "avg_speed": 2.8289999961853027,
       "aerobic_te": 4.099999904632568,
       "vo2max": 48.0
-    },
-    {
-      "name": "Southwark - Bike \u00b7 easy spin \u00b7 60 min",
-      "type": "cycling",
-      "date": "2026-07-26",
-      "distance_m": 57885.8515625,
-      "duration_s": 12496.2314453125,
-      "avg_hr": 118.0,
-      "max_hr": 154.0,
-      "calories": 1040.0,
-      "elevation_m": 364.0,
-      "avg_speed": 4.631999969482422,
-      "aerobic_te": 1.7000000476837158,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,12 +306,12 @@
   },
   "body_battery": {
     "charged": 58,
-    "drained": 6,
-    "end_val": "2026-08-14T08:01:00.0"
+    "drained": 9,
+    "end_val": "2026-08-14T08:45:00.0"
   },
   "heart_rate": {
     "resting": 42,
-    "max": 90,
+    "max": 93,
     "min": 41,
     "last_7d_avg_resting": 43
   },
@@ -328,21 +328,21 @@
     "lowest": 82
   },
   "training_readiness": {
-    "score": 90,
-    "level": "HIGH",
+    "score": 70,
+    "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_3",
-    "load": 457,
-    "load_chronic": 633,
-    "acwr": 0.7,
-    "acwr_status": "LOW",
+    "load": 537,
+    "load_chronic": 647,
+    "acwr": 0.8,
+    "acwr_status": "OPTIMAL",
     "fitness_trend": 3,
     "load_balance": "ABOVE_TARGETS",
-    "monthly_aerobic_low": 997.90533,
+    "monthly_aerobic_low": 1019.94403,
     "monthly_aerobic_high": 1138.3813,
-    "monthly_anaerobic": 482.1574,
+    "monthly_anaerobic": 522.7296,
     "vo2max": 49.4
   },
   "vo2max": {
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 98351,
-    "daily_avg": 12293
+    "weekly_total": 99210,
+    "daily_avg": 12401
   },
   "intensity": {
     "moderate": 49,
@@ -1366,5 +1366,5 @@
     }
   ],
   "fetched_at": "2026-08-14",
-  "fetched_time": "10:00"
+  "fetched_time": "11:08"
 }
