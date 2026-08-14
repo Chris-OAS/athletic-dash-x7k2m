@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 97928,
-    "daily_avg": 13989
+    "weekly_total": 97967,
+    "daily_avg": 13995
   },
   "intensity": {
     "moderate": 49,
@@ -609,7 +609,7 @@
       },
       {
         "date": "2026-08-13",
-        "value": 55
+        "value": 58
       },
       {
         "date": "2026-08-14",
@@ -1366,5 +1366,5 @@
     }
   ],
   "fetched_at": "2026-08-14",
-  "fetched_time": "00:32"
+  "fetched_time": "02:14"
 }
