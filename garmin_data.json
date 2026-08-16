@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Lewisham - Bike \u00b7 long Z2 \u00b7 90 min",
+      "type": "cycling",
+      "date": "2026-08-16",
+      "distance_m": 18746.779296875,
+      "duration_s": 3444.833984375,
+      "avg_hr": 131.0,
+      "max_hr": 167.0,
+      "calories": 442.0,
+      "elevation_m": 141.0,
+      "avg_speed": 5.441999912261963,
+      "aerobic_te": 2.200000047683716,
+      "vo2max": 0
+    },
+    {
       "name": "Southwark - Long easy \u00b7 75 min",
       "type": "running",
       "date": "2026-08-15",
@@ -269,20 +283,6 @@
       "avg_speed": 0.800000011920929,
       "aerobic_te": 2.9000000953674316,
       "vo2max": 0
-    },
-    {
-      "name": "Lower + Run-Proof",
-      "type": "strength_training",
-      "date": "2026-07-28",
-      "distance_m": 0.0,
-      "duration_s": 2336.113037109375,
-      "avg_hr": 120.0,
-      "max_hr": 159.0,
-      "calories": 246.0,
-      "elevation_m": 0,
-      "avg_speed": 0.0,
-      "aerobic_te": 1.600000023841858,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -307,11 +307,11 @@
   "body_battery": {
     "charged": 59,
     "drained": 6,
-    "end_val": "2026-08-16T08:25:00.0"
+    "end_val": "2026-08-16T09:33:00.0"
   },
   "heart_rate": {
     "resting": 47,
-    "max": 124,
+    "max": 155,
     "min": 45,
     "last_7d_avg_resting": 43
   },
@@ -328,19 +328,19 @@
     "lowest": 82
   },
   "training_readiness": {
-    "score": 81,
+    "score": 75,
     "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_3",
-    "load": 448,
-    "load_chronic": 633,
+    "load": 499,
+    "load_chronic": 642,
     "acwr": 0.7,
     "acwr_status": "LOW",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_FOCUS",
-    "monthly_aerobic_low": 1096.7487,
+    "monthly_aerobic_low": 1133.6033,
     "monthly_aerobic_high": 1010.82275,
     "monthly_anaerobic": 408.29083,
     "vo2max": 49.4
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 94155,
-    "daily_avg": 11769
+    "weekly_total": 94484,
+    "daily_avg": 11810
   },
   "intensity": {
-    "moderate": 92,
-    "vigorous": 189,
+    "moderate": 115,
+    "vigorous": 214,
     "goal": 150
   },
   "running_tolerance": {
@@ -683,6 +683,14 @@
       "workout_id": 1665578391,
       "is_race": null,
       "item_type": "workout"
+    },
+    {
+      "date": "2026-08-16",
+      "title": "Lewisham - Bike \u00b7 long Z2 \u00b7 90 min",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
     },
     {
       "date": "2026-08-18",
@@ -1350,5 +1358,5 @@
     }
   ],
   "fetched_at": "2026-08-16",
-  "fetched_time": "10:19"
+  "fetched_time": "11:15"
 }
