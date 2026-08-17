@@ -306,8 +306,8 @@
   },
   "body_battery": {
     "charged": 57,
-    "drained": 2,
-    "end_val": "2026-08-17T07:39:00.0"
+    "drained": 4,
+    "end_val": "2026-08-17T08:23:00.0"
   },
   "heart_rate": {
     "resting": 45,
@@ -316,7 +316,7 @@
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 11,
+    "avg": 12,
     "max": 72,
     "rest_duration": 0,
     "low_duration": 0,
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-08-17",
-        "value": 11
+        "value": 12
       }
     ]
   },
@@ -1342,5 +1342,5 @@
     }
   ],
   "fetched_at": "2026-08-17",
-  "fetched_time": "08:44"
+  "fetched_time": "09:33"
 }
