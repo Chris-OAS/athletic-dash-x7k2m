@@ -5,6 +5,34 @@
   },
   "activities": [
     {
+      "name": "Lower + Run-Proof",
+      "type": "strength_training",
+      "date": "2026-08-18",
+      "distance_m": 0.0,
+      "duration_s": 1568.425048828125,
+      "avg_hr": 144.0,
+      "max_hr": 170.0,
+      "calories": 266.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 2.4000000953674316,
+      "vo2max": 0
+    },
+    {
+      "name": "Southwark - Hill reps \u00b7 8 \u00d7 60s",
+      "type": "running",
+      "date": "2026-08-18",
+      "distance_m": 6599.68017578125,
+      "duration_s": 2473.931884765625,
+      "avg_hr": 159.0,
+      "max_hr": 189.0,
+      "calories": 485.0,
+      "elevation_m": 7.0,
+      "avg_speed": 2.6679999828338623,
+      "aerobic_te": 3.5,
+      "vo2max": 49.0
+    },
+    {
       "name": "Lewisham - Bike \u00b7 long Z2 \u00b7 90 min",
       "type": "cycling",
       "date": "2026-08-16",
@@ -255,34 +283,6 @@
       "avg_speed": 0.0,
       "aerobic_te": 0.30000001192092896,
       "vo2max": 0
-    },
-    {
-      "name": "Southwark - Easy 30 + 4 strides",
-      "type": "running",
-      "date": "2026-07-30",
-      "distance_m": 5332.2998046875,
-      "duration_s": 2100.699951171875,
-      "avg_hr": 149.0,
-      "max_hr": 175.0,
-      "calories": 381.0,
-      "elevation_m": 31.0,
-      "avg_speed": 2.5380001068115234,
-      "aerobic_te": 3.0,
-      "vo2max": 48.0
-    },
-    {
-      "name": "Technique & easy",
-      "type": "lap_swimming",
-      "date": "2026-07-29",
-      "distance_m": 1375.0,
-      "duration_s": 1949.89697265625,
-      "avg_hr": 151.0,
-      "max_hr": 169.0,
-      "calories": 349.0,
-      "elevation_m": 0,
-      "avg_speed": 0.800000011920929,
-      "aerobic_te": 2.9000000953674316,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 53,
-    "drained": 1,
-    "end_val": "2026-08-18T07:20:00.0"
+    "drained": 42,
+    "end_val": "2026-08-18T13:12:00.0"
   },
   "heart_rate": {
     "resting": 45,
-    "max": 76,
+    "max": 179,
     "min": 42,
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 13,
-    "max": 55,
+    "avg": 18,
+    "max": 90,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,39 +328,39 @@
     "lowest": 83
   },
   "training_readiness": {
-    "score": 95,
-    "level": "PRIME",
+    "score": 60,
+    "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
-    "status": "PEAKING_1",
-    "load": 314,
-    "load_chronic": 598,
-    "acwr": 0.5,
-    "acwr_status": "LOW",
+    "status": "PRODUCTIVE_3",
+    "load": 654,
+    "load_chronic": 659,
+    "acwr": 0.9,
+    "acwr_status": "OPTIMAL",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_FOCUS",
-    "monthly_aerobic_low": 1110.055,
-    "monthly_aerobic_high": 881.33606,
-    "monthly_anaerobic": 332.97202,
-    "vo2max": 49.4
+    "monthly_aerobic_low": 1160.3077,
+    "monthly_aerobic_high": 1008.53125,
+    "monthly_anaerobic": 422.57785,
+    "vo2max": 49.3
   },
   "vo2max": {
-    "value": 49.4
+    "value": 49.3
   },
   "respiration": {
-    "avg": 11.0,
-    "highest": 20.0,
-    "lowest": 6.0
+    "avg": 16.0,
+    "highest": 33.0,
+    "lowest": 5.0
   },
   "race_predictions": {
     "five_k": 1431,
-    "ten_k": 3025,
-    "half_marathon": 6798,
-    "marathon": 15098
+    "ten_k": 3023,
+    "half_marathon": 6794,
+    "marathon": 15087
   },
   "endurance_score": {
-    "overall": 5923,
+    "overall": 5927,
     "level": 3
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 76836,
-    "daily_avg": 9604
+    "weekly_total": 86747,
+    "daily_avg": 10843
   },
   "intensity": {
-    "moderate": 1,
-    "vigorous": 2,
+    "moderate": 25,
+    "vigorous": 49,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-08-18",
-        "value": 13
+        "value": 18
       }
     ]
   },
@@ -691,6 +691,14 @@
       "workout_id": 1663254662,
       "is_race": null,
       "item_type": "workout"
+    },
+    {
+      "date": "2026-08-18",
+      "title": "Southwark - Hill reps \u00b7 8 \u00d7 60s",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
     },
     {
       "date": "2026-08-19",
@@ -1358,5 +1366,5 @@
     }
   ],
   "fetched_at": "2026-08-18",
-  "fetched_time": "13:28"
+  "fetched_time": "14:36"
 }
