@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Technique & easy",
+      "type": "lap_swimming",
+      "date": "2026-08-19",
+      "distance_m": 1000.0,
+      "duration_s": 1919.987060546875,
+      "avg_hr": 131.0,
+      "max_hr": 165.0,
+      "calories": 248.0,
+      "elevation_m": 0,
+      "avg_speed": 0.8100000023841858,
+      "aerobic_te": 2.5,
+      "vo2max": 0
+    },
+    {
       "name": "Lower + Run-Proof",
       "type": "strength_training",
       "date": "2026-08-18",
@@ -269,20 +283,6 @@
       "avg_speed": 2.865000009536743,
       "aerobic_te": 4.5,
       "vo2max": 48.0
-    },
-    {
-      "name": "Upper + Swim-Proof",
-      "type": "strength_training",
-      "date": "2026-07-31",
-      "distance_m": 0.0,
-      "duration_s": 2568.72802734375,
-      "avg_hr": 92.0,
-      "max_hr": 152.0,
-      "calories": 161.0,
-      "elevation_m": 0,
-      "avg_speed": 0.0,
-      "aerobic_te": 0.30000001192092896,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,17 +306,17 @@
   },
   "body_battery": {
     "charged": 82,
-    "drained": 10,
-    "end_val": "2026-08-19T10:17:00.0"
+    "drained": 26,
+    "end_val": "2026-08-19T12:17:00.0"
   },
   "heart_rate": {
     "resting": 45,
-    "max": 88,
+    "max": 159,
     "min": 43,
     "last_7d_avg_resting": 45
   },
   "stress": {
-    "avg": 12,
+    "avg": 13,
     "max": 78,
     "rest_duration": 0,
     "low_duration": 0,
@@ -328,21 +328,21 @@
     "lowest": 86
   },
   "training_readiness": {
-    "score": 78,
+    "score": 77,
     "level": "HIGH",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_3",
-    "load": 559,
-    "load_chronic": 634,
-    "acwr": 0.8,
+    "load": 665,
+    "load_chronic": 653,
+    "acwr": 1.0,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_FOCUS",
-    "monthly_aerobic_low": 1081.1316,
+    "monthly_aerobic_low": 1135.6709,
     "monthly_aerobic_high": 1008.53125,
-    "monthly_anaerobic": 398.8499,
+    "monthly_anaerobic": 427.21155,
     "vo2max": 49.3
   },
   "vo2max": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 73441,
-    "daily_avg": 9180
+    "weekly_total": 77621,
+    "daily_avg": 9702
   },
   "intensity": {
-    "moderate": 18,
-    "vigorous": 60,
+    "moderate": 30,
+    "vigorous": 83,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-08-19",
-        "value": 12
+        "value": 13
       }
     ]
   },
@@ -1342,5 +1342,5 @@
     }
   ],
   "fetched_at": "2026-08-19",
-  "fetched_time": "12:17"
+  "fetched_time": "13:28"
 }
