@@ -5,6 +5,20 @@
   },
   "activities": [
     {
+      "name": "Southwark - Long Trail \u00b7 90 min",
+      "type": "running",
+      "date": "2026-08-22",
+      "distance_m": 14667.0498046875,
+      "duration_s": 5204.68896484375,
+      "avg_hr": 154.0,
+      "max_hr": 180.0,
+      "calories": 1055.0,
+      "elevation_m": 75.0,
+      "avg_speed": 2.818000078201294,
+      "aerobic_te": 4.0,
+      "vo2max": 49.0
+    },
+    {
       "name": "Upper + Swim-Proof",
       "type": "strength_training",
       "date": "2026-08-21",
@@ -269,20 +283,6 @@
       "avg_speed": 2.806999921798706,
       "aerobic_te": 3.700000047683716,
       "vo2max": 49.0
-    },
-    {
-      "name": "Southwark Cycling",
-      "type": "cycling",
-      "date": "2026-08-03",
-      "distance_m": 9625.099609375,
-      "duration_s": 2014.8330078125,
-      "avg_hr": 127.0,
-      "max_hr": 157.0,
-      "calories": 263.0,
-      "elevation_m": 55.0,
-      "avg_speed": 4.7769999504089355,
-      "aerobic_te": 1.399999976158142,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,12 +306,12 @@
   },
   "body_battery": {
     "charged": 57,
-    "drained": 18,
-    "end_val": "2026-08-22T10:02:00.0"
+    "drained": 41,
+    "end_val": "2026-08-22T11:42:00.0"
   },
   "heart_rate": {
     "resting": 41,
-    "max": 87,
+    "max": 175,
     "min": 40,
     "last_7d_avg_resting": 45
   },
@@ -328,39 +328,39 @@
     "lowest": 84
   },
   "training_readiness": {
-    "score": 87,
-    "level": "HIGH",
+    "score": 53,
+    "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_3",
-    "load": 530,
-    "load_chronic": 619,
-    "acwr": 0.8,
+    "load": 751,
+    "load_chronic": 659,
+    "acwr": 1.1,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_FOCUS",
-    "monthly_aerobic_low": 1087.9352,
+    "monthly_aerobic_low": 1261.2867,
     "monthly_aerobic_high": 894.87805,
     "monthly_anaerobic": 427.8339,
-    "vo2max": 49.5
+    "vo2max": 49.6
   },
   "vo2max": {
-    "value": 49.5
+    "value": 49.6
   },
   "respiration": {
-    "avg": 12.0,
-    "highest": 18.0,
+    "avg": 24.0,
+    "highest": 36.0,
     "lowest": 8.0
   },
   "race_predictions": {
-    "five_k": 1428,
-    "ten_k": 3016,
-    "half_marathon": 6778,
-    "marathon": 15046
+    "five_k": 1419,
+    "ten_k": 3001,
+    "half_marathon": 6746,
+    "marathon": 14963
   },
   "endurance_score": {
-    "overall": 5940,
+    "overall": 5967,
     "level": 3
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 81367,
-    "daily_avg": 10170
+    "weekly_total": 96512,
+    "daily_avg": 12064
   },
   "intensity": {
-    "moderate": 61,
-    "vigorous": 144,
+    "moderate": 66,
+    "vigorous": 232,
     "goal": 150
   },
   "running_tolerance": {
@@ -683,6 +683,14 @@
       "workout_id": 1672264360,
       "is_race": null,
       "item_type": "workout"
+    },
+    {
+      "date": "2026-08-22",
+      "title": "Southwark - Long Trail \u00b7 90 min",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
     },
     {
       "date": "2026-08-23",
@@ -1318,5 +1326,5 @@
     }
   ],
   "fetched_at": "2026-08-22",
-  "fetched_time": "12:13"
+  "fetched_time": "13:21"
 }
