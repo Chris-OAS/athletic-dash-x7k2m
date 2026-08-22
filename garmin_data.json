@@ -305,31 +305,31 @@
     "balanced_high": 0
   },
   "body_battery": {
-    "charged": null,
-    "drained": null,
-    "end_val": null
+    "charged": 1,
+    "drained": 0,
+    "end_val": "2026-08-21T23:33:00.0"
   },
   "heart_rate": {
-    "resting": null,
-    "max": null,
-    "min": null,
-    "last_7d_avg_resting": null
+    "resting": 50,
+    "max": 85,
+    "min": 50,
+    "last_7d_avg_resting": 46
   },
   "stress": {
-    "avg": null,
-    "max": null,
+    "avg": 24,
+    "max": 69,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
     "high_duration": 0
   },
   "spo2": {
-    "avg": null,
-    "lowest": null
+    "avg": 93.0,
+    "lowest": 89
   },
   "training_readiness": {
-    "score": 0,
-    "level": "",
+    "score": 73,
+    "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
@@ -349,15 +349,15 @@
     "value": 0
   },
   "respiration": {
-    "avg": null,
+    "avg": 13.0,
     "highest": null,
     "lowest": null
   },
   "race_predictions": {
-    "five_k": 1426,
-    "ten_k": 3014,
-    "half_marathon": 6774,
-    "marathon": 15035
+    "five_k": 1428,
+    "ten_k": 3016,
+    "half_marathon": 6778,
+    "marathon": 15046
   },
   "endurance_score": {
     "overall": 0,
@@ -368,8 +368,8 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 79520,
-    "daily_avg": 11360
+    "weekly_total": 79859,
+    "daily_avg": 9982
   },
   "intensity": {
     "moderate": 61,
@@ -380,8 +380,8 @@
     "value": 0
   },
   "morning_readiness": {
-    "score": 0,
-    "level": ""
+    "score": 73,
+    "level": "MODERATE"
   },
   "history": {
     "sleep": [
@@ -555,7 +555,7 @@
       },
       {
         "date": "2026-08-22",
-        "value": null
+        "value": 50
       }
     ],
     "bb": [
@@ -609,11 +609,11 @@
       },
       {
         "date": "2026-08-21",
-        "value": 73
+        "value": 75
       },
       {
         "date": "2026-08-22",
-        "value": null
+        "value": 1
       }
     ],
     "stress": [
@@ -667,11 +667,11 @@
       },
       {
         "date": "2026-08-21",
-        "value": 21
+        "value": 22
       },
       {
         "date": "2026-08-22",
-        "value": null
+        "value": 24
       }
     ]
   },
@@ -1318,5 +1318,5 @@
     }
   ],
   "fetched_at": "2026-08-22",
-  "fetched_time": "00:15"
+  "fetched_time": "01:45"
 }
