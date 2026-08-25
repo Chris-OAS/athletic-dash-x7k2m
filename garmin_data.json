@@ -5,6 +5,34 @@
   },
   "activities": [
     {
+      "name": "Lower + Run-Proof",
+      "type": "strength_training",
+      "date": "2026-08-25",
+      "distance_m": 0.0,
+      "duration_s": 1684.948974609375,
+      "avg_hr": 119.0,
+      "max_hr": 153.0,
+      "calories": 198.0,
+      "elevation_m": 0,
+      "avg_speed": 0.0,
+      "aerobic_te": 1.2999999523162842,
+      "vo2max": 0
+    },
+    {
+      "name": "Southwark - Threshold \u00b7 4 \u00d7 5 min",
+      "type": "running",
+      "date": "2026-08-25",
+      "distance_m": 8291.759765625,
+      "duration_s": 2939.824951171875,
+      "avg_hr": 156.0,
+      "max_hr": 188.0,
+      "calories": 586.0,
+      "elevation_m": 24.0,
+      "avg_speed": 2.8199999332427974,
+      "aerobic_te": 3.799999952316284,
+      "vo2max": 50.0
+    },
+    {
       "name": "South Gloucestershire Surfing",
       "type": "surfing_v2",
       "date": "2026-08-24",
@@ -255,34 +283,6 @@
       "avg_speed": 0.0,
       "aerobic_te": 1.2000000476837158,
       "vo2max": 0
-    },
-    {
-      "name": "Strength",
-      "type": "strength_training",
-      "date": "2026-08-05",
-      "distance_m": 0.0,
-      "duration_s": 46.250999450683594,
-      "avg_hr": 102.0,
-      "max_hr": 112.0,
-      "calories": 4.0,
-      "elevation_m": 0,
-      "avg_speed": 0.0,
-      "aerobic_te": 0.0,
-      "vo2max": 0
-    },
-    {
-      "name": "Technique & easy",
-      "type": "lap_swimming",
-      "date": "2026-08-05",
-      "distance_m": 1350.0,
-      "duration_s": 1874.073974609375,
-      "avg_hr": 156.0,
-      "max_hr": 177.0,
-      "calories": 372.0,
-      "elevation_m": 0,
-      "avg_speed": 0.8320000171661377,
-      "aerobic_te": 3.200000047683716,
-      "vo2max": 0
     }
   ],
   "sleep": {
@@ -306,18 +306,18 @@
   },
   "body_battery": {
     "charged": 73,
-    "drained": 1,
-    "end_val": "2026-08-25T08:06:00.0"
+    "drained": 36,
+    "end_val": "2026-08-25T13:38:00.0"
   },
   "heart_rate": {
     "resting": 44,
-    "max": 75,
+    "max": 184,
     "min": 41,
     "last_7d_avg_resting": 44
   },
   "stress": {
-    "avg": 10,
-    "max": 81,
+    "avg": 14,
+    "max": 91,
     "rest_duration": 0,
     "low_duration": 0,
     "med_duration": 0,
@@ -328,39 +328,39 @@
     "lowest": 78
   },
   "training_readiness": {
-    "score": 86,
-    "level": "HIGH",
+    "score": 64,
+    "level": "MODERATE",
     "feedback": ""
   },
   "training_status": {
     "status": "PRODUCTIVE_3",
-    "load": 611,
-    "load_chronic": 632,
-    "acwr": 0.9,
+    "load": 878,
+    "load_chronic": 680,
+    "acwr": 1.2,
     "acwr_status": "OPTIMAL",
     "fitness_trend": 3,
     "load_balance": "AEROBIC_LOW_FOCUS",
-    "monthly_aerobic_low": 1222.7332,
-    "monthly_aerobic_high": 849.5514,
-    "monthly_anaerobic": 382.62936,
-    "vo2max": 49.6
+    "monthly_aerobic_low": 1239.508,
+    "monthly_aerobic_high": 1009.9915,
+    "monthly_anaerobic": 415.56357,
+    "vo2max": 50.0
   },
   "vo2max": {
-    "value": 49.6
+    "value": 50.0
   },
   "respiration": {
-    "avg": 11.0,
-    "highest": 19.0,
+    "avg": 17.0,
+    "highest": 41.0,
     "lowest": 5.0
   },
   "race_predictions": {
-    "five_k": 1423,
-    "ten_k": 3006,
-    "half_marathon": 6757,
-    "marathon": 14989
+    "five_k": 1409,
+    "ten_k": 2970,
+    "half_marathon": 6666,
+    "marathon": 14789
   },
   "endurance_score": {
-    "overall": 5959,
+    "overall": 6026,
     "level": 3
   },
   "hill_score": {
@@ -368,12 +368,12 @@
     "level": ""
   },
   "steps": {
-    "weekly_total": 84851,
-    "daily_avg": 10606
+    "weekly_total": 96093,
+    "daily_avg": 12011
   },
   "intensity": {
-    "moderate": 10,
-    "vigorous": 53,
+    "moderate": 26,
+    "vigorous": 100,
     "goal": 150
   },
   "running_tolerance": {
@@ -671,7 +671,7 @@
       },
       {
         "date": "2026-08-25",
-        "value": 10
+        "value": 14
       }
     ]
   },
@@ -683,6 +683,14 @@
       "workout_id": 1663254662,
       "is_race": null,
       "item_type": "workout"
+    },
+    {
+      "date": "2026-08-25",
+      "title": "Southwark - Threshold \u00b7 4 \u00d7 5 min",
+      "sport": null,
+      "workout_id": null,
+      "is_race": null,
+      "item_type": "activity"
     },
     {
       "date": "2026-08-25",
@@ -1302,5 +1310,5 @@
     }
   ],
   "fetched_at": "2026-08-25",
-  "fetched_time": "13:31"
+  "fetched_time": "14:41"
 }
