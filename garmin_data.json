@@ -680,7 +680,7 @@
       "date": "2026-08-30",
       "title": "Bike \u00b7 long Z2 \u00b7 90 min",
       "sport": "cycling",
-      "workout_id": 1680875703,
+      "workout_id": 1681400410,
       "is_race": null,
       "item_type": "workout"
     },
@@ -736,7 +736,7 @@
       "date": "2026-09-06",
       "title": "Bike \u00b7 long Z2 \u00b7 90 min",
       "sport": "cycling",
-      "workout_id": 1680875703,
+      "workout_id": 1681400410,
       "is_race": null,
       "item_type": "workout"
     },
@@ -768,7 +768,7 @@
       "date": "2026-09-10",
       "title": "Downhill strides",
       "sport": "running",
-      "workout_id": 1678960386,
+      "workout_id": 1681400607,
       "is_race": null,
       "item_type": "workout"
     },
@@ -792,7 +792,7 @@
       "date": "2026-09-13",
       "title": "Bike \u00b7 long Z2 \u00b7 90 min",
       "sport": "cycling",
-      "workout_id": 1680875703,
+      "workout_id": 1681400410,
       "is_race": null,
       "item_type": "workout"
     },
@@ -848,7 +848,7 @@
       "date": "2026-09-20",
       "title": "Bike \u00b7 long Z2 \u00b7 90 min",
       "sport": "cycling",
-      "workout_id": 1680875703,
+      "workout_id": 1681400410,
       "is_race": null,
       "item_type": "workout"
     },
@@ -856,7 +856,7 @@
       "date": "2026-09-22",
       "title": "10K race-pace \u00b7 5 \u00d7 4 min",
       "sport": "running",
-      "workout_id": 1680875627,
+      "workout_id": 1681400090,
       "is_race": null,
       "item_type": "workout"
     },
@@ -880,7 +880,7 @@
       "date": "2026-09-23",
       "title": "Technique & easy",
       "sport": "swimming",
-      "workout_id": 1680875677,
+      "workout_id": 1681400136,
       "is_race": null,
       "item_type": "workout"
     },
@@ -888,7 +888,7 @@
       "date": "2026-09-24",
       "title": "Easy 30 + 4 strides",
       "sport": "running",
-      "workout_id": 1680875697,
+      "workout_id": 1681400495,
       "is_race": null,
       "item_type": "workout"
     },
@@ -944,7 +944,7 @@
       "date": "2026-09-30",
       "title": "Technique & easy",
       "sport": "swimming",
-      "workout_id": 1680875677,
+      "workout_id": 1681400136,
       "is_race": null,
       "item_type": "workout"
     },
@@ -965,18 +965,10 @@
       "item_type": "workout"
     },
     {
-      "date": "2026-10-03",
-      "title": "Long easy \u00b7 90 min",
-      "sport": "running",
-      "workout_id": 1680875574,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
       "date": "2026-10-04",
       "title": "Bike \u00b7 long Z2 \u00b7 90 min",
       "sport": "cycling",
-      "workout_id": 1680875703,
+      "workout_id": 1681400410,
       "is_race": null,
       "item_type": "workout"
     },
@@ -1008,7 +1000,7 @@
       "date": "2026-10-08",
       "title": "Downhill strides",
       "sport": "running",
-      "workout_id": 1678960386,
+      "workout_id": 1681400607,
       "is_race": null,
       "item_type": "workout"
     },
@@ -1032,7 +1024,7 @@
       "date": "2026-10-11",
       "title": "Bike \u00b7 long Z2 \u00b7 90 min",
       "sport": "cycling",
-      "workout_id": 1680875703,
+      "workout_id": 1681400410,
       "is_race": null,
       "item_type": "workout"
     },
@@ -1088,7 +1080,7 @@
       "date": "2026-10-18",
       "title": "Bike \u00b7 long Z2 \u00b7 90 min",
       "sport": "cycling",
-      "workout_id": 1680875703,
+      "workout_id": 1681400410,
       "is_race": null,
       "item_type": "workout"
     },
@@ -1104,7 +1096,7 @@
       "date": "2026-10-20",
       "title": "Tempo intervals \u00b7 5 \u00d7 3 min",
       "sport": "running",
-      "workout_id": 1678960687,
+      "workout_id": 1681400376,
       "is_race": null,
       "item_type": "workout"
     },
@@ -1144,7 +1136,7 @@
       "date": "2026-10-25",
       "title": "Bike \u00b7 long Z2 \u00b7 90 min",
       "sport": "cycling",
-      "workout_id": 1680875703,
+      "workout_id": 1681400410,
       "is_race": null,
       "item_type": "workout"
     },
@@ -1189,18 +1181,10 @@
       "item_type": "workout"
     },
     {
-      "date": "2026-10-31",
-      "title": "Long easy \u00b7 90 min",
-      "sport": "running",
-      "workout_id": 1680875574,
-      "is_race": null,
-      "item_type": "workout"
-    },
-    {
       "date": "2026-11-01",
       "title": "Bike \u00b7 easy spin \u00b7 60 min",
       "sport": "cycling",
-      "workout_id": 1678960421,
+      "workout_id": 1681400545,
       "is_race": null,
       "item_type": "workout"
     },
@@ -1208,7 +1192,7 @@
       "date": "2026-11-03",
       "title": "Easy 30 + 4 strides",
       "sport": "running",
-      "workout_id": 1680875697,
+      "workout_id": 1681400495,
       "is_race": null,
       "item_type": "workout"
     },
@@ -1224,7 +1208,7 @@
       "date": "2026-11-04",
       "title": "Technique & easy",
       "sport": "swimming",
-      "workout_id": 1680875677,
+      "workout_id": 1681400136,
       "is_race": null,
       "item_type": "workout"
     },
@@ -1248,11 +1232,11 @@
       "date": "2026-11-08",
       "title": "Bike \u00b7 easy spin \u00b7 60 min",
       "sport": "cycling",
-      "workout_id": 1678960421,
+      "workout_id": 1681400545,
       "is_race": null,
       "item_type": "workout"
     }
   ],
   "fetched_at": "2026-08-30",
-  "fetched_time": "19:18"
+  "fetched_time": "22:45"
 }
